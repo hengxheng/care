@@ -14,3 +14,6 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::resource('care_givers','GiversController');
+Route::resource('care_seekers','SeekersController');
