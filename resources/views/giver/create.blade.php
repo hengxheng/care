@@ -1,6 +1,6 @@
 <form action="{{ URL::route('care_givers.store') }}" method="post" enctype="multipart/form-data">
 	<input type="hidden" name="user_type" value="giver">
-	{{ Form::token() }}
+	{!! Form::token() !!}
 	<div class="form-row">
 		<label for="firstname">First Name</label>
 		<input type="text" name="firstname">

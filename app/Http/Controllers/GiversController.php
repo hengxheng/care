@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Giver;
-
+use Input;
+use Redirect;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
