@@ -100,7 +100,6 @@ class GiversController extends Controller
         //
     }
     public function storeDetails(){
-        var_dump(Input::all());
         $uid = Input::get('uid');
         $giver = new Giver;
         $giver->uid = $uid;
