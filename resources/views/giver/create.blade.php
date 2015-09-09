@@ -17,10 +17,6 @@
 		<label for="email">Phone</label>
 		<input type="text" name="phone">
 	</div>
-	<div class="form-row">	
-		<label for="picture">Your Photo</label>
-		<input type="file" name="picture">
-	</div> 
 	<div class="form-row">
 		<label for="password">Password</label>
 		<input type="password"　name="password">

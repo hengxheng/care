@@ -17,3 +17,5 @@ Route::get('/', function () {
 
 Route::resource('care_givers','GiversController');
 Route::resource('care_seekers','SeekersController');
+Route::get('personal-detail/{uid}', ['as' => 'care_givers.personal-detail', 'uses' => 'GiversController@createstep2']);
+Route::post('personal-store', ['as' => 'care_givers.storeDetails', 'uses' => 'GiversController@storeDetails']);

@@ -3,10 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Giver;
+use App\User;
 use Input;
 use Redirect;
 use Illuminate\Http\Request;
-
+use App\Http\Controllers\Session;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -42,9 +43,16 @@ class GiversController extends Controller
     public function store(Request $request)
     {
         $input_data = Input::all();
+        $error = "";
+        $user = User::create($input_data);
 
-        $t = print_r($input_data, true);
-        return view('giver.store', compact('t'));
+        $user_id = $user->id;
+
+        if($input_data['user_type'] == 'giver'){
+            return Redirect::route('care_givers.personal-detail', array('uid' => $user_id));
+        }
+
+        
     }
 
     /**
@@ -90,5 +98,30 @@ class GiversController extends Controller
     public function destroy($id)
     {
         //
+    }
+    public function storeDetails(){
+        var_dump(Input::all());
+        $uid = Input::get('uid');
+        $giver = new Giver;
+        $giver->uid = $uid;
+        $giver->gender = Input::get("gender");
+        $giver->address1 = Input::get('address1');
+        $giver->address2 = Input::get('address2');
+        $giver->state = Input::get('state');
+        $giver->suburb = Input::get('suburb');
+        $giver->postcode = Input::get('postcode');
+        
+        $pic_name = $uid;
+        $pic_path = public_path('images');
+        $pic_extension = Input::file('picture')->getClientOriginalExtension();
+        if(Input::file('picture')->move($pic_path, $pic_name.'.'.$pic_extension)){
+            $giver->picture = $pic_path."/".$pic_name.'.'.$pic_extension;
+        }
+        $giver->save();
+        return Redirect::route('care_givers.index');
+
+    }
+    public function createstep2($uid){
+         return view('giver.store', compact(array('uid')));
     }
 }

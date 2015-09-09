@@ -15,8 +15,8 @@ class DatabaseSeeder extends Seeder
         Model::unguard();
 
        $demo_users = array(
-                ['id' => 1, 'firstname' => 'John', 'lastname' => 'Jack', 'user_type' => 'seeker', 'email' => 'test@testemail.com', 'phone' => '1234', 'picture' => 'pic1.png', 'password' => '123', 'created_at' => new DateTime, 'updated_at' => new DateTime],
-                ['id' => 2, 'firstname' => 'Jill', 'lastname' => 'May', 'user_type' => 'provider', 'email' => 'test1@testemail.com', 'phone' => '4321', 'picture' => 'pic2.png', 'password' => '123', 'created_at' => new DateTime, 'updated_at' => new DateTime]
+                ['id' => 1, 'firstname' => 'John', 'lastname' => 'Jack', 'user_type' => 'seeker', 'email' => 'test@testemail.com', 'phone' => '1234', 'password' => '123', 'created_at' => new DateTime, 'updated_at' => new DateTime],
+                ['id' => 2, 'firstname' => 'Jill', 'lastname' => 'May', 'user_type' => 'provider', 'email' => 'test1@testemail.com', 'phone' => '4321', 'password' => '123', 'created_at' => new DateTime, 'updated_at' => new DateTime]
             );
         DB::table('users')->insert($demo_users);
 

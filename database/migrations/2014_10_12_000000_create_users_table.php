@@ -19,7 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('user_type');
             $table->string('email')->unique();
             $table->string('phone');
-            $table->string('picture');
+            
             $table->string('password', 60);
             $table->rememberToken();
             $table->timestamps();
@@ -30,8 +30,9 @@ class CreateUsersTable extends Migration
             $table->integer('uid')->unsigned();
             $table->foreign('uid')->references('id')->on('users')->onDelete('cascade');
             $table->string('gender');
+            $table->string('picture')->nullable();
             $table->string('address1');
-            $table->string('address2');
+            $table->string('address2')->nullable();
             $table->string('suburb');
             $table->string('state');
             $table->string('postcode');
@@ -41,7 +42,8 @@ class CreateUsersTable extends Migration
         Schema::create('seeker',function(Blueprint $table){
             $table->integer('uid')->unsigned();
             $table->foreign('uid')->references('id')->on('users')->onDelete('cascade');
-            $table->boolean('premium');
+            $table->string('picture')->nullable();
+            $table->boolean('premium')->default(false);
             $table->timestamps();
         });
 
