@@ -19,3 +19,13 @@ Route::resource('care_givers','GiversController');
 Route::resource('care_seekers','SeekersController');
 Route::get('personal-detail/{uid}', ['as' => 'care_givers.personal-detail', 'uses' => 'GiversController@createstep2']);
 Route::post('personal-store', ['as' => 'care_givers.storeDetails', 'uses' => 'GiversController@storeDetails']);
+
+
+// Authentication routes...
+Route::get('auth/login',['as'=>'login', 'uses' => 'Auth\AuthController@getLogin']);
+Route::post('auth/login',['as'=>'login', 'uses' => 'Auth\AuthController@postLogin']);
+Route::get('auth/logout', 'Auth\AuthController@getLogout');
+
+// Registration routes...
+Route::get('auth/register', 'Auth\AuthController@getRegister');
+Route::post('auth/register', 'Auth\AuthController@postRegister');
