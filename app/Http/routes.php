@@ -14,6 +14,9 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/home', function () {
+    return view('welcome');
+});
 
 Route::resource('care_givers','GiversController');
 Route::resource('care_seekers','SeekersController');
@@ -22,10 +25,10 @@ Route::post('personal-store', ['as' => 'care_givers.storeDetails', 'uses' => 'Gi
 
 
 // Authentication routes...
-Route::get('auth/login',['as'=>'login', 'uses' => 'Auth\AuthController@getLogin']);
-Route::post('auth/login',['as'=>'login', 'uses' => 'Auth\AuthController@postLogin']);
-Route::get('auth/logout', 'Auth\AuthController@getLogout');
+Route::get('auth/login',['as' => 'login', 'uses' => 'Auth\AuthController@getLogin']);
+Route::post('auth/login',['as' => 'login', 'uses' => 'Auth\AuthController@postLogin']);
+Route::get('auth/logout', ['as' => 'logout', 'uses' => 'Auth\AuthController@getLogout']);
 
 // Registration routes...
-Route::get('auth/register', 'Auth\AuthController@getRegister');
-Route::post('auth/register', 'Auth\AuthController@postRegister');
+Route::get('auth/register', ['as' => 'register', 'uses' => 'Auth\AuthController@getRegister']);
+Route::post('auth/register', ['as' => 'register', 'uses' => 'Auth\AuthController@postRegister']);

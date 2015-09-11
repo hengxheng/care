@@ -1,4 +1,7 @@
-<form method="POST" action="/auth/register">
+@extends('html')
+
+@section('content')
+<form method="POST" action="{{ URL::route('register') }}">
     {!! csrf_field() !!}
 
     <div class="form-row">
@@ -41,3 +44,4 @@
         <button type="submit">Register</button>
     </div>
 </form>
+@endsection
