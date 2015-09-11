@@ -5,11 +5,11 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Care Nation</title>
-		<link rel="stylesheet" href="/css/style.css">
+		<link rel="stylesheet" href="{{ URL::asset('stylesheets/screen.css') }}">
 	</head>
 	<body>
 		<header id="site-header">
-			<nav id="site-nav">
+			<nav id="site-nav" class="site-inner">
 				<ul>
 					@if (Auth::guest())
 						<li><a href="{{ URL::route('login') }}">Login</a></li>
@@ -31,7 +31,7 @@
 			</nav>
 		</header>
 
-		<div class="page-main-content">
+		<div class="page-main-content site-inner">
 			@if (Session::has('message'))
 				<div class="flash alert-info">
 					<p>{{ Session::get('message') }}</p>
@@ -51,5 +51,6 @@
 		<footer id="site-footer">
 			
 		</footer>
+		<script src="{{ URL::asset('scripts/script.js') }}"></script>
 	</body>
 </html>
