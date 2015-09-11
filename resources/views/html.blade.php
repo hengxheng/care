@@ -11,10 +11,23 @@
 		<header id="site-header">
 			<nav id="site-nav">
 				<ul>
-					<li></li>
-					<li></li>
-					<li></li>
+					@if (Auth::guest())
+						<li><a href="{{ URL::route('login') }}">Login</a></li>
+						<li><a href="{{ URL::route('register') }}">Register</a></li>
+					@else
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle">{{ Auth::user()->name }}</a>
+							<ul class="dropdown-menu" role="menu">
+								@if (Auth::user()->user_type == 'giver')
+								<li><a href="{{ URL::route('care_givers.create') }}">Create Profile</a>
+								@endif
+								<li><a href="{{ URL::route('logout') }}">Logout</a></li>
+							</ul>
+						</li>
+						{{-- dd(Auth::user()->toArray()) --}}
+					@endif
 				</ul>
+
 			</nav>
 		</header>
 
