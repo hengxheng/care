@@ -20,9 +20,9 @@ Route::get('/home', function () {
 
 Route::resource('care_givers','GiversController');
 Route::resource('care_seekers','SeekersController');
-Route::get('personal-detail/{uid}', ['as' => 'care_givers.personal-detail', 'uses' => 'GiversController@createstep2']);
+Route::get('profile/{uid}', ['as' => 'care_givers.create', 'uses' => 'GiversController@create']);
 Route::post('personal-store', ['as' => 'care_givers.storeDetails', 'uses' => 'GiversController@storeDetails']);
-
+Route::get('care_givers/{uid}',['as' => 'care_givers.show', 'users' => 'GiversController@show']);
 
 // Authentication routes...
 Route::get('auth/login',['as' => 'login', 'uses' => 'Auth\AuthController@getLogin']);

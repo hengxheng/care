@@ -29,9 +29,9 @@ class GiversController extends Controller
      *
      * @return Response
      */
-    public function create()
+    public function create($uid)
     {
-        return view('giver.create');
+        return view('giver.store', compact(array('uid')));
     }
 
     /**
@@ -50,9 +50,7 @@ class GiversController extends Controller
 
         if($input_data['user_type'] == 'giver'){
             return Redirect::route('care_givers.personal-detail', array('uid' => $user_id));
-        }
-
-        
+        }      
     }
 
     /**
@@ -63,7 +61,9 @@ class GiversController extends Controller
      */
     public function show($id)
     {
-        //
+        $the_giver = Giver::find($id);
+
+        return view('giver.show', compact('the_giver'));
     }
 
     /**
@@ -119,8 +119,5 @@ class GiversController extends Controller
         $giver->save();
         return Redirect::route('care_givers.index');
 
-    }
-    public function createstep2($uid){
-         return view('giver.store', compact(array('uid')));
     }
 }

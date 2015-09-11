@@ -19,7 +19,7 @@
 							<a href="#" class="dropdown-toggle">{{ Auth::user()->name }}</a>
 							<ul class="dropdown-menu" role="menu">
 								@if (Auth::user()->user_type == 'giver')
-								<li><a href="{{ URL::route('care_givers.create') }}">Create Profile</a>
+								<li><a href="{{ URL::route('care_givers.create', array('uid' => Auth::user()->id)) }}">Create Profile</a>
 								@endif
 								<li><a href="{{ URL::route('logout') }}">Logout</a></li>
 							</ul>
