@@ -19,11 +19,18 @@ Route::get('/home', function () {
 });
 
 Route::resource('care_givers','GiversController');
-Route::resource('care_seekers','SeekersController');
 Route::get('profile/{uid}', ['as' => 'care_givers.create', 'uses' => 'GiversController@create']);
 Route::post('personal-store', ['as' => 'care_givers.storeDetails', 'uses' => 'GiversController@storeDetails']);
 Route::get('care_givers/{uid}',['as' => 'care_givers.show', 'users' => 'GiversController@show']);
 
+Route::resource('care_seekers','SeekersController');
+Route::get('care_seekers/profile/{uid}', ['as' => 'care_seekers.create', 'uses' => 'SeekersController@create']);
+Route::post('care_seekers/profile/{uid}', ['as' => 'care_seekers.create', 'uses' => 'SeekersController@create']);
+Route::get('care_seekers/{uid}',['as' => 'care_seekers.show', 'users' => 'SeekersController@show']);
+
+
+Route::resource('job','JobsController');
+Route::get('job/create/{uid}', ['as'=>'job.create', 'uses'=>'JobsController@create']);
 // Authentication routes...
 Route::get('auth/login',['as' => 'login', 'uses' => 'Auth\AuthController@getLogin']);
 Route::post('auth/login',['as' => 'login', 'uses' => 'Auth\AuthController@postLogin']);

@@ -61,9 +61,10 @@ class GiversController extends Controller
      */
     public function show($id)
     {
+        $the_user = User::find($id);
         $the_giver = Giver::find($id);
 
-        return view('giver.show', compact('the_giver'));
+        return view('giver.show', compact(array('the_user', 'the_giver')));
     }
 
     /**

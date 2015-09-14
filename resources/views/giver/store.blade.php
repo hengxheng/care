@@ -1,3 +1,6 @@
+@extends ('html')
+
+@section ('content')
 <form action="{{ URL::route('care_givers.storeDetails') }}" method="post" enctype="multipart/form-data">
 	<input type="hidden" name="uid" value="{{ $uid }}">
 	{!! Form::token() !!}
@@ -35,3 +38,4 @@
 	</div>
 </form>
 
+@endsecion

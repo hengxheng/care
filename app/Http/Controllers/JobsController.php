@@ -24,9 +24,9 @@ class JobsController extends Controller
      *
      * @return Response
      */
-    public function create()
+    public function create($id)
     {
-        //
+        return view('job.create',compact('id'));
     }
 
     /**
