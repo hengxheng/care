@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Job;
+use Input;
+use Redirect;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -37,7 +39,13 @@ class JobsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $uid = Input::get('uid');
+        $job = new Job;
+        $job->poster_id = $uid;
+        $job->description = Input::get('description');
+        $job->save();
+
+        return Redirect::route("job.show",array('id' => $job->id));
     }
 
     /**
@@ -48,7 +56,8 @@ class JobsController extends Controller
      */
     public function show($id)
     {
-        //
+        $job = Job::find($id);
+        return view("job.show", compact('job'));
     }
 
     /**

@@ -1,5 +1,4 @@
 @extends ('html')
-
 @section ('content')
 	@if($the_user->user_type == "seeker")
 	<div class="seeker-profile">

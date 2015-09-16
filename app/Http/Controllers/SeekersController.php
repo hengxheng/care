@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use Input;
 use App\User;
 use App\Seeker;
+use Redirect;
 
 class SeekersController extends Controller
 {
@@ -53,6 +54,8 @@ class SeekersController extends Controller
         $seeker->premium = Input::get('premium');
 
         $seeker->save();
+
+        return Redirect::route('care_seekers.show', array('id' => $uid));
 
     }
 

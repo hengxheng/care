@@ -22,6 +22,7 @@
 								<li><a href="{{ URL::route('care_givers.create', array('uid' => Auth::user()->id)) }}">Create Profile</a>
 								@elseif (Auth::user() -> user_type == 'seeker')
 								<li><a href="{{ URL::route('care_seekers.create', array('uid' => Auth::user()->id)) }}">Details</a></li>
+								<li><a href="{{ URL::route('job.create', array('uid' => Auth::user()->id)) }}">Post a job</a></li>
 								@endif
 								<li><a href="{{ URL::route('logout') }}">Logout</a></li>
 							</ul>
