@@ -24,6 +24,7 @@
 								@elseif (Auth::user() -> user_type == 'seeker')
 								<li><a href="{{ URL::route('care_seekers.create', array('uid' => Auth::user()->id)) }}">Details</a></li>
 								<li><a href="{{ URL::route('job.create', array('uid' => Auth::user()->id)) }}">Post a job</a></li>
+								<li><a href="{{ URL::route('job.list', array('poster_id' => Auth::user()->id)) }}">My posted jobs</a></li>
 								@endif
 								<li><a href="{{ URL::route('logout') }}">Logout</a></li>
 							</ul>

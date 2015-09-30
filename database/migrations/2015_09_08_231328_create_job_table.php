@@ -14,9 +14,11 @@ class CreateJobTable extends Migration
     {
         Schema::create('job', function (Blueprint $table) {
             $table->increments('id');
+            $table->text('title');
             $table->text('description');
             $table->integer('poster_id')->unsigned();;
             $table->foreign('poster_id')->references('uid')->on('seeker')->onDelete('cascade');
+            $table->string('status');
             $table->timestamps();
         });
 

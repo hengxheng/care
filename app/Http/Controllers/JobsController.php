@@ -8,6 +8,7 @@ use Input;
 use Redirect;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Session;
 
 class JobsController extends Controller
 {
@@ -39,10 +40,17 @@ class JobsController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validate($request, [
+            'title' => 'required',
+            'description' => 'required'
+        ]);
+
         $uid = Input::get('uid');
         $job = new Job;
         $job->poster_id = $uid;
+        $job->title = Input::get('title');
         $job->description = Input::get('description');
+        $job->status = "Active";
         $job->save();
 
         return Redirect::route("job.show",array('id' => $job->id));
@@ -68,7 +76,8 @@ class JobsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $job = Job::find($id);
+        return view("job.edit", compact('job'));
     }
 
     /**
@@ -80,7 +89,22 @@ class JobsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $job = Job::findOrFail($id);
+
+        $this->validate($request, [
+            'title' => 'required',
+            'description' => 'required'
+        ]);
+
+        $job->title = $request->title;
+        $job->description = $request->description;
+        $job->status = $request->status;
+
+        $job->save();
+
+        Session::flash('message', 'Job successfully updated!');
+
+        return redirect()->back();
     }
 
     /**
@@ -91,6 +115,28 @@ class JobsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $job = Job::findOrFail($id);
+
+        $job->delete();
+
+        Session::flash('message', 'Job successfully deleted!');
+
+        return redirect()->back();
+    }
+
+    public function delete($id){
+        
+        $job = Job::findOrFail($id);
+
+        $job->delete();
+
+        Session::flash('message', 'Job successfully deleted!');
+
+        return redirect()->back();
+    }
+
+    public function listing($poster_id){
+        $jobs = Job::where('poster_id', '=', $poster_id) -> get();
+        return view("job.list", compact('jobs'));
     }
 }
