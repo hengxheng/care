@@ -19,7 +19,8 @@ class JobsController extends Controller
      */
     public function index()
     {
-        //
+        $jobs = Job::all();
+        return view('job.index', compact('jobs'));
     }
 
     /**
@@ -125,7 +126,7 @@ class JobsController extends Controller
     }
 
     public function delete($id){
-        
+
         $job = Job::findOrFail($id);
 
         $job->delete();
