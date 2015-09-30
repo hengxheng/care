@@ -38,4 +38,4 @@
 	</div>
 </form>
 
-@endsecion
+@endsection

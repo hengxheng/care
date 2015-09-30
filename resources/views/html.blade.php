@@ -20,6 +20,7 @@
 							<ul class="dropdown-menu" role="menu">
 								@if (Auth::user() -> user_type == 'giver')
 								<li><a href="{{ URL::route('care_givers.create', array('uid' => Auth::user()->id)) }}">Create Profile</a>
+								<li><a href="{{ URL::route('care_givers.show', array('uid' => Auth::user()->id)) }}" >My Profile</a></li>
 								@elseif (Auth::user() -> user_type == 'seeker')
 								<li><a href="{{ URL::route('care_seekers.create', array('uid' => Auth::user()->id)) }}">Details</a></li>
 								<li><a href="{{ URL::route('job.create', array('uid' => Auth::user()->id)) }}">Post a job</a></li>

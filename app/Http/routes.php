@@ -31,6 +31,9 @@ Route::get('care_seekers/{uid}',['as' => 'care_seekers.show', 'users' => 'Seeker
 
 Route::resource('job','JobsController');
 Route::get('job/create/{uid}', ['as'=>'job.create', 'uses'=>'JobsController@create']);
+
+
+
 // Authentication routes...
 Route::get('auth/login',['as' => 'login', 'uses' => 'Auth\AuthController@getLogin']);
 Route::post('auth/login',['as' => 'login', 'uses' => 'Auth\AuthController@postLogin']);
