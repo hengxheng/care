@@ -21,7 +21,7 @@
 		</select>
 	</div>
 	<div class="form-row">
-		<input type="submit" value="POST">
+		<input type="submit" value="UPDATE">
 	</div>
 </form>
 

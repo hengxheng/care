@@ -34,6 +34,13 @@ Route::get('job/create/{uid}', ['as'=>'job.create', 'uses'=>'JobsController@crea
 Route::get('job/list/{poster_id}', ['as'=>'job.list', 'uses'=>'JobsController@listing']);
 Route::get('job/edit/{id}', ['as' => 'job.edit', 'uses'=>'JobsController@edit']);
 Route::get('job/delete/{id}', ['as' => 'job.delete', 'uses'=>'JobsController@delete']);
+Route::get('job/search/{uid}', ['as' => 'job.search', 'uses'=>'JobsController@search']);
+
+Route::get('submission/create/{jid}/{uid}', ['as'=>'submission.create', 'uses'=>'SubmissionsController@create']);
+Route::post('submission/store', ['as'=>'submission.store', 'uses'=>'SubmissionsController@store']);
+
+
+
 
 // Authentication routes...
 Route::get('auth/login',['as' => 'login', 'uses' => 'Auth\AuthController@getLogin']);

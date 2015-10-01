@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Input;
+use App\Submission;
+use Redirect;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -24,9 +26,10 @@ class SubmissionsController extends Controller
      *
      * @return Response
      */
-    public function create()
+    public function create($jid, $uid)
     {
-        //
+
+        return view('submission.create', compact(array('jid','uid')));
     }
 
     /**
@@ -37,7 +40,14 @@ class SubmissionsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $submission = new Submission;
+        $submission->job_id = input::get('jid');
+        $submission->submited_uid = input::get('uid');
+        $submission->content = input::get('content');
+
+        $submission->save();
+
+        return Redirect::route('job.search', array('uid' => input::get('uid')));
     }
 
     /**

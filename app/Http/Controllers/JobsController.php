@@ -23,6 +23,12 @@ class JobsController extends Controller
         return view('job.index', compact('jobs'));
     }
 
+    public function search()
+    {
+        $jobs = Job::all();
+        return view('job.search', compact('jobs'));
+    }
+
     /**
      * Show the form for creating a new resource.
      *

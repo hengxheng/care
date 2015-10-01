@@ -118,7 +118,7 @@ class GiversController extends Controller
             $giver->picture = $pic_path."/".$pic_name.'.'.$pic_extension;
         }
         $giver->save();
-        return Redirect::route('care_givers.index');
+        return Redirect::route('care_givers.show', array('uid' => $uid ));
 
     }
 }
