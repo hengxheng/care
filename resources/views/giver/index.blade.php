@@ -1,5 +1,6 @@
  
 <div class="listing-box">
+    {{ dd($submited_jobs)}}
  @if ( !$givers->count() )
         You have no givers
     @else

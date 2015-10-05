@@ -146,4 +146,5 @@ class JobsController extends Controller
         $jobs = Job::where('poster_id', '=', $poster_id) -> get();
         return view("job.list", compact('jobs'));
     }
+
 }

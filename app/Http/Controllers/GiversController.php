@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Giver;
 use App\User;
+use App\Job;
+use Auth;
 use Input;
 use Redirect;
 use Illuminate\Http\Request;
@@ -20,8 +22,10 @@ class GiversController extends Controller
      */
     public function index()
     {
-        $givers = Giver::all();
-        return view('giver.index', compact('givers'));
+        $user = Auth::user();
+
+        $submited_jobs = Job::getSubmitedJob($user->id);
+        return view('giver.index', compact('submited_jobs'));
     }
 
     /**

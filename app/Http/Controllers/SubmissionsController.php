@@ -44,7 +44,6 @@ class SubmissionsController extends Controller
         $submission->job_id = input::get('jid');
         $submission->submited_uid = input::get('uid');
         $submission->content = input::get('content');
-
         $submission->save();
 
         return Redirect::route('job.search', array('uid' => input::get('uid')));
