@@ -67,14 +67,34 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   display: block;
 }
 
-/* line 11, ../sass/screen.scss */
+/* line 8, ../sass/screen.scss */
+a {
+  text-decoration: none;
+}
+
+/* line 13, ../sass/screen.scss */
 .site-inner {
   width: 960px;
   margin: 0 auto;
   padding: 15px;
 }
 
-/* line 17, ../sass/screen.scss */
+/* line 19, ../sass/screen.scss */
 header#site-header {
   background: #68bed6;
+}
+
+/* line 25, ../sass/screen.scss */
+#site-nav ul li {
+  display: inline-block;
+  margin: 5px 10px;
+}
+
+/* line 36, ../sass/screen.scss */
+.listing-box ul li {
+  display: inline-block;
+  margin: 10px;
+  border: 1px solid #68bed6;
+  box-sizing: border-box;
+  padding: 15px;
 }

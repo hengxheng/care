@@ -5,7 +5,9 @@
 
 @import "compass/reset";
 
-
+a{
+	text-decoration:none;
+}
 $site-width: 960px;
 $blue: #68bed6;
 .site-inner{
@@ -16,4 +18,27 @@ $blue: #68bed6;
 
 header#site-header{
 	background:$blue;
+}
+
+#site-nav{
+	ul{
+		li{
+			display:inline-block;
+			margin:5px 10px;
+			a{
+
+			}
+		}
+	}
+}
+.listing-box{
+	ul{
+		li{
+			display:inline-block;
+			margin:10px;
+			border:1px solid #68bed6;
+			box-sizing: border-box;
+			padding:15px;
+		}
+	}
 }

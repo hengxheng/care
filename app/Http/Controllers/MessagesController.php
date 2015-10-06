@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+Use App\user;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -24,9 +24,11 @@ class MessagesController extends Controller
      *
      * @return Response
      */
-    public function create()
+    public function create($to_id)
     {
-        //
+        $to_user = User::find($to_id);
+
+        return view('message.create',compact('to_user'));
     }
 
     /**

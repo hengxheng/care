@@ -28,6 +28,10 @@ class GiversController extends Controller
         return view('giver.index', compact('submited_jobs'));
     }
 
+    public function listing(){
+        $givers = Giver::all();
+        return view('giver.list',compact('givers'));
+    }
     /**
      * Show the form for creating a new resource.
      *

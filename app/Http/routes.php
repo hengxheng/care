@@ -21,7 +21,9 @@ Route::get('/home', function () {
 Route::resource('care_givers','GiversController');
 Route::get('profile/{uid}', ['as' => 'care_givers.create', 'uses' => 'GiversController@create']);
 Route::post('personal-store', ['as' => 'care_givers.storeDetails', 'uses' => 'GiversController@storeDetails']);
-Route::get('care_givers/{uid}',['as' => 'care_givers.show', 'users' => 'GiversController@show']);
+Route::get('care_givers/{uid}',['as' => 'care_givers.show', 'uses' => 'GiversController@show']);
+Route::get('givers/list',['as' => 'care_givers.list', 'uses' => 'GiversController@listing']);
+
 
 Route::resource('care_seekers','SeekersController');
 Route::get('care_seekers/profile/{uid}', ['as' => 'care_seekers.create', 'uses' => 'SeekersController@create']);
@@ -40,7 +42,9 @@ Route::get('submission/create/{jid}/{uid}', ['as'=>'submission.create', 'uses'=>
 Route::post('submission/store', ['as'=>'submission.store', 'uses'=>'SubmissionsController@store']);
 
 
-
+//Messaging
+Route::resource('message','MessagesController');
+Route::get('messaging/create/{to_id}', ['as'=>'message.create', 'uses' => 'MessagesController@create']);
 
 // Authentication routes...
 Route::get('auth/login',['as' => 'login', 'uses' => 'Auth\AuthController@getLogin']);

@@ -15,21 +15,17 @@
 						<li><a href="{{ URL::route('login') }}">Login</a></li>
 						<li><a href="{{ URL::route('register') }}">Register</a></li>
 					@else
-						<li class="dropdown">
-							<a href="#" class="dropdown-toggle">{{ Auth::user()->name }}</a>
-							<ul class="dropdown-menu" role="menu">
-								@if (Auth::user() -> user_type == 'giver')
-								<li><a href="{{ URL::route('care_givers.create', array('uid' => Auth::user()->id)) }}">Create Profile</a>
-								<li><a href="{{ URL::route('care_givers.show', array('uid' => Auth::user()->id)) }}" >My Profile</a></li>
-								<li><a href="{{ URL::route('job.search', array('uid' => Auth::user()->id)) }}">View Jobs</a></li>
-								@elseif (Auth::user() -> user_type == 'seeker')
-								<li><a href="{{ URL::route('care_seekers.create', array('uid' => Auth::user()->id)) }}">Details</a></li>
-								<li><a href="{{ URL::route('job.create', array('uid' => Auth::user()->id)) }}">Post a job</a></li>
-								<li><a href="{{ URL::route('job.list', array('poster_id' => Auth::user()->id)) }}">My posted jobs</a></li>
-								@endif
-								<li><a href="{{ URL::route('logout') }}">Logout</a></li>
-							</ul>
-						</li>
+						@if (Auth::user() -> user_type == 'giver')
+						<li><a href="{{ URL::route('care_givers.create', array('uid' => Auth::user()->id)) }}">Create Profile</a>
+						<li><a href="{{ URL::route('care_givers.show', array('uid' => Auth::user()->id)) }}" >My Profile</a></li>
+						<li><a href="{{ URL::route('job.search', array('uid' => Auth::user()->id)) }}">View Jobs</a></li>
+						@elseif (Auth::user() -> user_type == 'seeker')
+						<li><a href="{{ URL::route('care_seekers.create', array('uid' => Auth::user()->id)) }}">My Porfile</a></li>
+						<li><a href="{{ URL::route('job.create', array('uid' => Auth::user()->id)) }}">Post a job</a></li>
+						<li><a href="{{ URL::route('care_givers.list')}}">Find Givers</a></li>
+						<li><a href="{{ URL::route('job.list', array('poster_id' => Auth::user()->id)) }}">My posted jobs</a></li>
+						@endif
+						<li><a href="{{ URL::route('logout') }}">Logout</a></li>
 						{{-- dd(Auth::user()->toArray()) --}}
 					@endif
 				</ul>
