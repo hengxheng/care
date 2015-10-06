@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-Use App\user;
+use App\user;
+use App\Message;
+use Input;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -39,7 +41,14 @@ class MessagesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = input::all();
+        $message = new Message;
+        $message->receiver_id = input::get('to_id');
+        $message->sender_id = input::get('from_id');
+        $message->content = input::get('content');
+        $message->save();
+
+        return Redirect()->back();
     }
 
     /**

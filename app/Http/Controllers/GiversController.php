@@ -29,7 +29,7 @@ class GiversController extends Controller
     }
 
     public function listing(){
-        $givers = Giver::all();
+        $givers = Giver::allGivers();
         return view('giver.list',compact('givers'));
     }
     /**
