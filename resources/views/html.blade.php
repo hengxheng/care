@@ -6,6 +6,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Care Nation</title>
 		<link rel="stylesheet" href="{{ URL::asset('stylesheets/screen.css') }}">
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+		<script src="{{URL::asset('scripts/script.js') }}"></script>
 	</head>
 	<body>
 		<header id="site-header">
@@ -34,6 +36,11 @@
 		</header>
 
 		<div class="page-main-content site-inner">
+			<div class="welcome">
+				@if (Auth::user())
+					<p>Welcome {{Auth::user() -> firstname }}</p>
+				@endif
+			</div>
 			@if (Session::has('message'))
 				<div class="flash alert-info">
 					<p>{{ Session::get('message') }}</p>

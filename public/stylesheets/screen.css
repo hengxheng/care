@@ -72,29 +72,89 @@ a {
   text-decoration: none;
 }
 
-/* line 13, ../sass/screen.scss */
+/* line 16, ../sass/screen.scss */
 .site-inner {
   width: 960px;
   margin: 0 auto;
   padding: 15px;
 }
 
-/* line 19, ../sass/screen.scss */
+/* line 22, ../sass/screen.scss */
 header#site-header {
   background: #68bed6;
 }
 
-/* line 25, ../sass/screen.scss */
+/* line 28, ../sass/screen.scss */
 #site-nav ul li {
   display: inline-block;
   margin: 5px 10px;
 }
 
-/* line 36, ../sass/screen.scss */
+/* line 39, ../sass/screen.scss */
 .listing-box ul li {
   display: inline-block;
   margin: 10px;
   border: 1px solid #68bed6;
   box-sizing: border-box;
   padding: 15px;
+}
+
+/* line 49, ../sass/screen.scss */
+form {
+  display: inline-block;
+  width: 40%;
+}
+/* line 52, ../sass/screen.scss */
+form .form-row input[type="text"],
+form .form-row input[type="email"],
+form .form-row input[type="password"] {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 5px 5px 5px 15px;
+  height: 25px;
+}
+/* line 61, ../../../../../Ruby21-x64/lib/ruby/gems/2.1.0/gems/compass-core-1.0.1/stylesheets/compass/css3/_user-interface.scss */
+form .form-row input[type="text"]:-moz-placeholder,
+form .form-row input[type="email"]:-moz-placeholder,
+form .form-row input[type="password"]:-moz-placeholder {
+  color: #eee;
+}
+/* line 64, ../../../../../Ruby21-x64/lib/ruby/gems/2.1.0/gems/compass-core-1.0.1/stylesheets/compass/css3/_user-interface.scss */
+form .form-row input[type="text"]::-moz-placeholder,
+form .form-row input[type="email"]::-moz-placeholder,
+form .form-row input[type="password"]::-moz-placeholder {
+  color: #eee;
+}
+/* line 67, ../../../../../Ruby21-x64/lib/ruby/gems/2.1.0/gems/compass-core-1.0.1/stylesheets/compass/css3/_user-interface.scss */
+form .form-row input[type="text"]:-ms-input-placeholder,
+form .form-row input[type="email"]:-ms-input-placeholder,
+form .form-row input[type="password"]:-ms-input-placeholder {
+  color: #eee;
+}
+/* line 56, ../../../../../Ruby21-x64/lib/ruby/gems/2.1.0/gems/compass-core-1.0.1/stylesheets/compass/css3/_user-interface.scss */
+form .form-row input[type="text"]::-webkit-input-placeholder,
+form .form-row input[type="email"]::-webkit-input-placeholder,
+form .form-row input[type="password"]::-webkit-input-placeholder {
+  color: #eee;
+}
+/* line 63, ../sass/screen.scss */
+form .form-row textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 5px 5px 5px 15px;
+  height: 70px;
+}
+/* line 69, ../sass/screen.scss */
+form .form-row input[type="submit"] {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 5px 5px 5px 15px;
+  height: 25px;
+  background: #68bed6;
+  color: #fff;
+}
+
+/* line 79, ../sass/screen.scss */
+.welcome {
+  margin-bottom: 25px;
 }

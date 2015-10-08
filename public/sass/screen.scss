@@ -4,12 +4,15 @@
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
 
 @import "compass/reset";
-
+@import "compass/css3";
 a{
 	text-decoration:none;
 }
 $site-width: 960px;
 $blue: #68bed6;
+$text-color:#000;
+$placeholder-color:#eee;
+
 .site-inner{
 	width: $site-width;
 	margin:0 auto;
@@ -41,4 +44,38 @@ header#site-header{
 			padding:15px;
 		}
 	}
+}
+
+form{
+	display:inline-block;
+	width:40%;
+	.form-row input[type="text"],
+	.form-row input[type="email"],
+	.form-row input[type="password"]{
+		width:100%;
+		box-sizing:border-box;
+		padding:5px 5px 5px 15px;
+		height:25px;
+		@include input-placeholder {
+			color: $placeholder-color;
+		}
+	}
+	.form-row textarea{
+		width:100%;
+		box-sizing:border-box;
+		padding:5px 5px 5px 15px;
+		height:70px;
+	}
+	.form-row input[type="submit"]{
+		width:100%;
+		box-sizing:border-box;
+		padding:5px 5px 5px 15px;
+		height:25px;
+		background:$blue;
+		color:#fff;
+	}
+}
+
+.welcome{
+	margin-bottom:25px;
 }

@@ -29,7 +29,7 @@ class MessagesController extends Controller
     public function create($to_id)
     {
         $to_user = User::find($to_id);
-
+        // $messages = Message::find
         return view('message.create',compact('to_user'));
     }
 
@@ -60,6 +60,16 @@ class MessagesController extends Controller
     public function show($id)
     {
         //
+    }
+
+    public function sendedMessage($uid){
+        $messages = Message::where('sender_id','=',$uid)->get();
+        return $messages;
+    }
+
+    public function receivedMessage($uid){
+        $messages = Message::where('receiver_id','=',$uid)->get();
+        return $messages;
     }
 
     /**
