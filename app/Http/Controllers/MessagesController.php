@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Auth;
 use App\user;
 use App\Message;
 use Input;
@@ -18,7 +19,7 @@ class MessagesController extends Controller
      */
     public function index()
     {
-        //
+        echo "Messaging";
     }
 
     /**
@@ -62,16 +63,7 @@ class MessagesController extends Controller
         //
     }
 
-    public function sendedMessage($uid){
-        $messages = Message::where('sender_id','=',$uid)->get();
-        return $messages;
-    }
-
-    public function receivedMessage($uid){
-        $messages = Message::where('receiver_id','=',$uid)->get();
-        return $messages;
-    }
-
+    
     /**
      * Show the form for editing the specified resource.
      *
@@ -105,4 +97,20 @@ class MessagesController extends Controller
     {
         //
     }
+
+    public function sentmsg(){
+        $user = Auth::user();
+        $messages = Message::mySentMessages($user->id);
+        var_dump($messages);
+        exit;
+        return view('message.sent',compact('messages'));
+    }
+
+    public function receivedmsg(){
+        $user = Auth::user();      
+        $messages = Message::myMessages($user->id);
+
+        return view('message.inbox',compact('messages'));
+    }
+
 }

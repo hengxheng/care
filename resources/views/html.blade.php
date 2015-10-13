@@ -29,7 +29,10 @@
 						@endif
 						<li><a href="{{ URL::route('logout') }}">Logout</a></li>
 						{{-- dd(Auth::user()->toArray()) --}}
+						<li><a href="{{ URL::route('message.inbox') }}">My messages</a></li>
 					@endif
+
+
 				</ul>
 
 			</nav>
