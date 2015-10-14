@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Auth;
+use Redirect;
+use Session;
 use App\user;
 use App\Message;
 use Input;
@@ -49,7 +51,7 @@ class MessagesController extends Controller
         $message->content = input::get('content');
         $message->save();
 
-        return Redirect()->back();
+        return redirect::route('message.inbox');
     }
 
     /**
@@ -102,7 +104,13 @@ class MessagesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $msg = Message::findOrFail($id);
+
+        $msg -> delete();
+
+        Session::flash('message', 'The message successfully deleted!');
+
+        return redirect()->back();
     }
 
     public function sentmsg(){

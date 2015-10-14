@@ -2,6 +2,7 @@
 
 @section('message_content')
 <h2>Sent</h2>
+
 <div class="listing-box">
 	<ul>
 		@foreach ($messages as $message)
@@ -14,6 +15,7 @@
 					<p>Date: {{ $message -> created_at }}</p>
 					<div class="cta">
 						<a href="{{ URL::route('message.showInbox', array('id' => $message->id ))}}">View</a>
+						<a href="{{ URL::route('message.delete', array('id' => $message->id )) }}"> Delete</a>
 					</div>
 				</div>
 			</li>
