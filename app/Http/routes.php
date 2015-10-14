@@ -47,8 +47,8 @@ Route::post('submission/store', ['as'=>'submission.store', 'uses'=>'SubmissionsC
 Route::get('message/create/{to_id}', ['as'=>'message.create', 'uses' => 'MessagesController@create'] );
 Route::get('message/inbox', ['as'=>'message.inbox', 'uses' => 'MessagesController@receivedmsg'] );
 Route::get('message/sent', ['as'=>'message.sent', 'uses' => 'MessagesController@sentmsg'] );
-
-
+Route::get('message/inbox/{id}', ['as' => 'message.showInbox', 'uses' => 'MessagesController@showInbox']);
+Route::post('message/store', ['as'=> 'message.store', 'uses' => 'MessagesController@store'] );
 // Authentication routes...
 Route::get('auth/login',['as' => 'login', 'uses' => 'Auth\AuthController@getLogin']);
 Route::post('auth/login',['as' => 'login', 'uses' => 'Auth\AuthController@postLogin']);

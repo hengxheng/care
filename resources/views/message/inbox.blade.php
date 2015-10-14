@@ -12,6 +12,9 @@
 						{{ $message -> content }}
 					</div>
 					<p>Date: {{ $message -> created_at }}</p>
+					<div class="cta">
+						<a href="{{ URL::route('message.showInbox', array('id' => $message->id ))}}">View</a>
+					</div>
 				</div>
 			</li>
 		@endforeach

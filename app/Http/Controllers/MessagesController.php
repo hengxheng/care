@@ -58,9 +58,16 @@ class MessagesController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function show($id)
+    public function showInbox($id)
     {
-        //
+        $user = Auth::user();
+        $msg = Message::mySentMessage($id);
+
+        return view("message.show", compact('msg'));
+    }
+
+    public function showSent($id){
+        $user = Auth::user();
     }
 
     

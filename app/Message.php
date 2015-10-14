@@ -19,6 +19,29 @@ class Message extends Model
     }
 
     public static function mySentMessages($uid){
-    	return Message::where('sender_id', '=', $uid)->get();
+    	return DB::table('message')
+                ->leftJoin('users', 'message.receiver_id', '=', 'users.id')
+                ->where('message.sender_id', '=', $uid)
+                ->groupBy('message.receiver_id')
+                ->orderBy('message.created_at')
+                ->get();
+    }
+
+    public static function myMessage($id){
+        return DB::table('message')
+                ->leftJoin('users', 'message.sender_id', '=', 'users.id')
+                ->where('message.id', '=', $id)
+                ->groupBy('message.sender_id')
+                ->orderBy('message.created_at')
+                ->first();
+    }
+
+    public static function mySentMessage($id){
+        return DB::table('message')
+                ->leftJoin('users', 'message.receiver_id', '=', 'users.id')
+                ->where('message.id', '=', $id)
+                ->groupBy('message.receiver_id')
+                ->orderBy('message.created_at')
+                ->first();
     }
 }
