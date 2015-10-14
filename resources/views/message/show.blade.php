@@ -1,6 +1,6 @@
-@extends('html')
+@extends('message.message_html')
 
-@section('content')
+@section('message_content')
 <div class="message block">
 	<div class="msg-form">{{ $msg -> firstname }} {{ $msg -> lastname }}</div>
 	<div class="msg-title"></div>

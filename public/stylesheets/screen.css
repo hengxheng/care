@@ -158,3 +158,15 @@ form .form-row input[type="submit"] {
 .welcome {
   margin-bottom: 25px;
 }
+
+/* line 83, ../sass/screen.scss */
+#message-sidebar {
+  float: left;
+  width: 25%;
+}
+
+/* line 87, ../sass/screen.scss */
+#message-main {
+  float: left;
+  width: 75%;
+}

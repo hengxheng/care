@@ -58,7 +58,7 @@ class MessagesController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function showInbox($id)
+    public function showInboxMsg($id)
     {
         $user = Auth::user();
         $msg = Message::mySentMessage($id);
@@ -66,7 +66,7 @@ class MessagesController extends Controller
         return view("message.show", compact('msg'));
     }
 
-    public function showSent($id){
+    public function showSentMsg($id){
         $user = Auth::user();
     }
 
@@ -108,8 +108,6 @@ class MessagesController extends Controller
     public function sentmsg(){
         $user = Auth::user();
         $messages = Message::mySentMessages($user->id);
-        var_dump($messages);
-        exit;
         return view('message.sent',compact('messages'));
     }
 

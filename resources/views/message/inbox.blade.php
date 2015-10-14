@@ -1,6 +1,6 @@
-@extends('html')
+@extends('message.message_html')
 
-@section('content')
+@section('message_content')
 <h2>Inbox</h2>
 <div class="listing-box">
 	<ul>
