@@ -29,8 +29,22 @@ class DatabaseSeeder extends Seeder
                 ['uid' => 1, 'premium' => 1, 'created_at' => new DateTime, 'updated_at' => new DateTime]
             );
 
-        DB::table('giver')->insert($demo_giver);
-        DB::table('seeker')->insert($demo_seeker);
+        $demo_services = array(
+                ['id' => 1, 'Personal Care'],
+                ['id' => 2, 'Companionship'],
+                ['id' => 3, 'Transportation']
+            );
+
+        $demo_quolifications = array(
+                ['id' => 1, 'First Aid'],
+                ['id' => 2, 'CPR']
+            );
+
+        // DB::table('giver')->insert($demo_giver);
+        // DB::table('seeker')->insert($demo_seeker);
+
+        DB::table('service')->insert($demo_services);
+        DB::table('quolification')->insert($demo_quolifications);
 
         Model::reguard();
     }

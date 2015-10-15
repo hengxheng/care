@@ -36,6 +36,9 @@ class CreateUsersTable extends Migration
             $table->string('suburb');
             $table->string('state');
             $table->string('postcode');
+            $table->integer('rate');
+            $table->text('education');
+            $table->text('experience');
             $table->timestamps();
         });
 
