@@ -17,7 +17,7 @@ class CreateJobTable extends Migration
             $table->text('title');
             $table->text('description');
             $table->integer('poster_id')->unsigned();;
-            $table->foreign('poster_id')->references('uid')->on('seeker')->onDelete('cascade');
+            // $table->foreign('poster_id')->references('uid')->on('seeker')->onDelete('cascade');
             $table->string('status');
             $table->timestamps();
         });
