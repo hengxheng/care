@@ -129,4 +129,9 @@ class GiversController extends Controller
         return Redirect::route('care_givers.show', array('uid' => $uid ));
 
     }
+
+    public function ajaxCall(Request $request){
+        $input_data = Input::all();
+        return $input_data;
+    }
 }

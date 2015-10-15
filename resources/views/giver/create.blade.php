@@ -2,6 +2,7 @@
 
 
 @section('content')
+<div id="provider-create-form">
 <form action="{{ URL::route('care_givers.store') }}" method="post" enctype="multipart/form-data">
 	<input type="hidden" name="user_type" value="giver">
 	{!! Form::token() !!}
@@ -33,4 +34,7 @@
 		<input type="submit" value="Submit">
 	</div>
 </form>
+
+
+</div>
 @endsection

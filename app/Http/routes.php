@@ -32,6 +32,10 @@ Route::post('personal-store', ['as' => 'care_givers.storeDetails', 'uses' => 'Gi
 Route::get('care_givers/{uid}',['as' => 'care_givers.show', 'uses' => 'GiversController@show']);
 Route::get('givers/list',['as' => 'care_givers.list', 'uses' => 'GiversController@listing']);
 
+//Ajax call
+Route::Post('ajax', ['as' => 'care_givers.ajax', 'uses' => 'GiversController@ajaxCall']);
+
+
 
 Route::resource('care_seekers','SeekersController');
 Route::get('care_seekers/profile/{uid}', ['as' => 'care_seekers.create', 'uses' => 'SeekersController@create']);
@@ -69,3 +73,4 @@ Route::get('auth/logout', ['as' => 'logout', 'uses' => 'Auth\AuthController@getL
 // Registration routes...
 Route::get('auth/register', ['as' => 'register', 'uses' => 'Auth\AuthController@getRegister']);
 Route::post('auth/register', ['as' => 'register', 'uses' => 'Auth\AuthController@postRegister']);
+

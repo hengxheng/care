@@ -9,7 +9,7 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
 		<script src="{{URL::asset('scripts/script.js') }}"></script>
 	</head>
-	<body>
+	<body ng-app="myApp">
 		<header id="site-header">
 			<nav id="site-nav" class="site-inner">
 				<ul>
@@ -64,6 +64,5 @@
 		<footer id="site-footer">
 			
 		</footer>
-		<script src="{{ URL::asset('scripts/script.js') }}"></script>
 	</body>
 </html>

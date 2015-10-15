@@ -1,6 +1,7 @@
 @extends ('html')
 
 @section ('content')
+<div id="provider-create-form" ng-controller="GiverCtrl">
 <form action="{{ URL::route('care_givers.storeDetails') }}" method="post" enctype="multipart/form-data">
 	<input type="hidden" name="uid" value="{{ $uid }}">
 	{!! Form::token() !!}
@@ -37,5 +38,9 @@
 		<input type="submit" value="Submit">
 	</div>
 </form>
-
+<div>
+<a href="#" ng-click="go('{{ URL::route('care_givers.ajax') }}')">Test</a>
+||~ msg ~||
+</div>
+</div>
 @endsection
