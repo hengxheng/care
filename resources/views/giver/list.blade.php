@@ -9,7 +9,8 @@
             <li>
                 {{{ $giver -> firstname }}} {{ $giver->lastname}}
                 <div class="cta">
-                    <a href="{{ URL::route('message.create', array('to_id'=>$giver->id))}}">Send a message</a>
+                    <a href="{{ URL::route('care_givers.show', array('uid' => $giver->id )) }}">View</a>
+                    <a href="{{ URL::route('message.create', array('to_id'=>$giver->id )) }}">Send a message</a>
                 </div>
             </li>
         @endforeach

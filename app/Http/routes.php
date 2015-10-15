@@ -36,7 +36,6 @@ Route::get('givers/list',['as' => 'care_givers.list', 'uses' => 'GiversControlle
 Route::Post('ajax', ['as' => 'care_givers.ajax', 'uses' => 'GiversController@ajaxCall']);
 
 
-
 Route::resource('care_seekers','SeekersController');
 Route::get('care_seekers/profile/{uid}', ['as' => 'care_seekers.create', 'uses' => 'SeekersController@create']);
 Route::post('care_seekers/profile/{uid}', ['as' => 'care_seekers.create', 'uses' => 'SeekersController@create']);

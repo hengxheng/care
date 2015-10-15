@@ -8,6 +8,11 @@
 		</div>
 		<div class="profile-name">
 			{{ $the_user -> firstname }} {{ $the_user -> lastname }}
+			<p>
+				@if (Auth::user() -> user_type == 'seeker' )
+				<a href="{{ URL::route('message.create', array('to_id'=>$the_giver -> uid )) }}">Send a message</a>
+				@endif
+			</p>
 		</div>
 		<div class="profile-gender">
 			{{ $the_giver -> gender }}

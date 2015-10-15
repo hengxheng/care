@@ -71,7 +71,6 @@ class GiversController extends Controller
     {
         $the_user = User::find($id);
         $the_giver = Giver::find($id);
-
         return view('giver.show', compact(array('the_user', 'the_giver')));
     }
 
@@ -131,7 +130,7 @@ class GiversController extends Controller
     }
 
     public function ajaxCall(Request $request){
-        $input_data = Input::all();
-        return $input_data;
+        $givers = Giver::allGivers();
+        return $givers;
     }
 }

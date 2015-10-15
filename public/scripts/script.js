@@ -14,7 +14,8 @@ app.controller('GiverCtrl', function($scope, $http){
 
 		})
 		.success(function(data, status, header, config){
-			$scope.msg = data['msg'];
+			console.log(data);
+			$scope.msg = data;
 		});
 
 	}

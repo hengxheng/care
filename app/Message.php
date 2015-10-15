@@ -13,7 +13,6 @@ class Message extends Model
     			->leftJoin('users', 'message.sender_id', '=', 'users.id')
                 ->select('message.*','users.id as uid','users.firstname','users.lastname')
     			->where('message.receiver_id', '=', $uid)
-    			->groupBy('message.sender_id')
     			->orderBy('message.created_at')
     			->get();
 
@@ -24,7 +23,6 @@ class Message extends Model
                 ->leftJoin('users', 'message.receiver_id', '=', 'users.id')
                 ->select('message.*','users.id as uid','users.firstname','users.lastname')
                 ->where('message.sender_id', '=', $uid)
-                ->groupBy('message.receiver_id')
                 ->orderBy('message.created_at')
                 ->get();
     }
