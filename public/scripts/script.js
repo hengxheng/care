@@ -10,7 +10,8 @@ app.controller('GiverCtrl', function($scope, $http){
 		var promise = $http({
 			method: 'POST',
 			url: url,
-			data: { "msg": "ajax"}
+			data: {	"giver_id" : 2,
+					"service_name": "help" }
 
 		})
 		.success(function(data, status, header, config){
@@ -18,5 +19,17 @@ app.controller('GiverCtrl', function($scope, $http){
 			$scope.msg = data;
 		});
 
+	}
+
+	$scope.myservices = function(url){
+		var promise = $http({
+			method: "POST",
+			url: url,
+			data: { "uid": 2 }
+		})
+		.success(function(data, status, header, config){
+			console.log(data);
+			$scope.msg = data;
+		});
 	}
 });

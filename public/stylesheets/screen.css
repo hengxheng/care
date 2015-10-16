@@ -67,30 +67,30 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   display: block;
 }
 
-/* line 8, ../sass/screen.scss */
+/* line 15, ../sass/screen.scss */
 a {
   text-decoration: none;
 }
 
-/* line 16, ../sass/screen.scss */
+/* line 20, ../sass/screen.scss */
 .site-inner {
   width: 960px;
   margin: 0 auto;
   padding: 15px;
 }
 
-/* line 22, ../sass/screen.scss */
+/* line 26, ../sass/screen.scss */
 header#site-header {
   background: #68bed6;
 }
 
-/* line 28, ../sass/screen.scss */
+/* line 32, ../sass/screen.scss */
 #site-nav ul li {
   display: inline-block;
   margin: 5px 10px;
 }
 
-/* line 39, ../sass/screen.scss */
+/* line 44, ../sass/screen.scss */
 .listing-box ul li {
   display: inline-block;
   margin: 10px;
@@ -99,12 +99,12 @@ header#site-header {
   padding: 15px;
 }
 
-/* line 49, ../sass/screen.scss */
+/* line 54, ../sass/screen.scss */
 form {
   display: inline-block;
   width: 40%;
 }
-/* line 52, ../sass/screen.scss */
+/* line 57, ../sass/screen.scss */
 form .form-row input[type="text"],
 form .form-row input[type="email"],
 form .form-row input[type="password"] {
@@ -137,14 +137,14 @@ form .form-row input[type="email"]::-webkit-input-placeholder,
 form .form-row input[type="password"]::-webkit-input-placeholder {
   color: #eee;
 }
-/* line 63, ../sass/screen.scss */
+/* line 68, ../sass/screen.scss */
 form .form-row textarea {
   width: 100%;
   box-sizing: border-box;
   padding: 5px 5px 5px 15px;
   height: 70px;
 }
-/* line 69, ../sass/screen.scss */
+/* line 74, ../sass/screen.scss */
 form .form-row input[type="submit"] {
   width: 100%;
   box-sizing: border-box;
@@ -154,18 +154,18 @@ form .form-row input[type="submit"] {
   color: #fff;
 }
 
-/* line 79, ../sass/screen.scss */
+/* line 84, ../sass/screen.scss */
 .welcome {
   margin-bottom: 25px;
 }
 
-/* line 83, ../sass/screen.scss */
+/* line 88, ../sass/screen.scss */
 #message-sidebar {
   float: left;
   width: 25%;
 }
 
-/* line 87, ../sass/screen.scss */
+/* line 93, ../sass/screen.scss */
 #message-main {
   float: left;
   width: 75%;

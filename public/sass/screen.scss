@@ -5,13 +5,17 @@
 
 @import "compass/reset";
 @import "compass/css3";
+
+$site-width: 960px;
+$blue: #68bed6;
+$dark-blue: #3f7781;
+$text-color:#000;
+$placeholder-color:#eee;
+
 a{
 	text-decoration:none;
 }
-$site-width: 960px;
-$blue: #68bed6;
-$text-color:#000;
-$placeholder-color:#eee;
+
 
 .site-inner{
 	width: $site-width;
@@ -34,6 +38,7 @@ header#site-header{
 		}
 	}
 }
+
 .listing-box{
 	ul{
 		li{
@@ -84,6 +89,7 @@ form{
 	float:left;
 	width:25%;
 }
+
 #message-main{
 	float:left;
 	width:75%;

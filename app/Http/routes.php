@@ -64,6 +64,12 @@ Route::post('message/store', ['as'=> 'message.store', 'uses' => 'MessagesControl
 Route::get('message/delete/{id}',[ 'as' => 'message.delete', 'uses' => 'MessagesController@destroy']);
 
 
+//Service Type
+Route::post('service_type/add', [ 'as' => 'service.store', 'uses' => 'ServiceTypeController@store']);
+Route::post('myservices', ['as' => 'service.myservices' , 'uses' => 'ServiceTypeController@MyServices']);
+
+
+
 // Authentication routes...
 Route::get('auth/login',['as' => 'login', 'uses' => 'Auth\AuthController@getLogin']);
 Route::post('auth/login',['as' => 'login', 'uses' => 'Auth\AuthController@postLogin']);

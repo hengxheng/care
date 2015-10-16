@@ -39,8 +39,10 @@
 	</div>
 </form>
 <div>
-<a href="#" ng-click="go('{{ URL::route('care_givers.ajax') }}')">Test</a>
+<a href="#" ng-click="go('{{ URL::route('service.store') }}')">Test</a>
 ||~ msg ~||
+
+<a href="#" ng-click="myservices('{{ URL::route('service.myservices') }}')">My services</a>
 </div>
 </div>
 @endsection
