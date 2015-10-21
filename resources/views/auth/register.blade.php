@@ -3,6 +3,13 @@
 @section('content')
 <form method="POST" action="{{ URL::route('register') }}">
     {!! csrf_field() !!}
+    
+    <div class="form-row">
+        <select name="user_type">
+            <option value="giver">I want to become a care giver</option>
+            <option value="seeker">I want to become a care seeker</option>
+        </select>
+    </div>
 
     <div class="form-row">
         <label for="firstname">First Name</label>
@@ -23,25 +30,19 @@
         <label for="phone">Phone</label>
         <input type="text" name="phone" value="{{ old('phone') }}">
     </div>
-
+  
     <div class="form-row">
-        <select name="user_type">
-            <option value="giver">I want to become a care giver</option>
-            <option value="seeker">I want to become a care seeker</option>
-        </select>
-    </div>
-    <div class="form-row">
-        Password
+        <label for="password">Password</label>
         <input type="password" name="password">
     </div>
 
     <div class="form-row">
-        Confirm Password
+        <label for="password_confirmation">Confirm Password</label>
         <input type="password" name="password_confirmation">
     </div>
 
     <div class="form-row">
-        <button type="submit">Register</button>
+        <input type="submit" value="Register">
     </div>
 </form>
 @endsection

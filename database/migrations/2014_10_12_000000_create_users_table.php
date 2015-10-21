@@ -19,7 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('user_type');
             $table->string('email')->unique();
             $table->string('phone');
-            
+            $table->string('status')->default("Inactive");
             $table->string('password', 60);
             $table->rememberToken();
             $table->timestamps();
@@ -36,9 +36,9 @@ class CreateUsersTable extends Migration
             $table->string('suburb');
             $table->string('state');
             $table->string('postcode');
-            $table->integer('rate');
-            $table->text('education');
-            $table->text('experience');
+            $table->integer('rate')->nullable();
+            $table->text('education')->nullable();
+            $table->text('experience')->nullable();
             $table->timestamps();
         });
 

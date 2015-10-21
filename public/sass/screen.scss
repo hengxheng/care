@@ -8,13 +8,77 @@
 
 $site-width: 960px;
 $blue: #68bed6;
-$dark-blue: #3f7781;
+$dark-blue: #336f7b;
+$dark-blue-hover: #234b54;
+$blue-hover: #3197b5;
 $text-color:#000;
 $placeholder-color:#eee;
+
+
+@font-face {
+  font-family: 'Gotham-Bold';
+  src: 	url('../fonts/Gotham-Bold.eot?#iefix') format('embedded-opentype'),  
+  		url('../fonts/Gotham-Bold.otf')  format('opentype'),
+		url('../fonts/Gotham-Bold.woff') format('woff'), 
+		url('../fonts/Gotham-Bold.ttf')  format('truetype'), 
+		url('../fonts/Gotham-Bold.svg#Gotham-Bold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gotham-Book';
+  src: url('../fonts/Gotham-Book.eot?#iefix') format('embedded-opentype'),  
+  		url('../fonts/Gotham-Book.otf')  format('opentype'),
+		url('../fonts/Gotham-Book.woff') format('woff'), 
+		url('../fonts/Gotham-Book.ttf')  format('truetype'), 
+		url('../fonts/Gotham-Book.svg#Gotham-Book') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body{
+	font-family: 'Gotham-Book';	
+	font-size: 12px;
+	color:$dark-blue;
+}
 
 a{
 	text-decoration:none;
 }
+
+h1, h2, h3, h4{
+	font-family: 'Gotham-Bold';
+	color: $dark-blue;
+}
+
+.dark-blue-btn{
+	background: $dark-blue;
+	color:#fff;
+	display:inline-block;
+	border:0;
+	text-transform: uppercase;
+	padding: 8px 7px;
+	font-family: "Gotham-Bold";
+}
+
+.dark-blue-btn:hover{
+	background: $dark-blue-hover;
+}
+
+.blue-btn{
+	background: $blue;
+	color:#fff;
+	display:inline-block;
+	border:0;
+	text-transform: uppercase;
+	padding: 8px 7px;
+	font-family: "Gotham-Bold";
+}
+
+.blue-btn:hover{
+	background: $blue-hover;
+}
+
 
 
 .site-inner{
@@ -54,30 +118,44 @@ header#site-header{
 form{
 	display:inline-block;
 	width:40%;
-	.form-row input[type="text"],
-	.form-row input[type="email"],
-	.form-row input[type="password"]{
-		width:100%;
-		box-sizing:border-box;
-		padding:5px 5px 5px 15px;
-		height:25px;
-		@include input-placeholder {
-			color: $placeholder-color;
+	.form-row{
+		margin-bottom: 15px;
+
+		label{
+			font-size: 16px;
+			line-height: 28px;
 		}
-	}
-	.form-row textarea{
-		width:100%;
-		box-sizing:border-box;
-		padding:5px 5px 5px 15px;
-		height:70px;
-	}
-	.form-row input[type="submit"]{
-		width:100%;
-		box-sizing:border-box;
-		padding:5px 5px 5px 15px;
-		height:25px;
-		background:$blue;
-		color:#fff;
+
+		input[type="text"],
+		input[type="email"],
+		input[type="password"],
+		select{
+			border: 1px solid $dark-blue;
+			width:100%;
+			box-sizing:border-box;
+			color:#000;
+			padding:3px 0 3px 10px;
+			height: 35px;
+			@include input-placeholder {
+				color: $placeholder-color;
+			}
+		}
+		textarea{
+			border: 1px solid $dark-blue;
+			width:100%;
+			box-sizing:border-box;
+			padding:5px 5px 5px 10px;
+			height:70px;
+		}
+		input[type="submit"]{
+			width:100%;
+			color:#fff;
+			text-transform: uppercase;
+			background:$dark-blue;
+			border: 1px solid $dark-blue;
+			padding:3px;
+			height: 35px;
+		}
 	}
 }
 
