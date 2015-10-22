@@ -137,17 +137,41 @@ h1, h2, h3, h4 {
 }
 
 /* line 90, ../sass/screen.scss */
+.row {
+  width: 100%;
+}
+/* line 92, ../sass/screen.scss */
+.row:after {
+  content: "";
+  clear: both;
+}
+/* line 97, ../sass/screen.scss */
+.row .col-2 {
+  width: 50%;
+  float: left;
+  padding: 15px;
+  box-sizing: border-box;
+}
+/* line 104, ../sass/screen.scss */
+.row .col-4 {
+  width: 25%;
+  float: left;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+/* line 112, ../sass/screen.scss */
 header#site-header {
   background: #68bed6;
 }
 
-/* line 96, ../sass/screen.scss */
+/* line 118, ../sass/screen.scss */
 #site-nav ul li {
   display: inline-block;
   margin: 5px 10px;
 }
 
-/* line 108, ../sass/screen.scss */
+/* line 130, ../sass/screen.scss */
 .listing-box ul li {
   display: inline-block;
   margin: 10px;
@@ -156,21 +180,26 @@ header#site-header {
   padding: 15px;
 }
 
-/* line 118, ../sass/screen.scss */
+/* line 140, ../sass/screen.scss */
+.full-wide {
+  width: 100%;
+}
+
+/* line 143, ../sass/screen.scss */
 form {
   display: inline-block;
   width: 40%;
 }
-/* line 121, ../sass/screen.scss */
+/* line 146, ../sass/screen.scss */
 form .form-row {
   margin-bottom: 15px;
 }
-/* line 124, ../sass/screen.scss */
+/* line 149, ../sass/screen.scss */
 form .form-row label {
   font-size: 16px;
   line-height: 28px;
 }
-/* line 129, ../sass/screen.scss */
+/* line 154, ../sass/screen.scss */
 form .form-row input[type="text"],
 form .form-row input[type="email"],
 form .form-row input[type="password"],
@@ -187,30 +216,30 @@ form .form-row input[type="text"]:-moz-placeholder,
 form .form-row input[type="email"]:-moz-placeholder,
 form .form-row input[type="password"]:-moz-placeholder,
 form .form-row select:-moz-placeholder {
-  color: #eee;
+  color: #bbb;
 }
 /* line 64, ../../../../../Ruby21-x64/lib/ruby/gems/2.1.0/gems/compass-core-1.0.1/stylesheets/compass/css3/_user-interface.scss */
 form .form-row input[type="text"]::-moz-placeholder,
 form .form-row input[type="email"]::-moz-placeholder,
 form .form-row input[type="password"]::-moz-placeholder,
 form .form-row select::-moz-placeholder {
-  color: #eee;
+  color: #bbb;
 }
 /* line 67, ../../../../../Ruby21-x64/lib/ruby/gems/2.1.0/gems/compass-core-1.0.1/stylesheets/compass/css3/_user-interface.scss */
 form .form-row input[type="text"]:-ms-input-placeholder,
 form .form-row input[type="email"]:-ms-input-placeholder,
 form .form-row input[type="password"]:-ms-input-placeholder,
 form .form-row select:-ms-input-placeholder {
-  color: #eee;
+  color: #bbb;
 }
 /* line 56, ../../../../../Ruby21-x64/lib/ruby/gems/2.1.0/gems/compass-core-1.0.1/stylesheets/compass/css3/_user-interface.scss */
 form .form-row input[type="text"]::-webkit-input-placeholder,
 form .form-row input[type="email"]::-webkit-input-placeholder,
 form .form-row input[type="password"]::-webkit-input-placeholder,
 form .form-row select::-webkit-input-placeholder {
-  color: #eee;
+  color: #bbb;
 }
-/* line 143, ../sass/screen.scss */
+/* line 168, ../sass/screen.scss */
 form .form-row textarea {
   border: 1px solid #336f7b;
   width: 100%;
@@ -218,7 +247,7 @@ form .form-row textarea {
   padding: 5px 5px 5px 10px;
   height: 70px;
 }
-/* line 150, ../sass/screen.scss */
+/* line 175, ../sass/screen.scss */
 form .form-row input[type="submit"] {
   width: 100%;
   color: #fff;
@@ -229,18 +258,37 @@ form .form-row input[type="submit"] {
   height: 35px;
 }
 
-/* line 162, ../sass/screen.scss */
+/* line 188, ../sass/screen.scss */
+.block .block-title {
+  background: #68bed6;
+  color: #fff;
+  font-size: 18px;
+  padding: 10px;
+}
+/* line 194, ../sass/screen.scss */
+.block .block-content {
+  padding: 15px;
+  box-sizing: border-box;
+  color: #68bed6;
+  font-size: 14px;
+}
+/* line 199, ../sass/screen.scss */
+.block .block-content p {
+  margin-bottom: 5px;
+}
+
+/* line 205, ../sass/screen.scss */
 .welcome {
   margin-bottom: 25px;
 }
 
-/* line 166, ../sass/screen.scss */
+/* line 209, ../sass/screen.scss */
 #message-sidebar {
   float: left;
   width: 25%;
 }
 
-/* line 171, ../sass/screen.scss */
+/* line 214, ../sass/screen.scss */
 #message-main {
   float: left;
   width: 75%;

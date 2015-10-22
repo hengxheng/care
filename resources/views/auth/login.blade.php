@@ -4,22 +4,22 @@
 <form method="POST" action="{{ URL::route('login') }}">
     {!! csrf_field() !!}
 
-    <div>
-        Email
+    <div class="form-row">
+        <label for="email">Email</label>
         <input type="email" name="email" value="{{ old('email') }}">
     </div>
 
-    <div>
-        Password
+    <div class="form-row">
+        <label for="password">Password</label>
         <input type="password" name="password" id="password">
     </div>
 
-    <div>
-        <input type="checkbox" name="remember"> Remember Me
+    <div class="form-row">
+        <input type="checkbox" name="remember"> <label for="remember">Remember Me</label>
     </div>
 
-    <div>
-        <button type="submit">Login</button>
+    <div class="form-row">
+        <input type="submit" value="Login">
     </div>
 </form>
 

@@ -12,7 +12,7 @@ $dark-blue: #336f7b;
 $dark-blue-hover: #234b54;
 $blue-hover: #3197b5;
 $text-color:#000;
-$placeholder-color:#eee;
+$placeholder-color:#bbb;
 
 
 @font-face {
@@ -87,6 +87,28 @@ h1, h2, h3, h4{
 	padding:15px;
 }
 
+.row{
+	width:100%;
+	&:after{
+		content:"";
+		clear:both;
+	}
+
+	.col-2{
+		width: 50%;
+		float:left;
+		padding:15px;
+		box-sizing: border-box;
+	}
+
+	.col-4{
+		width: 25%;
+		float:left;
+		padding:5px;
+		box-sizing: border-box;
+	}
+}
+
 header#site-header{
 	background:$blue;
 }
@@ -115,6 +137,9 @@ header#site-header{
 	}
 }
 
+.full-wide{
+	width:100%;
+}
 form{
 	display:inline-block;
 	width:40%;
@@ -155,6 +180,24 @@ form{
 			border: 1px solid $dark-blue;
 			padding:3px;
 			height: 35px;
+		}
+	}
+}
+
+.block{
+	.block-title{
+		background: $blue;
+		color:#fff;
+		font-size: 18px;
+		padding: 10px;
+	}
+	.block-content{
+		padding: 15px;
+		box-sizing: border-box;
+		color: $blue;
+		font-size: 14px;
+		p{
+			margin-bottom:5px;
 		}
 	}
 }

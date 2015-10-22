@@ -20,18 +20,19 @@ Route::get('/home', function () {
 
 //Route need to be auth
 
-Route::filter('auth', function(){
-	if(Auth::guest()){
-		return Redirect::to("login");
-	}
-});
+// Route::filter('auth', function(){
+// 	if(Auth::guest()){
+// 		return Redirect::to("login");
+// 	}
+// });
 
 Route::resource('care_givers','GiversController');
 Route::get('profile/{uid}', ['as' => 'care_givers.create', 'uses' => 'GiversController@create']);
 Route::post('personal-store', ['as' => 'care_givers.storeDetails', 'uses' => 'GiversController@storeDetails']);
 Route::get('care_givers/{uid}',['as' => 'care_givers.show', 'uses' => 'GiversController@show']);
 Route::get('givers/list',['as' => 'care_givers.list', 'uses' => 'GiversController@listing']);
-
+Route::get('profile1', ['as' => 'care_givers.storeProfile1', 'uses' => 'GiversController@storeProfile1']);
+Route::get('profile2', ['as' => 'care_givers.storeProfile2', 'uses' => 'GiversController@storeProfile2' ]);
 //Ajax call
 Route::Post('ajax', ['as' => 'care_givers.ajax', 'uses' => 'GiversController@ajaxCall']);
 

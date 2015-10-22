@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Giver;
 use App\User;
 use App\Job;
+use App\Service;
+use App\Quolification;
 use Auth;
 use Input;
 use Redirect;
@@ -50,15 +52,64 @@ class GiversController extends Controller
      */
     public function store(Request $request)
     {
-        $input_data = Input::all();
-        $error = "";
-        $user = User::create($input_data);
+        $uid = Input::get('uid');
+        $step = Input::get('step');
+        switch ($step){
+            case "1":
+                $giver = new Giver;
+                $giver->uid = $uid;
+                $giver->gender = Input::get("gender");
+                $giver->address1 = Input::get('address1');
+                $giver->address2 = Input::get('address2');
+                $giver->state = Input::get('state');
+                $giver->suburb = Input::get('suburb');
+                $giver->postcode = Input::get('postcode');
+                
+                $pic_name = $uid;
+                $pic_path = public_path('images');
+                $pic_extension = Input::file('picture')->getClientOriginalExtension();
+                if(Input::file('picture')->move($pic_path, $pic_name.'.'.$pic_extension)){
+                    $giver->picture = $pic_path."/".$pic_name.'.'.$pic_extension;
+                }
+                $giver->save();
+                return Redirect::route('care_givers.storeProfile1');    
+            break;
+            case "2":
+                $giver = Giver::find($uid);
+                $giver->experience = Input::get('experience');
+                $giver->education = Input::get('education');
+                $giver->rate = Input::get('rate');
+                $giver->save();
+                return Redirect::route('care_givers.storeProfile2'); 
+            break;
+            case "3":
+                $services = Input::get('service');
+                $quolifications = Input::get('quolification');
+                if(is_array($services) && sizeof($services) > 0){
+                    foreach ($services as $s){
+                        $ser = new Service;
+                        $ser->giver_id = $uid;
+                        $ser->service_name = $s;
+                        $ser->save();
+                    }
+                }
 
-        $user_id = $user->id;
+                if(is_array($quolifications) && sizeof($quolifications) > 0){
+                    foreach ($quolifications as $q){
+                        $quo = new Quolification;
+                        $quo->giver_id = $uid;
+                        $quo->quolification_name = $q;
+                        $quo->save();
+                    }
+                }
+                return Redirect::route('care_givers.storeProfile2'); 
+            break;
+                
 
-        if($input_data['user_type'] == 'giver'){
-            return Redirect::route('care_givers.personal-detail', array('uid' => $user_id));
-        }      
+        }
+        
+        
+       
     }
 
     /**
@@ -107,26 +158,13 @@ class GiversController extends Controller
     {
         //
     }
-    public function storeDetails(){
-        $uid = Input::get('uid');
-        $giver = new Giver;
-        $giver->uid = $uid;
-        $giver->gender = Input::get("gender");
-        $giver->address1 = Input::get('address1');
-        $giver->address2 = Input::get('address2');
-        $giver->state = Input::get('state');
-        $giver->suburb = Input::get('suburb');
-        $giver->postcode = Input::get('postcode');
-        
-        $pic_name = $uid;
-        $pic_path = public_path('images');
-        $pic_extension = Input::file('picture')->getClientOriginalExtension();
-        if(Input::file('picture')->move($pic_path, $pic_name.'.'.$pic_extension)){
-            $giver->picture = $pic_path."/".$pic_name.'.'.$pic_extension;
-        }
-        $giver->save();
-        return Redirect::route('care_givers.show', array('uid' => $uid ));
 
+    public function storeProfile1(){
+        return view("giver.profile1");
+    }
+
+    public function storeProfile2(){
+        return view("giver.profile2");
     }
 
     public function ajaxCall(Request $request){
