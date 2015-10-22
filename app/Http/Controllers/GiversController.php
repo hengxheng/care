@@ -65,11 +65,11 @@ class GiversController extends Controller
                 $giver->suburb = Input::get('suburb');
                 $giver->postcode = Input::get('postcode');
                 
-                $pic_name = $uid;
+                $pic_name = "photo-".$uid;
                 $pic_path = public_path('images');
                 $pic_extension = Input::file('picture')->getClientOriginalExtension();
                 if(Input::file('picture')->move($pic_path, $pic_name.'.'.$pic_extension)){
-                    $giver->picture = $pic_path."/".$pic_name.'.'.$pic_extension;
+                    $giver->picture = $pic_name.'.'.$pic_extension;
                 }
                 $giver->save();
                 return Redirect::route('care_givers.storeProfile1');    

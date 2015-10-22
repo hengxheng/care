@@ -3,8 +3,8 @@
 @section('content')
 <div class="giver-profile-block">
 	<div class="profile-row row">
-		<div class="profile-image">
-			<img src="{{ $the_giver -> picture }}" alt="">
+		<div class="profile-image block">
+			<img src="{{ URL::asset('images/'.$the_giver -> picture) }}" alt="">
 		</div>
 		<div class="profile-name block">
 			<div class="block-content">
