@@ -41,7 +41,7 @@ class GiversController extends Controller
      */
     public function create($uid)
     {
-        return view('giver.store', compact(array('uid')));
+        return view('giver.create', compact(array('uid')));
     }
 
     /**
@@ -102,10 +102,8 @@ class GiversController extends Controller
                         $quo->save();
                     }
                 }
-                return Redirect::route('care_givers.storeProfile2'); 
+                return Redirect::route('care_givers.show', array('uid' => $uid)); 
             break;
-                
-
         }
         
         
