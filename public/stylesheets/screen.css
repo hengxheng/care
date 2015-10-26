@@ -143,16 +143,17 @@ h1, h2, h3, h4 {
 /* line 92, ../sass/screen.scss */
 .row:after {
   content: "";
+  display: block;
   clear: both;
 }
-/* line 97, ../sass/screen.scss */
+/* line 98, ../sass/screen.scss */
 .row .col-2 {
   width: 50%;
   float: left;
   padding: 15px;
   box-sizing: border-box;
 }
-/* line 104, ../sass/screen.scss */
+/* line 105, ../sass/screen.scss */
 .row .col-4 {
   width: 25%;
   float: left;
@@ -160,18 +161,18 @@ h1, h2, h3, h4 {
   box-sizing: border-box;
 }
 
-/* line 112, ../sass/screen.scss */
+/* line 113, ../sass/screen.scss */
 header#site-header {
   background: #68bed6;
 }
 
-/* line 118, ../sass/screen.scss */
+/* line 119, ../sass/screen.scss */
 #site-nav ul li {
   display: inline-block;
   margin: 5px 10px;
 }
 
-/* line 130, ../sass/screen.scss */
+/* line 131, ../sass/screen.scss */
 .listing-box ul li {
   display: inline-block;
   margin: 10px;
@@ -180,26 +181,26 @@ header#site-header {
   padding: 15px;
 }
 
-/* line 140, ../sass/screen.scss */
+/* line 141, ../sass/screen.scss */
 .full-wide {
   width: 100%;
 }
 
-/* line 143, ../sass/screen.scss */
+/* line 144, ../sass/screen.scss */
 form {
   display: inline-block;
   width: 40%;
 }
-/* line 146, ../sass/screen.scss */
+/* line 147, ../sass/screen.scss */
 form .form-row {
   margin-bottom: 15px;
 }
-/* line 149, ../sass/screen.scss */
+/* line 150, ../sass/screen.scss */
 form .form-row label {
   font-size: 16px;
   line-height: 28px;
 }
-/* line 154, ../sass/screen.scss */
+/* line 155, ../sass/screen.scss */
 form .form-row input[type="text"],
 form .form-row input[type="email"],
 form .form-row input[type="password"],
@@ -239,7 +240,7 @@ form .form-row input[type="password"]::-webkit-input-placeholder,
 form .form-row select::-webkit-input-placeholder {
   color: #bbb;
 }
-/* line 168, ../sass/screen.scss */
+/* line 169, ../sass/screen.scss */
 form .form-row textarea {
   border: 1px solid #336f7b;
   width: 100%;
@@ -247,7 +248,7 @@ form .form-row textarea {
   padding: 5px 5px 5px 10px;
   height: 70px;
 }
-/* line 175, ../sass/screen.scss */
+/* line 176, ../sass/screen.scss */
 form .form-row input[type="submit"] {
   width: 100%;
   color: #fff;
@@ -258,38 +259,49 @@ form .form-row input[type="submit"] {
   height: 35px;
 }
 
-/* line 188, ../sass/screen.scss */
+/* line 189, ../sass/screen.scss */
 .block .block-title {
   background: #68bed6;
   color: #fff;
   font-size: 18px;
   padding: 10px;
 }
-/* line 194, ../sass/screen.scss */
+/* line 195, ../sass/screen.scss */
 .block .block-content {
   padding: 15px;
   box-sizing: border-box;
   color: #68bed6;
   font-size: 14px;
 }
-/* line 199, ../sass/screen.scss */
+/* line 200, ../sass/screen.scss */
 .block .block-content p {
   margin-bottom: 5px;
 }
 
-/* line 205, ../sass/screen.scss */
+/* line 206, ../sass/screen.scss */
 .welcome {
   margin-bottom: 25px;
 }
 
-/* line 209, ../sass/screen.scss */
+/* line 210, ../sass/screen.scss */
 #message-sidebar {
   float: left;
   width: 25%;
 }
 
-/* line 214, ../sass/screen.scss */
+/* line 215, ../sass/screen.scss */
 #message-main {
   float: left;
   width: 75%;
+}
+
+/* line 222, ../sass/screen.scss */
+.giver-profile-block .profile-image {
+  width: 300px;
+  height: auto;
+  float: left;
+}
+/* line 226, ../sass/screen.scss */
+.giver-profile-block .profile-image img {
+  width: 100%;
 }

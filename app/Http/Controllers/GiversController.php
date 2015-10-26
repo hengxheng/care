@@ -120,7 +120,9 @@ class GiversController extends Controller
     {
         $the_user = User::find($id);
         $the_giver = Giver::find($id);
-        return view('giver.show', compact(array('the_user', 'the_giver')));
+        $my_services = Service::MyServices($id);
+        $my_quolifications = Quolification::MyQuolifications($id);
+        return view('giver.show', compact(array('the_user', 'the_giver','my_services','my_quolifications')));
     }
 
     /**

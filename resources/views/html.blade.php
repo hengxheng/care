@@ -18,7 +18,6 @@
 						<li><a href="{{ URL::route('register') }}">Register</a></li>
 					@else
 						@if (Auth::user() -> user_type == 'giver')
-						<li><a href="{{ URL::route('care_givers.create', array('uid' => Auth::user()->id)) }}">Create Profile</a>
 						<li><a href="{{ URL::route('care_givers.show', array('uid' => Auth::user()->id)) }}" >My Profile</a></li>
 						<li><a href="{{ URL::route('job.search', array('uid' => Auth::user()->id)) }}">View Jobs</a></li>
 						@elseif (Auth::user() -> user_type == 'seeker')

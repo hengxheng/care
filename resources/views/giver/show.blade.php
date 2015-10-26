@@ -2,20 +2,22 @@
 
 @section('content')
 <div class="giver-profile-block">
-	<div class="profile-row row">
-		<div class="profile-image block">
-			<img src="{{ URL::asset('images/'.$the_giver -> picture) }}" alt="">
-		</div>
-		<div class="profile-name block">
-			<div class="block-content">
-			{{ $the_user -> firstname }} {{ $the_user -> lastname }}
-			<p>
-				@if (Auth::user() -> user_type == 'seeker' )
-				<a href="{{ URL::route('message.create', array('to_id'=>$the_giver -> uid )) }}">Send a message</a>
-				@endif
-			</p>
+	<div class="profile-row">
+		<div class="row">
+			<div class="profile-image block">
+				<img src="{{ URL::asset('images/'.$the_giver -> picture) }}" alt="">
+			</div>
+			<div class="profile-name block">
+				<div class="block-content">
+				{{ $the_user -> firstname }} {{ $the_user -> lastname }}
+				<p>
+					@if (Auth::user() -> user_type == 'seeker' )
+					<a href="{{ URL::route('message.create', array('to_id'=>$the_giver -> uid )) }}">Send a message</a>
+					@endif
+				</p>
 
-			<p>{{ $the_giver -> gender }}</p>
+				<p>{{ $the_giver -> gender }}</p>
+				</div>
 			</div>
 		</div>
 		<div class="profile-contact block">
@@ -48,6 +50,28 @@
 
 		<div class="block">
 			<h2 class="block-title">Hourly Rate : {{ $the_giver->rate}}</h2>
+		</div>
+
+		<div class="block">
+			<h2 class="block-title">My Services</h2>
+			<div class="block-content">
+				<ul>
+					@foreach ($my_services as $s)
+					<li>{{ $s-> service_name }}</li>
+					@endforeach
+				</ul>
+			</div>
+		</div>
+
+		<div class="block">
+			<h2 class="block-title">My Quolifications</h2>
+			<div class="block-content">
+				<ul>
+					@foreach ($my_quolifications as $q)
+					<li>{{ $q-> quolification_name }}</li>
+					@endforeach
+				</ul>
+			</div>
 		</div>
 	</div>
 </div>

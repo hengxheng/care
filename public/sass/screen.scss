@@ -91,6 +91,7 @@ h1, h2, h3, h4{
 	width:100%;
 	&:after{
 		content:"";
+		display:block;
 		clear:both;
 	}
 
@@ -214,4 +215,16 @@ form{
 #message-main{
 	float:left;
 	width:75%;
+}
+
+
+.giver-profile-block{
+	.profile-image{
+		width: 300px;
+		height: auto;
+		float:left;
+		img{
+			width:100%;
+		}
+	}
 }
