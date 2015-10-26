@@ -30,7 +30,7 @@
     <div class="row">
         <div class="availability-block">
             <label for="availability">Availability</label>
-            <table>
+            <table id="avaiability-table">
                 <tr>
                     <td></td>
                     <td>Mon</td>
@@ -43,43 +43,80 @@
                 </tr>
                 <tr>
                     <td>Morning</td>
-                    <td><input type="checkbox" name="morning[]" value="Mon"></td>
-                    <td><input type="checkbox" name="morning[]" value="Tue"></td>
-                    <td><input type="checkbox" name="morning[]" value="Wed"></td>
-                    <td><input type="checkbox" name="morning[]" value="Thu"></td>
-                    <td><input type="checkbox" name="morning[]" value="Fri"></td>
-                    <td><input type="checkbox" name="morning[]" value="Sat"></td>
-                    <td><input type="checkbox" name="morning[]" value="Sun"></td>
+                    <td>
+                        <a href="#" class="av-tick"></a>
+                        <input type="hidden" name="avai[morning][mon]" value="0">
+                    </td>
+                    <td><a href="#" class="av-tick"></a>
+                        <input type="hidden" name="avai[morning][tue]" value="0">
+                    </td>
+                    <td><a href="#" class="av-tick"></a>
+                        <input type="hidden" name="avai[morning][wed]" value="0">
+                    </td>
+                    <td><a href="#" class="av-tick"></a>
+                        <input type="hidden" name="avai[morning][thu]" value="0">
+                    </td>
+                    <td><a href="#" class="av-tick"></a>
+                        <input type="hidden" name="avai[morning][fri]" value="0">
+                    </td>
+                    <td><a href="#" class="av-tick"></a>
+                        <input type="hidden" name="avai[morning][sat]" value="0">
+                    </td>
+                    <td><a href="#" class="av-tick"></a>
+                        <input type="hidden" name="avai[morning][sun]" value="0">
+                    </td>
                 </tr>
                 <tr>
                     <td>Afternoon</td>
-                    <td><input type="checkbox" name="afternoon[]" value="Mon"></td>
-                    <td><input type="checkbox" name="afternoon[]" value="Tue"></td>
-                    <td><input type="checkbox" name="afternoon[]" value="Wed"></td>
-                    <td><input type="checkbox" name="afternoon[]" value="Thu"></td>
-                    <td><input type="checkbox" name="afternoon[]" value="Fri"></td>
-                    <td><input type="checkbox" name="afternoon[]" value="Sat"></td>
-                    <td><input type="checkbox" name="afternoon[]" value="Sun"></td>
+                    <td><a href="#" class="av-tick"></a>
+                        <input type="hidden" name="avai[afternoon][mon]" value="0"></td>
+                    <td><a href="#" class="av-tick"></a>
+                        <input type="hidden" name="avai[afternoon][tue]" value="0"></td>
+                    <td><a href="#" class="av-tick"></a>
+                        <input type="hidden" name="avai[afternoon][wed]" value="0"></td>
+                    <td><a href="#" class="av-tick"></a>
+                        <input type="hidden" name="avai[afternoon][thu]" value="0"></td>
+                    <td><a href="#" class="av-tick"></a>
+                        <input type="hidden" name="avai[afternoon][fri]" value="0"></td>
+                    <td><a href="#" class="av-tick"></a>
+                        <input type="hidden" name="avai[afternoon][sat]" value="0"></td>
+                    <td><a href="#" class="av-tick"></a>
+                        <input type="hidden" name="avai[afternoon][sun]" value="0"></td>
                 </tr>
                 <tr>
                     <td>Everning</td>
-                    <td><input type="checkbox" name="everning[]" value="Mon"></td>
-                    <td><input type="checkbox" name="everning[]" value="Tue"></td>
-                    <td><input type="checkbox" name="everning[]" value="Wed"></td>
-                    <td><input type="checkbox" name="everning[]" value="Thu"></td>
-                    <td><input type="checkbox" name="everning[]" value="Fri"></td>
-                    <td><input type="checkbox" name="everning[]" value="Sat"></td>
-                    <td><input type="checkbox" name="everning[]" value="Sun"></td>
+                    <td><a href="#" class="av-tick"></a>
+                        <input type="hidden" name="avai[everning][mon]" value="0"></td>
+                    <td><a href="#" class="av-tick"></a>
+                        <input type="hidden" name="avai[everning][tue]" value="0"></td>
+                    <td><a href="#" class="av-tick"></a>
+                        <input type="hidden" name="avai[everning][wed]" value="0"></td>
+                    <td><a href="#" class="av-tick"></a>
+                        <input type="hidden" name="avai[everning][thu]" value="0"></td>
+                    <td><a href="#" class="av-tick"></a>
+                        <input type="hidden" name="avai[everning][fri]" value="0"></td>
+                    <td><a href="#" class="av-tick"></a>
+                        <input type="hidden" name="avai[everning][sat]" value="0"></td>
+                    <td><a href="#" class="av-tick"></a>
+                        <input type="hidden" name="avai[everning][sun]" value="0"></td>
+
                 </tr>
                 <tr>
                     <td>Overnight</td>
-                    <td><input type="checkbox" name="overnight[]" value="Mon"></td>
-                    <td><input type="checkbox" name="overnight[]" value="Tue"></td>
-                    <td><input type="checkbox" name="overnight[]" value="Wed"></td>
-                    <td><input type="checkbox" name="overnight[]" value="Thu"></td>
-                    <td><input type="checkbox" name="overnight[]" value="Fri"></td>
-                    <td><input type="checkbox" name="overnight[]" value="Sat"></td>
-                    <td><input type="checkbox" name="overnight[]" value="Sun"></td>
+                    <td><a href="#" class="av-tick"></a>
+                        <input type="hidden" name="avai[overnight][mon]" value="0"></td>
+                    <td><a href="#" class="av-tick"></a>
+                        <input type="hidden" name="avai[overnight][tue]" value="0"></td>
+                    <td><a href="#" class="av-tick"></a>
+                        <input type="hidden" name="avai[overnight][wed]" value="0"></td>
+                    <td><a href="#" class="av-tick"></a>
+                        <input type="hidden" name="avai[overnight][thu]" value="0"></td>
+                    <td><a href="#" class="av-tick"></a>
+                        <input type="hidden" name="avai[overnight][fri]" value="0"></td>
+                    <td><a href="#" class="av-tick"></a>
+                        <input type="hidden" name="avai[overnight][sat]" value="0"></td>
+                    <td><a href="#" class="av-tick"></a>
+                        <input type="hidden" name="avai[overnight][sun]" value="0"></td>
                 </tr>
             </table>
         </div>

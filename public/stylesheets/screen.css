@@ -305,3 +305,20 @@ form .form-row input[type="submit"] {
 .giver-profile-block .profile-image img {
   width: 100%;
 }
+
+/* line 232, ../sass/screen.scss */
+.av-tick {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  background: green;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border: 1px solid #000;
+}
+
+/* line 243, ../sass/screen.scss */
+#avaiability-table td {
+  padding: 10px;
+}

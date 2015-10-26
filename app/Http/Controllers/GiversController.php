@@ -88,10 +88,9 @@ class GiversController extends Controller
                 $quolifications = Input::get('quolification');
 
                 //availability
-                $morning = Input::get('morning');
-                $afternoon = Input::get('afternoon');
-                $everning = Input::get('everning');
-                $overnight = Input::get('overnight');
+                $avail = Input::get('avai');
+
+
                 if(is_array($services) && sizeof($services) > 0){
                     foreach ($services as $s){
                         $ser = new Service;
@@ -110,42 +109,19 @@ class GiversController extends Controller
                     }
                 }
 
-                if(is_array($morning) && sizeof($morning)>0){
-                    foreach ($morning as $m ){
-                        $avai = new Availability;
-                        $avai->giver_id = $uid;
-                        $avai->week = $m;
-                        $avai->time = "Morning";
-                        $avai->save();
+                if(is_array($avail) && sizeof($avail)>0){
+                    foreach ( $avail as $k =>$a ){
+                        foreach($a as $f => $t){
+                            $avai = new Availability;
+                            $avai->giver_id = $uid;
+                            $avai->week = $f;
+                            $avai->time = $k;
+                            $avai->av = $t;
+                            $avai->save();
+                        }                       
                     }
                 }
-                if(is_array($afternoon) && sizeof($afternoon)>0){
-                    foreach ($afternoon as $af ){
-                        $avai = new Availability;
-                        $avai->giver_id = $uid;
-                        $avai->week = $af;
-                        $avai->time = "Afternoon";
-                        $avai->save();
-                    }
-                }
-                if(is_array($everning) && sizeof($everning)>0){
-                    foreach ($everning as $ev ){
-                        $avai = new Availability;
-                        $avai->giver_id = $uid;
-                        $avai->week = $ev;
-                        $avai->time = "Everning";
-                        $avai->save();
-                    }
-                }
-                if(is_array($overnight) && sizeof($overnight)>0){
-                    foreach ($overnight as $ov ){
-                        $avai = new Availability;
-                        $avai->giver_id = $uid;
-                        $avai->week = $ov;
-                        $avai->time = "Overnight";
-                        $avai->save();
-                    }
-                }
+                
                 return Redirect::route('care_givers.show', array('uid' => $uid)); 
             break;
         }
@@ -166,7 +142,13 @@ class GiversController extends Controller
         $the_giver = Giver::find($id);
         $my_services = Service::MyServices($id);
         $my_quolifications = Quolification::MyQuolifications($id);
-        return view('giver.show', compact(array('the_user', 'the_giver','my_services','my_quolifications')));
+        $av = Availability::MyAvailability($id);
+
+        $my_availability = array();
+        foreach ($av as $a){
+            $my_availability[$a->week][$a->time] = $a->av; 
+        }
+        return view('giver.show', compact(array('the_user', 'the_giver','my_services','my_quolifications', 'my_availability')));
     }
 
     /**

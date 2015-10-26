@@ -228,3 +228,18 @@ form{
 		}
 	}
 }
+
+.av-tick{
+	display:inline-block;
+	width:25px;
+	height:25px;
+	background:green;
+	border-radius: 50%;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border:1px solid #000;
+}
+
+#avaiability-table td{
+	padding: 10px;
+}

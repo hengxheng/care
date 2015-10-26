@@ -1,6 +1,7 @@
 @extends('html')
 
 @section('content')
+
 <div class="giver-profile-block">
 	<div class="profile-row">
 		<div class="row">
@@ -71,6 +72,64 @@
 					<li>{{ $q-> quolification_name }}</li>
 					@endforeach
 				</ul>
+			</div>
+		</div>
+
+		<div class="block">
+			<h2 class="block-title">My Availability</h2>
+			<div class="block-content">
+				<table id="avaiability-table">
+					<tr>
+                    <td></td>
+                    <td>Mon</td>
+                    <td>Tue</td>
+                    <td>Wed</td>
+                    <td>Thu</td>
+                    <td>Fri</td>
+                    <td>Sat</td>
+                    <td>Sun</td>
+                </tr>
+                <tr>
+                    <td>Morning</td>
+                    <td>{{ $my_availability['mon']['morning'] }} </td>
+                    <td>{{ $my_availability['tue']['morning'] }}</td>
+                    <td>{{ $my_availability['wed']['morning'] }}</td>
+                    <td>{{ $my_availability['thu']['morning'] }}</td>
+                    <td>{{ $my_availability['fri']['morning'] }}</td>
+                    <td>{{ $my_availability['sat']['morning'] }}</td>
+                    <td>{{ $my_availability['sun']['morning'] }}</td>
+                </tr>
+                <tr>
+                    <td>Afternoon</td>
+                    <td>{{ $my_availability['mon']['afternoon'] }}</td>
+                    <td>{{ $my_availability['tue']['afternoon'] }}</td>
+                    <td>{{ $my_availability['wed']['afternoon'] }}</td>
+                    <td>{{ $my_availability['thu']['afternoon'] }}</td>
+                    <td>{{ $my_availability['fri']['afternoon'] }}</td>
+                    <td>{{ $my_availability['sat']['afternoon'] }}</td>
+                    <td>{{ $my_availability['sun']['afternoon'] }}</td>
+                </tr>
+                <tr>
+                    <td>Everning</td>
+                    <td>{{ $my_availability['mon']['everning'] }}</td>
+                    <td>{{ $my_availability['tue']['everning'] }}</td>
+                    <td>{{ $my_availability['wed']['everning'] }}</td>
+                    <td>{{ $my_availability['thu']['everning'] }}</td>
+                    <td>{{ $my_availability['fri']['everning'] }}</td>
+                    <td>{{ $my_availability['sat']['everning'] }}</td>
+                    <td>{{ $my_availability['sun']['everning'] }}</td>
+                </tr>
+                <tr>
+                    <td>Overnight</td>
+                    <td>{{ $my_availability['mon']['overnight'] }}</td>
+                    <td>{{ $my_availability['tue']['overnight'] }}</td>
+                    <td>{{ $my_availability['wed']['overnight'] }}</td>
+                    <td>{{ $my_availability['thu']['overnight'] }}</td>
+                    <td>{{ $my_availability['fri']['overnight'] }}</td>
+                    <td>{{ $my_availability['sat']['overnight'] }}</td>
+                    <td>{{ $my_availability['sun']['overnight'] }}</td>
+                </tr>
+				</table>
 			</div>
 		</div>
 	</div>

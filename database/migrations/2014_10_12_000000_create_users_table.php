@@ -72,6 +72,7 @@ class CreateUsersTable extends Migration
             // $table->foreign('giver_id')->references('uid')->on('giver')->onDelete('cascade');
             $table->string('week');
             $table->string('time');
+            $table->boolean('av');
             $table->timestamps();
         });
 
