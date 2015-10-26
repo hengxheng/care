@@ -7,6 +7,7 @@ use App\User;
 use App\Job;
 use App\Service;
 use App\Quolification;
+use App\Availability;
 use Auth;
 use Input;
 use Redirect;
@@ -85,6 +86,12 @@ class GiversController extends Controller
             case "3":
                 $services = Input::get('service');
                 $quolifications = Input::get('quolification');
+
+                //availability
+                $morning = Input::get('morning');
+                $afternoon = Input::get('afternoon');
+                $everning = Input::get('everning');
+                $overnight = Input::get('overnight');
                 if(is_array($services) && sizeof($services) > 0){
                     foreach ($services as $s){
                         $ser = new Service;
@@ -100,6 +107,43 @@ class GiversController extends Controller
                         $quo->giver_id = $uid;
                         $quo->quolification_name = $q;
                         $quo->save();
+                    }
+                }
+
+                if(is_array($morning) && sizeof($morning)>0){
+                    foreach ($morning as $m ){
+                        $avai = new Availability;
+                        $avai->giver_id = $uid;
+                        $avai->week = $m;
+                        $avai->time = "Morning";
+                        $avai->save();
+                    }
+                }
+                if(is_array($afternoon) && sizeof($afternoon)>0){
+                    foreach ($afternoon as $af ){
+                        $avai = new Availability;
+                        $avai->giver_id = $uid;
+                        $avai->week = $af;
+                        $avai->time = "Afternoon";
+                        $avai->save();
+                    }
+                }
+                if(is_array($everning) && sizeof($everning)>0){
+                    foreach ($everning as $ev ){
+                        $avai = new Availability;
+                        $avai->giver_id = $uid;
+                        $avai->week = $ev;
+                        $avai->time = "Everning";
+                        $avai->save();
+                    }
+                }
+                if(is_array($overnight) && sizeof($overnight)>0){
+                    foreach ($overnight as $ov ){
+                        $avai = new Availability;
+                        $avai->giver_id = $uid;
+                        $avai->week = $ov;
+                        $avai->time = "Overnight";
+                        $avai->save();
                     }
                 }
                 return Redirect::route('care_givers.show', array('uid' => $uid)); 

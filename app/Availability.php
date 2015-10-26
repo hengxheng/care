@@ -13,11 +13,11 @@ class Availability extends Model
     	return DB::table("availability")->where("giver_id", "=", $uid)->get();
     }
 
-    public static function WithAvailabilityByWeek( $weekday){
+    public static function WithAvailabilityByWeek( $weekday ){
     	return DB::table("availability")->where("week","=", $weekday)->get();
     }
 
-    public static function WithAvailabilityByTime( $time){
+    public static function WithAvailabilityByTime( $time ){
     	return DB::table("availability")->where("time", "=", $time )->get();
     }
 }
