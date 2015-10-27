@@ -159,9 +159,14 @@ class GiversController extends Controller
      */
     public function edit($id)
     {
-        //
+        $giver = Giver::findorFail($id);
+        return view("giver.edit-p1", compact(array("giver")));
     }
 
+    public function edit2($id){
+        $giver = Giver::findorFail($id);
+        return view("giver.edit-p2", compact(array("giver")));
+    }
     /**
      * Update the specified resource in storage.
      *
@@ -171,7 +176,29 @@ class GiversController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $giver = Giver::findorFail($id);
+        
+        $giver->gender = Input::get("gender");
+        $giver->address1 = Input::get('address1');
+        $giver->address2 = Input::get('address2');
+        $giver->state = Input::get('state');
+        $giver->suburb = Input::get('suburb');
+        $giver->postcode = Input::get('postcode');
+        if(Input::file('picture')){
+            $pic_name = "photo-".$id;
+            $pic_path = public_path('images');
+            $pic_extension = Input::file('picture')->getClientOriginalExtension();
+            if(Input::file('picture')->move($pic_path, $pic_name.'.'.$pic_extension)){
+                $giver->picture = $pic_name.'.'.$pic_extension;
+            }
+        }
+
+        if(Input::get('experience')){
+            $giver->experience = Input::get('experience');
+        }
+        
+        $giver->save();
+         return Redirect::route('care_givers.show', array('uid' => $id)); 
     }
 
     /**

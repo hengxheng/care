@@ -233,13 +233,32 @@ form{
 	display:inline-block;
 	width:25px;
 	height:25px;
-	background:green;
+	background:#fff;
 	border-radius: 50%;
 	-webkit-border-radius: 50%;
 	-moz-border-radius: 50%;
 	border:1px solid #000;
 }
 
-#avaiability-table td{
-	padding: 10px;
+#avaiability-table{
+	td{
+		padding: 10px;
+		border:1px solid #000;
+		text-align: center;
+	}
+}
+
+.av-icon{
+	display:inline-block;
+	width:20px;
+	height:20px;
+	text-align:center;
+	@include border-radius(50%);
+}
+
+.av-icon.a-0{
+	background:#fff;
+}
+.av-icon.a-1{
+	background: green;
 }

@@ -33,8 +33,9 @@ Route::get('care_givers/{uid}',['as' => 'care_givers.show', 'uses' => 'GiversCon
 Route::get('givers/list',['as' => 'care_givers.list', 'uses' => 'GiversController@listing']);
 Route::get('profile1', ['as' => 'care_givers.storeProfile1', 'uses' => 'GiversController@storeProfile1']);
 Route::get('profile2', ['as' => 'care_givers.storeProfile2', 'uses' => 'GiversController@storeProfile2' ]);
+Route::get('{id}/edit2', ['as' => 'care_givers.edit2', 'uses' => 'GiversController@edit2']);
 //Ajax call
-Route::Post('ajax', ['as' => 'care_givers.ajax', 'uses' => 'GiversController@ajaxCall']);
+Route::post('ajax', ['as' => 'care_givers.ajax', 'uses' => 'GiversController@ajaxCall']);
 
 
 Route::resource('care_seekers','SeekersController');

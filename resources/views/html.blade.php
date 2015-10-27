@@ -6,7 +6,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Care Nation</title>
 		<link rel="stylesheet" href="{{ URL::asset('stylesheets/screen.css') }}">
-		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+		<!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script> -->
+		<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 		<script src="{{URL::asset('scripts/script.js') }}"></script>
 	</head>
 	<body ng-app="myApp">

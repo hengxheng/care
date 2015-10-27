@@ -22,7 +22,7 @@
 			</div>
 		</div>
 		<div class="profile-contact block">
-			<h2 class="block-title">Contact</h2>
+			<h2 class="block-title">Contact <span><a href="{{ URL::route('care_givers.edit', array('id'=>$the_user->id)) }}">Edit</a></span></h2>
 			<div class="block-content">
 				<p>Email : {{ $the_user -> email }}</p>
 				<p>Phone : {{ $the_user -> phone }}</p>
@@ -36,7 +36,7 @@
 
 
 		<div class="block">
-			<h2 class="block-title">Experiece</h2>
+			<h2 class="block-title">Experiece <span><a href="{{ URL::route('care_givers.edit2', array('id'=>$the_user->id)) }}">Edit</a></span></h2>
 			<div class="block-content">
 			{{ $the_giver -> experience }}
 			</div>
@@ -91,43 +91,43 @@
                 </tr>
                 <tr>
                     <td>Morning</td>
-                    <td>{{ $my_availability['mon']['morning'] }} </td>
-                    <td>{{ $my_availability['tue']['morning'] }}</td>
-                    <td>{{ $my_availability['wed']['morning'] }}</td>
-                    <td>{{ $my_availability['thu']['morning'] }}</td>
-                    <td>{{ $my_availability['fri']['morning'] }}</td>
-                    <td>{{ $my_availability['sat']['morning'] }}</td>
-                    <td>{{ $my_availability['sun']['morning'] }}</td>
+                    <td><div class="av-icon a-{{ $my_availability['mon']['morning'] }}"></div></td>
+                    <td><div class="av-icon a-{{ $my_availability['tue']['morning'] }}"></div></td>
+                    <td><div class="av-icon a-{{ $my_availability['wed']['morning'] }}"></div></td>
+                    <td><div class="av-icon a-{{ $my_availability['thu']['morning'] }}"></div></td>
+                    <td><div class="av-icon a-{{ $my_availability['fri']['morning'] }}"></div></td>
+                    <td><div class="av-icon a-{{ $my_availability['sat']['morning'] }}"></div></td>
+                    <td><div class="av-icon a-{{ $my_availability['sun']['morning'] }}"></div></td>
                 </tr>
                 <tr>
                     <td>Afternoon</td>
-                    <td>{{ $my_availability['mon']['afternoon'] }}</td>
-                    <td>{{ $my_availability['tue']['afternoon'] }}</td>
-                    <td>{{ $my_availability['wed']['afternoon'] }}</td>
-                    <td>{{ $my_availability['thu']['afternoon'] }}</td>
-                    <td>{{ $my_availability['fri']['afternoon'] }}</td>
-                    <td>{{ $my_availability['sat']['afternoon'] }}</td>
-                    <td>{{ $my_availability['sun']['afternoon'] }}</td>
+                    <td><div class="av-icon a-{{ $my_availability['mon']['afternoon'] }}"></div></td>
+                    <td><div class="av-icon a-{{ $my_availability['tue']['afternoon'] }}"></div></td>
+                    <td><div class="av-icon a-{{ $my_availability['wed']['afternoon'] }}"></div></td>
+                    <td><div class="av-icon a-{{ $my_availability['thu']['afternoon'] }}"></div></td>
+                    <td><div class="av-icon a-{{ $my_availability['fri']['afternoon'] }}"></div></td>
+                    <td><div class="av-icon a-{{ $my_availability['sat']['afternoon'] }}"></div></td>
+                    <td><div class="av-icon a-{{ $my_availability['sun']['afternoon'] }}"></div></td>
                 </tr>
                 <tr>
                     <td>Everning</td>
-                    <td>{{ $my_availability['mon']['everning'] }}</td>
-                    <td>{{ $my_availability['tue']['everning'] }}</td>
-                    <td>{{ $my_availability['wed']['everning'] }}</td>
-                    <td>{{ $my_availability['thu']['everning'] }}</td>
-                    <td>{{ $my_availability['fri']['everning'] }}</td>
-                    <td>{{ $my_availability['sat']['everning'] }}</td>
-                    <td>{{ $my_availability['sun']['everning'] }}</td>
+                    <td><div class="av-icon a-{{ $my_availability['mon']['everning'] }}"></div></td>
+                    <td><div class="av-icon a-{{ $my_availability['tue']['everning'] }}"></div></td>
+                    <td><div class="av-icon a-{{ $my_availability['wed']['everning'] }}"></div></td>
+                    <td><div class="av-icon a-{{ $my_availability['thu']['everning'] }}"></div></td>
+                    <td><div class="av-icon a-{{ $my_availability['fri']['everning'] }}"></div></td>
+                    <td><div class="av-icon a-{{ $my_availability['sat']['everning'] }}"></div></td>
+                    <td><div class="av-icon a-{{ $my_availability['sun']['everning'] }}"></div></td>
                 </tr>
                 <tr>
                     <td>Overnight</td>
-                    <td>{{ $my_availability['mon']['overnight'] }}</td>
-                    <td>{{ $my_availability['tue']['overnight'] }}</td>
-                    <td>{{ $my_availability['wed']['overnight'] }}</td>
-                    <td>{{ $my_availability['thu']['overnight'] }}</td>
-                    <td>{{ $my_availability['fri']['overnight'] }}</td>
-                    <td>{{ $my_availability['sat']['overnight'] }}</td>
-                    <td>{{ $my_availability['sun']['overnight'] }}</td>
+                    <td><div class="av-icon a-{{ $my_availability['mon']['overnight'] }}"></div></td>
+                    <td><div class="av-icon a-{{ $my_availability['tue']['overnight'] }}"></div></td>
+                    <td><div class="av-icon a-{{ $my_availability['wed']['overnight'] }}"></div></td>
+                    <td><div class="av-icon a-{{ $my_availability['thu']['overnight'] }}"></div></td>
+                    <td><div class="av-icon a-{{ $my_availability['fri']['overnight'] }}"></div></td>
+                    <td><div class="av-icon a-{{ $my_availability['sat']['overnight'] }}"></div></td>
+                    <td><div class="av-icon a-{{ $my_availability['sun']['overnight'] }}"></div></td>
                 </tr>
 				</table>
 			</div>

@@ -14,7 +14,7 @@
                     <label>Service 1: </label><input type="text" name="service[]">
                 </div> 
             </div>
-            <a href="#" ng-click="add_service()" class="dark-blue-btn">Add a service</a>
+            <a id="add_serv" href="#" ng-click="add_service()" class="dark-blue-btn">Add a service</a>
         </div>
         <div class="col-2">
             <h2>Quolifications</h2>
@@ -23,7 +23,7 @@
                     <label>Quolification 1: </label><input type="text" name="quolification[]">
                 </div>
             </div>
-            <a href="#" ng-click="add_quolification()" class="dark-blue-btn">Add a quolification</a>
+            <a id="add_quo" href="#" ng-click="add_quolification()" class="dark-blue-btn">Add a quolification</a>
         </div>
     </div>
 
@@ -44,7 +44,7 @@
                 <tr>
                     <td>Morning</td>
                     <td>
-                        <a href="#" class="av-tick"></a>
+                        <a href="#" class="av-tick" ng-click="avai()"></a>
                         <input type="hidden" name="avai[morning][mon]" value="0">
                     </td>
                     <td><a href="#" class="av-tick"></a>
