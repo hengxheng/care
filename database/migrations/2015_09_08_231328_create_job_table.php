@@ -18,6 +18,9 @@ class CreateJobTable extends Migration
             $table->text('description');
             $table->integer('poster_id')->unsigned();;
             // $table->foreign('poster_id')->references('uid')->on('seeker')->onDelete('cascade');
+            $table->string('service_name');
+            $table->string('location');
+            $table->string('postcode');
             $table->string('status');
             $table->timestamps();
         });

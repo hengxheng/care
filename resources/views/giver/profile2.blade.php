@@ -7,16 +7,21 @@
     <input type="hidden" name="uid" value="{{ Auth::user() -> id }}">
     <input type="hidden" name="step" value="3">
     <div class="row">
-        <div class="col-2">
-            <h2>Skills</h2>
-            <div class="service-block">
-                <div class="form-row">
-                    <label>Service 1: </label><input type="text" name="service[]">
-                </div> 
+         <div class="col-1">
+            <h2>Services</h2>
+            <div class="form-row">
+                <div><input type="checkbox" name="service[]" value="Meal preparation"><span>Meal preparation</span></div>
+                <div><input type="checkbox" name="service[]" value="Alzheimer's Care"><span>Alzheimer's Care</span></div>
+                <div><input type="checkbox" name="service[]" value="Companionship"><span>Companionship</span></div>
+                <div><input type="checkbox" name="service[]" value="Housekeeping"><span>Housekeeping</span></div>
+                <div><input type="checkbox" name="service[]" value="Transportation"><span>Transportation</span></div>
+                <div><input type="checkbox" name="service[]" value="Personal Care"><span>Personal Care</span></div>
             </div>
-            <a id="add_serv" href="#" ng-click="add_service()" class="dark-blue-btn">Add a service</a>
-        </div>
-        <div class="col-2">
+         </div>
+    </div>
+
+    <div class="row">
+        <div class="col-1">
             <h2>Quolifications</h2>
             <div class="quolification-block">
                 <div class="form-row">

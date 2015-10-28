@@ -45,6 +45,11 @@ class CreateUsersTable extends Migration
         Schema::create('seeker',function(Blueprint $table){
             $table->integer('uid')->unsigned();
             $table->foreign('uid')->references('id')->on('users')->onDelete('cascade');
+            $table->string('address1');
+            $table->string('address2')->nullable();
+            $table->string('suburb');
+            $table->string('state');
+            $table->string('postcode');
             $table->string('picture')->nullable();
             $table->boolean('premium')->default(false);
             $table->timestamps();

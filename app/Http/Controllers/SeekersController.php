@@ -51,9 +51,27 @@ class SeekersController extends Controller
 
         $seeker = new Seeker;
         $seeker->uid = $uid;
-        $seeker->premium = Input::get('premium');
 
+        $seeker->address1 = Input::get('address1');
+        $seeker->address2 = Input::get('address2');
+        $seeker->state = Input::get('state');
+        $seeker->suburb = Input::get('suburb');
+        $seeker->postcode = Input::get('postcode');
+
+
+        $pic_name = "photo-".$uid;
+        $pic_path = public_path('images');
+        $pic_extension = Input::file('picture')->getClientOriginalExtension();
+        if(Input::file('picture')->move($pic_path, $pic_name.'.'.$pic_extension)){
+            $seeker->picture = $pic_name.'.'.$pic_extension;
+        }
         $seeker->save();
+
+        $user = new User;
+        $user = User::findorFail($uid);
+        $user->status = "Active";
+        $user->save();
+
 
         return Redirect::route('care_seekers.show', array('id' => $uid));
 
