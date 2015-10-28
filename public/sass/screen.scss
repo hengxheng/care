@@ -229,6 +229,17 @@ form{
 	}
 }
 
+
+.seeker-profile-block{
+	.profile-image{
+		width: 300px;
+		height: auto;
+		float:left;
+		img{
+			width:100%;
+		}
+	}
+}
 .av-tick{
 	display:inline-block;
 	width:25px;

@@ -24,13 +24,13 @@
 		<div class="profile-contact block">
 			<h2 class="block-title">Contact <span><a href="{{ URL::route('care_givers.edit', array('id'=>$the_user->id)) }}">Edit</a></span></h2>
 			<div class="block-content">
-				<p>Email : {{ $the_user -> email }}</p>
-				<p>Phone : {{ $the_user -> phone }}</p>
-				<p>Address : {{ $the_giver -> address1 }}</p>
-				<p>{{ $the_giver -> address2 }}</p>
-				<p>{{ $the_giver -> suburb }}</p>
-				<p>{{ $the_giver -> state }}</p>
-				<p>{{ $the_giver -> postcode }}</p>
+				<p>Email: {{ $the_user -> email }}</p>
+				<p>Phone: {{ $the_user -> phone }}</p>
+				<p>Address: {{ $the_giver -> address1 }}</p>
+				<p>Address: {{ $the_giver -> address2 }}</p>
+				<p>Suburb: {{ $the_giver -> suburb }}</p>
+				<p>State: {{ $the_giver -> state }}</p>
+				<p>Postcode: {{ $the_giver -> postcode }}</p>
 			</div>
 		</div>
 

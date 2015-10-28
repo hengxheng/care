@@ -200,7 +200,7 @@ class GiversController extends Controller
         }
         
         $giver->save();
-         return Redirect::route('care_givers.show', array('uid' => $id)); 
+        return Redirect::route('care_givers.show', array('uid' => $id)); 
     }
 
     /**

@@ -1,7 +1,7 @@
 @extends ('html')
 @section ('content')
 	@if($the_user->user_type == "seeker")
-	<div class="seeker-profile">
+	<div class="seeker-profile-block">
 
 		<div class="row">
 			<div class="profile-image block">
@@ -16,13 +16,13 @@
 		<div class="profile-contact block">
 			<h2 class="block-title">Contact <span><a href="{{ URL::route('care_seekers.edit', array('id'=>$the_user->id)) }}">Edit</a></span></h2>
 			<div class="block-content">
-				<p>Email : {{ $the_seeker -> email }}</p>
-				<p>Phone : {{ $the_seeker -> phone }}</p>
-				<p>Address : {{ $the_seeker -> address1 }}</p>
-				<p>{{ $the_seeker -> address2 }}</p>
-				<p>{{ $the_seeker -> suburb }}</p>
-				<p>{{ $the_seeker -> state }}</p>
-				<p>{{ $the_seeker -> postcode }}</p>
+				<p>Email: {{ $the_user -> email }}</p>
+				<p>Phone: {{ $the_user -> phone }}</p>
+				<p>Address: {{ $the_seeker -> address1 }}</p>
+				<p>Address2: {{ $the_seeker -> address2 }}</p>
+				<p>Suburb: {{ $the_seeker -> suburb }}</p>
+				<p>State: {{ $the_seeker -> state }}</p>
+				<p>Postcode: {{ $the_seeker -> postcode }}</p>
 			</div>
 		</div>
 	</div>

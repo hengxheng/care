@@ -28,7 +28,6 @@ Route::get('/home', function () {
 
 Route::resource('care_givers','GiversController');
 Route::get('profile/{uid}', ['as' => 'care_givers.create', 'uses' => 'GiversController@create']);
-Route::post('personal-store', ['as' => 'care_givers.storeDetails', 'uses' => 'GiversController@storeDetails']);
 Route::get('care_givers/{uid}',['as' => 'care_givers.show', 'uses' => 'GiversController@show']);
 Route::get('givers/list',['as' => 'care_givers.list', 'uses' => 'GiversController@listing']);
 Route::get('profile1', ['as' => 'care_givers.storeProfile1', 'uses' => 'GiversController@storeProfile1']);

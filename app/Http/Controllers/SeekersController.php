@@ -99,7 +99,8 @@ class SeekersController extends Controller
      */
     public function edit($id)
     {
-        //
+        $seeker = Seeker::findorFail($id);
+        return view('seeker.edit', compact(array('seeker')));
     }
 
     /**
@@ -111,7 +112,36 @@ class SeekersController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+        
+        $seeker = Seeker::findorFail($id);
+        
+        if(Input::get('address1')){
+            $seeker->address1 = Input::get('address1');
+        }
+        if(Input::get('address2')){
+            $seeker->address2 = Input::get('address2');
+        }
+        if(Input::get('state')){
+            $seeker->state = Input::get('state');
+        }
+        if(Input::get('suburb')){
+            $seeker->suburb = Input::get('suburb');
+        }
+        if(Input::get('postcode')){
+            $seeker->postcode = Input::get('postcode');
+        }
+        if(Input::file('picture')){
+            $pic_name = "photo-".$id;
+            $pic_path = public_path('images');
+            $pic_extension = Input::file('picture')->getClientOriginalExtension();
+            if(Input::file('picture')->move($pic_path, $pic_name.'.'.$pic_extension)){
+                $seeker->picture = $pic_name.'.'.$pic_extension;
+            }
+        }
+
+        $seeker->save();
+        return Redirect::route('care_seekers.show',array('uid'=>$id));
     }
 
     /**

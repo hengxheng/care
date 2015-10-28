@@ -2,7 +2,7 @@
 
 @section('content')
 <div id="provider-create-form" ng-controller="GiverCtrl">
-	<form action="{{ URL::route('care_givers.update', array('id'=>Auth::user() -> id)) }}" method="post" enctype="multipart/form-data">
+	<form action="{{ URL::route('care_givers.update', array('id'=>Auth::user()->id)) }}" method="post" enctype="multipart/form-data">
 		<input name="_method" type="hidden" value="PATCH">
 		{!! Form::token() !!}
 		<div class="form-row">
