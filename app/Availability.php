@@ -14,6 +14,10 @@ class Availability extends Model
         
     }
 
+    public static function deletMyAvailability($uid){
+        return DB::table("availability")->where("giver_id","=", $uid)->delete();
+    }
+
     public static function WithAvailabilityByWeek( $weekday ){
     	return DB::table("availability")->where("week","=", $weekday)->get();
     }

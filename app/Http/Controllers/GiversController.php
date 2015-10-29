@@ -219,7 +219,48 @@ class GiversController extends Controller
             $giver->experience = Input::get('experience');
         }
 
-        
+        if(Input::get('service')){
+            Service::deleteMyServices($id);
+            $services = Input::get('service');
+            if(is_array($services) && sizeof($services) > 0){
+                foreach ($services as $s){
+                    $ser = new Service;
+                    $ser->giver_id = $id;
+                    $ser->service_name = $s;
+                    $ser->save();
+                }
+            }
+        }
+
+        if(Input::get('quolification')){
+            Quolification::deleteMyQuolifications($id);
+            $quolifications = Input::get('quolification');
+            if(is_array($quolifications) && sizeof($quolifications) > 0){
+                foreach ($quolifications as $q){
+                    $quo = new Quolification;
+                    $quo->giver_id = $id;
+                    $quo->quolification_name = $q;
+                    $quo->save();
+                }
+            }
+        }
+
+        if(Input::get('avai')){
+            Availability::deletMyAvailability($id);
+            $avail = Input::get('avai');
+            if(is_array($avail) && sizeof($avail)>0){
+                foreach ( $avail as $k =>$a ){
+                    foreach($a as $f => $t){
+                        $avai = new Availability;
+                        $avai->giver_id = $id;
+                        $avai->week = $f;
+                        $avai->time = $k;
+                        $avai->av = $t;
+                        $avai->save();
+                    }                       
+                }
+            }
+        }
         
         $giver->save();
         return Redirect::route('care_givers.show', array('uid' => $id)); 
