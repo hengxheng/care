@@ -25,13 +25,12 @@
             <h2>Quolifications</h2>
             <div class="quolification-block">
                 <div class="form-row">
-                    <label>Quolification 1: </label><input type="text" name="quolification[]">
+                    <label>Quolification: </label><input type="text" name="quolification[]">
                 </div>
             </div>
             <a id="add_quo" href="#" ng-click="add_quolification()" class="dark-blue-btn">Add a quolification</a>
         </div>
     </div>
-
     <div class="row">
         <div class="availability-block">
             <label for="availability">Availability</label>
@@ -49,7 +48,7 @@
                 <tr>
                     <td>Morning</td>
                     <td>
-                        <a href="#" class="av-tick" ng-click="avai()"></a>
+                        <a href="#" class="av-tick"></a>
                         <input type="hidden" name="avai[morning][mon]" value="0">
                     </td>
                     <td><a href="#" class="av-tick"></a>

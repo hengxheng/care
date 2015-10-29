@@ -169,6 +169,26 @@ class GiversController extends Controller
         $giver = Giver::findorFail($id);
         return view("giver.edit-p2", compact(array("giver")));
     }
+
+    public function edit3($id){
+        $giver = Giver::findorFail($id);
+        $services = Service::MyServices($id);
+        $ser = array();
+        foreach ($services as $s){
+            $ser[$s->service_name] = 1;
+        }
+        $quolifications = Quolification::MyQuolifications($id);
+
+        $availabilities = Availability::MyAvailability($id);
+
+        $avai = array();
+        foreach ($availabilities as $ava){
+            $avai[$ava->time][$ava->week] = $ava->av;
+        }
+        return view("giver.edit-p3", compact(array("giver", "ser","quolifications", "avai")));
+    }
+
+
     /**
      * Update the specified resource in storage.
      *
@@ -198,6 +218,8 @@ class GiversController extends Controller
         if(Input::get('experience')){
             $giver->experience = Input::get('experience');
         }
+
+        
         
         $giver->save();
         return Redirect::route('care_givers.show', array('uid' => $id)); 

@@ -43,18 +43,18 @@
 		</div>
 
 		<div class="block">
-			<h2 class="block-title">Education</h2>
+			<h2 class="block-title">Education <span><a href="{{ URL::route('care_givers.edit2', array('id'=>$the_user->id)) }}">Edit</a></span></h2>
 			<div class="block-content">
 				{{ $the_giver -> education }}
 			</div>
 		</div>
 
 		<div class="block">
-			<h2 class="block-title">Hourly Rate : {{ $the_giver->rate}}</h2>
+			<h2 class="block-title">Hourly Rate : {{ $the_giver->rate}} <span><a href="{{ URL::route('care_givers.edit2', array('id'=>$the_user->id)) }}">Edit</a></span></h2>
 		</div>
 
 		<div class="block">
-			<h2 class="block-title">My Services</h2>
+			<h2 class="block-title">My Services  <span><a href="{{ URL::route('care_givers.edit3', array('id'=>$the_user->id)) }}">Edit</a></span></h2>
 			<div class="block-content">
 				<ul>
 					@foreach ($my_services as $s)
@@ -65,7 +65,7 @@
 		</div>
 
 		<div class="block">
-			<h2 class="block-title">My Quolifications</h2>
+			<h2 class="block-title">My Quolifications  <span><a href="{{ URL::route('care_givers.edit3', array('id'=>$the_user->id)) }}">Edit</a></span></h2>
 			<div class="block-content">
 				<ul>
 					@foreach ($my_quolifications as $q)
@@ -76,7 +76,7 @@
 		</div>
 
 		<div class="block">
-			<h2 class="block-title">My Availability</h2>
+			<h2 class="block-title">My Availability  <span><a href="{{ URL::route('care_givers.edit3', array('id'=>$the_user->id)) }}">Edit</a></span></h2>
 			<div class="block-content">
 				<table id="avaiability-table">
 					<tr>

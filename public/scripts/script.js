@@ -10,14 +10,12 @@ var app = {
 
 
 $(function(){
-	var quo_count = 1; 
-	var service_count = 1;
+	// var quo_count = 1; 
+	// var service_count = 1;
 
 	$("#add_quo").click(function(e){
-		quo_count++;
-		$(".quolification-block").append('<div class="form-row"><label>Quolification '+
-			quo_count
-			+': </label><input type="text" name="quolification[]"></div>');
+		// quo_count++;
+		$(".quolification-block").append('<div class="form-row"><label>Quolification: </label><input type="text" name="quolification[]"></div>');
 	});
 
 	$("#add_serv").click(function(e){
@@ -25,6 +23,12 @@ $(function(){
 		$(".service-block").append('<div class="form-row"><label>Service '+
 			service_count
 			+': </label><input type="text" name="service[]"></div>');
+	});
+
+	$('#avaiability-table input[type="hidden"]').each(function(){
+		if($(this).val() == "1"){
+			$(this).parent().find('.av-tick').css("background","green");
+		}
 	});
 
 	$(".av-tick").click(function(e){
@@ -39,4 +43,6 @@ $(function(){
 			$(this).css("background","green");
 		}
 	});
+
+
 });
