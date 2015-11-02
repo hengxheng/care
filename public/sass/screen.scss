@@ -421,3 +421,22 @@ form{
 	padding: 5px 0 5px 35px;
 	background-size: contain;
 }
+
+.job-block{
+	.job-title{
+		font-size: 20px;
+		margin-bottom:15px;
+		color:$dark-blue;
+		.active{
+			color: green;
+		}
+		.inactive{
+			color: red;
+		}
+	}
+	.job-desc{
+		font-size: 16px;
+		color:$text-color;
+		padding: 15px 0;
+	}
+}

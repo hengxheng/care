@@ -527,3 +527,24 @@ form .form-row input[type="submit"] {
   padding: 5px 0 5px 35px;
   background-size: contain;
 }
+
+/* line 426, ../sass/screen.scss */
+.job-block .job-title {
+  font-size: 20px;
+  margin-bottom: 15px;
+  color: #336f7b;
+}
+/* line 430, ../sass/screen.scss */
+.job-block .job-title .active {
+  color: green;
+}
+/* line 433, ../sass/screen.scss */
+.job-block .job-title .inactive {
+  color: red;
+}
+/* line 437, ../sass/screen.scss */
+.job-block .job-desc {
+  font-size: 16px;
+  color: #000;
+  padding: 15px 0;
+}
