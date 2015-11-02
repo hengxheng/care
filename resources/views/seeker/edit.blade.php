@@ -26,7 +26,7 @@
 		<input type="text" name="postcode" value="{{ $seeker->postcode }}">
 	</div>	
 	<div class="form-row">	
-		<img src="{{ URL::asset('images/'.$seeker->picture) }}" alt="">
+		<img src="{{ URL::asset('images/user/'.$seeker->picture) }}" alt="">
 		<label for="picture">Your Photo</label>
 		<input type="file" name="picture">
 	</div> 

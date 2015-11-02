@@ -3,7 +3,6 @@
 
 @section('content')
 <div class="listing-box">
-    {{-- dd($givers)--}}
     <ul>
         @foreach( $givers as $giver )
             <li>

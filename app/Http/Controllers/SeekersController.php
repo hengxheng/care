@@ -60,7 +60,7 @@ class SeekersController extends Controller
 
 
         $pic_name = "photo-".$uid;
-        $pic_path = public_path('images');
+        $pic_path = public_path('images/user');
         $pic_extension = Input::file('picture')->getClientOriginalExtension();
         if(Input::file('picture')->move($pic_path, $pic_name.'.'.$pic_extension)){
             $seeker->picture = $pic_name.'.'.$pic_extension;
@@ -133,7 +133,7 @@ class SeekersController extends Controller
         }
         if(Input::file('picture')){
             $pic_name = "photo-".$id;
-            $pic_path = public_path('images');
+            $pic_path = public_path('images/user');
             $pic_extension = Input::file('picture')->getClientOriginalExtension();
             if(Input::file('picture')->move($pic_path, $pic_name.'.'.$pic_extension)){
                 $seeker->picture = $pic_name.'.'.$pic_extension;

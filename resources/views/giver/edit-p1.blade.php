@@ -1,6 +1,7 @@
 @extends('html')
 
 @section('content')
+
 <div id="provider-create-form" ng-controller="GiverCtrl">
 	<form action="{{ URL::route('care_givers.update', array('id'=>Auth::user()->id)) }}" method="post" enctype="multipart/form-data">
 		<input name="_method" type="hidden" value="PATCH">
@@ -36,7 +37,7 @@
 			<input type="text" name="postcode" value="{{ $giver->postcode }}">
 		</div>	
 		<div class="form-row">	
-			<img src="{{ URL::asset('images/'.$giver -> picture) }}" alt="">
+			<img src="{{ URL::asset('images/user/'.$giver->picture) }}" alt="">
 			<label for="picture">Your Photo</label>
 			<input type="file" name="picture">
 		</div> 

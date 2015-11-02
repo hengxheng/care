@@ -4,7 +4,7 @@
 
 <form action="{{ URL::route('job.store') }}" method="post">
 	{!! csrf_field() !!}
-	<input type="hidden" value="{{ $id }}" name="uid">
+	<input type="hidden" value="{{$id}}" name="uid">
 	<div class="form-row">
 		<label for="title">Title</label>
 		<input type="text" name="title">
@@ -24,11 +24,11 @@
     </div>
     <div class="form-row">
 		<label for="suburb">Suburb</label>
-		<input type="text" name="suburb" value="{{ $seeker->suburb }}">
+		<input type="text" name="suburb">
 	</div>
 	<div class="form-row">
 		<label for="postcode">Postcode</label>
-		<input type="text" name="postcode" value="{{ $seeker->postcode }}">
+		<input type="text" name="postcode">
 	</div>
 	<div class="form-row">
 		<input type="submit" value="POST">

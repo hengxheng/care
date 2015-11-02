@@ -56,6 +56,15 @@ class JobsController extends Controller
         $job = new Job;
         $job->poster_id = $uid;
         $job->title = Input::get('title');
+
+        $serv = Input::get('service');
+        $_serv = "";
+        foreach ($serv as $s){
+            $_serv .= $s.',';
+        }
+        $_serv = substr($_serv,0,-1);
+        $job->service_name = $_serv;
+         
         $job->description = Input::get('description');
         $job->status = "Active";
         $job->save();
@@ -72,7 +81,10 @@ class JobsController extends Controller
     public function show($id)
     {
         $job = Job::find($id);
-        return view("job.show", compact('job'));
+
+        $_serv = $job->service_name;
+        $serv = explode("," ,$_serv);
+        return view("job.show", compact('job', 'serv'));
     }
 
     /**
@@ -111,7 +123,7 @@ class JobsController extends Controller
 
         Session::flash('message', 'Job successfully updated!');
 
-        return redirect()->back();
+        return Redirect::route("job.show",array('id' => $job->id));
     }
 
     /**
