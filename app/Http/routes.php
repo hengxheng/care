@@ -82,3 +82,4 @@ Route::get('auth/logout', ['as' => 'logout', 'uses' => 'Auth\AuthController@getL
 Route::get('auth/register', ['as' => 'register', 'uses' => 'Auth\AuthController@getRegister']);
 Route::post('auth/register', ['as' => 'register', 'uses' => 'Auth\AuthController@postRegister']);
 
+Route::resource('rating','RatingController');

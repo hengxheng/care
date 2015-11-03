@@ -9,6 +9,8 @@
 		<!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script> -->
 		<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 		<script src="{{URL::asset('scripts/script.js') }}"></script>
+		<script src="{{URL::asset('scripts/rateit/src/jquery.rateit.min.js') }}"></script>
+		<link rel="stylesheet" href="{{URL::asset('scripts/rateit/src/rateit.css') }}">
 	</head>
 	<body ng-app="myApp">
 		<header id="site-header">

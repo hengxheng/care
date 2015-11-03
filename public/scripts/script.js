@@ -44,5 +44,15 @@ $(function(){
 		}
 	});
 
+	 $("#rateit").bind('rated', function (event, value) { 
+	 	// console.log('You\'ve rated it: ' + value); 
+	 });
 
+    $("#rateit").bind('reset', function () { 
+    	// console.log('Rating reset'); 
+    });
+
+    $("#rateit").bind('over', function (event, value) { 
+    	// console.log('Hovering over: ' + value); 
+    });
 });

@@ -167,4 +167,42 @@
 		</div>
 	</div>
 </div>
+
+   @if(Auth::user()->id != $the_user->id) 
+	<div class="row">
+		<div class="col-1">
+			<div class="block">
+				<div class="block-title">
+					Rating
+				</div>
+				<div class="block-content">
+					<div id="rateit" class="rateit"></div>
+				</div>
+				
+				<script>
+					$(function(){
+						$("#rateit").bind('rated', function(event, value) { 
+							var ratedby = {{ Auth::user()->id }};
+							var ratefor = {{ $the_user->id }};
+							$.ajax({
+								type: 'POST',
+								url: '{{ URL::route("rating.index") }}',
+								data: { 
+										"_token" : "{{ Session::token()}}",
+										"rate_uid" : ratefor,
+							            "rateby_uid" : ratedby,
+							            "rate_star" : value
+							        },
+							    success: function(result){
+							    	console.log(result);
+							    }
+							});
+						 });
+					});
+				</script>
+			</div>
+		</div>
+	</div>
+
+   @endif
 @endsection('content')

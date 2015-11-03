@@ -36,6 +36,7 @@ class CreateUsersTable extends Migration
             $table->string('suburb');
             $table->string('state');
             $table->string('postcode');
+            $table->string('years_exp')->nullable();
             $table->integer('rate')->nullable();
             $table->text('education')->nullable();
             $table->text('experience')->nullable();
@@ -81,6 +82,14 @@ class CreateUsersTable extends Migration
             $table->timestamps();
         });
 
+        Schema::create('rating', function (Blueprint $table){
+            $table->increments('rid');
+            $table->integer('rate_uid');
+            $table->integer('rateby_uid');
+            $table->integer('rate_star');
+            $table->timestamps();
+        });
+
     }
 
     /**
@@ -90,11 +99,13 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
+        Schema::drop('rating');
         Schema::drop('quolification');
         Schema::drop('availability');
         Schema::drop('service');
         Schema::drop('giver');
         Schema::drop('seeker');
         Schema::drop('users');
+
     }
 }
