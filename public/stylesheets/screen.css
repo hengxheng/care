@@ -605,3 +605,45 @@ form .form-row input[type="submit"] {
 .rating-block i {
   color: yellow;
 }
+
+/* line 494, ../sass/screen.scss */
+.user-block {
+  overflow: hidden;
+}
+/* line 496, ../sass/screen.scss */
+.user-block .user-img {
+  width: 20%;
+  float: left;
+  padding: 10px;
+}
+/* line 500, ../sass/screen.scss */
+.user-block .user-img img {
+  width: 100%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+}
+/* line 505, ../sass/screen.scss */
+.user-block .user-info {
+  width: 60%;
+  float: left;
+  padding: 10px 20px;
+}
+/* line 509, ../sass/screen.scss */
+.user-block .user-info .user-name {
+  font-size: 20px;
+  color: #336f7b;
+  margin-bottom: 15px;
+}
+/* line 514, ../sass/screen.scss */
+.user-block .user-info .user-exp {
+  font-size: 14px;
+  color: #000;
+  margin-bottom: 10px;
+}
+/* line 519, ../sass/screen.scss */
+.user-block .user-info .user-rate {
+  font-size: 14px;
+  color: #68bed6;
+  margin-bottom: 15px;
+}

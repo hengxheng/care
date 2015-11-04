@@ -31,8 +31,8 @@
 		</div>
 		
 		<div class="job-action">
-			<a class="btn" href="{{ URL::route('job.edit', array('id' => $job -> id))}}">Edit</a>
-			<a class="btn" href="{{ URL::route('job.delete', array('id' => $job->id )) }}">Delete</a>
+			<a class="blue-btn" href="{{ URL::route('job.edit', array('id' => $job -> id))}}">Edit</a>
+			<a class="dark-blue-btn" href="{{ URL::route('job.delete', array('id' => $job->id )) }}">Delete</a>
 		</div>
 	</div>
 @endsection

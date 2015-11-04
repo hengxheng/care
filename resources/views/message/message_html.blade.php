@@ -9,7 +9,7 @@
 	</ul>
 </div>
 <div id="message-main">
-@yield('message_content')
+	@yield('message_content')
 </div>
 
 @endsection
