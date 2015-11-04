@@ -91,6 +91,7 @@
 			</div>
 		</div>
 		
+		<div class="clear"></div>
 		<footer id="site-footer">
 			<div class="footer-content">
 				<div class="footer-1">

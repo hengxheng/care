@@ -80,7 +80,9 @@ h1, h2, h3, h4{
 	background: $blue-hover;
 }
 
-
+.clear{
+	clear:both;
+}
 
 .site-inner{
 	width: $site-width;
@@ -292,16 +294,76 @@ form{
 	margin-bottom:25px;
 }
 
-#message-sidebar{
-	float:left;
-	width:25%;
+#message-menu{
+	ul{
+		li{
+			display:inline-block;
+			width:49.5%;
+			border:1px solid $blue;
+			border-bottom: 0;
+			text-align:center;
+			padding: 10px 0;
+			background: #fff;
+			a{
+				font-size: 16px;
+				color:$dark-blue;			
+			}
+			&.active{
+				background:$blue;
+				a{
+					color:#fff;
+				}
+				
+			}
+		}
+	}
 }
 
 #message-main{
-	float:left;
-	width:75%;
+	background:$blue;
+	padding: 15px;
+	ul{
+		li{
+			border:1px solid $dark-blue;
+			color:#fff;
+			padding: 15px;
+			margin-bottom: 25px;
+			.user-name{
+				font-size: 16px;
+				color: $dark-blue;
+				margin-bottom: 15px;
+			}
+			.message-content{
+				font-size: 14px;
+				margin-bottom: 10px;
+			}
+			.message-date{
+				font-style: italic;
+				font-size: 13px;
+				margin-bottom: 10px;
+			}
+		}
+	}
 }
 
+.message{
+	padding: 15px;
+	background: $blue;
+	.user-name{
+		font-size: 16px;
+		color: $dark-blue;
+		margin-bottom: 15px;
+	}
+	.message-content{
+		font-size: 14px;
+		margin-bottom: 50px;
+	}
+	.message-date{
+		font-style: italic;
+		font-size: 13px;
+		margin-bottom: 10px;
+	}
+}
 
 .giver-profile-block{
 	.profile-image{

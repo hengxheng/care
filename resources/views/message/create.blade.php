@@ -6,8 +6,8 @@
 	<input type="hidden" name="from_id" value="{{ Auth::user()->id }}">
 	<input type="hidden" name="to_id" value="{{ $to_user->id }}">
 	{!! Form::token() !!}
-	<div>
-		TO: {{ $to_user->firstname}} {{ $to_user->lastname}}
+	<div class="form-row">
+		<h2>TO: {{ $to_user->firstname}} {{ $to_user->lastname}}</h2>
 	</div>
 	<div class="form-row">
 		<label for="content">Message: </label>

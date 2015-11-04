@@ -1,25 +1,34 @@
-@extends('message.message_html')
+@extends('html')
 
-@section('message_content')
-<h2>Sent</h2>
-
-<div class="listing-box">
+@section('content')
+<div id="message-menu">
 	<ul>
-		@foreach ($messages as $message)
-			<li>
-				<div>
-					<p>From:  {{ $message -> firstname}} {{ $message -> lastname}}</p>
-					<div>
-						{{ $message -> content }}
-					</div>
-					<p>Date: {{ $message -> created_at }}</p>
-					<div class="cta">
-						<a href="{{ URL::route('message.showInbox', array('id' => $message->id ))}}">View</a>
-						<a href="{{ URL::route('message.delete', array('id' => $message->id )) }}"> Delete</a>
-					</div>
-				</div>
-			</li>
-		@endforeach
+		<li><a href="{{ URL::route('message.inbox') }}">Inbox</a></li>
+		<li class="active"><a href="{{ URL::route('message.sent') }}">Sent</a></li>
 	</ul>
+</div>
+<div id="message-main">
+	<div class="message-listing-box">
+		<ul>
+			@foreach ($messages as $message)
+				<li>
+					<div>
+						<div class="user-name">
+							From:  {{ $message->firstname}} {{ $message->lastname}}
+						</div>
+						<div class="message-content">
+							{{ str_limit($message->content, 100) }}
+						</div>
+						<div class="message-date">
+							Date: {{ $message->created_at }}
+						</div>
+						<div class="cta">
+							<a class="dark-blue-btn" href="{{ URL::route('message.showInbox', array('id' => $message->id ))}}">View</a>
+						</div>
+					</div>
+				</li>
+			@endforeach
+		</ul>
+	</div>
 </div>
 @endsection

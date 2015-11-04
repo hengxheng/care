@@ -18,7 +18,7 @@
 		<div class="row">
 			<div class="col-1">
 				<div class="profile-contact block">
-					<h2 class="block-title">Contact <span><a href="{{ URL::route('care_seekers.edit', array('id'=>$the_user->id)) }}">Edit</a></span></h2>
+					<h2 class="block-title">Contact <a class="edit-btn" href="{{ URL::route('care_seekers.edit', array('id'=>$the_user->id)) }}">Edit</a></h2>
 					<div class="block-content">
 						<p>Email: {{ $the_user -> email }}</p>
 						<p>Phone: {{ $the_user -> phone }}</p>
@@ -33,6 +33,6 @@
 		</div>
 	</div>
 
-	<a class="btn" href="{{ URL::route('job.create', array('uid' => $the_user->id)) }}">Post a job</a>
+	<!-- <a class="btn" href="{{ URL::route('job.create', array('uid' => $the_user->id)) }}">Post a job</a> -->
 	@endif
 @endsection
