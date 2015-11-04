@@ -6,26 +6,39 @@
 	<div class="profile-row">
 		<div class="row">
 			<div class="col-1">
-			<div class="profile-image block">
-				<img src="{{ URL::asset('images/user/'.$the_giver -> picture) }}" alt="">
-			</div>
-			<div class="profile-name">
-				<h2>{{ $the_user -> firstname }} {{ $the_user -> lastname }}</h2>
-				<div class="block-content">			
-				<p>
-					@if (Auth::user() -> user_type == 'seeker' )
-					<a href="{{ URL::route('message.create', array('to_id'=>$the_giver -> uid )) }}">Send a message</a>
-					@endif
-				</p>
-				<p>{{ $the_giver -> gender }}</p>
+				<div class="profile-image block">
+					<img src="{{ URL::asset('images/user/'.$the_giver -> picture) }}" alt="">
 				</div>
-			</div>
+				<div class="profile-name">
+					<h2>{{ $the_user -> firstname }} {{ $the_user -> lastname }}</h2>
+					<div class="block-content">			
+					<p>
+						@if (Auth::user() -> user_type == 'seeker' )
+						<a href="{{ URL::route('message.create', array('to_id'=>$the_giver -> uid )) }}">Send a message</a>
+						@endif
+					</p>
+					<p>{{ $the_giver -> gender }}</p>
+					</div>
+				</div>
+
+				<div class="rating-block">
+					<h3>My Rating</h3>
+					<div class="rating">
+						@for ($i=0; $i< $my_rating; $i++)
+							<i class="fa fa-star fa-2x"></i>
+						@endfor
+					</div>
+				</div>
 			</div>
 		</div>
 		<div class="row">
 			<div class="col-1">
 			<div class="profile-contact block">
-				<h2 class="block-title">Contact<a class="edit-btn" href="{{ URL::route('care_givers.edit', array('id'=>$the_user->id)) }}">Edit</a></h2>
+				<h2 class="block-title">Contact
+					@if(Auth::user()->id == $the_user->id)
+					<a class="edit-btn" href="{{ URL::route('care_givers.edit', array('id'=>$the_user->id)) }}">Edit</a>
+					@endif
+				</h2>
 				<div class="block-content">
 					<p>Email: {{ $the_user -> email }}</p>
 					<p>Phone: {{ $the_user -> phone }}</p>
@@ -42,7 +55,11 @@
 		<div class="row">
 			<div class="col-1">
 			<div class="block">
-				<h2 class="block-title">Experiece<a class="edit-btn" href="{{ URL::route('care_givers.edit2', array('id'=>$the_user->id)) }}">Edit</a></h2>
+				<h2 class="block-title">Experiece
+					@if(Auth::user()->id == $the_user->id)
+					<a class="edit-btn" href="{{ URL::route('care_givers.edit2', array('id'=>$the_user->id)) }}">Edit</a>
+					@endif
+				</h2>
 				<div class="block-content">
 				{{ $the_giver -> experience }}
 				</div>
@@ -53,7 +70,11 @@
 		<div class="row">
 			<div class="col-1">
 			<div class="block">
-				<h2 class="block-title">Education <a class="edit-btn" href="{{ URL::route('care_givers.edit2', array('id'=>$the_user->id)) }}">Edit</a></h2>
+				<h2 class="block-title">Education
+					@if(Auth::user()->id == $the_user->id) 
+					<a class="edit-btn" href="{{ URL::route('care_givers.edit2', array('id'=>$the_user->id)) }}">Edit</a>
+					@endif
+				</h2>
 				<div class="block-content">
 					{{ $the_giver -> education }}
 				</div>
@@ -64,7 +85,11 @@
 		<div class="row">
 			<div class="col-2">
 				<div class="block">
-					<h2 class="block-title">My Services  <a class="edit-btn" href="{{ URL::route('care_givers.edit3', array('id'=>$the_user->id)) }}">Edit</a></h2>
+					<h2 class="block-title">My Services  
+						@if(Auth::user()->id == $the_user->id) 
+						<a class="edit-btn" href="{{ URL::route('care_givers.edit3', array('id'=>$the_user->id)) }}">Edit</a>
+						@endif
+					</h2>
 					<div class="block-content">
 						<ul class="service-list">
 							@foreach ($my_services as $s)
@@ -81,7 +106,11 @@
 
 			<div class="col-2">
 				<div class="block">
-					<h2 class="block-title">Rate <a class="edit-btn" href="{{ URL::route('care_givers.edit2', array('id'=>$the_user->id)) }}">Edit</a></h2>
+					<h2 class="block-title">Rate 
+						@if(Auth::user()->id == $the_user->id)
+						<a class="edit-btn" href="{{ URL::route('care_givers.edit2', array('id'=>$the_user->id)) }}">Edit</a>
+						@endif
+					</h2>
 					<div class="block-content">
 						Hourly Rate: ${{ $the_giver->rate}}
 					</div>
@@ -92,7 +121,11 @@
 		<div class="row">
 			<div class="col-1">
 				<div class="block">
-					<h2 class="block-title">My Quolifications<a class="edit-btn" href="{{ URL::route('care_givers.edit3', array('id'=>$the_user->id)) }}">Edit</a></h2>
+					<h2 class="block-title">My Quolifications
+						@if(Auth::user()->id == $the_user->id) 
+						<a class="edit-btn" href="{{ URL::route('care_givers.edit3', array('id'=>$the_user->id)) }}">Edit</a>
+						@endif
+					</h2>
 					<div class="block-content">
 						<ul>
 							@foreach ($my_quolifications as $q)
@@ -107,7 +140,11 @@
 		<div class="row">
 			<div class="col-1">
 				<div class="block">
-					<h2 class="block-title">My Availability<a class="edit-btn" href="{{ URL::route('care_givers.edit3', array('id'=>$the_user->id)) }}">Edit</a></h2>
+					<h2 class="block-title">My Availability
+						@if(Auth::user()->id == $the_user->id)
+						<a class="edit-btn" href="{{ URL::route('care_givers.edit3', array('id'=>$the_user->id)) }}">Edit</a>
+						@endif
+					</h2>
 					<div class="block-content">
 						<table id="avaiability-table">
 							<tr>

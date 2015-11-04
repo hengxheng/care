@@ -548,3 +548,60 @@ form .form-row input[type="submit"] {
   color: #000;
   padding: 15px 0;
 }
+
+/* line 445, ../sass/screen.scss */
+#site-footer {
+  background: #336f7b;
+}
+/* line 447, ../sass/screen.scss */
+#site-footer .footer-content {
+  width: 1300px;
+  margin: 0 auto;
+  padding: 15px;
+  color: #fff;
+  overflow: hidden;
+}
+/* line 453, ../sass/screen.scss */
+#site-footer .footer-content .footer-1 {
+  float: left;
+  width: 28%;
+}
+/* line 457, ../sass/screen.scss */
+#site-footer .footer-content .footer-2 {
+  float: left;
+  width: 35%;
+  font-size: 12px;
+}
+/* line 461, ../sass/screen.scss */
+#site-footer .footer-content .footer-2 p {
+  margin-bottom: 10px;
+}
+/* line 463, ../sass/screen.scss */
+#site-footer .footer-content .footer-2 p a {
+  color: #fff;
+}
+/* line 468, ../sass/screen.scss */
+#site-footer .footer-content .footer-3 {
+  float: left;
+  width: 35%;
+  font-size: 11px;
+}
+
+/* line 478, ../sass/screen.scss */
+.rating-block {
+  float: right;
+  text-align: center;
+  padding: 20px 15px;
+  background: #336f7b;
+  color: #fff;
+}
+/* line 484, ../sass/screen.scss */
+.rating-block h3 {
+  color: #fff;
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+/* line 489, ../sass/screen.scss */
+.rating-block i {
+  color: yellow;
+}

@@ -8,6 +8,7 @@ use App\Job;
 use App\Service;
 use App\Quolification;
 use App\Availability;
+use App\Rating;
 use Auth;
 use Input;
 use Redirect;
@@ -145,12 +146,12 @@ class GiversController extends Controller
         $my_services = Service::MyServices($id);
         $my_quolifications = Quolification::MyQuolifications($id);
         $av = Availability::MyAvailability($id);
-
+        $my_rating = Rating::MyRating($id);
         $my_availability = array();
         foreach ($av as $a){
             $my_availability[$a->week][$a->time] = $a->av; 
         }
-        return view('giver.show', compact(array('the_user', 'the_giver','my_services','my_quolifications', 'my_availability')));
+        return view('giver.show', compact(array('the_user', 'the_giver','my_services','my_quolifications', 'my_availability','my_rating')));
     }
 
     /**

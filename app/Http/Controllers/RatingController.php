@@ -29,6 +29,8 @@ class RatingController extends Controller
      */
     public function create()
     {
+        $rating = Rating::myRating(2);
+        var_dump($rating);
         return "Saved";
     }
 

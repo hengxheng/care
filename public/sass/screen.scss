@@ -440,3 +440,53 @@ form{
 		padding: 15px 0;
 	}
 }
+
+
+#site-footer{
+	background:$dark-blue;
+	.footer-content{
+		width:1300px;
+		margin: 0 auto;
+		padding:15px;
+		color: #fff;
+		overflow:hidden;
+		.footer-1{
+			float:left;
+			width:28%;
+		}
+		.footer-2{
+			float:left;
+			width:35%;
+			font-size: 12px;
+			p{
+				margin-bottom: 10px;
+				a{
+					color:#fff;
+				}
+			}
+		}
+		.footer-3{
+			float:left;
+			width:35%;
+			font-size: 11px;
+		}
+
+	}
+
+}
+
+.rating-block{
+	float:right;
+	text-align:center;
+	padding:20px 15px;
+	background: $dark-blue;
+	color:#fff;
+	h3{
+		color:#fff;
+		margin-bottom:15px;
+		font-size: 18px;
+	}
+	i{
+		color: yellow;
+	}
+}
