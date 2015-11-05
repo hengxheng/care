@@ -16,7 +16,7 @@ class Rating extends Model
     	->select("rate_star")
     	->get();
 
-    	$count = sizeof($myRate);
+    	$count = sizeof($myRate)?sizeof($myRate):1;
 
     	$sum = 0;
     	foreach ($myRate as $r){

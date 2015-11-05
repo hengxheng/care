@@ -53,7 +53,7 @@
 						<input type="submit" value="Save">
 					</div>
 				</form>
-			<div>
+			</div>
 
 		@elseif (Auth::user() -> user_type == "seeker")
  			<form action="{{ URL::route('care_seekers.store')}}" method="post" enctype="multipart/form-data">

@@ -24,9 +24,13 @@
 				<div class="rating-block">
 					<h3>My Rating</h3>
 					<div class="rating">
-						@for ($i=0; $i< $my_rating; $i++)
-							<i class="fa fa-star fa-2x"></i>
-						@endfor
+						@if($my_rating >0 )
+							@for ($i=0; $i< $my_rating; $i++)
+								<i class="fa fa-star fa-2x"></i>
+							@endfor
+						@else
+						   Not Rating yet
+						@endif
 					</div>
 				</div>
 			</div>

@@ -35,7 +35,11 @@ class GiversController extends Controller
 
     public function listing(){
         $givers = Giver::allGivers();
-        return view('giver.list',compact('givers'));
+
+        foreach ($givers as $g){
+            $rating[$g->uid] = Rating::MyRating($g->uid);
+        }
+        return view('giver.list',compact('givers', 'rating'));
     }
     /**
      * Show the form for creating a new resource.

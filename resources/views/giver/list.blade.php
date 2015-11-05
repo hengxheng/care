@@ -2,10 +2,11 @@
 
 
 @section('content')
+
 <div class="listing-box">
     <ul>
         @foreach( $givers as $giver )
-            <li>
+            <li class="{{ $giver->state }} {{ $giver->suburb }} rate-{{ $giver->rate }} rating-{{$rating[$giver->uid] }}">
                 <div class="user-block">
                     <div class="user-img">
                         <img src="{{ URL::asset('images/user/'.$giver->picture) }}" alt="">
@@ -26,11 +27,7 @@
                         </div>
                      </div>
                      
-                </div>
-               
-                
-                
-                
+                </div>              
             </li>
         @endforeach
     </ul>
