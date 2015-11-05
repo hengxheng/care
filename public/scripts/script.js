@@ -55,4 +55,5 @@ $(function(){
     $("#rateit").bind('over', function (event, value) { 
     	// console.log('Hovering over: ' + value); 
     });
+
 });

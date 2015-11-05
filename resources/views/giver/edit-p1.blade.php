@@ -2,6 +2,7 @@
 
 @section('content')
 
+
 <div id="provider-create-form" ng-controller="GiverCtrl">
 	<form action="{{ URL::route('care_givers.update', array('id'=>Auth::user()->id)) }}" method="post" enctype="multipart/form-data">
 		<input name="_method" type="hidden" value="PATCH">
@@ -26,11 +27,21 @@
 		</div>
 		<div class="form-row">
 			<label for="state">State</label>
-			<input type="text" name="state" value="{{ $giver->state }}">
+			<select name="state" id="state-dropdown">
+					<option value="{{ $giver->state }}">{{ $giver->state }}</option>
+					<option value="ACT">ACT</option>
+					<option value="NSW">NSW</option>
+					<option value="NT">NT</option>
+					<option value="QLD">QLD</option>
+					<option value="SA">SA</option>
+					<option value="TAS">TAS</option>
+					<option value="VIC">VIC</option>
+					<option value="WA">WA</option>
+			</select>
 		</div>
 		<div class="form-row">
 			<label for="suburb">Suburb</label>
-			<input type="text" name="suburb" value="{{ $giver->suburb }}">
+			<input type="text" value="{{ $giver->suburb }}">
 		</div>
 		<div class="form-row">
 			<label for="postcode">Postcode</label>

@@ -14,21 +14,6 @@ class DatabaseSeeder extends Seeder
     {
         Model::unguard();
 
-
-        $demo_users = array(
-                ['id' => 1, 'firstname' => 'John', 'lastname' => 'Jack', 'user_type' => 'seeker', 'email' => 'test@testemail.com', 'phone' => '1234', 'password' => '123', 'created_at' => new DateTime, 'updated_at' => new DateTime],
-                ['id' => 2, 'firstname' => 'Jill', 'lastname' => 'May', 'user_type' => 'provider', 'email' => 'test1@testemail.com', 'phone' => '4321', 'password' => '123', 'created_at' => new DateTime, 'updated_at' => new DateTime]
-            );
-        DB::table('users')->insert($demo_users);
-
-        $demo_giver = array(
-                ['uid' => 2, 'gender' => 'female', 'address1' => 'High St', 'address2' => '11', 'suburb' => 'Burwood', 'state' => "nsw", 'postcode' => '2133', 'created_at' => new DateTime, 'updated_at' => new DateTime]
-            );
-
-        $demo_seeker = array(
-                ['uid' => 1, 'premium' => 1, 'created_at' => new DateTime, 'updated_at' => new DateTime]
-            );
-
         $demo_services = array(
                 ['id' => 1, 'Personal Care'],
                 ['id' => 2, 'Companionship'],
@@ -40,8 +25,6 @@ class DatabaseSeeder extends Seeder
                 ['id' => 2, 'CPR']
             );
 
-        // DB::table('giver')->insert($demo_giver);
-        // DB::table('seeker')->insert($demo_seeker);
 
         DB::table('service')->insert($demo_services);
         DB::table('quolification')->insert($demo_quolifications);

@@ -15,7 +15,17 @@
 	</div>
 	<div class="form-row">
 		<label for="state">State</label>
-		<input type="text" name="state"  value="{{ $seeker->state }}">
+		<select name="state">
+			<option value="{{ $seeker->state }}">{{ $seeker->state }}</option>
+			<option value="ACT">ACT</option>
+			<option value="NSW">NSW</option>
+			<option value="NT">NT</option>
+			<option value="QLD">QLD</option>
+			<option value="SA">SA</option>
+			<option value="TAS">TAS</option>
+			<option value="VIC">VIC</option>
+			<option value="WA">WA</option>
+		</select>
 	</div>
 	<div class="form-row">
 		<label for="suburb">Suburb</label>

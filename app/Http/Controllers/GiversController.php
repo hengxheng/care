@@ -9,6 +9,7 @@ use App\Service;
 use App\Quolification;
 use App\Availability;
 use App\Rating;
+use App\Suburb;
 use Auth;
 use Input;
 use Redirect;
@@ -43,7 +44,8 @@ class GiversController extends Controller
      */
     public function create($uid)
     {
-        return view('giver.create', compact(array('uid')));
+        $states = Suburb::getStates();
+        return view('giver.create', compact(array('uid', 'states')));
     }
 
     /**
@@ -163,7 +165,9 @@ class GiversController extends Controller
     public function edit($id)
     {
         $giver = Giver::findorFail($id);
-        return view("giver.edit-p1", compact(array("giver")));
+        $states = Suburb::getStates();
+        // $suburbs = Suburb::getSuburbs($giver->state);
+        return view("giver.edit-p1", compact(array("giver", 'states')));
     }
 
     public function edit2($id){
