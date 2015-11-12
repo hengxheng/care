@@ -1,6 +1,6 @@
-@extends('message.message_html')
+@extends('html')
 
-@section('message_content')
+@section('content')
 <div class="message">
 	<div class="user-name">From: <br/>{{ $msg -> firstname }} {{ $msg -> lastname }}</div>
 	<div class="message-date">Date: <br/>{{ $msg -> created_at }}</div>

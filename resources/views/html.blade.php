@@ -61,7 +61,7 @@
 							@if (Auth::user() -> user_type == 'giver')
 								<a id="view-profile-btn" href="{{ URL::route('care_givers.show', array('uid' => Auth::user()->id)) }}" >View Profile</a>
 							@elseif (Auth::user() -> user_type == 'seeker')
-								<a id="view-profile-btn"  href="{{ URL::route('care_seekers.show', array('uid' => Auth::user()->id)) }}">View Porfile</a>
+								<a id="view-profile-btn"  href="{{ URL::route('care_seekers.show', array('uid' => Auth::user()->id)) }}">View Profile</a>
 							@endif
 								<a id="logout-btn" href="{{ URL::route('logout') }}">Logout</a>
 						</div>
