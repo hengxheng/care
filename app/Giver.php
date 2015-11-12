@@ -15,4 +15,31 @@ class Giver extends Model
     	->groupBy('giver.uid')
     	->get();
     }
+
+    public static function getAllStates(){
+        return DB::table('giver')
+        ->select('state')
+        ->groupBy('state')
+        ->get();
+    }
+
+    public static function getAllSuburbs(){
+    	return DB::table('giver')
+        ->select('suburb')
+        ->groupBy('suburb')
+        ->get();
+    }
+
+    public static function filterByState($state){
+        return DB::table('giver')
+        ->where('state','=',$state)
+        ->get();
+    }
+
+    public static function filterBySuburbs($suburb){
+        return DB::table('giver')
+        ->where('suburb','=',$suburb)
+        ->get();
+    }
+
 }
