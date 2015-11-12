@@ -683,37 +683,67 @@ form .form-row input[type="submit"] {
 /* line 558, ../sass/screen.scss */
 .user-block .user-img {
   width: 20%;
+  box-sizing: border-box;
   float: left;
   padding: 10px;
 }
-/* line 562, ../sass/screen.scss */
+/* line 563, ../sass/screen.scss */
 .user-block .user-img img {
   width: 100%;
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
   border-radius: 50%;
 }
-/* line 567, ../sass/screen.scss */
+/* line 568, ../sass/screen.scss */
 .user-block .user-info {
   width: 60%;
+  box-sizing: border-box;
   float: left;
   padding: 10px 20px;
 }
-/* line 571, ../sass/screen.scss */
+/* line 573, ../sass/screen.scss */
 .user-block .user-info .user-name {
-  font-size: 20px;
+  font-size: 32px;
+  font-family: "Gotham-Bold";
   color: #336f7b;
   margin-bottom: 15px;
 }
-/* line 576, ../sass/screen.scss */
+/* line 579, ../sass/screen.scss */
 .user-block .user-info .user-exp {
   font-size: 14px;
   color: #000;
   margin-bottom: 10px;
 }
-/* line 581, ../sass/screen.scss */
+/* line 584, ../sass/screen.scss */
 .user-block .user-info .user-rate {
   font-size: 14px;
   color: #68bed6;
   margin-bottom: 15px;
+}
+/* line 591, ../sass/screen.scss */
+.user-block .user-right-box {
+  width: 20%;
+  color: #fff;
+  box-sizing: border-box;
+  float: right;
+  background: #336f7b;
+  text-align: center;
+  padding: 20px 15px;
+}
+/* line 599, ../sass/screen.scss */
+.user-block .user-right-box h2 {
+  font-size: 32px;
+  color: #fff;
+}
+/* line 603, ../sass/screen.scss */
+.user-block .user-right-box .user-rate {
+  margin-bottom: 15px;
+}
+/* line 605, ../sass/screen.scss */
+.user-block .user-right-box .user-rate p {
+  font-size: 20px;
+}
+/* line 610, ../sass/screen.scss */
+.user-block .user-right-box .year-exp p {
+  font-size: 16px;
 }
