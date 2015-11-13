@@ -165,7 +165,7 @@ header#site-header{
 	padding: 45px 25px 45px 400px;
 	min-height: 800px;
 	.page-content{
-		width:800px;
+		width:960px;
 	}
 	.page-sidebar{
 		position: absolute;
@@ -570,6 +570,7 @@ form{
 		box-sizing:border-box;
 		float: left;
 		padding: 10px 20px;
+		position: relative;
 		.user-name{
 			font-size: 32px;
 			font-family: "Gotham-Bold";
@@ -585,6 +586,12 @@ form{
 			font-size: 14px;
 			color: $blue;
 			margin-bottom: 15px;
+		}
+		.user-rating{
+			position:absolute;
+			top:0;
+			right:0;
+			padding:10px;
 		}
 	}
 
@@ -609,6 +616,64 @@ form{
 		.year-exp{
 			p{
 				font-size: 16px;
+			}
+		}
+	}
+}
+
+.filter-sidebar{
+	width: 20%;
+	float: left;
+	border: 1px solid $dark-blue;
+	box-sizing: border-box;
+	padding: 30px 15px;
+	form{
+		width:100%
+	}
+	h2{
+		font-size: 20px;
+		margin-bottom: 35px
+	}
+	.form-ele{
+		width:100%;
+		margin-bottom: 15px;
+		label{
+			font-size: 14px;
+			color: $dark-blue;
+			display:block;
+			margin-bottom: 5px;
+		}
+		select{
+			width: 100%;
+			border: 1px solid $dark-blue;
+			color:$dark-blue;
+			padding: 10px;
+			text-transform: uppercase;
+		}
+
+		input[type="submit"]{
+			width:100%;
+			background: $dark-blue;
+			color:#fff;
+			border:0;
+			font-size: 20px;
+			padding: 10px;
+		}
+	}
+}
+
+.content-with-sidebar{
+	width: 80%;
+	float: left;
+	box-sizing: border-box;
+}
+
+.giver-list-block{
+	.listing-box{
+		ul{
+			li{
+				border:0;
+				border-bottom: 1px solid #ccc;
 			}
 		}
 	}

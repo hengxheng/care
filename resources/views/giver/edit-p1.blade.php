@@ -41,7 +41,7 @@
 		</div>
 		<div class="form-row">
 			<label for="suburb">Suburb</label>
-			<input type="text" value="{{ $giver->suburb }}">
+			<input type="text" name="suburb" value="{{ $giver->suburb }}">
 		</div>
 		<div class="form-row">
 			<label for="postcode">Postcode</label>

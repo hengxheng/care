@@ -14,7 +14,7 @@ use Auth;
 use Input;
 use Redirect;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Session;
+use Session;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -34,12 +34,48 @@ class GiversController extends Controller
     }
 
     public function listing(){
-        $givers = Giver::allGivers();
+        // filters
+
+        $state_filter = (Session::has('state-filter'))?(Session::get('state-filter')):"null";
+        $suburb_filter = (Session::has('suburb-filter'))?(Session::get('suburb-filter')):"null";
+        $rating_filter = (Session::has('rating-filter'))?(Session::get('rating-filter')):"null";
+        $price_filter = (Session::has('price-filter'))?(Session::get('price-filter')):"null";
+
+        if(Input::has('state-filter')){
+            Session::put('state-filter', Input::get('state-filter'));
+            $state_filter = Input::get('state-filter');
+        }
+        if(Input::has('suburb-filter')){
+            Session::put('suburb-filter', Input::get('suburb-filter'));
+            $suburb_filter = Input::get('suburb-filter');
+        }
+        if(Input::has('rating-filter')){
+            Session::put('rating-filter', Input::get('rating-filter'));
+            $rating_filter = Input::get('rating-filter');
+        }
+        if(Input::has('price-filter')){
+            Session::put('price-filter', Input::get('price-filter'));
+            $price_filter = Input::get('price-filter');
+        }
+
+        if($price_filter != 'null'){
+            $t = explode(' - ', $price_filter);
+            $min_price = substr($t[0],1);
+            $max_price = substr($t[1],1);
+        }
+        else{
+            $min_price = 'null';
+            $max_price = 'null';
+        }
+
+        $givers = Giver::filterAllGivers($state_filter, $suburb_filter, $min_price, $max_price);
 
         foreach ($givers as $g){
             $rating[$g->uid] = Rating::MyRating($g->uid);
         }
-        return view('giver.list',compact('givers', 'rating'));
+
+        $suburbs = Giver::getAllSuburbs();
+        return view('giver.list',compact('givers', 'rating', 'suburbs','state_filter', 'suburb_filter','rating_filter', 'price_filter'));
     }
     /**
      * Show the form for creating a new resource.
@@ -209,12 +245,25 @@ class GiversController extends Controller
     {
         $giver = Giver::findorFail($id);
         
-        $giver->gender = Input::get("gender");
-        $giver->address1 = Input::get('address1');
-        $giver->address2 = Input::get('address2');
-        $giver->state = Input::get('state');
-        $giver->suburb = Input::get('suburb');
-        $giver->postcode = Input::get('postcode');
+        if(Input::has("gender")){
+            $giver->gender = Input::get("gender");
+        }
+        if(Input::has('address1')){
+            $giver->address1 = Input::get('address1');
+        }
+        if(Input::has('address2')){
+            $giver->address2 = Input::get('address2');
+        }
+        if(Input::has('state')){
+            $giver->state = Input::get('state');
+        }
+        if(Input::has('suburb')){
+            $giver->suburb = Input::get('suburb');
+        }
+        if(Input::has('postcode')){
+            $giver->postcode = Input::get('postcode');
+        }
+        
         if(Input::file('picture')){
             $pic_name = "photo-".$id;
             $pic_path = public_path('images/user');
@@ -226,6 +275,12 @@ class GiversController extends Controller
 
         if(Input::get('experience')){
             $giver->experience = Input::get('experience');
+        }
+        if(Input::get('education')){
+            $giver->education = Input::get('education');
+        }
+        if(Input::get('rate')){
+            $giver->rate = Input::get('rate');
         }
 
         if(Input::get('service')){
@@ -295,7 +350,6 @@ class GiversController extends Controller
     }
 
     public function ajaxCall(Request $request){
-        $givers = Giver::allGivers();
-        return $givers;
+
     }
 }
