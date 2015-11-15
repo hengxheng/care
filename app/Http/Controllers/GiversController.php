@@ -121,6 +121,7 @@ class GiversController extends Controller
             case "2":
                 $giver = Giver::find($uid);
                 $giver->experience = Input::get('experience');
+                $giver->years_exp = Input::get('years_exp');
                 $giver->education = Input::get('education');
                 $giver->rate = Input::get('rate');
                 $giver->save();
@@ -272,7 +273,9 @@ class GiversController extends Controller
                 $giver->picture = $pic_name.'.'.$pic_extension;
             }
         }
-
+        if(Input::get('years_exp')){
+            $giver->years_exp = Input::get('years_exp');
+        }
         if(Input::get('experience')){
             $giver->experience = Input::get('experience');
         }

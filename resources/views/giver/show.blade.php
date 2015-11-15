@@ -59,7 +59,7 @@
 		<div class="row">
 			<div class="col-1">
 			<div class="block">
-				<h2 class="block-title">Experiece
+				<h2 class="block-title">Experiece ({{ $the_giver->years_exp }} years)
 					@if(Auth::user()->id == $the_user->id)
 					<a class="edit-btn" href="{{ URL::route('care_givers.edit2', array('id'=>$the_user->id)) }}">Edit</a>
 					@endif
