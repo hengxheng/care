@@ -46,7 +46,7 @@
                                     <p>per hour</p>
                                 </div>
                                 <div class="year-exp">
-                                    <h2>0</h2>
+                                    <h2>{{ $giver->year-exp }}</h2>
                                     <p>years<br/>experience</p>
                                 </div>
                              </div>
