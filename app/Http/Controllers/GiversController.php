@@ -68,7 +68,18 @@ class GiversController extends Controller
             $max_price = 'null';
         }
 
-        $givers = Giver::filterAllGivers($state_filter, $suburb_filter, $min_price, $max_price);
+        if($rating_filter != 'null'){
+            $x = explode(' - ', $rating_filter);
+            $min_rating = $x[0];
+            $max_rating = $x[1];
+            var_dump($min_rating);
+        }
+        else{
+            $min_rating = 0;
+            $max_rating = 5;
+        }
+
+        $givers = Giver::filterAllGivers($state_filter, $suburb_filter, $min_price, $max_price, $min_rating, $max_rating);
 
         foreach ($givers as $g){
             $rating[$g->uid] = Rating::MyRating($g->uid);
@@ -194,7 +205,9 @@ class GiversController extends Controller
         foreach ($av as $a){
             $my_availability[$a->week][$a->time] = $a->av; 
         }
-        return view('giver.show', compact(array('the_user', 'the_giver','my_services','my_quolifications', 'my_availability','my_rating')));
+
+        $test = Rating::getAvgRating();
+        return view('giver.show', compact(array('the_user', 'the_giver','my_services','my_quolifications', 'my_availability','my_rating','test')));
     }
 
     /**

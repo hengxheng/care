@@ -16,9 +16,12 @@ class Giver extends Model
         ->get();
     }
 
-    public static function filterAllGivers($state="null", $suburb="null", $min_rate="null", $max_rate="null", $max_rating=5, $min_rating=0){
-        $givers = DB::table('giver')
-        ->leftJoin('users','giver.uid','=','users.id');
+    public static function filterAllGivers($state="null", $suburb="null", $min_rate="null", $max_rate="null", $min_rating=0, $max_rating=5){
+        $givers = DB::table('giver AS g')
+        ->leftJoin('users AS u','g.uid','=','u.id')
+        ->leftJoin(DB::raw('(SELECT rate_uid, avg(rate_star) AS avg FROM rating GROUP BY rate_uid) AS r'), 'r.rate_uid', '=', 'g.uid')
+        ->where('r.avg','>=',$min_rating)
+        ->where('r.avg','<=',$max_rating);
 
         if($state != 'null'){
             $givers->where('giver.state','=', $state);
@@ -32,7 +35,7 @@ class Giver extends Model
             $givers->where('giver.rate','>=',$min)
              ->where('giver.rate', '<=', $max);
         }
-        return $givers->groupBy('giver.uid')->get();
+        return $givers->get();//->groupBy('giver.uid')->get();
         
     }
 

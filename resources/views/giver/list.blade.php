@@ -5,7 +5,7 @@
     
     <div class="giver-list-block content-with-sidebar">
         <div class="listing-box">
-            
+    
             @if (count($givers) > 0)
             <ul>
                 @foreach( $givers as $giver )

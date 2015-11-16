@@ -8,7 +8,7 @@ use DB;
 class Rating extends Model
 {
     protected $table = "rating";
-    protected $primaryKey = 'rid';
+    protected $primaryKey = "rid";
 
     public static function MyRating($uid){
     	$myRate = DB::table("rating")
@@ -24,5 +24,12 @@ class Rating extends Model
     	}
 
     	return ceil($sum/$count);
+    }
+
+    public static function getAvgRating(){
+        return DB::table("rating")
+        ->select("rate_uid",DB::raw('avg(rate_star) as avg'))  
+        ->groupBy("rate_uid")
+        ->get();
     }
 }
