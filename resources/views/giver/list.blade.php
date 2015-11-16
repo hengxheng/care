@@ -4,8 +4,29 @@
 @section('content')
     
     <div class="giver-list-block content-with-sidebar">
+        <div class="tool-bar">
+            <form id="sort-form" action="{{ URL::route('care_givers.list')}}" method="get">
+                <label for="sort-by">Sort By: </label>
+                <select name="sort-by" id="sort-by">
+                    <option value="{{ $order }}">
+                        @if($order == "avg") Rating
+                        @else {{ $order }}
+                        @endif
+                    </option>
+                    <option value="avg">Rating</option>
+                    <option value="rate">Rate</option>
+                </select>
+            </form>
+            <script>
+                $(function(){
+                    $("#sort-by").change(function(){
+                        console.log("ss");
+                        $("#sort-form").submit();
+                    });
+                });
+            </script>
+        </div>
         <div class="listing-box">
-    
             @if (count($givers) > 0)
             <ul>
                 @foreach( $givers as $giver )
@@ -30,14 +51,14 @@
                                 </div>
                                 <div class="user-rating">
                                     <div class="rating">
-                                    @if($rating[$giver->id] >0 )
-                                        @for ($i=0; $i< $rating[$giver->id]; $i++)
-                                            <i class="fa fa-star fa-2x"></i>
-                                        @endfor
-                                    @else
-                                       Not Rating yet
-                                    @endif
-                                </div>
+                                        @if($rating[$giver->id] >0 )
+                                            @for ($i=0; $i< $rating[$giver->id]; $i++)
+                                                <i class="fa fa-star fa-2x"></i>
+                                            @endfor
+                                        @else
+                                           Not Rating yet
+                                        @endif
+                                    </div>
                                 </div>
                              </div>
                              <div class="user-right-box">

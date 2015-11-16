@@ -41,6 +41,10 @@ class GiversController extends Controller
         $rating_filter = (Session::has('rating-filter'))?(Session::get('rating-filter')):"null";
         $price_filter = (Session::has('price-filter'))?(Session::get('price-filter')):"null";
 
+        //sort by
+
+        $order = (Session::has('giver-order'))?(Session::get('giver-order')):"avg";
+
         if(Input::has('state-filter')){
             Session::put('state-filter', Input::get('state-filter'));
             $state_filter = Input::get('state-filter');
@@ -79,14 +83,19 @@ class GiversController extends Controller
             $max_rating = 'null';
         }
 
-        $givers = Giver::filterAllGivers($state_filter, $suburb_filter, $min_price, $max_price, $min_rating, $max_rating);
+        if(Input::has('sort-by')){
+            Session::put('giver-order', Input::get('sort-by'));
+            $order = Input::get('sort-by');
+        }
+
+        $givers = Giver::filterAllGivers($state_filter, $suburb_filter, $min_price, $max_price, $min_rating, $max_rating, $order);
 
         foreach ($givers as $g){
             $rating[$g->uid] = Rating::MyRating($g->uid);
         }
 
         $suburbs = Giver::getAllSuburbs();
-        return view('giver.list',compact('givers', 'rating', 'suburbs','state_filter', 'suburb_filter','rating_filter', 'price_filter'));
+        return view('giver.list',compact('givers', 'rating', 'suburbs','state_filter', 'suburb_filter','rating_filter', 'price_filter','order'));
     }
     /**
      * Show the form for creating a new resource.

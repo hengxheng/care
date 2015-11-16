@@ -37,7 +37,7 @@ class Giver extends Model
             $givers->where('r.avg','>=',$min_rating)
                 ->where('r.avg','<=',$max_rating);
         }
-        $givers->orderBy('rate', 'desc');  
+        $givers->orderBy($order, 'desc');  
         return $givers->get();//->groupBy('giver.uid')->get();
         
     }
@@ -76,5 +76,6 @@ class Giver extends Model
                     ->groupBy('rate_uid')
                     ->get();
     }
+
 
 }

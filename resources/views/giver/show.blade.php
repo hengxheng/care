@@ -7,17 +7,17 @@
 		<div class="row">
 			<div class="col-1">
 				<div class="profile-image block">
-					<img src="{{ URL::asset('images/user/'.$the_giver -> picture) }}" alt="">
+					<img src="{{ URL::asset('images/user/'.$the_giver->picture) }}" alt="">
 				</div>
 				<div class="profile-name">
-					<h2>{{ $the_user -> firstname }} {{ $the_user -> lastname }}</h2>
+					<h2>{{ $the_user->firstname }} {{ $the_user -> lastname }}</h2>
 					<div class="block-content">			
 					<p>
-						@if (Auth::user() -> user_type == 'seeker' )
+						@if (Auth::user()->user_type == 'seeker' )
 						<a href="{{ URL::route('message.create', array('to_id'=>$the_giver -> uid )) }}">Send a message</a>
 						@endif
 					</p>
-					<p>{{ $the_giver -> gender }}</p>
+					<p>{{ $the_giver->gender }}</p>
 					</div>
 				</div>
 
@@ -44,13 +44,13 @@
 					@endif
 				</h2>
 				<div class="block-content">
-					<p>Email: {{ $the_user -> email }}</p>
-					<p>Phone: {{ $the_user -> phone }}</p>
-					<p>Address: {{ $the_giver -> address1 }}</p>
-					<p>Address: {{ $the_giver -> address2 }}</p>
-					<p>Suburb: {{ $the_giver -> suburb }}</p>
-					<p>State: {{ $the_giver -> state }}</p>
-					<p>Postcode: {{ $the_giver -> postcode }}</p>
+					<p>Email: {{ $the_user->email }}</p>
+					<p>Phone: {{ $the_user->phone }}</p>
+					<p>Address: {{ $the_giver->address1 }}</p>
+					<p>Address: {{ $the_giver->address2 }}</p>
+					<p>Suburb: {{ $the_giver->suburb }}</p>
+					<p>State: {{ $the_giver->state }}</p>
+					<p>Postcode: {{ $the_giver->postcode }}</p>
 				</div>
 			</div>
 			</div>
@@ -65,7 +65,7 @@
 					@endif
 				</h2>
 				<div class="block-content">
-				{{ $the_giver -> experience }}
+				{{ $the_giver->experience }}
 				</div>
 			</div>
 			</div>
@@ -80,7 +80,7 @@
 					@endif
 				</h2>
 				<div class="block-content">
-					{{ $the_giver -> education }}
+					{{ $the_giver->education }}
 				</div>
 			</div>
 			</div>

@@ -815,3 +815,8 @@ form .form-row input[type="submit"] {
   border: 0;
   border-bottom: 1px solid #ccc;
 }
+
+/* line 683, ../sass/screen.scss */
+.tool-bar #sort-by {
+  text-transform: uppercase;
+}
