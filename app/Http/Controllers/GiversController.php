@@ -75,8 +75,8 @@ class GiversController extends Controller
             var_dump($min_rating);
         }
         else{
-            $min_rating = 0;
-            $max_rating = 5;
+            $min_rating = 'null';
+            $max_rating = 'null';
         }
 
         $givers = Giver::filterAllGivers($state_filter, $suburb_filter, $min_price, $max_price, $min_rating, $max_rating);
