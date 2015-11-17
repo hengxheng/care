@@ -9,23 +9,26 @@
 				<div class="profile-image block">
 					<img src="{{ URL::asset('images/user/'.$the_giver->picture) }}" alt="">
 				</div>
-				<div class="profile-name">
-					<h2>{{ $the_user->firstname }} {{ $the_user -> lastname }}</h2>
-					<div class="block-content">			
-					<p>
-						@if (Auth::user()->user_type == 'seeker' )
-						<a href="{{ URL::route('message.create', array('to_id'=>$the_giver -> uid )) }}">Send a message</a>
-						@endif
-					</p>
-					<p>{{ $the_giver->gender }}</p>
+				<div class="profile-info">
+					<h2 class="profile-name">
+						{{ $the_user->firstname }} {{ $the_user -> lastname }}
+					</h2>		
+					<div class="gender">
+						{{ $the_giver->gender }}
 					</div>
+					<div class="user-location">
+						{{ $the_giver->suburb }},{{ $the_giver->state }}
+					</div>
+					@if (Auth::user()->user_type == 'seeker' )
+						<a class="dark-blue-btn" href="{{ URL::route('message.create', array('to_id'=>$the_giver -> uid )) }}">Send a message</a>
+					@endif
 				</div>
 
 				<div class="rating-block">
 					<h3>My Rating</h3>
 					<div class="rating">
 						@if($my_rating >0 )
-							@for ($i=0; $i< $my_rating; $i++)
+							@for ($i=0; $i < $my_rating; $i++)
 								<i class="fa fa-star fa-2x"></i>
 							@endfor
 						@else
@@ -59,7 +62,7 @@
 		<div class="row">
 			<div class="col-1">
 			<div class="block">
-				<h2 class="block-title">Experiece ({{ $the_giver->years_exp }} years)
+				<h2 class="block-title">Experiece
 					@if(Auth::user()->id == $the_user->id)
 					<a class="edit-btn" href="{{ URL::route('care_givers.edit2', array('id'=>$the_user->id)) }}">Edit</a>
 					@endif
@@ -125,7 +128,7 @@
 		<div class="row">
 			<div class="col-1">
 				<div class="block">
-					<h2 class="block-title">My Quolifications
+					<h2 class="block-title">My Qualifications
 						@if(Auth::user()->id == $the_user->id) 
 						<a class="edit-btn" href="{{ URL::route('care_givers.edit3', array('id'=>$the_user->id)) }}">Edit</a>
 						@endif

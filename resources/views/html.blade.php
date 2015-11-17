@@ -82,9 +82,7 @@
 							<li><a href="{{ URL::route('care_givers.list')}}">Find Givers</a></li>
 							<li><a href="{{ URL::route('job.list', array('poster_id' => Auth::user()->id)) }}">My posted jobs</a></li>
 							@endif
-							<li><a href="{{ URL::route('message.inbox') }}">My messages</a></li>
-							<li><a href="{{ URL::route('logout') }}">Logout</a></li>
-							{{-- dd(Auth::user()->toArray()) --}}						
+							<li><a href="{{ URL::route('message.inbox') }}">My messages</a></li>						
 						@endif
 					</ul>
 				</nav>

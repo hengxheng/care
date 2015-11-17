@@ -54,23 +54,6 @@ class MessagesController extends Controller
         return redirect::route('message.inbox');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return Response
-     */
-    public function showInboxMsg($id)
-    {
-        $user = Auth::user();
-        $msg = Message::mySentMessage($id);
-
-        return view("message.show", compact('msg'));
-    }
-
-    public function showSentMsg($id){
-        $user = Auth::user();
-    }
 
     
     /**
@@ -126,4 +109,14 @@ class MessagesController extends Controller
         return view('message.inbox',compact('messages'));
     }
 
+    public function showInboxMsg($id){
+        $user = Auth::user();
+        $message = Message::mySentMessage($id);
+
+        return view("message.show", compact('message'));
+    }
+
+    public function showSentMsg($id){
+        $user = Auth::user();
+    }
 }

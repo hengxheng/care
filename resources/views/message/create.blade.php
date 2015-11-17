@@ -10,6 +10,10 @@
 		<h2>TO: {{ $to_user->firstname}} {{ $to_user->lastname}}</h2>
 	</div>
 	<div class="form-row">
+		<label for="subject">Subject</label>
+		<input type="text" name="subject">
+	</div>
+	<div class="form-row">
 		<label for="content">Message: </label>
 		<textarea name="content"></textarea>
 	</div>

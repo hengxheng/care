@@ -25,7 +25,7 @@
             <h2>Quolifications</h2>
             <div class="quolification-block">
                 <div class="form-row">
-                    <label>Quolification: </label><input type="text" name="quolification[]">
+                    <label>Qualification: </label><input type="text" name="quolification[]">
                 </div>
             </div>
             <a id="add_quo" href="#" ng-click="add_quolification()" class="dark-blue-btn">Add a quolification</a>

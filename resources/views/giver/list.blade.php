@@ -20,7 +20,6 @@
             <script>
                 $(function(){
                     $("#sort-by").change(function(){
-                        console.log("ss");
                         $("#sort-form").submit();
                     });
                 });

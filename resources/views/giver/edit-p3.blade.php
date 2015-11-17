@@ -39,15 +39,15 @@
 
     <div class="row">
         <div class="col-1">
-            <h2>Quolifications</h2>
+            <h2>Qualifications</h2>
             <div class="quolification-block">
                 @foreach ($quolifications as $q)
                     <div class="form-row">
-                    <label>Quolification: </label><input type="text" name="quolification[]" value="{{ $q->quolification_name }}">
+                    <label>Qualification: </label><input type="text" name="quolification[]" value="{{ $q->quolification_name }}">
                 </div>
                 @endforeach
             </div>
-            <a id="add_quo" href="#" ng-click="add_quolification()" class="dark-blue-btn">Add a quolification</a>
+            <a id="add_quo" href="#" ng-click="add_quolification()" class="dark-blue-btn">Add a qualification</a>
         </div>
     </div>
 

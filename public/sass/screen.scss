@@ -150,7 +150,7 @@ header#site-header{
 
 			border-bottom:1px solid $dark-blue;
 			a{
-				color: $text-color;
+				color: $dark-blue;
 				font-size: 16px;
 				padding-left: 25px;
 			}
@@ -193,7 +193,7 @@ header#site-header{
 			}
 			.user-block-btns{
 				clear:both;
-				text-align:center;
+				text-align:left;
 				padding-top:25px;
 				a{
 					display:inline-block;
@@ -300,17 +300,20 @@ form{
 			display:inline-block;
 			width:49.5%;
 			border:1px solid $blue;
-			border-bottom: 0;
-			text-align:center;
-			padding: 10px 0;
+			text-align:center;		
 			background: #fff;
 			a{
 				font-size: 16px;
-				color:$dark-blue;			
+				color:$dark-blue;
+				display:block;
+				height:100%;
+				width: 100%;
+				padding: 10px 0;			
 			}
 			&.active{
 				background:$blue;
 				a{
+
 					color:#fff;
 				}
 				
@@ -320,48 +323,109 @@ form{
 }
 
 #message-main{
-	background:$blue;
 	padding: 15px;
 	ul{
 		li{
-			border:1px solid $dark-blue;
-			color:#fff;
+			border-bottom:1px solid #ccc;
+			color:$dark-blue;
 			padding: 15px;
 			margin-bottom: 25px;
-			.user-name{
-				font-size: 16px;
-				color: $dark-blue;
-				margin-bottom: 15px;
+			position: relative;
+			&:first-child{
+				border-top:1px solid #ccc;
 			}
-			.message-content{
-				font-size: 14px;
-				margin-bottom: 10px;
+
+			.user-img{
+				width: 20%;
+				box-sizing:border-box;
+				display: inline-block;
+				vertical-align: top;
+				padding: 10px;
+				img{
+					width: 100%;
+				}
 			}
-			.message-date{
-				font-style: italic;
-				font-size: 13px;
-				margin-bottom: 10px;
+			.message-tease{
+				width: 60%;
+				box-sizing:border-box;
+				display: inline-block;
+				vertical-align: top;
+				padding: 10px 20px;
+				position: relative;
+				.user-name{
+					font-size: 20px;
+					font-family: 'Gotham-Bold';
+					color: $dark-blue;
+					margin-bottom: 15px;
+				}
+				.message-content{
+					font-size: 16px;
+					margin-bottom: 15px;
+				}
+				.message-date{
+					font-style: italic;
+					font-size: 16px;
+					margin-bottom: 15px;
+				}
+				.cta{
+					position:absolute;
+					right:0;
+					top:20%;
+					.dark-blue-btn{
+						font-size:20px;
+						padding:10px;
+					}
+				}
 			}
+			
+			
 		}
 	}
 }
 
 .message{
 	padding: 15px;
-	background: $blue;
-	.user-name{
+
+	.user-img{
+		width: 20%;
+		box-sizing:border-box;
+		display: inline-block;
+		vertical-align: top;
+		padding: 10px;
+		img{
+			width: 100%;
+		}
+	}
+	.message-tease{
+		width: 60%;
+		box-sizing:border-box;
+		display: inline-block;
+		vertical-align: top;
+		padding: 10px 20px;
+		position: relative;
+		.user-name{
+			font-size: 20px;
+			font-family: 'Gotham-Bold';
+			color: $dark-blue;
+			margin-bottom: 15px;
+		}
+		.message-content{
+			font-size: 16px;
+			margin-bottom: 15px;
+		}
+		.message-date{
+			font-style: italic;
+			font-size: 16px;
+			margin-bottom: 15px;
+		}
+	}
+
+	.message-body{
+		padding:15px;
 		font-size: 16px;
-		color: $dark-blue;
-		margin-bottom: 15px;
 	}
-	.message-content{
-		font-size: 14px;
-		margin-bottom: 50px;
-	}
-	.message-date{
-		font-style: italic;
-		font-size: 13px;
-		margin-bottom: 10px;
+	.msg-cta{
+		padding:15px;
 	}
 }
 
@@ -369,18 +433,29 @@ form{
 	.profile-image{
 		width: 200px;
 		height: auto;
-		float:left;
-		@include border-radius(50%);
+		display: inline-block;
+    	vertical-align: top;
+		margin-right: 20px;
 		img{
-			width:100%;
-			@include border-radius(50%);
+			width:100%;		
 		}
 	}
 
-	.profile-name{
+	.profile-info{
+		display: inline-block;
+    	vertical-align: top;
 		h2{
 			font-size: 20px;
 			margin-bottom: 15px;
+			text-transform: capitalize;
+		}
+		.gender{
+			text-transform: capitalize;
+			margin-bottom: 5px;
+		}
+		.user-location{
+			text-transform: uppercase;
+			margin-bottom: 20px;
 		}
 	}
 }
@@ -412,6 +487,7 @@ form{
 		padding: 10px;
 		border:1px solid #000;
 		text-align: center;
+		color:#055B05;
 	}
 }
 
@@ -427,7 +503,7 @@ form{
 	background:#fff;
 }
 .av-icon.a-1{
-	background: green;
+	background: #055B05;
 }
 
 .service-list{
@@ -549,7 +625,7 @@ form{
 		font-size: 18px;
 	}
 	i{
-		color: yellow;
+		color: $blue;
 	}
 }
 
@@ -562,7 +638,6 @@ form{
 		padding: 10px;
 		img{
 			width: 100%;
-			@include border-radius(50%);
 		}
 	}
 	.user-info{
