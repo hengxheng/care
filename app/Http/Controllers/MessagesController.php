@@ -48,6 +48,7 @@ class MessagesController extends Controller
         $message = new Message;
         $message->receiver_id = input::get('to_id');
         $message->sender_id = input::get('from_id');
+        $message->subject = input::get('subject');
         $message->content = input::get('content');
         $message->save();
 
@@ -109,14 +110,9 @@ class MessagesController extends Controller
         return view('message.inbox',compact('messages'));
     }
 
-    public function showInboxMsg($id){
-        $user = Auth::user();
-        $message = Message::mySentMessage($id);
-
+    public function show($type, $id){
+        $message = Message::getTheMessage($id, $type);
         return view("message.show", compact('message'));
     }
 
-    public function showSentMsg($id){
-        $user = Auth::user();
-    }
 }

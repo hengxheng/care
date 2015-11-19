@@ -1,6 +1,7 @@
 @extends('html')
 
 @section('content')
+
 <div id="message-menu">
 	<ul>
 		<li><a href="{{ URL::route('message.inbox') }}">Inbox</a></li>
@@ -23,7 +24,7 @@
 						</div>
 						<div class="message-tease">
 							<div class="user-name">
-								{{ $message->firstname}} {{ $message->lastname}}
+								To: {{ $message->firstname}} {{ $message->lastname}}
 							</div>
 							<div class="message-content">
 								{{ str_limit($message->content, 100) }}
@@ -32,7 +33,7 @@
 								{{ date('H:i w F d Y', strtotime($message->created_at)) }}
 							</div>
 							<div class="cta">
-								<a class="dark-blue-btn" href="{{ URL::route('message.showInbox', array('id' => $message->id ))}}">View</a>
+								<a class="dark-blue-btn" href="{{ URL::route('message.show', array('type' => 'RECEIVER', 'id' => $message->id))}}">View</a>
 							</div>
 						</div>
 					</div>
