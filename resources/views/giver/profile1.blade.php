@@ -6,6 +6,14 @@
     <input type="hidden" name="uid" value="{{ Auth::user() -> id }}">
     <input type="hidden" name="step" value="2">
     <div class="form-row">
+        <label for="bio">Descript yourself</label>
+        <textarea name="bio"></textarea>
+    </div>
+    <div class="form-row">
+        <label for="live_in">Live In</label>
+        <input type="checkbox" name="live_in" value="1">
+    </div>
+    <div class="form-row">
         <label for="years_exp">Years of Experience</label>
         <input type="text" name="years_exp" placeholder="How many years experience?">
     </div>

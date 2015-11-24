@@ -14,7 +14,7 @@
 						{{ $the_user->firstname }} {{ $the_user -> lastname }}
 					</h2>		
 					<div class="gender">
-						{{ $the_giver->gender }}
+						{{ $the_giver->gender }}@if ($the_giver->live_in)&nbsp;&nbsp;|&nbsp;&nbsp;Live In @endif
 					</div>
 					<div class="user-location">
 						{{ $the_giver->suburb }},{{ $the_giver->state }}
@@ -58,7 +58,22 @@
 			</div>
 			</div>
 		</div>
-	
+		
+		<div class="row">
+			<div class="col-1">
+			<div class="block">
+				<h2 class="block-title">Bio
+					@if(Auth::user()->id == $the_user->id)
+					<a class="edit-btn" href="{{ URL::route('care_givers.edit2', array('id'=>$the_user->id)) }}">Edit</a>
+					@endif
+				</h2>
+				<div class="block-content">
+				{{ $the_giver->bio }}
+				</div>
+			</div>
+			</div>
+		</div>
+
 		<div class="row">
 			<div class="col-1">
 			<div class="block">

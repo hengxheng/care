@@ -42,7 +42,7 @@
                                      {{ $giver->suburb }},{{ $giver->state }}
                                  </div>
                                  <div class="user-exp">
-                                     {{ str_limit($giver->experience, 200) }}
+                                     {{ str_limit($giver->bio, 200) }}
                                  </div>
                                  <div class="cta">
                                     <a class="blue-btn" href="{{ URL::route('care_givers.show', array('uid' => $giver->id )) }}">View</a>

@@ -36,10 +36,13 @@ class CreateUsersTable extends Migration
             $table->string('suburb');
             $table->string('state');
             $table->string('postcode');
+            $table->boolean('live_in')->default(false);
             $table->string('years_exp')->nullable();
             $table->integer('rate')->nullable();
+            $table->text('bio')->nullable();
             $table->text('education')->nullable();
             $table->text('experience')->nullable();
+            $table->string('background_check');
             $table->timestamps();
         });
 

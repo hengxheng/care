@@ -140,6 +140,8 @@ class GiversController extends Controller
             break;
             case "2":
                 $giver = Giver::find($uid);
+                $giver->bio = Input::get('bio');
+                $giver->live_in = Input::get('live_in');
                 $giver->experience = Input::get('experience');
                 $giver->years_exp = Input::get('years_exp');
                 $giver->education = Input::get('education');
@@ -295,20 +297,26 @@ class GiversController extends Controller
                 $giver->picture = $pic_name.'.'.$pic_extension;
             }
         }
-        if(Input::get('years_exp')){
+        if(Input::has('bio')){
+            $giver->bio = Input::get('bio');
+        }
+        if(Input::has('live_in')){
+            $giver->live_in = Input::get('live_in');
+        }
+        if(Input::has('years_exp')){
             $giver->years_exp = Input::get('years_exp');
         }
-        if(Input::get('experience')){
+        if(Input::has('experience')){
             $giver->experience = Input::get('experience');
         }
-        if(Input::get('education')){
+        if(Input::has('education')){
             $giver->education = Input::get('education');
         }
-        if(Input::get('rate')){
+        if(Input::has('rate')){
             $giver->rate = Input::get('rate');
         }
 
-        if(Input::get('service')){
+        if(Input::has('service')){
             Service::deleteMyServices($id);
             $services = Input::get('service');
             if(is_array($services) && sizeof($services) > 0){
@@ -321,7 +329,7 @@ class GiversController extends Controller
             }
         }
 
-        if(Input::get('quolification')){
+        if(Input::has('quolification')){
             Quolification::deleteMyQuolifications($id);
             $quolifications = Input::get('quolification');
             if(is_array($quolifications) && sizeof($quolifications) > 0){
@@ -334,7 +342,7 @@ class GiversController extends Controller
             }
         }
 
-        if(Input::get('avai')){
+        if(Input::has('avai')){
             Availability::deletMyAvailability($id);
             $avail = Input::get('avai');
             if(is_array($avail) && sizeof($avail)>0){
