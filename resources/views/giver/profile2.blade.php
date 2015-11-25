@@ -8,16 +8,36 @@
     <input type="hidden" name="step" value="3">
     <div class="row">
          <div class="col-1">
-            <h2>Services</h2>
+            <h2>Service Categories</h2>
             <div class="form-row">
-                <div><input type="checkbox" name="service[]" value="Meal preparation"><span>Meal preparation</span></div>
-                <div><input type="checkbox" name="service[]" value="Alzheimer's Care"><span>Alzheimer's Care</span></div>
-                <div><input type="checkbox" name="service[]" value="Companionship"><span>Companionship</span></div>
-                <div><input type="checkbox" name="service[]" value="Housekeeping"><span>Housekeeping</span></div>
-                <div><input type="checkbox" name="service[]" value="Transportation"><span>Transportation</span></div>
-                <div><input type="checkbox" name="service[]" value="Personal Care"><span>Personal Care</span></div>
+                <div><input type="checkbox" name="service[]" value="Alzheimer's & Dementia Care"><span>Alzheimer's & Dementia Care</span></div>
+                <div><input type="checkbox" name="service[]" value="Companion Care"><span>Companion Care</span></div>
+                <div><input type="checkbox" name="service[]" value="Palliative Care"><span>Palliative Care</span></div>
+                <div><input type="checkbox" name="service[]" value="Respite Care"><span>Respite Care</span></div>
+                <div><input type="checkbox" name="service[]" value="Transition Care"><span>Transition Care</span></div>
             </div>
          </div>
+    </div>
+
+    <div class="row">
+        <div class="col-1">
+            <h2>Services</h2>
+            <div class="form-row">
+                <ul class="service2-list">
+                    <li><input type="checkbox" name="service2[]" value="Bathing"><span>Bathing</span></li>
+                    <li><input type="checkbox" name="service2[]" value="Grooming"><span>Grooming</span></li>
+                    <li><input type="checkbox" name="service2[]" value="Toileting"><span>Toileting</span></li>
+                    <li><input type="checkbox" name="service2[]" value="Managing Medications"><span>Managing Medications</span></li>
+                    <li><input type="checkbox" name="service2[]" value="Meal prep"><span>Meal prep</span></li>
+                    <li><input type="checkbox" name="service2[]" value="Groceries & Shopping"><span>Groceries & Shopping</span></li>
+                    <li><input type="checkbox" name="service2[]" value="Transferring & Mobility"><span>Transferring & Mobility</span></li>
+                    <li><input type="checkbox" name="service2[]" value="Exercise"><span>Exercise</span></li>
+                    <li><input type="checkbox" name="service2[]" value="Transportation"><span>Transportation</span></li>
+                    <li><input type="checkbox" name="service2[]" value="Housekeeping"><span>Housekeeping</span></li>
+                    <li><input type="checkbox" name="service2[]" value="Companionship"><span>Companionship</span></li>
+                </ul>
+            </div>
+        </div>
     </div>
 
     <div class="row">
@@ -32,8 +52,9 @@
         </div>
     </div>
     <div class="row">
-        <div class="availability-block">
-            <label for="availability">Availability</label>
+        <div class="col-1">
+        <h2>Availability</h2>
+        <div class="availability-block">      
             <table id="avaiability-table">
                 <tr>
                     <td></td>
@@ -124,10 +145,12 @@
                 </tr>
             </table>
         </div>
+        </div>
     </div>
     <div class="form-row" style="width:300px;">
         <input type="submit" value="Submit">
     </div>
 </form>
+
 </div>
 @endsection

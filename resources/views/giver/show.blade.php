@@ -38,13 +38,13 @@
 				</div>
 			</div>
 		</div>
+
+		@if(Auth::user()->id == $the_user->id)
 		<div class="row">
 			<div class="col-1">
 			<div class="profile-contact block">
 				<h2 class="block-title">Contact
-					@if(Auth::user()->id == $the_user->id)
-					<a class="edit-btn" href="{{ URL::route('care_givers.edit', array('id'=>$the_user->id)) }}">Edit</a>
-					@endif
+					<a class="edit-btn" href="{{ URL::route('care_givers.edit', array('id'=>$the_user->id)) }}">Edit</a>				
 				</h2>
 				<div class="block-content">
 					<p>Email: {{ $the_user->email }}</p>
@@ -58,7 +58,8 @@
 			</div>
 			</div>
 		</div>
-		
+		@endif
+
 		<div class="row">
 			<div class="col-1">
 			<div class="block">
@@ -107,7 +108,7 @@
 		<div class="row">
 			<div class="col-2">
 				<div class="block">
-					<h2 class="block-title">My Services  
+					<h2 class="block-title">Service categories 
 						@if(Auth::user()->id == $the_user->id) 
 						<a class="edit-btn" href="{{ URL::route('care_givers.edit3', array('id'=>$the_user->id)) }}">Edit</a>
 						@endif
@@ -126,6 +127,8 @@
 				</div>
 			</div>
 
+			
+
 			<div class="col-2">
 				<div class="block">
 					<h2 class="block-title">Rate 
@@ -139,7 +142,28 @@
 				</div>
 			</div>
 		</div>
-
+		
+		<div class="row">
+			<div class="col-1">
+				<div class="block">
+					<h2 class="block-title">Services
+						@if(Auth::user()->id == $the_user->id) 
+						<a class="edit-btn" href="{{ URL::route('care_givers.edit3', array('id'=>$the_user->id)) }}">Edit</a>
+						@endif
+					</h2>
+					<div class="block-content">
+						<ul>
+							@foreach ($my_services2 as $s)
+							<li>
+								<div class="{{ str_slug($s->service_name, '-') }}">
+								{{ $s->service_name }}
+								</div>
+							</li>
+							@endforeach
+						</ul>
+					</div>
+				</div>
+			</div>
 		<div class="row">
 			<div class="col-1">
 				<div class="block">

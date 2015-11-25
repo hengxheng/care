@@ -10,33 +10,71 @@
             <h2>Services</h2>
             <div class="form-row">
                 
-                <div><input type="checkbox" name="service[]" value="Meal preparation"
-                @if (isset($ser["Meal preparation"])) checked @endif
-                    ><span>Meal preparation</span></div>
+                <div><input type="checkbox" name="service[]" value="Alzheimer's & Dementia Care"
+                @if (isset($ser["Alzheimer's & Dementia Care"])) checked @endif
+                    ><span>Alzheimer's & Dementia Care</span></div>
 
-                <div><input type="checkbox" name="service[]" value="Alzheimer's Care"
-                @if (isset($ser["Alzheimer's Care"])) checked @endif
-                    ><span>Alzheimer's Care</span></div>
+                <div><input type="checkbox" name="service[]" value="Companion Care"
+                @if (isset($ser["Companion Care"])) checked @endif
+                    ><span>Companion Care</span></div>
 
-                <div><input type="checkbox" name="service[]" value="Companionship"
-                @if (isset($ser["Companionship"])) checked @endif
-                    ><span>Companionship</span></div>
+                <div><input type="checkbox" name="service[]" value="Palliative Care"
+                @if (isset($ser["Palliative Care"])) checked @endif
+                    ><span>Palliative Care</span></div>
 
-                <div><input type="checkbox" name="service[]" value="Housekeeping"
-                @if (isset($ser["Housekeeping"])) checked @endif
-                    ><span>Housekeeping</span></div>
+                <div><input type="checkbox" name="service[]" value="Respite Care"
+                @if (isset($ser["Respite Care"])) checked @endif
+                    ><span>Respite Care</span></div>
 
-                <div><input type="checkbox" name="service[]" value="Transportation"
-                @if (isset($ser["Transportation"])) checked @endif
-                    ><span>Transportation</span></div>
-
-                <div><input type="checkbox" name="service[]" value="Personal Care"
-                @if (isset($ser["Personal Care"])) checked @endif
-                    ><span>Personal Care</span></div>
+                <div><input type="checkbox" name="service[]" value="Transition Care"
+                @if (isset($ser["Transition Care"])) checked @endif
+                    ><span>Transition Care</span></div>
             </div>
          </div>
     </div>
-
+    
+    <div class="row">
+        <div class="col-1">
+            <h2>Services</h2>
+            <div class="form-row">
+                <ul class="service2-list">
+                    <li><input type="checkbox" name="service2[]" value="Bathing"
+                        @if (isset($ser2["Bathing"])) checked @endif
+                        ><span>Bathing</span></li>
+                    <li><input type="checkbox" name="service2[]" value="Grooming"
+                        @if (isset($ser2["Grooming"])) checked @endif
+                        ><span>Grooming</span></li>
+                    <li><input type="checkbox" name="service2[]" value="Toileting"
+                        @if (isset($ser2["Toileting"])) checked @endif
+                        ><span>Toileting</span></li>
+                    <li><input type="checkbox" name="service2[]" value="Managing Medications"
+                        @if (isset($ser2["Managing Medications"])) checked @endif
+                        ><span>Managing Medications</span></li>
+                    <li><input type="checkbox" name="service2[]" value="Meal prep"
+                        @if (isset($ser2["Meal prep"])) checked @endif
+                        ><span>Meal prep</span></li>
+                    <li><input type="checkbox" name="service2[]" value="Groceries & Shopping"
+                        @if (isset($ser2["Groceries & Shopping"])) checked @endif
+                        ><span>Groceries & Shopping</span></li>
+                    <li><input type="checkbox" name="service2[]" value="Transferring & Mobility"
+                        @if (isset($ser2["Transferring & Mobility"])) checked @endif
+                        ><span>Transferring & Mobility</span></li>
+                    <li><input type="checkbox" name="service2[]" value="Exercise"
+                        @if (isset($ser2["Exercise"])) checked @endif
+                        ><span>Exercise</span></li>
+                    <li><input type="checkbox" name="service2[]" value="Transportation"
+                        @if (isset($ser2["Transportation"])) checked @endif
+                        ><span>Transportation</span></li>
+                    <li><input type="checkbox" name="service2[]" value="Housekeeping"
+                        @if (isset($ser2["Housekeeping"])) checked @endif
+                        ><span>Housekeeping</span></li>
+                    <li><input type="checkbox" name="service2[]" value="Companionship"
+                        @if (isset($ser2["Companionship"])) checked @endif
+                        ><span>Companionship</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
     <div class="row">
         <div class="col-1">
             <h2>Qualifications</h2>
@@ -52,8 +90,9 @@
     </div>
 
      <div class="row">
+        <div class="col-1">
+        <h2>Availability</h2>
         <div class="availability-block">
-            <label for="availability">Availability</label>
             <table id="avaiability-table">
                 <tr>
                     <td></td>
@@ -144,9 +183,14 @@
                 </tr>
             </table>
         </div>
+        </div>
     </div>
-    <div class="form-row" style="width:300px;">
-        <input type="submit" value="Submit">
+    <div class="row">
+        <div class="col-1">
+            <div class="form-row" style="width:300px;">
+                <input type="submit" value="Submit">
+            </div>
+        </div>
     </div>
 </form>
 </div>

@@ -75,6 +75,13 @@ class CreateUsersTable extends Migration
             $table->timestamps();
         });
 
+        Schema::create('service2', function (Blueprint $table) {
+            $table->increments('id');
+            $table->integer('giver_id');
+            $table->string('service_name');
+            $table->timestamps();
+        });
+
         Schema::create('availability', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('giver_id');
@@ -106,6 +113,7 @@ class CreateUsersTable extends Migration
         Schema::drop('quolification');
         Schema::drop('availability');
         Schema::drop('service');
+        Schema::drop('service2');
         Schema::drop('giver');
         Schema::drop('seeker');
         Schema::drop('users');

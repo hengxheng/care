@@ -47,6 +47,15 @@ a{
 	text-decoration:none;
 }
 
+h1{
+	font-size: 22px;
+}
+h2{
+	font-size: 20px;
+}
+h3{
+	font-size: 18px;
+}
 h1, h2, h3, h4{
 	font-family: 'Gotham-Bold';
 	color: $dark-blue;
@@ -505,47 +514,47 @@ form{
 	background: #055B05;
 }
 
-.service-list{
-	li{
-		display:inline-block;
-	}
-}
+// .service-list{
+// 	li{
+// 		display:inline-block;
+// 	}
+// }
 .service-icon{
-	display:inline-block;
-	width:80px;
-	height:80px;
-	margin:10px;
-	font-size: 0;
+	// display:inline-block;
+	// width:80px;
+	// height:80px;
+	// margin:10px;
+	// font-size: 0;
 }
-.meal-preparation{
-	background:url(../images/meal.png) no-repeat center center;
-	background-size:cover;
-}
+// .meal-preparation{
+// 	background:url(../images/meal.png) no-repeat center center;
+// 	background-size:cover;
+// }
 
-.alzheimers-care{
-	background:url(../images/al-care.png) no-repeat center center;
-	background-size:cover;
-}
+// .alzheimers-care{
+// 	background:url(../images/al-care.png) no-repeat center center;
+// 	background-size:cover;
+// }
 
-.companionship{
-	background:url(../images/companion.png) no-repeat center center;
-	background-size:cover;
-}
+// .companionship{
+// 	background:url(../images/companion.png) no-repeat center center;
+// 	background-size:cover;
+// }
 
-.housekeeping{
-	background:url(../images/housekeeping.png) no-repeat center center;
-	background-size:cover;
-}
+// .housekeeping{
+// 	background:url(../images/housekeeping.png) no-repeat center center;
+// 	background-size:cover;
+// }
 
-.transportation{
-	background:url(../images/transport.png) no-repeat center center;
-	background-size:cover;
-}
+// .transportation{
+// 	background:url(../images/transport.png) no-repeat center center;
+// 	background-size:cover;
+// }
 
-.personal-care{
-	background:url(../images/personal-care.png) no-repeat center center;
-	background-size:cover;
-}
+// .personal-care{
+// 	background:url(../images/personal-care.png) no-repeat center center;
+// 	background-size:cover;
+// }
 
 #logout-btn{
 	background:url(../images/logout-icon.png) no-repeat center left;
@@ -756,5 +765,20 @@ form{
 .tool-bar{
 	#sort-by{
 		text-transform: uppercase;
+	}
+}
+
+
+.service2-list{
+	li{
+		display:inline-block;
+		width: 30%;
+		margin-bottom: 10px;
+		input{
+			vertical-align: middle;
+		}
+		span{
+			vertical-align: middle;
+		}
 	}
 }

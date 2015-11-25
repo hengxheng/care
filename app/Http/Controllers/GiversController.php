@@ -6,6 +6,7 @@ use App\Giver;
 use App\User;
 use App\Job;
 use App\Service;
+use App\Service2;
 use App\Quolification;
 use App\Availability;
 use App\Rating;
@@ -151,6 +152,7 @@ class GiversController extends Controller
             break;
             case "3":
                 $services = Input::get('service');
+                $services2  = Input::get('service2');
                 $quolifications = Input::get('quolification');
 
                 //availability
@@ -160,6 +162,15 @@ class GiversController extends Controller
                 if(is_array($services) && sizeof($services) > 0){
                     foreach ($services as $s){
                         $ser = new Service;
+                        $ser->giver_id = $uid;
+                        $ser->service_name = $s;
+                        $ser->save();
+                    }
+                }
+
+                if(is_array($services2) && sizeof($services2) > 0){
+                    foreach ($services2 as $s){
+                        $ser = new Service2;
                         $ser->giver_id = $uid;
                         $ser->service_name = $s;
                         $ser->save();
@@ -209,6 +220,7 @@ class GiversController extends Controller
         $the_user = User::find($id);
         $the_giver = Giver::find($id);
         $my_services = Service::MyServices($id);
+        $my_services2 = Service2::MyServices($id);
         $my_quolifications = Quolification::MyQuolifications($id);
         $av = Availability::MyAvailability($id);
         $my_rating = Rating::MyRating($id);
@@ -218,7 +230,15 @@ class GiversController extends Controller
         }
 
         $test = Rating::getAvgRating();
-        return view('giver.show', compact(array('the_user', 'the_giver','my_services','my_quolifications', 'my_availability','my_rating','test')));
+        return view('giver.show', compact(array(
+            'the_user',
+            'the_giver',
+            'my_services',
+            'my_services2',
+            'my_quolifications',
+            'my_availability',
+            'my_rating'
+            )));
     }
 
     /**
@@ -243,10 +263,18 @@ class GiversController extends Controller
     public function edit3($id){
         $giver = Giver::findorFail($id);
         $services = Service::MyServices($id);
+        $services2 = Service2::MyServices($id);
+
         $ser = array();
         foreach ($services as $s){
             $ser[$s->service_name] = 1;
         }
+
+        $ser2 = array();
+        foreach ($services2 as $s){
+            $ser2[$s->service_name] = 1;
+        }
+
         $quolifications = Quolification::MyQuolifications($id);
 
         $availabilities = Availability::MyAvailability($id);
@@ -255,7 +283,7 @@ class GiversController extends Controller
         foreach ($availabilities as $ava){
             $avai[$ava->time][$ava->week] = $ava->av;
         }
-        return view("giver.edit-p3", compact(array("giver", "ser","quolifications", "avai")));
+        return view("giver.edit-p3", compact(array("giver", "ser","ser2","quolifications", "avai")));
     }
 
 
@@ -328,6 +356,20 @@ class GiversController extends Controller
                 }
             }
         }
+
+        if(Input::has('service2')){
+            Service2::deleteMyServices($id);
+            $services2 = Input::get('service2');
+            if(is_array($services2) && sizeof($services2) > 0){
+                foreach ($services2 as $s){
+                    $ser = new Service2;
+                    $ser->giver_id = $id;
+                    $ser->service_name = $s;
+                    $ser->save();
+                }
+            }
+        }
+
 
         if(Input::has('quolification')){
             Quolification::deleteMyQuolifications($id);
