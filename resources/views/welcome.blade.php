@@ -48,7 +48,11 @@
 					<div class="form-row">	
 						<label for="picture">Your Photo</label>
 						<input type="file" name="picture">
-					</div> 
+					</div>
+					<div class="form-row">
+						<label for="background-check">Background Check</label>
+						<input type="file" name="background-check">
+					</div>
 					<div class="form-row">
 						<input type="submit" value="Save">
 					</div>

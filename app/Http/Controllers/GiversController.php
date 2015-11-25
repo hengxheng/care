@@ -130,12 +130,25 @@ class GiversController extends Controller
                 $giver->suburb = Input::get('suburb');
                 $giver->postcode = Input::get('postcode');
                 
-                $pic_name = "photo-".$uid;
-                $pic_path = public_path('images/user');
-                $pic_extension = Input::file('picture')->getClientOriginalExtension();
-                if(Input::file('picture')->move($pic_path, $pic_name.'.'.$pic_extension)){
-                    $giver->picture = $pic_name.'.'.$pic_extension;
-                }
+                if(Input::file('picture')){
+                    $pic_name = "photo-".$uid;
+                    $pic_path = public_path('images/user');
+                    $pic_extension = Input::file('picture')->getClientOriginalExtension();
+                    if(Input::file('picture')->move($pic_path, $pic_name.'.'.$pic_extension)){
+                        $giver->picture = $pic_name.'.'.$pic_extension;
+                    }
+                } 
+
+                
+                if(Input::file('background-check')){
+                    $bc_name = "background-check-".$uid;
+                    $bc_path = public_path('uploaded_files/user');
+                    $bc_extension = Input::file('background-check')->getClientOriginalExtension();
+                    if(Input::file('background-check')->move($bc_path, $bc_name.'.'.$bc_extension)){
+                        $giver->background_check = $bc_name.'.'.$bc_extension;
+                    }
+                } 
+
                 $giver->save();
                 return Redirect::route('care_givers.storeProfile1');    
             break;
