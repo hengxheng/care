@@ -86,6 +86,6 @@ Route::group(['middleware' => 'auth'], function(){
 	
 Route::group([ 'namespace' => 'Admin', 'middleware' => 'admin'], function(){
 	Route::resource('admin', 'AdminController');
-	Route::get('admin/dashboard', [ 'as' => 'admin.dashboard', 'uses' => 'AdminController@dashboard']);
 	Route::get('admin/givers/list', ['as' => 'admin.givers.list', 'uses' => 'GiversController@listing']);
+	Route::get('admin/seekers/list', ['as' => 'admin.seekers.list', 'uses' => 'SeekersController@listing']);
 });

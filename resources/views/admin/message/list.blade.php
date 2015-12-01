@@ -1,4 +1,4 @@
-@extends('admin.master')
+@extends('html')
 
 
 @section('content')
@@ -46,7 +46,7 @@
                                  </div>
                                  <div class="cta">
                                     <a class="blue-btn" href="{{ URL::route('care_givers.show', array('uid' => $giver->id )) }}">View</a>
-                                    <!-- <a class="dark-blue-btn" href="{{ URL::route('message.create', array('to_id'=>$giver->id )) }}">Send a message</a> -->
+                                    <a class="dark-blue-btn" href="{{ URL::route('message.create', array('to_id'=>$giver->id )) }}">Send a message</a>
                                 </div>
                                 <div class="user-rating">
                                     <div class="rating">

@@ -59,7 +59,9 @@
 				</div>
 				<nav id="site-nav">
 					<ul>
-						
+						<li><a href="{{ URL::route('admin.index') }}">Dashboard</a></li>
+						<li><a href="{{ URL::route('admin.givers.list') }}">Care givers</a></li>
+						<li><a href="{{ URL::route('admin.seekers.list') }}">Care seekers</a></li>
 					</ul>
 				</nav>
 			</div>

@@ -2,8 +2,20 @@
 
 namespace App\Http\Controllers\admin;
 
+use App\Giver;
+use App\User;
+use App\Job;
+use App\Service;
+use App\Service2;
+use App\Quolification;
+use App\Availability;
+use App\Rating;
+use App\Suburb;
+use Auth;
+use Input;
+use Redirect;
 use Illuminate\Http\Request;
-
+use Session;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 

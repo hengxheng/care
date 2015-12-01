@@ -418,16 +418,7 @@ class GiversController extends Controller
         return Redirect::route('care_givers.show', array('uid' => $id)); 
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
+    
 
     public function storeProfile1(){
         return view("giver.profile1");
@@ -439,5 +430,16 @@ class GiversController extends Controller
 
     public function ajaxCall(Request $request){
 
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return Response
+     */
+    public function destroy($id)
+    {
+        //
     }
 }

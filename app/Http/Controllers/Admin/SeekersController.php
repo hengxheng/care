@@ -2,35 +2,26 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Seeker;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Users;
-use App\Seeker;
-use App\Giver;
 
-
-class AdminController extends Controller
+class SeekersController extends Controller
 {
-
-    public function login(){
-        return view('admin.login');
+    public function listing(){
+        $seekers = Seeker::getAllSeekers();
+        return view('admin.seeker.list', compact('seekers'));
     }
-
     /**
      * Display a listing of the resource.
      *
      * @return Response
      */
-    public function index(){
-        $_givers = Giver::getAllGivers();
-        $givers = array_slice($_givers, 0, 3);
-
-        $_seekers = Seeker::getAllSeekers();
-        $seekers = array_slice($_seekers, 0, 3);
-
-        return view('admin.index', compact('givers', 'seekers'));
+    public function index()
+    {
+        //
     }
 
     /**
@@ -40,7 +31,7 @@ class AdminController extends Controller
      */
     public function create()
     {
-        echo "asfsdaf";
+        //
     }
 
     /**
@@ -62,7 +53,7 @@ class AdminController extends Controller
      */
     public function show($id)
     {
-        
+        //
     }
 
     /**
@@ -97,9 +88,5 @@ class AdminController extends Controller
     public function destroy($id)
     {
         //
-    }
-
-    public function changeUserStatus($id, $status){
-        
     }
 }
