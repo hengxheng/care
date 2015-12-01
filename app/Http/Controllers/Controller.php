@@ -17,7 +17,6 @@ abstract class Controller extends BaseController
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
     
     public function __construct(){
-        $this->middleware('auth');
 
         if(Auth::check()){
         	$id = Auth::user()->id;
@@ -30,6 +29,9 @@ abstract class Controller extends BaseController
         	elseif ($type == "giver"){
         		$user_info = Giver::find($id);
         	}
+            elseif ($type == "admin"){
+                $user_info = array();
+            }
 
 
         	View::share('user_info', $user_info);

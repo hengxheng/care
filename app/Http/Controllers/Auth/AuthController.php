@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use Auth;
 use App\User;
 use Validator;
 use App\Http\Controllers\Controller;
@@ -24,7 +25,7 @@ class AuthController extends Controller
     use AuthenticatesAndRegistersUsers, ThrottlesLogins;
 
     protected $redirectPath = '/';
-
+    protected $redirectAfterLogout = '/auth/login';
     /**
      * Create a new authentication controller instance.
      *
@@ -32,7 +33,26 @@ class AuthController extends Controller
      */
     public function __construct()
     {
+        if(Auth::check()){
+            if(Auth::user()->user_type == 'admin' ){
+                $this->redirectAfterLogout = '/admin/login';
+            }
+        }
         $this->middleware('guest', ['except' => 'getLogout']);
+    }
+
+
+    //override redirectPath()
+    
+    public function redirectPath(){
+        if (property_exists($this, 'redirectPath')) {
+            if (\Auth::user()->user_type == 'admin') {
+                return '/admin';
+            }
+            return $this->redirectPath;
+        }
+
+        return property_exists($this, 'redirectTo') ? $this->redirectTo : '/home';
     }
 
     /**
@@ -70,4 +90,5 @@ class AuthController extends Controller
             'password' => bcrypt($data['password']),
         ]);
     }
+
 }

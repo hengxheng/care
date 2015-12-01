@@ -14,20 +14,14 @@ class DatabaseSeeder extends Seeder
     {
         Model::unguard();
 
-        $demo_services = array(
-                ['id' => 1, 'Personal Care'],
-                ['id' => 2, 'Companionship'],
-                ['id' => 3, 'Transportation']
+        $admin = array(
+                'user_type' => 'admin', 
+                'email' => 'admin@carenation.com',
+                'status' => 'Active',
+                'password' => bcrypt('hidden1234')               
             );
 
-        $demo_quolifications = array(
-                ['id' => 1, 'First Aid'],
-                ['id' => 2, 'CPR']
-            );
-
-
-        DB::table('service')->insert($demo_services);
-        DB::table('quolification')->insert($demo_quolifications);
+        DB::table('users')->insert($admin);
 
         Model::reguard();
     }

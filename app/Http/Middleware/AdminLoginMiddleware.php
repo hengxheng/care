@@ -5,7 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Contracts\Auth\Guard;
 
-class RedirectIfAuthenticated
+class AdminLoginMiddleware
 {
     /**
      * The Guard implementation.
@@ -34,8 +34,13 @@ class RedirectIfAuthenticated
      */
     public function handle($request, Closure $next)
     {
-        if ($this->auth->check()) {
-                return redirect('/');           
+        if($this->auth->check()) {
+            if($this->auth->user()->user_type == "admin"){
+                return redirect("admin/dashboard");
+            }
+            else{
+                return redirect("admin/login");
+            }
         }
 
         return $next($request);
