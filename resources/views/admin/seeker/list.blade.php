@@ -24,8 +24,8 @@
                                      {{ $seeker->suburb }},{{ $seeker->state }}
                                  </div>
                                  <div class="cta">
-                                    <a class="blue-btn" href="{{ URL::route('care_seekers.show', array('uid' => $seeker->id )) }}">View</a>
-                                    <a class="dark-blue-btn" href="{{ URL::route('message.create', array('to_id'=>$seeker->id )) }}">Send a message</a>
+                                    <a class="blue-btn" href="{{ URL::route('admin.seeker.show', array('uid' => $seeker->id )) }}">View</a>
+                                    <!-- <a class="dark-blue-btn" href="{{ URL::route('message.create', array('to_id'=>$seeker->id )) }}">Send a message</a> -->
                                 </div>
                              </div>
                         </div>              

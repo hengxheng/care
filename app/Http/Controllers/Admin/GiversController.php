@@ -60,7 +60,27 @@ class GiversController extends Controller
      */
     public function show($id)
     {
-        //
+        $the_user = User::find($id);
+        $the_giver = Giver::find($id);
+        $my_services = Service::MyServices($id);
+        $my_services2 = Service2::MyServices($id);
+        $my_quolifications = Quolification::MyQuolifications($id);
+        $av = Availability::MyAvailability($id);
+        $my_rating = Rating::MyRating($id);
+        $my_availability = array();
+        foreach ($av as $a){
+            $my_availability[$a->week][$a->time] = $a->av; 
+        }
+
+        return view('admin.giver.show', compact(array(
+            'the_user',
+            'the_giver',
+            'my_services',
+            'my_services2',
+            'my_quolifications',
+            'my_availability',
+            'my_rating'
+            )));
     }
 
     /**

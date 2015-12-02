@@ -45,7 +45,7 @@
                                      {{ str_limit($giver->bio, 200) }}
                                  </div>
                                  <div class="cta">
-                                    <a class="blue-btn" href="{{ URL::route('care_givers.show', array('uid' => $giver->id )) }}">View</a>
+                                    <a class="blue-btn" href="{{ URL::route('admin.giver.show', array('uid' => $giver->id )) }}">View</a>
                                     <!-- <a class="dark-blue-btn" href="{{ URL::route('message.create', array('to_id'=>$giver->id )) }}">Send a message</a> -->
                                 </div>
                                 <div class="user-rating">

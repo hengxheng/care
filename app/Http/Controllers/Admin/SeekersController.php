@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Seeker;
-use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Input;
+use App\User;
+use App\Seeker;
+use Redirect;
 
 class SeekersController extends Controller
 {
@@ -53,7 +55,10 @@ class SeekersController extends Controller
      */
     public function show($id)
     {
-        //
+        $the_user = User::find($id);
+        $the_seeker = Seeker::find($id);
+
+        return view('admin.seeker.show', compact(array('the_user', 'the_seeker')));
     }
 
     /**

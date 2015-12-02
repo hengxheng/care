@@ -1,4 +1,4 @@
-@extends('html')
+@extends('admin.master')
 
 @section('content')
 
@@ -39,12 +39,13 @@
 			</div>
 		</div>
 
-		@if(Auth::user()->id == $the_user->id)
 		<div class="row">
 			<div class="col-1">
 			<div class="profile-contact block">
 				<h2 class="block-title">Contact
+					@if(Auth::user()->id == $the_user->id)
 					<a class="edit-btn" href="{{ URL::route('care_givers.edit', array('id'=>$the_user->id)) }}">Edit</a>				
+					@endif
 				</h2>
 				<div class="block-content">
 					<p>Email: {{ $the_user->email }}</p>
@@ -58,7 +59,6 @@
 			</div>
 			</div>
 		</div>
-		@endif
 
 		<div class="row">
 			<div class="col-1">
@@ -164,6 +164,7 @@
 					</div>
 				</div>
 			</div>
+		</div>
 		<div class="row">
 			<div class="col-1">
 				<div class="block">

@@ -1,4 +1,4 @@
-@extends ('html')
+@extends ('admin.master')
 @section ('content')
 	@if($the_user->user_type == "seeker")
 	<div class="seeker-profile-block">
@@ -18,7 +18,11 @@
 		<div class="row">
 			<div class="col-1">
 				<div class="profile-contact block">
-					<h2 class="block-title">Contact <a class="edit-btn" href="{{ URL::route('care_seekers.edit', array('id'=>$the_user->id)) }}">Edit</a></h2>
+					<h2 class="block-title">Contact 
+						@if ( Auth::user()->id == $the_user->id )
+						<a class="edit-btn" href="{{ URL::route('care_seekers.edit', array('id'=>$the_user->id)) }}">Edit</a>
+						@endif;
+					</h2>
 					<div class="block-content">
 						<p>Email: {{ $the_user -> email }}</p>
 						<p>Phone: {{ $the_user -> phone }}</p>
