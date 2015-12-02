@@ -82,7 +82,11 @@
 							<li><a href="{{ URL::route('care_givers.list')}}">Find Caregivers</a></li>
 							<li><a href="{{ URL::route('job.list', array('poster_id' => Auth::user()->id)) }}">My posted jobs</a></li>
 							@endif
-							<li><a href="{{ URL::route('message.inbox') }}">Inbox</a></li>						
+							<li><a href="{{ URL::route('message.inbox') }}">Inbox 
+								@if(isset($unread))
+								  <span class="msg-notify">{{ $unread }}</span>
+								@endif
+							</a></li>						
 						@endif
 					</ul>
 				</nav>

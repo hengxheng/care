@@ -21,7 +21,7 @@ class MessagesController extends Controller
      */
     public function index()
     {
-        echo "Messaging";
+    
     }
 
     /**
@@ -112,6 +112,13 @@ class MessagesController extends Controller
 
     public function show($type, $id){
         $message = Message::getTheMessage($id, $type);
+
+        if( ($message->receiver_id == Auth::user()->id)&&($message->unread == "1") ){
+            $msg = Message::findorFail($id);
+            $msg->unread = 0;
+            $msg->save();
+        }
+        
         return view("message.show", compact('message'));
     }
 

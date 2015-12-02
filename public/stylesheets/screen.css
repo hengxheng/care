@@ -876,3 +876,20 @@ form .form-row input[type="submit"] {
 .service2-list li span {
   vertical-align: middle;
 }
+
+/* line 786, ../sass/screen.scss */
+.msg-notify {
+  display: inline-block;
+  background: #BC1414;
+  padding: 4px;
+  font-size: 11px;
+  color: #fff;
+  text-align: center;
+  vertical-align: middle;
+  box-sizing: border-box;
+  min-width: 18px;
+  height: 18px;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+}

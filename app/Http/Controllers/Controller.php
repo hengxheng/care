@@ -10,6 +10,7 @@ use Auth;
 use App\User;
 use App\Seeker;
 use App\Giver;
+use App\Message;
 use View;
 
 abstract class Controller extends BaseController
@@ -33,8 +34,11 @@ abstract class Controller extends BaseController
                 $user_info = array();
             }
 
+            $msg = Message::myUnReadMsg($id);
+
 
         	View::share('user_info', $user_info);
+            View::share('unread', $msg);
         }
     }
 }

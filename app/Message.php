@@ -15,8 +15,17 @@ class Message extends Model
                 ->leftJoin('giver', 'message.sender_id', '=', 'giver.uid')
                 ->select('message.*','users.id as uid','users.firstname','users.lastname','users.user_type','seeker.picture AS s_pic','giver.picture AS g_pic')
     			->where('message.receiver_id', '=', $uid)
-    			->orderBy('message.created_at')
+    			->orderBy('message.created_at', 'DESC')
     			->get();
+    }
+
+    public static function myUnReadMsg($uid){
+        $msg = DB::table('message')
+                ->where('unread', '=', 1)
+                ->where('receiver_id', '=', $uid)
+                ->get();
+
+        return sizeof($msg);
     }
 
     public static function mySentMessages($uid){
@@ -26,7 +35,7 @@ class Message extends Model
                 ->leftJoin('giver', 'message.receiver_id', '=', 'giver.uid')
                 ->select('message.*','users.id as uid','users.firstname','users.lastname','users.user_type','seeker.picture AS s_pic','giver.picture AS g_pic')
                 ->where('message.sender_id', '=', $uid)
-                ->orderBy('message.created_at')
+                ->orderBy('message.created_at', 'DESC')
                 ->get();
     }
 

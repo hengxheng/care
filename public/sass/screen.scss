@@ -782,3 +782,17 @@ form{
 		}
 	}
 }
+
+.msg-notify{
+	display:inline-block;
+	background:#BC1414;
+	padding:4px;
+	font-size: 11px;
+	color:#fff;
+	text-align: center;
+	vertical-align: middle;
+	box-sizing:border-box;
+	min-width:18px;
+	height:18px;
+	@include border-radius(2px);
+}

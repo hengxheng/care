@@ -21,7 +21,7 @@
 					<h2 class="block-title">Contact 
 						@if ( Auth::user()->id == $the_user->id )
 						<a class="edit-btn" href="{{ URL::route('care_seekers.edit', array('id'=>$the_user->id)) }}">Edit</a>
-						@endif;
+						@endif
 					</h2>
 					<div class="block-content">
 						<p>Email: {{ $the_user -> email }}</p>

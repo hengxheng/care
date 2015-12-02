@@ -11,12 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-Route::get('/home', function () {
-    return view('welcome');
-});
+Route::get('/', ['uses' => 'HelloController@index']);
 
 // Authentication routes...
 Route::get('auth/login',['as' => 'login', 'uses' => 'Auth\AuthController@getLogin']);
@@ -86,7 +81,7 @@ Route::group(['middleware' => 'auth'], function(){
 	
 Route::group([ 'namespace' => 'Admin', 'middleware' => 'admin'], function(){
 	Route::resource('admin', 'AdminController');
-	
+
 	Route::get('admin/givers/list', ['as' => 'admin.givers.list', 'uses' => 'GiversController@listing']);	
 	Route::get('admin/giver/{id}', ['as' => 'admin.giver.show', 'uses' => 'GiversController@show']);
 
