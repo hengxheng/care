@@ -19,6 +19,9 @@
 		</div>
 		<div class="message-tease">
 			<div class="user-name">
+				@if ($type == "to") To:&nbsp;
+				@elseif ($type == "from") From:&nbsp;
+				@endif
 				{{ $message->firstname}} {{ $message->lastname}}
 			</div>
 			<div class="message-content">
@@ -33,8 +36,10 @@
 	<div class="message-body">
 		{{ $message->content }}
 	</div>
+	@if ($type == "from" )
 	<div class="msg-cta">
 		<a class="dark-blue-btn" href="{{ URL::route('message.create', array('to_id' => $message->sender_id))}}">Replay</a>
 	</div>
+	@endif
 </div>
 @endsection

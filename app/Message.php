@@ -40,7 +40,7 @@ class Message extends Model
     }
 
     public static function getTheMessage($id, $type){
-        if($type == "SENDER"){
+        if($type == "from"){
             $msg = DB::table('message')
                 ->leftJoin('users', 'message.sender_id', '=', 'users.id')
                 ->leftJoin('seeker', 'message.sender_id', '=' ,'seeker.uid')
@@ -49,7 +49,7 @@ class Message extends Model
                 ->where('message.id', '=', $id)
                 ->first();
         }
-        else if($type == "RECEIVER"){
+        else if($type == "to"){
             $msg = DB::table('message')
                 ->leftJoin('users', 'message.receiver_id', '=', 'users.id')
                 ->leftJoin('seeker', 'message.receiver_id', '=' ,'seeker.uid')

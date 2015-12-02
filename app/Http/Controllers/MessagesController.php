@@ -119,7 +119,7 @@ class MessagesController extends Controller
             $msg->save();
         }
         
-        return view("message.show", compact('message'));
+        return view("message.show", compact('type', 'message'));
     }
 
 }

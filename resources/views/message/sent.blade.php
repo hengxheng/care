@@ -33,7 +33,7 @@
 								{{ date('H:i w F d Y', strtotime($message->created_at)) }}
 							</div>
 							<div class="cta">
-								<a class="dark-blue-btn" href="{{ URL::route('message.show', array('type' => 'RECEIVER', 'id' => $message->id))}}">View</a>
+								<a class="dark-blue-btn" href="{{ URL::route('message.show', array('type' => 'to', 'id' => $message->id))}}">View</a>
 							</div>
 						</div>
 					</div>
