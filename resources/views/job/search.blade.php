@@ -20,8 +20,8 @@
                     	{{ $job -> status }}
                     </div>
                     <div class="job-action">
-                    	<a href="{{ URL::route('job.edit', array('id' => $job->id )) }}">View</a>
-                        <a href="{{ URL::route('submission.create',  array('jid' => $job->id, 'uid'=> Auth::user()->id )) }}">Apply</a>
+                    	<a class="blue-btn" href="{{ URL::route('job.show', array('id' => $job->id )) }}">View</a>
+                        <a class="dark-blue-btn" href="{{ URL::route('submission.create',  array('jid' => $job->id, 'uid'=> Auth::user()->id )) }}">Apply</a>
                     </div>
                 </div>
             </li>

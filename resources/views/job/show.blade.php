@@ -29,10 +29,11 @@
 				</ul>
 			</div>
 		</div>
-		
+		@if (Auth::user()->id == $job->poster_id)
 		<div class="job-action">
 			<a class="blue-btn" href="{{ URL::route('job.edit', array('id' => $job -> id))}}">Edit</a>
 			<a class="dark-blue-btn" href="{{ URL::route('job.delete', array('id' => $job->id )) }}">Delete</a>
 		</div>
+		@endif
 	</div>
 @endsection
