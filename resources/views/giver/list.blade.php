@@ -2,90 +2,6 @@
 
 
 @section('content')
-    
-    <div class="giver-list-block content-with-sidebar">
-        <div class="tool-bar">
-            <form id="sort-form" action="{{ URL::route('care_givers.list')}}" method="get">
-                <label for="sort-by">Sort By: </label>
-                <select name="sort-by" id="sort-by">
-                    <option value="{{ $order }}">
-                        @if($order == "avg") Rating
-                        @else {{ $order }}
-                        @endif
-                    </option>
-                    <option value="avg">Rating</option>
-                    <option value="rate">Rate</option>
-                </select>
-            </form>
-            <script>
-                $(function(){
-                    $("#sort-by").change(function(){
-                        $("#sort-form").submit();
-                    });
-                });
-            </script>
-        </div>
-        <div class="listing-box">
-            @if (count($givers) > 0)
-            <ul>
-                @foreach( $givers as $giver )
-                    <li class="{{ $giver->state }} {{ $giver->suburb }} rate-{{ $giver->rate }} rating-{{$rating[$giver->uid] }}">
-                        <div class="user-block">
-                            <div class="user-img">
-                                <img src="{{ URL::asset('images/user/'.$giver->picture) }}" alt="">
-                            </div>
-                             <div class="user-info">
-                                 <div class="user-name">
-                                     {{ $giver->firstname }} {{ $giver->lastname}}
-                                 </div>
-                                 <div class="user-location">
-                                     {{ $giver->suburb }},{{ $giver->state }}
-                                 </div>
-                                 <div class="user-exp">
-                                     {{ str_limit($giver->bio, 200) }}
-                                 </div>
-                                 <div class="cta">
-                                    <a class="blue-btn" href="{{ URL::route('care_givers.show', array('uid' => $giver->id )) }}">View</a>
-                                    <a class="dark-blue-btn" href="{{ URL::route('message.create', array('to_id'=>$giver->id )) }}">Send a message</a>
-                                </div>
-                                <div class="user-rating">
-                                    <div class="rating">
-                                        @if($rating[$giver->id] >0 )
-                                            @for ($i=0; $i< $rating[$giver->id]; $i++)
-                                                <i class="fa fa-star fa-2x"></i>
-                                            @endfor
-                                        @else
-                                           Not Rating yet
-                                        @endif
-                                    </div>
-                                </div>
-                             </div>
-                             <div class="user-right-box">
-                                <div class="user-rate">
-                                    <h2>${{ $giver->rate }}</h2>
-                                    <p>per hour</p>
-                                </div>
-                                <div class="year-exp">
-                                    <h2>{{ $giver->years_exp }}</h2>
-                                    <p>years<br/>experience</p>
-                                </div>
-                             </div>
-                        </div>              
-                    </li>
-                @endforeach
-            </ul>
-            @else
-            <ul>
-                <li>
-                    <div class="user-block">
-                    Not care giver found.
-                    </div>
-                </li>
-            </ul>
-            @endif
-        </div>
-    </div>
-
     <div class="filter-sidebar">
         <h2>Refine Search:</h2>
 
@@ -168,4 +84,91 @@
             </form>
         </div>
     </div>
+
+    <div class="giver-list-block content-with-sidebar">
+        <div class="tool-bar row">
+            <div class="col-1">
+            <form id="sort-form" action="{{ URL::route('care_givers.list')}}" method="get">
+                <label for="sort-by">Sort By: </label>
+                <select name="sort-by" id="sort-by">
+                    <option value="{{ $order }}">
+                        @if($order == "avg") Rating
+                        @else {{ $order }}
+                        @endif
+                    </option>
+                    <option value="avg">Rating</option>
+                    <option value="rate">Rate</option>
+                </select>
+            </form>
+            <script>
+                $(function(){
+                    $("#sort-by").change(function(){
+                        $("#sort-form").submit();
+                    });
+                });
+            </script>
+            </div>
+        </div>
+        <div class="listing-box">
+            @if (count($givers) > 0)
+            <ul>
+                @foreach( $givers as $giver )
+                    <li class="{{ $giver->state }} {{ $giver->suburb }} rate-{{ $giver->rate }} rating-{{$rating[$giver->uid] }}">
+                        <div class="user-block">
+                            <div class="user-img">
+                                <img src="{{ URL::asset('images/user/'.$giver->picture) }}" alt="">
+                            </div>
+                             <div class="user-info">
+                                 <div class="user-name">
+                                     {{ $giver->firstname }} {{ $giver->lastname}}
+                                 </div>
+                                 <div class="user-location">
+                                     {{ $giver->suburb }},{{ $giver->state }}
+                                 </div>
+                                 <div class="user-exp">
+                                     {{ str_limit($giver->bio, 200) }}
+                                 </div>
+                                 <div class="cta">
+                                    <a class="blue-btn" href="{{ URL::route('care_givers.show', array('uid' => $giver->id )) }}">View</a>
+                                    <a class="dark-blue-btn" href="{{ URL::route('message.create', array('to_id'=>$giver->id )) }}">Send a message</a>
+                                </div>
+                                <div class="user-rating">
+                                    <div class="rating">
+                                        @if($rating[$giver->id] >0 )
+                                            @for ($i=0; $i< $rating[$giver->id]; $i++)
+                                                <i class="fa fa-star fa-2x"></i>
+                                            @endfor
+                                        @else
+                                           Not Rating yet
+                                        @endif
+                                    </div>
+                                </div>
+                             </div>
+                             <div class="user-right-box">
+                                <div class="user-rate">
+                                    <h2>${{ $giver->rate }}</h2>
+                                    <p>per hour</p>
+                                </div>
+                                <div class="year-exp">
+                                    <h2>{{ $giver->years_exp }}</h2>
+                                    <p>years<br/>experience</p>
+                                </div>
+                             </div>
+                        </div>              
+                    </li>
+                @endforeach
+            </ul>
+            @else
+            <ul>
+                <li>
+                    <div class="user-block">
+                    Not care giver found.
+                    </div>
+                </li>
+            </ul>
+            @endif
+        </div>
+    </div>
+
+    
 @endsection

@@ -216,6 +216,8 @@ header#site-header{
 
 
 .listing-box{
+	padding: 25px 0;
+	box-sizing: border-box;
 	ul{
 		li{
 			margin:10px;
@@ -763,6 +765,7 @@ form{
 }
 
 .tool-bar{
+	text-align:right;
 	#sort-by{
 		text-transform: uppercase;
 	}
