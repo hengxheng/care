@@ -76,6 +76,11 @@ class SeekersController extends Controller
         return Redirect::route('care_seekers.show', array('id' => $uid));
 
     }
+    
+    //pay to upgrade via Stripe
+    public function upgradeAccount($uid){
+
+    }
 
     /**
      * Display the specified resource.

@@ -99,7 +99,17 @@ class AdminController extends Controller
         //
     }
 
-    public function changeUserStatus($id, $status){
-        
+    public function changeUserStatus($uid, $status){
+        $user = Users::findorFail($uid);
+        $user->status = $status;
+        $user->save();
+        return $status;
+    }
+
+    public function changeJobStatus($jid, $status){
+        $job = Job::findorFail($jid);
+        $job->status = $status;
+        $job->save();
+        return $status;
     }
 }
