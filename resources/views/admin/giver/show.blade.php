@@ -19,7 +19,15 @@
 					<div class="user-location">
 						{{ $the_giver->suburb }},{{ $the_giver->state }}
 					</div>
-					@if (Auth::user()->user_type == 'seeker' )
+					@if (Auth::user()->user_type == 'admin')
+						<!-- <form id="user-status-form" action="{{ URL::route('changeUserStatus') }}"> -->
+							<select name="status" id="user-status">
+								<option value="Active">Publish</option>
+								<option value="Inactive">Unpublish</option>
+							</select>
+						<!-- </form> -->
+					@endif
+					@if (Auth::user()->user_type == 'seeker')
 						<a class="dark-blue-btn" href="{{ URL::route('message.create', array('to_id'=>$the_giver -> uid )) }}">Send a message</a>
 					@endif
 				</div>

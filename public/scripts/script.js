@@ -1,4 +1,6 @@
 
+var base_url = "http://localhost/care/public/";
+
 var app = {
  	
  	inital: function(){
@@ -55,5 +57,7 @@ $(function(){
     $("#rateit").bind('over', function (event, value) { 
     	// console.log('Hovering over: ' + value); 
     });
+
+    $
 
 });
