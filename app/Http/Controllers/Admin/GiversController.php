@@ -172,7 +172,7 @@ class GiversController extends Controller
             $order = Input::get('sort-by');
         }
 
-        $givers = Giver::filterAllGivers($state_filter, $suburb_filter, $min_price, $max_price, $min_rating, $max_rating, $order);
+        $givers = Giver::filterAllGivers($state_filter, $suburb_filter, $min_price, $max_price, $min_rating, $max_rating, $order, "Inactive");
 
         foreach ($givers as $g){
             $rating[$g->uid] = Rating::MyRating($g->uid);

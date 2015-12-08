@@ -212,10 +212,10 @@ class GiversController extends Controller
                     }
                 }
                 
-                $user = new User;
-                $user = User::findorFail($uid);
-                $user->status = "Active";
-                $user->save();
+                // $user = new User;
+                // $user = User::findorFail($uid);
+                // $user->status = "Active";
+                // $user->save();
 
                 return Redirect::route('care_givers.show', array('uid' => $uid)); 
             break;

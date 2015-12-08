@@ -59,11 +59,13 @@ class SeekersController extends Controller
         $seeker->postcode = Input::get('postcode');
 
 
-        $pic_name = "photo-".$uid;
-        $pic_path = public_path('images/user');
-        $pic_extension = Input::file('picture')->getClientOriginalExtension();
-        if(Input::file('picture')->move($pic_path, $pic_name.'.'.$pic_extension)){
-            $seeker->picture = $pic_name.'.'.$pic_extension;
+        if(Input::file('picture')){
+            $pic_name = "photo-".$uid;
+            $pic_path = public_path('images/user');
+            $pic_extension = Input::file('picture')->getClientOriginalExtension();
+            if(Input::file('picture')->move($pic_path, $pic_name.'.'.$pic_extension)){
+                $seeker->picture = $pic_name.'.'.$pic_extension;
+            }
         }
         $seeker->save();
 

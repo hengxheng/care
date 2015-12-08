@@ -799,3 +799,13 @@ form{
 	height:18px;
 	@include border-radius(2px);
 }
+
+.register-block{
+	display:inline-block;
+	width: 45%;
+	box-sizing: border-box;
+	padding: 0 15px;
+	form{
+		width:100%;
+	}
+}

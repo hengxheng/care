@@ -20,12 +20,21 @@
 						{{ $the_giver->suburb }},{{ $the_giver->state }}
 					</div>
 					@if (Auth::user()->user_type == 'admin')
+					<div class="user-status">
 						<!-- <form id="user-status-form" action="{{ URL::route('changeUserStatus') }}"> -->
+							<label for="status">User Status: </label>
 							<select name="status" id="user-status">
-								<option value="Active">Publish</option>
-								<option value="Inactive">Unpublish</option>
+								<option value="{{ $the_user->status }}">{{ $the_user->status }}</option>
+								<option value="Active">Active</option>
+								<option value="Inactive">Inactive</option>
 							</select>
 						<!-- </form> -->
+					</div>
+					<div class="bg-check">
+						<a class="dark-blue-btn" href="{{ URL::asset('uploaded_files/user/'.$the_giver->background_check) }}" target="_blank">Background Check</a>
+					</div>		
+
+
 					@endif
 					@if (Auth::user()->user_type == 'seeker')
 						<a class="dark-blue-btn" href="{{ URL::route('message.create', array('to_id'=>$the_giver -> uid )) }}">Send a message</a>
@@ -290,6 +299,23 @@
 							    }
 							});
 						 });
+
+					    $("#user-status").change(function(){
+					    	var v = $(this).val();
+					    	$.ajax({
+					    		type: 'POST',
+					    		url: "{{ URL::route('changeUserStatus') }}",
+					    		data: { 
+					    				"_token" : "{{ Session::token()}}",
+					    				"uid" : {{ $the_user->id }},
+					    				"status": $(this).val()
+					    			},
+					    		success: function(result){
+							    	console.log(result);
+							    }
+					    	});
+					    });
+
 					});
 				</script>
 			</div>

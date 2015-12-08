@@ -30,7 +30,7 @@ class CreateUsersTable extends Migration
             $table->integer('uid')->unsigned();
             $table->foreign('uid')->references('id')->on('users')->onDelete('cascade');
             $table->string('gender');
-            $table->string('picture')->nullable();
+            $table->string('picture')->default('default.png');
             $table->string('address1');
             $table->string('address2')->nullable();
             $table->string('suburb');
@@ -54,7 +54,7 @@ class CreateUsersTable extends Migration
             $table->string('suburb');
             $table->string('state');
             $table->string('postcode');
-            $table->string('picture')->nullable();
+            $table->string('picture')->default('default.png');
             $table->boolean('premium')->default(false);
             $table->timestamps();
         });

@@ -58,6 +58,4 @@ $(function(){
     	// console.log('Hovering over: ' + value); 
     });
 
-    $
-
 });

@@ -52,6 +52,8 @@
 					<div class="form-row">
 						<label for="background-check">Background Check</label>
 						<input type="file" name="background-check">
+						<p>It is mandatory to have a background check in order for your profile to be live.</p>
+						<p>To apply, please visit <a href="https://www.veritascheck.com.au/apply" target="_blank">https://www.veritascheck.com.au/apply</a></p>
 					</div>
 					<div class="form-row">
 						<input type="submit" value="Save">

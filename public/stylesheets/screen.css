@@ -902,3 +902,15 @@ form .form-row input[type="submit"] {
   -webkit-border-radius: 2px;
   border-radius: 2px;
 }
+
+/* line 803, ../sass/screen.scss */
+.register-block {
+  display: inline-block;
+  width: 45%;
+  box-sizing: border-box;
+  padding: 0 15px;
+}
+/* line 808, ../sass/screen.scss */
+.register-block form {
+  width: 100%;
+}

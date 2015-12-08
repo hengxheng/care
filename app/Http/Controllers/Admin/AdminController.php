@@ -6,10 +6,10 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Users;
+use App\User;
 use App\Seeker;
 use App\Giver;
-
+use Input;
 
 class AdminController extends Controller
 {
@@ -99,17 +99,23 @@ class AdminController extends Controller
         //
     }
 
-    public function changeUserStatus($uid, $status){
-        $user = Users::findorFail($uid);
+    public function changeUserStatus(){
+        $uid = Input::get('uid');
+        $status = Input::get('status');
+        $user = User::findorFail($uid);
         $user->status = $status;
         $user->save();
         return $status;
     }
 
-    public function changeJobStatus($jid, $status){
-        $job = Job::findorFail($jid);
-        $job->status = $status;
-        $job->save();
-        return $status;
+    public function changeJobStatus(){
+        $jid = Input::get('jid');
+        $status = Input::get('status');
+
+        return $jid;
+        // $job = Job::findorFail($jid);
+        // $job->status = $status;
+        // $job->save();
+        // return $status;
     }
 }

@@ -18,7 +18,7 @@ class DatabaseSeeder extends Seeder
                 'user_type' => 'admin', 
                 'email' => 'admin@carenation.com',
                 'status' => 'Active',
-                'password' => bcrypt('hidden1234')               
+                'password' => bcrypt('123456')               
             );
 
         DB::table('users')->insert($admin);
