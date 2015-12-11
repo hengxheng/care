@@ -55,6 +55,9 @@ class GiversController extends Controller
             Session::put('suburb-filter', Input::get('suburb-filter'));
             $suburb_filter = Input::get('suburb-filter');
         }
+
+
+    
         if(Input::has('rating-filter')){
             Session::put('rating-filter', Input::get('rating-filter'));
             $rating_filter = Input::get('rating-filter');
