@@ -49,7 +49,11 @@ class JobsController extends Controller
     {
         $this->validate($request, [
             'title' => 'required',
-            'description' => 'required'
+            'description' => 'required',
+            'service' => 'required',
+            'state' => 'required',
+            'suburb' => 'required',
+            'start_date' => 'required'
         ]);
 
         $uid = Input::get('uid');
@@ -64,8 +68,11 @@ class JobsController extends Controller
         }
         $_serv = substr($_serv,0,-1);
         $job->service_name = $_serv;
-         
+        $job->state = Input::get('state');
+        $job->start_date = date("Y-m-d", strtotime(Input::get('start_date')));
         $job->description = Input::get('description');
+        $job->suburb = Input::get('suburb');
+        $job->postcode = Input::get('postcode');
         $job->status = "Active";
         $job->save();
 
@@ -96,7 +103,21 @@ class JobsController extends Controller
     public function edit($id)
     {
         $job = Job::find($id);
-        return view("job.edit", compact('job'));
+
+        $_serv = $job->service_name;
+        $serv = explode("," ,$_serv);
+        $services = array( 
+            "Meal preparation" => false,
+            "Alzheimer's Care" => false,
+            "Companionship" => false,
+            "Housekeeping" => false,
+            "Transportation" => false,
+            "Personal Care" => false,
+            );
+        foreach ($serv as $s){
+            $services[$s] = true;
+        }
+        return view("job.edit", compact('job', 'services'));
     }
 
     /**
@@ -112,11 +133,28 @@ class JobsController extends Controller
 
         $this->validate($request, [
             'title' => 'required',
-            'description' => 'required'
+            'description' => 'required',
+            'service' => 'required',
+            'state' => 'required',
+            'suburb' => 'required',
+            'start_date' => 'required'
         ]);
 
-        $job->title = $request->title;
-        $job->description = $request->description;
+        $job->title = Input::get('title');
+
+        $serv = Input::get('service');
+        $_serv = "";
+        foreach ($serv as $s){
+            $_serv .= $s.',';
+        }
+        $_serv = substr($_serv,0,-1);
+        
+        $job->service_name = $_serv;
+        $job->state = Input::get('state');
+        $job->start_date = date("Y-m-d", strtotime(Input::get('start_date')));
+        $job->description = Input::get('description');
+        $job->suburb = Input::get('suburb');
+        $job->postcode = Input::get('postcode');
         $job->status = $request->status;
 
         $job->save();

@@ -6,9 +6,11 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Care Nation</title>
 		<link rel="stylesheet" href="{{ URL::asset('stylesheets/screen.css') }}">
+		<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
 		<!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script> -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-		<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+		<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+		<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 		<script src="{{URL::asset('scripts/script.js') }}"></script>
 		<script src="{{URL::asset('scripts/rateit/src/jquery.rateit.min.js') }}"></script>
 		<link rel="stylesheet" href="{{URL::asset('scripts/rateit/src/rateit.css') }}">

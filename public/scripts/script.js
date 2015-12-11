@@ -58,4 +58,8 @@ $(function(){
     	// console.log('Hovering over: ' + value); 
     });
 
+    $(".datepicker").datepicker({
+    	dateFormat: 'yy-m-d'
+    });
+
 });

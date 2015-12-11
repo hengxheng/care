@@ -40,7 +40,7 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::get('{id}/edit3', ['as' => 'care_givers.edit3', 'uses' => 'GiversController@edit3']);
 
 	//Ajax call
-	Route::post('ajax', ['as' => 'care_givers.ajax', 'uses' => 'GiversController@ajaxCall']);
+	Route::get('ajax', ['as' => 'care_givers.ajax', 'uses' => 'GiversController@ajaxCall']);
 
 
 	Route::resource('care_seekers','SeekersController');

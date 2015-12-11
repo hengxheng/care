@@ -2,17 +2,23 @@
 @section ('content')
 	<div class="job-view">
 		<div class="job-title block">
-			<h2 class="block-title">Job Title ({{ $job -> status }})</h2>
+			<h2 class="block-title">Job Title ({{ $job->status }})</h2>
 			
 			<div class="block-content">		
-				<h2>{{ $job -> title }}</h2>
-				<p>{{ $job -> created_at }}</p>
+				<h2>{{ $job->title }}</h2>
+				<p>{{ $job->created_at }}</p>
 			</div>	
 		</div>
 		<div class="job-description block">
 			<h2 class="block-title">Job Description</h2>
 			<div class="block-content">
-				{{ $job -> description }}
+				{{ $job->description }}
+			</div>
+		</div>
+		<div class="block">
+			<h2 class="block-title">Start Date</h2>
+			<div class="block-content">
+				{{ $job->start_date}}
 			</div>
 		</div>
 		<div class="block">
@@ -27,6 +33,12 @@
 					</li>
 					@endforeach
 				</ul>
+			</div>
+		</div>
+		<div class="block">
+			<h2 class="block-title">Location</h2>
+			<div class="block-content">
+				<p>{{ $job->suburb }}, {{ $job->state }}</p>
 			</div>
 		</div>
 		@if (Auth::user()->id == $job->poster_id)

@@ -11,6 +11,7 @@ use App\Quolification;
 use App\Availability;
 use App\Rating;
 use App\Suburb;
+use App\Location;
 use Auth;
 use Input;
 use Redirect;
@@ -429,6 +430,8 @@ class GiversController extends Controller
     }
 
     public function ajaxCall(Request $request){
+        $t = Location::getNearBy(2135, 10);
+        var_dump(sizeof($t));
 
     }
 

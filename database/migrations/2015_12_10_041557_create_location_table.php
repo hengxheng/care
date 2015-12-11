@@ -13,7 +13,8 @@ class CreateLocationTable extends Migration
     public function up()
     {
         Schema::create('location', function (Blueprint $table) {
-             $table->string('countrycode');
+            $table->increments('id');
+            $table->string('countrycode');
             $table->string('region1');
             $table->string('region2');
             $table->string('region3');
@@ -28,6 +29,7 @@ class CreateLocationTable extends Migration
             $table->string('timezone');
             $table->string('utc');
             $table->string('dst');
+            $table->index('postcode');
         });
     }
 

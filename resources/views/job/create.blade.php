@@ -23,12 +23,28 @@
         <div><input type="checkbox" name="service[]" value="Personal Care"><span>Personal Care</span></div>
     </div>
     <div class="form-row">
+    	<label for="state">State</label>
+    	<select name="state">
+    		<option value="">---</option>
+    		<option value="New South Wales">New South Wales</option>
+    		<option value="Queensland">Queensland</option>
+    		<option value="Victoria">Victoria</option>
+    		<option value="Western Australia">Western Australia</option>
+    		<option value="South Australia">South Australia</option>
+    		<option value="Tasmania">Tasmania</option>
+    	</select>
+    </div>
+    <div class="form-row">
 		<label for="suburb">Suburb</label>
 		<input type="text" name="suburb">
 	</div>
 	<div class="form-row">
 		<label for="postcode">Postcode</label>
 		<input type="text" name="postcode">
+	</div>
+	<div class="form-row">
+		<label for="start_date">Start Date</label>
+		<input type="text" name="start_date" class="datepicker">
 	</div>
 	<div class="form-row">
 		<input type="submit" value="POST">

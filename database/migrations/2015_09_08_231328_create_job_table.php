@@ -17,10 +17,11 @@ class CreateJobTable extends Migration
             $table->text('title');
             $table->text('description');
             $table->integer('poster_id')->unsigned();;
-            // $table->foreign('poster_id')->references('uid')->on('seeker')->onDelete('cascade');
             $table->string('service_name');
-            $table->string('location');
+            $table->string('state');
+            $table->string('suburb');
             $table->string('postcode');
+            $table->date('start_date');
             $table->string('status');
             $table->timestamps();
         });
