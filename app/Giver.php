@@ -40,7 +40,7 @@ class Giver extends Model
         }
 
         $givers->orderBy($order, 'desc');  
-        return $givers->get();//->groupBy('giver.uid')->get();
+        return $givers->get();
         
     }
 

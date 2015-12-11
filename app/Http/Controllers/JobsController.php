@@ -25,8 +25,47 @@ class JobsController extends Controller
 
     public function search()
     {
-        $jobs = Job::all();
-        return view('job.search', compact('jobs'));
+        $state_filter = (Session::has('job-state-filter'))?(Session::get('job-state-filter')):"null";
+        $suburb_filter = (Session::has('job-suburb-filter'))?(Session::get('job-suburb-filter')):"null";
+        $services_filter = (Session::has('job-services-filter'))?(Session::get('job-services-filter')):array();
+
+
+        $order = (Session::has('job-order'))?(Session::get('job-order')):"start_date";
+
+        if(Input::has('job-state-filter')){
+            Session::put('job-state-filter', Input::get('job-state-filter'));
+            $state_filter = Input::get('job-state-filter');
+        }
+        if(Input::has('job-suburb-filter')){
+            Session::put('job-suburb-filter', Input::get('job-suburb-filter'));
+            $suburb_filter = Input::get('job-suburb-filter');
+        }
+        if(Input::has('job-services-filter')){
+            Session::put('job-services-filter', Input::get('job-services-filter'));
+            $services_filter = Input::get('job-services-filter');
+        }
+        if(Input::has('job-order')){
+            Session::put('job-order', Input::get('job-order'));
+            $order = Input::get('job-order');
+        }
+
+        $suburbs = Job::getAllSuburbs();
+
+        $serv = array( 
+            "Meal preparation" => false,
+            "Alzheimer's Care" => false,
+            "Companionship" => false,
+            "Housekeeping" => false,
+            "Transportation" => false,
+            "Personal Care" => false,
+            );
+        foreach ($services_filter as $s){
+            $serv[$s] = true;
+        }
+
+        $jobs = Job::search($state_filter, $suburb_filter, $services_filter, $order, "Active");
+
+        return view('job.search', compact('jobs', 'suburbs', 'serv', 'state_filter', 'suburb_filter', 'services_filter', 'order'));
     }
 
     /**
@@ -88,7 +127,6 @@ class JobsController extends Controller
     public function show($id)
     {
         $job = Job::find($id);
-
         $_serv = $job->service_name;
         $serv = explode("," ,$_serv);
         return view("job.show", compact('job', 'serv'));
@@ -148,7 +186,7 @@ class JobsController extends Controller
             $_serv .= $s.',';
         }
         $_serv = substr($_serv,0,-1);
-        
+
         $job->service_name = $_serv;
         $job->state = Input::get('state');
         $job->start_date = date("Y-m-d", strtotime(Input::get('start_date')));

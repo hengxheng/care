@@ -3,9 +3,6 @@
 
 @section('content')
 <div class="listing-box">
- @if ( !$jobs->count() )
-        No job yet.
-    @else
         <ul>
             @foreach( $jobs as $job )
             <li>
@@ -27,6 +24,5 @@
             </li>
             @endforeach
         </ul>
-    @endif
 </div>
 @endsection
