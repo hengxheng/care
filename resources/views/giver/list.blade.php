@@ -39,7 +39,7 @@
                     </select>
                 </div>
 
-                <div class="form-ele">
+           <!--      <div class="form-ele">
                     <label for="rating">Rating:</label>
                     <select name="rating-filter" id="rating-filter">
                         @if ($rating_filter != "null")
@@ -74,6 +74,26 @@
                         <option value="$50 - $100">$50 - $100</option>
                         <option value="$100 - $150">$100 - $150</option>
                         <option value="$150 - $100000">Above $150</option>
+                    </select>
+                </div> -->
+
+                <div class="form-ele">
+                    <label for="gender">Gender</label>
+                    <select name="gender">
+                        <option value="null">-- NONE --</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+                </div>
+
+                <div class="form-ele">
+                    <label for="radius">Radius</label>
+                    <select name="radius">
+                        <option value="null">-- NONE --</option>
+                        <option value="5">5 Kilometers</option>
+                        <option value="10">10 Kilometers</option>
+                        <option value="15">15 Kilometers</option>
+                        <option value="20">20 Kilometers</option>
                     </select>
                 </div>
 
