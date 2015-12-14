@@ -38,25 +38,42 @@ class GiversController extends Controller
     public function listing(){
         // filters
 
-        $state_filter = (Session::has('state-filter'))?(Session::get('state-filter')):"null";
-        $suburb_filter = (Session::has('suburb-filter'))?(Session::get('suburb-filter')):"null";
+        // var_dump(Input::get('service-filter'));
+        // var_dump(Input::get('service2-filter'));
+        // exit;
+
+        $postcode_filter = (Session::has('postcode-filter'))?(Session::get('postcode-filter')):"null";
+        $radius_filter = Session::has('radius-filter');
+
         $rating_filter = (Session::has('rating-filter'))?(Session::get('rating-filter')):"null";
         $price_filter = (Session::has('price-filter'))?(Session::get('price-filter')):"null";
-
+        $gender_filter = (Session::has('gender-filter'))?(Session::get('gender-filter')):"null";
+        $service_filter = (Session::has('service-filter'))?(Session::get('service-fitler')):"null";
+        $service2_filter = (Session::has('service2-filter'))?(Session::get('service2-filter')):"null";
         //sort by
 
         $order = (Session::has('giver-order'))?(Session::get('giver-order')):"avg";
 
-        if(Input::has('state-filter')){
-            Session::put('state-filter', Input::get('state-filter'));
-            $state_filter = Input::get('state-filter');
-        }
-        if(Input::has('suburb-filter')){
-            Session::put('suburb-filter', Input::get('suburb-filter'));
-            $suburb_filter = Input::get('suburb-filter');
+
+        if(Input::has('postcode-filter') && Input::has('radius-filter')){
+            Session::put('postcode-filter', Input::get('postcode-filter'));
+            $postcode_filter = Input::get('postcode-filter');
         }
 
+        if(Input::has('gender-filter')){
+            Session::put('gender-filter', Input::get('gender-filter'));
+            $gender_filter = Input::get('gender-filter');
+        }
 
+        if(Input::has('service-filter')){
+            Session::put('service-filter', Input::get('service-filter'));
+            $service_filter = Input::get('service-filter');
+        }
+
+        if(Input::has('service2-filter')){
+            Session::put('service2-filter', Input::get('service2-filter'));
+            $service2_filter = Input::get('service2-filter');
+        }
     
         if(Input::has('rating-filter')){
             Session::put('rating-filter', Input::get('rating-filter'));
@@ -93,14 +110,28 @@ class GiversController extends Controller
             $order = Input::get('sort-by');
         }
 
-        $givers = Giver::filterAllGivers($state_filter, $suburb_filter, $min_price, $max_price, $min_rating, $max_rating, $order);
+        $givers = Giver::filterAllGivers($postcode_filter, $gender_filter, $service_filter, $service2_filter, $min_price, $max_price, $min_rating, $max_rating, $order);
 
         foreach ($givers as $g){
             $rating[$g->uid] = Rating::MyRating($g->uid);
         }
 
+        $sf = array();
+        if(is_array($service_filter) && !empty($service_filter)){
+            foreach ($service_filter as $s){
+                $sf[$s] = true;
+            }
+        }
+        
+
+        $sf2 = array();
+        if(is_array($service2_filter) && !empty($service2_filter)){
+            foreach ($service2_filter as $s){
+                $sf2[$s] = true;
+            }
+        }
         $suburbs = Giver::getAllSuburbs();
-        return view('giver.list',compact('givers', 'rating', 'suburbs','state_filter', 'suburb_filter','rating_filter', 'price_filter','order'));
+        return view('giver.list',compact('givers', 'rating', 'suburbs','postcode_filter', 'sf', 'sf2', 'rating_filter', 'price_filter','order'));
     }
     /**
      * Show the form for creating a new resource.

@@ -9,6 +9,7 @@
 		<!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script> -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 		<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+			<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 		<script src="{{URL::asset('scripts/script.js') }}"></script>
 	</head>
 	<body ng-app="myApp">

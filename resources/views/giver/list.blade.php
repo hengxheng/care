@@ -9,35 +9,26 @@
             <form action="{{ URL::route('care_givers.list')}}">
                 {!! csrf_field() !!}
                 <div class="form-ele">
-                    <label for="state-filter">State:</label>
-                    <select name="state-filter" id="state-filter">
-                        @if ($state_filter != "null")
-                        <option value="{{ $state_filter }}">{{ $state_filter }}</option>
-                        @endif
+                    <label for="gender">Gender</label>
+                    <select name="gender-filter">
                         <option value="null">-- NONE --</option>
-                        <option value="New South Wales">New South Wales</option>
-                        <option value="Queensland">Queensland</option>
-                        <option value="Northern Territory">Northern Territory</option>
-                        <option value="Australian Capital Territory">Australian Capital Territory</option>
-                        <option value="Victoria">Victoria</option>
-                        <option value="Western Australia">Western Australia</option>
-                        <option value="South Australia">South Australia</option>
-                        <option value="Tasmania">Tasmania</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
                     </select>
                 </div>
-                
                 <div class="form-ele">
-                    <label for="suburb-filter">Suburb:</label>
-                    <select name="suburb-filter" id="suburb-filter">
-                        @if ($suburb_filter != "null")
-                        <option value="{{ $suburb_filter }}">{{ $suburb_filter }}</option>
-                        @endif
-                        <option value="null">-- NONE --</option>
-                        @foreach ($suburbs as $sub)
-                            <option value="{{ $sub->suburb }}">{{ $sub->suburb }}</option>
-                        @endforeach
-                    </select>
+                    <label for="postcode-filter">Postcode: </label>
+                    <input type="text" name="postcode-filter" value="{{ Auth::user()->postcode }}">
                 </div>
+                <div class="form-ele">
+                    <label for="radius">Radius (Km)</label>
+                    <select name="radius-filter">
+                        <option value="5">5</option>
+                        <option value="10">10</option>
+                        <option value="15">15</option>
+                        <option value="20">20</option>
+                    </select>
+                </div>           
 
            <!--      <div class="form-ele">
                     <label for="rating">Rating:</label>
@@ -77,26 +68,76 @@
                     </select>
                 </div> -->
 
-                <div class="form-ele">
-                    <label for="gender">Gender</label>
-                    <select name="gender">
-                        <option value="null">-- NONE --</option>
-                        <option value="male">Male</option>
-                        <option value="female">Female</option>
-                    </select>
-                </div>
 
                 <div class="form-ele">
-                    <label for="radius">Radius</label>
-                    <select name="radius">
-                        <option value="null">-- NONE --</option>
-                        <option value="5">5 Kilometers</option>
-                        <option value="10">10 Kilometers</option>
-                        <option value="15">15 Kilometers</option>
-                        <option value="20">20 Kilometers</option>
-                    </select>
-                </div>
+                    <label for="service-filter[]">Service Categories</label>
+                    <div><input type="checkbox" name="service-filter[]" value="Alzheimer's & Dementia Care"
+                        @if( isset($sf["Alzheimer's & Dementia Care"]) && $sf["Alzheimer's & Dementia Care"]) checked @endif
+                        ><span>Alzheimer's & Dementia Care</span></div>
 
+                    <div><input type="checkbox" name="service-filter[]" value="Companion Care"
+                        @if( isset($sf["Companion Care"]) && $sf["Companion Care"]) checked @endif
+                        ><span>Companion Care</span></div>
+
+                    <div><input type="checkbox" name="service-filter[]" value="Palliative Care"
+                        @if( isset($sf["Palliative Care"]) && $sf["Palliative Care"]) checked @endif
+                        ><span>Palliative Care</span></div>
+
+                    <div><input type="checkbox" name="service-filter[]" value="Respite Care"
+                        @if( isset($sf["Respite Care"]) && $sf["Respite Care"]) checked @endif
+                        ><span>Respite Care</span></div>
+
+                    <div><input type="checkbox" name="service-filter[]" value="Transition Care"
+                        @if( isset($sf["Transition Care"]) && $sf["Transition Care"]) checked @endif
+                        ><span>Transition Care</span></div>
+                </div>
+                
+                <div class="form-ele">
+                    <label for="service2-filter[]">Services</label>
+                    <div><input type="checkbox" name="service2-filter[]" value="Bathing"
+                        @if( isset($sf2["Bathing"]) && $sf2["Bathing"]) checked @endif
+                        ><span>Bathing</span></div>
+
+                     <div><input type="checkbox" name="service2-filter[]" value="Grooming"
+                        @if( isset($sf2["Grooming"]) && $sf2["Grooming"]) checked @endif
+                        ><span>Grooming</span></div>
+
+                        <div><input type="checkbox" name="service2-filter[]" value="Toileting"
+                        @if( isset($sf2["Toileting"]) && $sf2["Toileting"]) checked @endif
+                            ><span>Toileting</span></div>
+
+                        <div><input type="checkbox" name="service2-filter[]" value="Managing Medications"
+                        @if( isset($sf2["Managing Medications"]) && $sf2["Managing Medications"]) checked @endif
+                            ><span>Managing Medications</span></div>
+
+                        <div><input type="checkbox" name="service2-filter[]" value="Meal prep"
+                        @if( isset($sf2["Meal prep"]) && $sf2["Meal prep"]) checked @endif
+                            ><span>Meal prep</span></div>
+
+                        <div><input type="checkbox" name="service2-filter[]" value="Groceries & Shopping"
+                        @if( isset($sf2["Groceries & Shopping"]) && $sf2["Groceries & Shopping"]) checked @endif
+                            ><span>Groceries & Shopping</span></div>
+
+                        <div><input type="checkbox" name="service2-filter[]" value="Transferring & Mobility"
+                        @if( isset($sf2["Transferring & Mobility"]) && $sf2["Transferring & Mobility"]) checked @endif
+                            ><span>Transferring & Mobility</span></div>
+
+                        <div><input type="checkbox" name="service2-filter[]" value="Exercise"
+                        @if( isset($sf2["Exercise"]) && $sf2["Exercise"]) checked @endif
+                            ><span>Exercise</span></div>
+
+                        <div><input type="checkbox" name="service2-filter[]" value="Transportation"
+                        @if( isset($sf2["Transportation"]) && $sf2["Transportation"]) checked @endif
+                            ><span>Transportation</span></div>
+
+                        <div><input type="checkbox" name="service2-filter[]" value="Housekeeping"
+                        @if( isset($sf2["Housekeeping"]) && $sf2["Housekeeping"]) checked @endif
+                            ><span>Housekeeping</span></div>
+                            
+                        <div><input type="checkbox" name="service2-filter[]" value="Companionship"
+                        @if( isset($sf2["Companionship"]) && $sf2["Companionship"]) checked @endif
+                            ><span>Companionship</span></div>
+                </div>
                 <div class="form-ele">
                     <input type="submit" value="FILTER" />
                 </div>

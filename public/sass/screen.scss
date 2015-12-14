@@ -735,7 +735,14 @@ form{
 			padding: 10px;
 			text-transform: uppercase;
 		}
-
+		
+		input[type="text"]{
+			width: 100%;
+			border: 1px solid $dark-blue;
+			color:$dark-blue;
+			padding: 10px;
+			box-sizing: border-box;
+		}
 		input[type="submit"]{
 			width:100%;
 			background: $dark-blue;

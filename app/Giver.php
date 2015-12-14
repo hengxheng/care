@@ -2,6 +2,8 @@
 
 namespace App;
 use DB;
+use App\Service;
+use App\Service2;
 use Illuminate\Database\Eloquent\Model;
 
 class Giver extends Model
@@ -16,18 +18,43 @@ class Giver extends Model
         ->get();
     }
 
-    public static function filterAllGivers($state="null", $suburb="null", $min_rate="null", $max_rate="null", $min_rating="null", $max_rating="null", $order="avg", $status="Active"){
+    public static function filterAllGivers($suburb="null", $gender="null", $service_filter, $service2_filter, $min_rate="null", $max_rate="null", $min_rating="null", $max_rating="null", $order="avg", $status="Active"){
+
         $givers = DB::table('giver AS g')
         ->leftJoin('users AS u','g.uid','=','u.id')
         ->leftJoin(DB::raw('(SELECT rate_uid, avg(rate_star) AS avg FROM rating GROUP BY rate_uid) AS r'), 'r.rate_uid', '=', 'g.uid')
         ->where('u.status', '=', $status);
+       
 
-        if($state != 'null'){
-            $givers->where('g.state','=', $state);
+        if(is_array($service_filter) && !empty($service_filter)){
+            $s = Service::WithService($service_filter);
+            $ser = array();
+            foreach ($s as $_s){
+                $ser[] = $_s->giver_id;
+            }
+
+            $givers->whereIn('uid',$ser);
         }
+
+        if(is_array($service2_filter) && !empty($service2_filter)){
+            $s = Service2::WithService($service2_filter);
+            $ser = array();
+            foreach ($s as $_s){
+                $ser[] = $_s->giver_id;
+            }
+
+            $givers->whereIn('uid',$ser);
+        }
+
         if($suburb != 'null'){
             $givers->where('g.suburb','=', $suburb);
         }
+        if($gender != 'null'){
+            $givers->where('g.gender', '=', $gender);
+        }
+        
+
+
         if(($max_rate != 'null') && ($min_rate != 'null')){
             $max = (int)$max_rate;
             $min = (int)$min_rate;

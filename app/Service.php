@@ -17,7 +17,17 @@ class Service extends Model
     	return DB::table('service')->where('giver_id','=',$uid)->delete();
     }
 
-    public static function WithService($service_name){
-    	return DB::table('service')->where('service_name', '=', $service_name)->get();
+    public static function WithService($service_names){
+        if(is_array($service_names)){
+            $givers = DB::table('service')
+            ->select('giver_id');
+            
+            foreach($service_names as $n){
+                $givers->where('service_name', '=', $n);
+            }
+
+            return $givers->get();
+        }
+    	return DB::table('service')->select('giver_id')->where('service_name', '=', $service_names)->get();
     }
 }
