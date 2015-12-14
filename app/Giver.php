@@ -4,6 +4,7 @@ namespace App;
 use DB;
 use App\Service;
 use App\Service2;
+use App\Location;
 use Illuminate\Database\Eloquent\Model;
 
 class Giver extends Model
@@ -18,13 +19,13 @@ class Giver extends Model
         ->get();
     }
 
-    public static function filterAllGivers($suburb="null", $gender="null", $service_filter, $service2_filter, $min_rate="null", $max_rate="null", $min_rating="null", $max_rating="null", $order="avg", $status="Active"){
+    public static function filterAllGivers($postcode="null", $radius, $gender="null", $service_filter, $service2_filter, $min_rate="null", $max_rate="null", $min_rating="null", $max_rating="null", $order="avg", $status="Active"){
 
         $givers = DB::table('giver AS g')
         ->leftJoin('users AS u','g.uid','=','u.id')
         ->leftJoin(DB::raw('(SELECT rate_uid, avg(rate_star) AS avg FROM rating GROUP BY rate_uid) AS r'), 'r.rate_uid', '=', 'g.uid')
         ->where('u.status', '=', $status);
-       
+        
 
         if(is_array($service_filter) && !empty($service_filter)){
             $s = Service::WithService($service_filter);
@@ -46,9 +47,15 @@ class Giver extends Model
             $givers->whereIn('uid',$ser);
         }
 
-        if($suburb != 'null'){
-            $givers->where('g.suburb','=', $suburb);
+        if($postcode != 'null'){
+            $within = Location::getNearBy($postcode, $radius);
+            $pos = array($postcode);
+            foreach ($within as $w){
+                $pos[] = $w->postcode;
+            }
+            $givers->whereIn('g.postcode', $pos);
         }
+
         if($gender != 'null'){
             $givers->where('g.gender', '=', $gender);
         }

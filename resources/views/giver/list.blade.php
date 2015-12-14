@@ -18,11 +18,12 @@
                 </div>
                 <div class="form-ele">
                     <label for="postcode-filter">Postcode: </label>
-                    <input type="text" name="postcode-filter" value="{{ Auth::user()->postcode }}">
+                    <input type="text" name="postcode-filter" value="{{ $postcode_filter }}">
                 </div>
                 <div class="form-ele">
                     <label for="radius">Radius (Km)</label>
                     <select name="radius-filter">
+                        <option value="{{ $radius_filter }}">{{ $radius_filter }}</option>
                         <option value="5">5</option>
                         <option value="10">10</option>
                         <option value="15">15</option>
@@ -133,7 +134,7 @@
                         <div><input type="checkbox" name="service2-filter[]" value="Housekeeping"
                         @if( isset($sf2["Housekeeping"]) && $sf2["Housekeeping"]) checked @endif
                             ><span>Housekeeping</span></div>
-                            
+
                         <div><input type="checkbox" name="service2-filter[]" value="Companionship"
                         @if( isset($sf2["Companionship"]) && $sf2["Companionship"]) checked @endif
                             ><span>Companionship</span></div>

@@ -37,21 +37,18 @@ class GiversController extends Controller
 
     public function listing(){
         // filters
-
-        // var_dump(Input::get('service-filter'));
-        // var_dump(Input::get('service2-filter'));
-        // exit;
-
         $postcode_filter = (Session::has('postcode-filter'))?(Session::get('postcode-filter')):"null";
-        $radius_filter = Session::has('radius-filter');
+        $radius_filter = (Input::has('radius-filter'))?(Input::get('radius-filter')):5;
 
         $rating_filter = (Session::has('rating-filter'))?(Session::get('rating-filter')):"null";
         $price_filter = (Session::has('price-filter'))?(Session::get('price-filter')):"null";
         $gender_filter = (Session::has('gender-filter'))?(Session::get('gender-filter')):"null";
-        $service_filter = (Session::has('service-filter'))?(Session::get('service-fitler')):"null";
-        $service2_filter = (Session::has('service2-filter'))?(Session::get('service2-filter')):"null";
-        //sort by
-
+        
+        $service_filter = Input::get('service-filter');        
+        $service2_filter = Input::get('service2-filter'); 
+           
+            
+        //sort by        
         $order = (Session::has('giver-order'))?(Session::get('giver-order')):"avg";
 
 
@@ -63,16 +60,6 @@ class GiversController extends Controller
         if(Input::has('gender-filter')){
             Session::put('gender-filter', Input::get('gender-filter'));
             $gender_filter = Input::get('gender-filter');
-        }
-
-        if(Input::has('service-filter')){
-            Session::put('service-filter', Input::get('service-filter'));
-            $service_filter = Input::get('service-filter');
-        }
-
-        if(Input::has('service2-filter')){
-            Session::put('service2-filter', Input::get('service2-filter'));
-            $service2_filter = Input::get('service2-filter');
         }
     
         if(Input::has('rating-filter')){
@@ -98,7 +85,6 @@ class GiversController extends Controller
             $x = explode(' - ', $rating_filter);
             $min_rating = $x[0];
             $max_rating = $x[1];
-            var_dump($min_rating);
         }
         else{
             $min_rating = 'null';
@@ -110,7 +96,7 @@ class GiversController extends Controller
             $order = Input::get('sort-by');
         }
 
-        $givers = Giver::filterAllGivers($postcode_filter, $gender_filter, $service_filter, $service2_filter, $min_price, $max_price, $min_rating, $max_rating, $order);
+        $givers = Giver::filterAllGivers($postcode_filter, $radius_filter, $gender_filter, $service_filter, $service2_filter, $min_price, $max_price, $min_rating, $max_rating, $order);
 
         foreach ($givers as $g){
             $rating[$g->uid] = Rating::MyRating($g->uid);
@@ -122,7 +108,6 @@ class GiversController extends Controller
                 $sf[$s] = true;
             }
         }
-        
 
         $sf2 = array();
         if(is_array($service2_filter) && !empty($service2_filter)){
@@ -130,8 +115,9 @@ class GiversController extends Controller
                 $sf2[$s] = true;
             }
         }
+
         $suburbs = Giver::getAllSuburbs();
-        return view('giver.list',compact('givers', 'rating', 'suburbs','postcode_filter', 'sf', 'sf2', 'rating_filter', 'price_filter','order'));
+        return view('giver.list',compact('givers', 'rating', 'suburbs','postcode_filter', 'radius_filter','rating_filter','price_filter', 'sf', 'sf2','order'));
     }
     /**
      * Show the form for creating a new resource.
@@ -465,7 +451,7 @@ class GiversController extends Controller
 
     public function ajaxCall(Request $request){
         $t = Location::getNearBy(2135, 10);
-        var_dump(sizeof($t));
+        var_dump($t);
 
     }
 
