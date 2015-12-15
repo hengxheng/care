@@ -54,9 +54,7 @@
 			<div class="page-sidebar">
 				@if(Auth::check())
 				<div class="user-block">
-					@if(isset($user_info))
-						<img src="{{ URL::asset('images/user/'.$user_info->picture) }}" alt="">
-					@endif
+						<img src="{{ URL::asset('images/user/'.Auth::user()->picture) }}" alt="">
 						<h2 class="user-name">{{ Auth::user()->firstname }} {{ Auth::user()->lastname }}</h2>
 						<p>Care {{ Auth::user()->user_type }}</p>
 						<div class="user-block-btns">

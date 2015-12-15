@@ -56,5 +56,5 @@
 			<input type="submit" value="Update">
 		</div>
 	</form>
-<div>
+</div>
 @endsection

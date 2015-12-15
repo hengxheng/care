@@ -10,6 +10,7 @@ use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Contracts\Auth\Access\Authorizable as AuthorizableContract;
 use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
 
+
 class User extends Model implements AuthenticatableContract,
                                     AuthorizableContract,
                                     CanResetPasswordContract
@@ -37,5 +38,16 @@ class User extends Model implements AuthenticatableContract,
      * @var array
      */
     protected $hidden = ['password', 'remember_token'];
+
+    public static function addPic($id, $file){
+        $user = User::findorFail($id);
+        $pic_name = "p-".$id;
+        $pic_path = public_path('images/user');
+        $pic_extension = $file->getClientOriginalExtension();
+        if($file->move($pic_path, $pic_name.'.'.$pic_extension)){
+            $user->picture = $pic_name.'.'.$pic_extension;
+        }
+        $user->save();
+    }
 
 }

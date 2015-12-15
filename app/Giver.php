@@ -19,7 +19,7 @@ class Giver extends Model
         ->get();
     }
 
-    public static function filterAllGivers($postcode="null", $radius, $gender="null", $service_filter, $service2_filter, $min_rate="null", $max_rate="null", $min_rating="null", $max_rating="null", $order="avg", $status="Active"){
+    public static function filterAllGivers($postcode, $radius, $gender="null", $service_filter, $service2_filter, $min_rate="null", $max_rate="null", $min_rating="null", $max_rating="null", $order="avg", $status="Active"){
 
         $givers = DB::table('giver AS g')
         ->leftJoin('users AS u','g.uid','=','u.id')
@@ -47,7 +47,7 @@ class Giver extends Model
             $givers->whereIn('uid',$ser);
         }
 
-        if($postcode != 'null'){
+        if($postcode != ' '){
             $within = Location::getNearBy($postcode, $radius);
             $pos = array($postcode);
             foreach ($within as $w){

@@ -19,6 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('user_type');
             $table->string('email')->unique();
             $table->string('phone');
+            $table->string('picture')->default('default.png');
             $table->string('status')->default("Inactive");
             $table->string('password', 60);
             $table->rememberToken();

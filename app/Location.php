@@ -11,7 +11,9 @@ class Location extends Model
 
     public static function getNearBy($postcode, $radius){
     	$_this = DB::table("location")->where("postcode", "=", $postcode)->first();
-    	
+    	if(!count($_this)){
+            return array();
+        }
     	$lng = $_this->longitude / 180 * M_PI;
     	$lat = $_this->latitude / 180 * M_PI;
 

@@ -10,7 +10,6 @@ use App\Service2;
 use App\Quolification;
 use App\Availability;
 use App\Rating;
-use App\Suburb;
 use App\Location;
 use Auth;
 use Input;
@@ -37,7 +36,7 @@ class GiversController extends Controller
 
     public function listing(){
         // filters
-        $postcode_filter = (Session::has('postcode-filter'))?(Session::get('postcode-filter')):"null";
+        $postcode_filter = (Session::has('postcode-filter'))?(Session::get('postcode-filter')):" ";
         $radius_filter = (Input::has('radius-filter'))?(Input::get('radius-filter')):5;
 
         $rating_filter = (Session::has('rating-filter'))?(Session::get('rating-filter')):"null";
@@ -116,8 +115,7 @@ class GiversController extends Controller
             }
         }
 
-        $suburbs = Giver::getAllSuburbs();
-        return view('giver.list',compact('givers', 'rating', 'suburbs','postcode_filter', 'radius_filter','rating_filter','price_filter', 'sf', 'sf2','order'));
+        return view('giver.list',compact('givers', 'rating','postcode_filter', 'radius_filter','rating_filter','price_filter', 'sf', 'sf2','order'));
     }
     /**
      * Show the form for creating a new resource.
@@ -126,7 +124,6 @@ class GiversController extends Controller
      */
     public function create($uid)
     {
-        $states = Suburb::getStates();
         return view('giver.create', compact(array('uid', 'states')));
     }
 
@@ -151,14 +148,10 @@ class GiversController extends Controller
                 $giver->suburb = Input::get('suburb');
                 $giver->postcode = Input::get('postcode');
                 
-                if(Input::file('picture')){
-                    $pic_name = "photo-".$uid;
-                    $pic_path = public_path('images/user');
-                    $pic_extension = Input::file('picture')->getClientOriginalExtension();
-                    if(Input::file('picture')->move($pic_path, $pic_name.'.'.$pic_extension)){
-                        $giver->picture = $pic_name.'.'.$pic_extension;
-                    }
-                } 
+                $file = Input::file('picture');
+                if($file){
+                    User::addPic($uid, $file);
+                }
 
                 
                 if(Input::file('background-check')){
@@ -284,8 +277,6 @@ class GiversController extends Controller
     public function edit($id)
     {
         $giver = Giver::findorFail($id);
-        $states = Suburb::getStates();
-        // $suburbs = Suburb::getSuburbs($giver->state);
         return view("giver.edit-p1", compact(array("giver", 'states')));
     }
 
@@ -351,14 +342,11 @@ class GiversController extends Controller
             $giver->postcode = Input::get('postcode');
         }
         
-        if(Input::file('picture')){
-            $pic_name = "photo-".$id;
-            $pic_path = public_path('images/user');
-            $pic_extension = Input::file('picture')->getClientOriginalExtension();
-            if(Input::file('picture')->move($pic_path, $pic_name.'.'.$pic_extension)){
-                $giver->picture = $pic_name.'.'.$pic_extension;
-            }
+        $file = Input::file('picture');       
+        if($file){
+            User::addPic($id, $file);
         }
+
         if(Input::has('bio')){
             $giver->bio = Input::get('bio');
         }

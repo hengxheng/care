@@ -7,7 +7,7 @@
 		<div class="row">
 			<div class="col-1">
 				<div class="profile-image block">
-					<img src="{{ URL::asset('images/user/'.$the_giver->picture) }}" alt="">
+					<img src="{{ URL::asset('images/user/'.Auth::user()->picture) }}" alt="">
 				</div>
 				<div class="profile-info">
 					<h2 class="profile-name">

@@ -21,23 +21,23 @@ abstract class Controller extends BaseController
 
         if(Auth::check()){
         	$id = Auth::user()->id;
-        	$type = Auth::user()->user_type;
+        	// $type = Auth::user()->user_type;
 
 
-        	if($type == "seeker"){
-        		$user_info = Seeker::find($id);
-        	}
-        	elseif ($type == "giver"){
-        		$user_info = Giver::find($id);
-        	}
-            elseif ($type == "admin"){
-                $user_info = array();
-            }
+        	// if($type == "seeker"){
+        	// 	$user_info = Seeker::find($id);
+        	// }
+        	// elseif ($type == "giver"){
+        	// 	$user_info = Giver::find($id);
+        	// }
+         //    elseif ($type == "admin"){
+         //        $user_info = array();
+         //    }
 
             $msg = Message::myUnReadMsg($id);
 
 
-        	View::share('user_info', $user_info);
+        	// View::share('user_info', $user_info);
             View::share('unread', $msg);
         }
     }
