@@ -9,9 +9,11 @@ use Input;
 use App\User;
 use App\Seeker;
 use Redirect;
+use Carbon\Carbon;
 
 class SeekersController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      *
@@ -69,18 +71,46 @@ class SeekersController extends Controller
         }
         $seeker->save();
 
-        $user = new User;
-        $user = User::findorFail($uid);
-        $user->status = "Active";
-        $user->save();
+        // $user = new User;
+        // $user = User::findorFail($uid);
+        // $user->status = "Active";
+        // $user->save();
 
 
-        return Redirect::route('care_seekers.show', array('id' => $uid));
+        return Redirect::route('seeker.signup');
 
+    }
+
+    public function signup(){
+        return view('seeker.signup');
     }
     
     //pay to upgrade via Stripe
-    public function upgradeAccount($uid){
+    public function upgrade(Request $request){
+        Seeker::setStripeKey("sk_test_wRuhjbZ3DfAaPzMYUWc1DzHP");
+        $id = Input::get('uid');
+        $user = Seeker::findorFail($id);
+
+        $plan = Input::get('subscription');
+        $user->subscription($plan)->create( Input::get('stripeToken'));
+        if($plan == "004"){
+            $user->subscription_ends_at = Carbon::now()->addDays(365);
+        }
+        elseif($plan == "003"){
+            $user->subscription_ends_at = Carbon::now()->addDays(180);
+        }
+        elseif($plan == "002"){
+            $user->subscription_ends_at = Carbon::now()->addDays(90);
+        }
+        $user->premium = 1;
+        $user->save();
+
+        $user = new User;
+        $user = User::findorFail($id);
+        $user->status = "Active";
+        $user->save();
+
+        return Redirect::route('care_seekers.show',array('uid'=>$id));
 
     }
 

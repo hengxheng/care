@@ -58,8 +58,7 @@ class Giver extends Model
 
         if($gender != 'null'){
             $givers->where('g.gender', '=', $gender);
-        }
-        
+        }      
 
 
         if(($max_rate != 'null') && ($min_rate != 'null')){

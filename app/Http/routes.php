@@ -76,11 +76,14 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::resource('rating', 'RatingController');
 
 	Route::post('user_status', [ 'as' => 'changeUserStatus', 'uses' => 'Admin\AdminController@changeUserStatus']);
+
+	Route::get('seeker/member-signup', ['as'=>'seeker.signup', 'uses' => 'SeekersController@signup']);
+
+	Route::post('seeker/upgrade', ['as'=> 'seeker.upgrade', 'uses'=>'SeekersController@upgrade']);
+
 });
 
-Route::get('seeker/member-signup', function(){
-		return view('seeker.signup');
-	});
+
 	
 Route::group([ 'namespace' => 'Admin', 'middleware' => 'admin'], function(){
 	Route::resource('admin', 'AdminController');
