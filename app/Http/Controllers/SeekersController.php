@@ -89,21 +89,21 @@ class SeekersController extends Controller
     public function upgrade(Request $request){
         Seeker::setStripeKey("sk_test_wRuhjbZ3DfAaPzMYUWc1DzHP");
         $id = Input::get('uid');
-        $user = Seeker::findorFail($id);
+        $seeker = Seeker::findorFail($id);
 
         $plan = Input::get('subscription');
-        $user->subscription($plan)->create( Input::get('stripeToken'));
+        $seeker->subscription($plan)->create( Input::get('stripeToken'));
         if($plan == "004"){
-            $user->subscription_ends_at = Carbon::now()->addDays(365);
+            $seeker->subscription_ends_at = Carbon::now()->addDays(365);
         }
         elseif($plan == "003"){
-            $user->subscription_ends_at = Carbon::now()->addDays(180);
+            $seeker->subscription_ends_at = Carbon::now()->addDays(180);
         }
         elseif($plan == "002"){
-            $user->subscription_ends_at = Carbon::now()->addDays(90);
+            $seeker->subscription_ends_at = Carbon::now()->addDays(90);
         }
-        $user->premium = 1;
-        $user->save();
+        $seeker->premium = 1;
+        $seeker->save();
 
         $user = new User;
         $user = User::findorFail($id);
