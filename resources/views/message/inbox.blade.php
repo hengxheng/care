@@ -14,11 +14,7 @@
 				<li>
 					<div class="message-list-block">
 						<div class="user-img">
-							@if($message->user_type == "giver")
-								<img src="{{ URL::asset('images/user/'.$message->g_pic) }}" alt="">
-							@elseif($message->user_type == "seeker")
-								<img src="{{ URL::asset('images/user/'.$message->s_pic) }}" alt="">
-							@endif
+							<img src="{{ URL::asset('images/user/'.$message->picture) }}" alt="">
 						</div>
 						<div class="message-tease">
 							<div class="user-name">

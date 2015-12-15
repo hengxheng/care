@@ -3,8 +3,8 @@
 
 @section('content')
     
-    <div class="giver-list-block content-with-sidebar">
-        <div class="tool-bar">
+    <div class="giver-list-block">
+<!--         <div class="tool-bar">
             <form id="sort-form" action="{{ URL::route('care_givers.list')}}" method="get">
                 <label for="sort-by">Sort By: </label>
                 <select name="sort-by" id="sort-by">
@@ -24,7 +24,7 @@
                     });
                 });
             </script>
-        </div>
+        </div> -->
         <div class="listing-box">
             @if (count($givers) > 0)
             <ul>
@@ -86,7 +86,7 @@
         </div>
     </div>
 
-    <div class="filter-sidebar">
+  <!--   <div class="filter-sidebar">
         <h2>Refine Search:</h2>
 
         <div class="filters">
@@ -167,5 +167,5 @@
                 </div>
             </form>
         </div>
-    </div>
+    </div> -->
 @endsection

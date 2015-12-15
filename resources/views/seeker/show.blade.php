@@ -6,7 +6,7 @@
 		<div class="row">
 			<div class="col-1">
 				<div class="profile-image block">
-					<img src="{{ URL::asset('images/user/'.Auth::user()->picture) }}" alt="">
+					<img src="{{ URL::asset('images/user/'.$the_user->picture) }}" alt="">
 				</div>
 				<div class="profile-name block">
 					<div class="block-content">
