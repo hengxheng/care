@@ -1,7 +1,13 @@
 @extends('html')
 
 @section('content')
+
 <div class="register-block">
+    <a href="#" id="user-1-btn" class="blue-btn">I want to provide care</a>
+    <a href="#" id="user-2-btn" class="blue-btn">I'm looking for care</a>
+</div>
+<div class="clear"></div>
+<div id="user-1" class="register-block" style="display:none;">
 <form method="POST" action="{{ URL::route('register') }}">
     {!! csrf_field() !!}
 
@@ -43,7 +49,7 @@
 </form>
 </div>
 
-<div class="register-block">
+<div id="user-2" class="register-block" style="display:none;">
 <form method="POST" action="{{ URL::route('register') }}">
     {!! csrf_field() !!}
     <h2>I'm looking for care</h2>
@@ -84,5 +90,20 @@
     </div>
 </form>
 </div>
+<script>
+    $(function(){
+        $("#user-1-btn").click(function(e){
+            e.preventDefault();
+            $(".register-block").hide();
+            $("#user-1").slideDown();
+        });
 
+        $("#user-2-btn").click(function(e){
+            e.preventDefault();
+            $(".register-block").hide();
+            
+            $("#user-2").slideDown();
+        });
+    });
+</script>
 @endsection
