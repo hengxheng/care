@@ -47,5 +47,10 @@
 			<a class="dark-blue-btn" href="{{ URL::route('job.delete', array('id' => $job->id )) }}">Delete</a>
 		</div>
 		@endif
+		@if (Auth::user()->user_type == "giver")
+		<div class="job-action">
+			<a href="{{ URL::route('submission.create', array('jid' => $job->id, 'uid'=> Auth::user()->id)) }}" class="blue-btn">Apply this job</a>
+		</div>
+		@endif
 	</div>
 @endsection

@@ -11,7 +11,7 @@
 				</div>
 				<div class="profile-info">
 					<h2 class="profile-name">
-						{{ $the_user->firstname }} {{ $the_user -> lastname }}
+						{{ camel_case($the_user->firstname) }} {{ camel_case($the_user->lastname) }}
 					</h2>		
 					<div class="gender">
 						{{ $the_giver->gender }}@if ($the_giver->live_in)&nbsp;&nbsp;|&nbsp;&nbsp;Live In @endif

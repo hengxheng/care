@@ -11,6 +11,7 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 		<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
 		<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+		<script src="{{ URL::asset('scripts/jquery-ui-1.11.4.js') }} "></script>
 		<script src="{{URL::asset('scripts/script.js') }}"></script>
 		<script src="{{URL::asset('scripts/rateit/src/jquery.rateit.min.js') }}"></script>
 		<link rel="stylesheet" href="{{URL::asset('scripts/rateit/src/rateit.css') }}">
@@ -55,7 +56,9 @@
 				@if(Auth::check())
 				<div class="user-block">
 						<img src="{{ URL::asset('images/user/'.Auth::user()->picture) }}" alt="">
-						<h2 class="user-name">{{ Auth::user()->firstname }} {{ Auth::user()->lastname }}</h2>
+						<h2 class="user-name">
+							{{ camel_case(Auth::user()->firstname) }} {{ camel_case(Auth::user()->lastname) }}
+						</h2>
 						<p>Care {{ Auth::user()->user_type }}</p>
 						<div class="user-block-btns">
 							@if (Auth::user() -> user_type == 'giver')

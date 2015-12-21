@@ -64,21 +64,14 @@ class SeekersController extends Controller
 
         $file = Input::file('picture');
         if($file){
-            // $pic_name = "photo-".$uid;
-            // $pic_path = public_path('images/user');
-            // $pic_extension = Input::file('picture')->getClientOriginalExtension();
-            // if(Input::file('picture')->move($pic_path, $pic_name.'.'.$pic_extension)){
-            //     $seeker->picture = $pic_name.'.'.$pic_extension;
-            // }
-
             User::addPic($uid, $file);
         }
        
 
-        // $user = new User;
-        // $user = User::findorFail($uid);
-        // $user->status = "Active";
-        // $user->save();
+        $user = new User;
+        $user = User::findorFail($uid);
+        $user->status = "Pending";
+        $user->save();
 
 
         return Redirect::route('seeker.signup');

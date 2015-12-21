@@ -14,18 +14,19 @@
 Route::get('/', ['uses' => 'HelloController@index']);
 
 // Authentication routes...
-Route::get('auth/login',['as' => 'login', 'uses' => 'Auth\AuthController@getLogin']);
-Route::post('auth/login',['as' => 'login', 'uses' => 'Auth\AuthController@postLogin']);
-Route::get('auth/logout', ['as' => 'logout', 'uses' => 'Auth\AuthController@getLogout']);
+Route::get('login',['as' => 'login', 'uses' => 'Auth\AuthController@getLogin']);
+Route::post('login',['as' => 'login', 'uses' => 'Auth\AuthController@postLogin']);
+Route::get('logout', ['as' => 'logout', 'uses' => 'Auth\AuthController@getLogout']);
+// Registration routes...
+Route::get('register', ['as' => 'register', 'uses' => 'Auth\AuthController@getRegister']);
+Route::post('register', ['as' => 'register', 'uses' => 'Auth\AuthController@postRegister']);
 
 Route::group(['middleware' => 'admin.login'], function(){
 	Route::get('admin/login', ['as' => 'admin.login', 'uses' => 'Admin\AdminController@login']);
 });
 
 
-// Registration routes...
-Route::get('auth/register', ['as' => 'register', 'uses' => 'Auth\AuthController@getRegister']);
-Route::post('auth/register', ['as' => 'register', 'uses' => 'Auth\AuthController@postRegister']);
+
 
 //Route need to be auth
 

@@ -33,7 +33,7 @@
     </div>
     <div class="form-row">
         <label for="years_exp">Years of Experience</label>
-        <input type="text" name="years_exp" value="{{ $giver->years_exp }}">
+        <input type="text" name="years_exp" value="{{ $giver->years_exp }}" patter="[0-9]{2}">
     </div>
     <div class="form-row">
         <label for="experience">Experience</label>
@@ -47,7 +47,7 @@
 
     <div class="form-row">
         <label for="rate">Rate</label>
-        <input type="text" name="rate" value="{{ $giver->rate }}"> 
+        <input type="text" name="rate" value="{{ $giver->rate }}" patter="[0-9]{4}" required> 
     </div>
 
     <div class="form-row">

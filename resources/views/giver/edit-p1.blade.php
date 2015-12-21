@@ -19,7 +19,7 @@
 		</div>
 		<div class="form-row">
 			<label for="address1">Address1</label>
-			<input type="text" name="address1" value="{{ $giver->address1 }}">
+			<input type="text" name="address1" value="{{ $giver->address1 }}" required>
 		</div>
 		<div class="form-row">
 			<label for="address2">Address2</label>
@@ -27,7 +27,7 @@
 		</div>
 		<div class="form-row">
 			<label for="state">State</label>
-			<select name="state" id="state-dropdown">
+			<select name="state" id="state-dropdown" required>
 					<option value="{{ $giver->state }}">{{ $giver->state }}</option>
 					<option value="ACT">ACT</option>
 					<option value="NSW">NSW</option>
@@ -41,11 +41,11 @@
 		</div>
 		<div class="form-row">
 			<label for="suburb">Suburb</label>
-			<input type="text" name="suburb" value="{{ $giver->suburb }}">
+			<input id="suburb-dropdown" type="text" name="suburb" value="{{ $giver->suburb }}" required>
 		</div>
 		<div class="form-row">
 			<label for="postcode">Postcode</label>
-			<input type="text" name="postcode" value="{{ $giver->postcode }}">
+			<input type="text" name="postcode" value="{{ $giver->postcode }}" required>
 		</div>	
 		<div class="form-row">	
 			<img src="{{ URL::asset('images/user/'.$giver->picture) }}" alt="">
@@ -57,4 +57,40 @@
 		</div>
 	</form>
 </div>
+<script>
+  $(function() {
+  	var base_url = "http://localhost/care/public/";
+  	$("#state-dropdown").change(function(){
+  		var state = $(this).val();
+
+  	});
+    var availableTags = [
+      "ActionScript",
+      "AppleScript",
+      "Asp",
+      "BASIC",
+      "C",
+      "C++",
+      "Clojure",
+      "COBOL",
+      "ColdFusion",
+      "Erlang",
+      "Fortran",
+      "Groovy",
+      "Haskell",
+      "Java",
+      "JavaScript",
+      "Lisp",
+      "Perl",
+      "PHP",
+      "Python",
+      "Ruby",
+      "Scala",
+      "Scheme"
+    ];
+    $( "#suburb-dropdown" ).autocomplete({
+      source: availableTags
+    });
+  });
+  </script>
 @endsection

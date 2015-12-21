@@ -194,6 +194,7 @@ header#site-header{
 				color:#fff;
 				font-size: 18px;
 				margin-top: 18px;
+				text-transform: capitalize;
 			}
 			img{
 				width: 100px;
@@ -368,6 +369,7 @@ form{
 					font-family: 'Gotham-Bold';
 					color: $dark-blue;
 					margin-bottom: 15px;
+					text-transform: capitalize;
 				}
 				.message-content{
 					font-size: 16px;
@@ -419,6 +421,7 @@ form{
 			font-family: 'Gotham-Bold';
 			color: $dark-blue;
 			margin-bottom: 15px;
+			text-transform: capitalize;
 		}
 		.message-content{
 			font-size: 16px;
@@ -662,6 +665,7 @@ form{
 			font-family: "Gotham-Bold";
 			color: $dark-blue;
 			margin-bottom: 15px;
+			text-transform: capitalize;
 		}
 		.user-exp{
 			font-size: 14px;

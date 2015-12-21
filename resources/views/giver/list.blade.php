@@ -18,7 +18,11 @@
                 </div>
                 <div class="form-ele">
                     <label for="postcode-filter">Postcode: </label>
-                    <input type="text" name="postcode-filter" value="{{ $postcode_filter }}">
+                    <input type="text" name="postcode-filter" 
+                    @if( $postcode_filter != " ")
+                    value="{{ $postcode_filter }}"
+                    @endif
+                    >
                 </div>
                 <div class="form-ele">
                     <label for="radius">Radius (Km)</label>
@@ -230,6 +234,4 @@
             @endif
         </div>
     </div>
-
-    
 @endsection

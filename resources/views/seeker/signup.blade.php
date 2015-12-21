@@ -15,7 +15,7 @@
 	</div>
 	<div class="form-ele">
 		<label for="ccn">Credit card number: </label>
-		<input type="text" name="ccn" data-stripe="number">
+		<input type="text" name="ccn" data-stripe="number" required pattern="[0-9]{13,16}">
 	</div>
 	<div class="form-ele">
 		<label for="expiration">Expiration date: </label>

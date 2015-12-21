@@ -15,7 +15,7 @@
     </div>
     <div class="form-row">
         <label for="years_exp">Years of Experience</label>
-        <input type="text" name="years_exp" placeholder="How many years experience?">
+        <input type="text" name="years_exp" placeholder="How many years experience?" pattern="[0-9]{1,2}">
     </div>
     <div class="form-row">
         <label for="experience">Experience</label>
@@ -29,7 +29,7 @@
 
     <div class="form-row">
         <label for="rate">Rate</label>
-        <input type="text" name="rate" placeholder="$$/hour"> 
+        <input type="text" name="rate" placeholder="$$/hour" pattern="[0-9]{1,4}"> 
     </div>
 
     <div class="form-row">

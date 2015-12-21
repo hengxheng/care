@@ -18,7 +18,7 @@
 					</div>
 					<div class="form-row">
 						<label for="address1">Address1</label>
-						<input type="text" name="address1">
+						<input type="text" name="address1" required>
 					</div>
 					<div class="form-row">
 						<label for="address2">Address2</label>
@@ -26,7 +26,7 @@
 					</div>
 					<div class="form-row">
 						<label for="state">State</label>
-						<select name="state">
+						<select name="state" required>
 							<option value="New South Wales">New South Wales</option>
 		                    <option value="Queensland">Queensland</option>
 		                    <option value="Northern Territory">Northern Territory</option>
@@ -39,11 +39,11 @@
 					</div>
 					<div class="form-row">
 						<label for="suburb">Suburb</label>
-						<input type="text" name="suburb">
+						<input type="text" name="suburb" required>
 					</div>
 					<div class="form-row">
 						<label for="postcode">Postcode</label>
-						<input type="text" name="postcode">
+						<input type="text" name="postcode" required pattern="[0-9]{4}">
 					</div>	
 					<div class="form-row">	
 						<label for="picture">Your Photo</label>
@@ -67,7 +67,7 @@
 				<input type="hidden" name="uid" value="{{ Auth::user() -> id }}">
 				<div class="form-row">
 					<label for="address1">Address1</label>
-					<input type="text" name="address1">
+					<input type="text" name="address1" required>
 				</div>
 				<div class="form-row">
 					<label for="address2">Address2</label>
@@ -75,7 +75,7 @@
 				</div>
 				<div class="form-row">
 					<label for="state">State</label>
-					<select name="state">
+					<select name="state" required>
 						<option value="New South Wales">New South Wales</option>
 	                    <option value="Queensland">Queensland</option>
 	                    <option value="Northern Territory">Northern Territory</option>
@@ -88,11 +88,11 @@
 				</div>
 				<div class="form-row">
 					<label for="suburb">Suburb</label>
-					<input type="text" name="suburb">
+					<input type="text" name="suburb" required>
 				</div>
 				<div class="form-row">
 					<label for="postcode">Postcode</label>
-					<input type="text" name="postcode">
+					<input type="text" name="postcode" required pattern="[0-9]{4}">
 				</div>	
 				<div class="form-row">	
 					<label for="picture">Your Photo</label>

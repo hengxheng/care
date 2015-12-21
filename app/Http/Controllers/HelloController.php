@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Auth;
+use Redirect;
+use App\User;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -16,7 +19,23 @@ class HelloController extends Controller
      */
     public function index()
     {
-        return view('welcome');
+        if(Auth::check()){
+            $user_type = Auth::user()->user_type;
+            $user_status = Auth::user()->status;
+            if($user_status != "Inactive"){
+                if($user_type == "giver"){
+                    return redirect::route('care_givers.show',array('uid'=>Auth::user()->id));
+                }
+                elseif($user_type == "seeker"){
+                    return redirect::route('care_seekers.show',array('uid'=>Auth::user()->id));
+                }
+            }            
+            return view('welcome');
+        }
+        else{
+            return redirect('login');
+        }
+        
     }
 
     /**

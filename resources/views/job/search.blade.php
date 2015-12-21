@@ -98,8 +98,10 @@
                 </div>
                 <div class="job-action">
                     <a class="blue-btn" href="{{ URL::route('job.show', array('id' => $job->id )) }}">View</a>
+                    @if(Auth::user()->id == $job->poster_id)
                     <a class="blue-btn" href="{{ URL::route('job.edit', array('id' => $job->id )) }}">Edit</a>
                     <a class="dark-blue-btn" href="{{ URL::route('job.delete', array('id' => $job->id )) }}">Delete</a>
+                    @endif
                 </div>
             </div>
         </li>
