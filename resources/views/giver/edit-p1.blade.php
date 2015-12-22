@@ -29,13 +29,14 @@
 			<label for="state">State</label>
 			<select name="state" id="state-dropdown" required>
 					<option value="{{ $giver->state }}">{{ $giver->state }}</option>
-					<option value="ACT">ACT</option>
-					<option value="NSW">NSW</option>
-					<option value="NT">NT</option>
-					<option value="QLD">QLD</option>
-					<option value="SA">SA</option>
-					<option value="TAS">TAS</option>
-					<option value="VIC">VIC</option>
+					<option value="New South Wales">New South Wales</option>
+					<option value="Queensland">Queensland</option>
+					<option value="Northern Territory">Northern Territory</option>
+					<option value="Australian Capital Territory">Australian Capital Territory</option>
+					<option value="Victoria">Victoria</option>
+					<option value="Western Australia">Western Australia</option>
+					<option value="South Australia">South Australia</option>
+					<option value="Tasmania">Tasmania</option>
 					<option value="WA">WA</option>
 			</select>
 		</div>
@@ -57,40 +58,5 @@
 		</div>
 	</form>
 </div>
-<script>
-  $(function() {
-  	var base_url = "http://localhost/care/public/";
-  	$("#state-dropdown").change(function(){
-  		var state = $(this).val();
 
-  	});
-    var availableTags = [
-      "ActionScript",
-      "AppleScript",
-      "Asp",
-      "BASIC",
-      "C",
-      "C++",
-      "Clojure",
-      "COBOL",
-      "ColdFusion",
-      "Erlang",
-      "Fortran",
-      "Groovy",
-      "Haskell",
-      "Java",
-      "JavaScript",
-      "Lisp",
-      "Perl",
-      "PHP",
-      "Python",
-      "Ruby",
-      "Scala",
-      "Scheme"
-    ];
-    $( "#suburb-dropdown" ).autocomplete({
-      source: availableTags
-    });
-  });
-  </script>
 @endsection

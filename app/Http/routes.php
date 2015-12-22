@@ -25,6 +25,7 @@ Route::group(['middleware' => 'admin.login'], function(){
 	Route::get('admin/login', ['as' => 'admin.login', 'uses' => 'Admin\AdminController@login']);
 });
 
+Route::post('getsuburbs', ['as'=>'getsuburbs', 'uses'=>'LocationController@getSuburbs']);
 
 
 
@@ -32,7 +33,7 @@ Route::group(['middleware' => 'admin.login'], function(){
 
 Route::group(['middleware' => 'auth'], function(){
 	Route::resource('care_givers','GiversController');
-	Route::get('profile/{uid}', ['as' => 'care_givers.create', 'uses' => 'GiversController@create']);
+	// Route::get('profile/{uid}', ['as' => 'care_givers.create', 'uses' => 'GiversController@create']);
 	Route::get('care_givers/{uid}',['as' => 'care_givers.show', 'uses' => 'GiversController@show']);
 	Route::get('givers/list',['as' => 'care_givers.list', 'uses' => 'GiversController@listing']);
 	Route::get('profile1', ['as' => 'care_givers.storeProfile1', 'uses' => 'GiversController@storeProfile1']);
@@ -45,8 +46,8 @@ Route::group(['middleware' => 'auth'], function(){
 
 
 	Route::resource('care_seekers','SeekersController');
-	Route::get('care_seekers/profile/{uid}', ['as' => 'care_seekers.create', 'uses' => 'SeekersController@create']);
-	Route::post('care_seekers/profile/{uid}', ['as' => 'care_seekers.create', 'uses' => 'SeekersController@create']);
+	// Route::get('care_seekers/profile/{uid}', ['as' => 'care_seekers.create', 'uses' => 'SeekersController@create']);
+	// Route::post('care_seekers/profile/{uid}', ['as' => 'care_seekers.create', 'uses' => 'SeekersController@create']);
 	Route::get('care_seekers/{uid}',['as' => 'care_seekers.show', 'users' => 'SeekersController@show']);
 
 

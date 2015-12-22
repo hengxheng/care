@@ -4,13 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use Auth;
-use Redirect;
-use App\User;
+use App\Location;
+use Input;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class HelloController extends Controller
+class LocationController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,30 +18,18 @@ class HelloController extends Controller
      */
     public function index()
     {
-        if(Auth::check()){
-            $user_type = Auth::user()->user_type;
-            $user_status = Auth::user()->status;
-            if($user_status != "Inactive"){
-                if($user_type == "giver"){
-                    return redirect::route('care_givers.show',array('uid'=>Auth::user()->id));
-                }
-                elseif($user_type == "seeker"){
-                    return redirect::route('care_seekers.show',array('uid'=>Auth::user()->id));
-                }
-            }            
-            else{
-                if($user_type == "giver"){
-                    return redirect::route('care_givers.create');
-                }
-                elseif($user_type == "seeker"){
-                    return redirect::route('care_seekers.create');
-                }
-            }
+        //
+    }
+
+    public function getSuburbs(){
+        $state = Input::get("state");
+        $suburbs = Location::getByState($state);
+        $sub = array();
+
+        foreach ($suburbs as $s){
+            $sub[] = $s->locality;
         }
-        else{
-            return redirect('login');
-        }
-        
+        return $sub;
     }
 
     /**

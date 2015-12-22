@@ -24,7 +24,7 @@
     </div>
     <div class="form-row">
     	<label for="state">State</label>
-    	<select name="state">
+    	<select name="state" id="state-dropdown">
     		<option value="">---</option>
     		<option value="New South Wales">New South Wales</option>
     		<option value="Queensland">Queensland</option>
@@ -38,7 +38,7 @@
     </div>
     <div class="form-row">
 		<label for="suburb">Suburb</label>
-		<input type="text" name="suburb">
+		<input id="suburb-dropdown" type="text" name="suburb">
 	</div>
 	<div class="form-row">
 		<label for="postcode">Postcode</label>

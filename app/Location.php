@@ -29,6 +29,7 @@ class Location extends Model
     	return DB::table("location")
     	->select("postcode", "locality")
     	->where("region1", "=", $state)
+        ->groupBy('locality')
     	->get();
     }
 

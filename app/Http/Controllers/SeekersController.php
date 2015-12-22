@@ -29,16 +29,9 @@ class SeekersController extends Controller
      *
      * @return Response
      */
-    public function create($id)
+    public function create()
     {
-        // $method = Request::method();
-     
-        if (!empty($_POST)){
-
-        }
-        else{
-            return view('seeker.create', compact('id'));
-        }
+        return view('seeker.create');
     }
 
     /**

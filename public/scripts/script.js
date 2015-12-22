@@ -12,6 +12,8 @@ var app = {
 
 
 $(function(){
+	// var quo_count = 1; 
+	// var service_count = 1;
 
 	$("#add_quo").click(function(e){
 		e.preventDefault();

@@ -26,7 +26,7 @@
 					</div>
 					<div class="form-row">
 						<label for="state">State</label>
-						<select name="state" required>
+						<select id="state-dropdown" name="state" required>
 							<option value="New South Wales">New South Wales</option>
 		                    <option value="Queensland">Queensland</option>
 		                    <option value="Northern Territory">Northern Territory</option>
@@ -39,7 +39,7 @@
 					</div>
 					<div class="form-row">
 						<label for="suburb">Suburb</label>
-						<input type="text" name="suburb" required>
+						<input id="suburb-dropdown" type="text" name="suburb" required>
 					</div>
 					<div class="form-row">
 						<label for="postcode">Postcode</label>
@@ -75,7 +75,7 @@
 				</div>
 				<div class="form-row">
 					<label for="state">State</label>
-					<select name="state" required>
+					<select id="state-dropdown" name="state" required>
 						<option value="New South Wales">New South Wales</option>
 	                    <option value="Queensland">Queensland</option>
 	                    <option value="Northern Territory">Northern Territory</option>
@@ -88,7 +88,7 @@
 				</div>
 				<div class="form-row">
 					<label for="suburb">Suburb</label>
-					<input type="text" name="suburb" required>
+					<input id="suburb-dropdown" type="text" name="suburb" required>
 				</div>
 				<div class="form-row">
 					<label for="postcode">Postcode</label>

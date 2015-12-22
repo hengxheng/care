@@ -122,9 +122,9 @@ class GiversController extends Controller
      *
      * @return Response
      */
-    public function create($uid)
+    public function create()
     {
-        return view('giver.create', compact(array('uid', 'states')));
+        return view('giver.create');
     }
 
     /**
