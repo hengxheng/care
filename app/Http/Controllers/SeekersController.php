@@ -100,6 +100,14 @@ class SeekersController extends Controller
         $user->status = "Active";
         $user->save();
 
+        $fname = $user->firstname;
+        $lname = $user->lastname;
+        $hmail = $user->email;
+
+        Mail::send('email.welcome',array('firstname' => $fname, 'lastname' => $lname, 'email' => $hmail ), function($message) use ($hmail) {
+            $message->to($hmail , "CareNation Customer")->subject('Welcome');
+        });
+
         return Redirect::route('care_seekers.show',array('uid'=>$id));
 
     }

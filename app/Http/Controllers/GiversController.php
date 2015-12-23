@@ -227,10 +227,19 @@ class GiversController extends Controller
                     }
                 }
                 
+
                 $user = new User;
                 $user = User::findorFail($uid);
                 $user->status = "Pending";
+
+                $fname = $user->firstname;
+                $lname = $user->lastname;
+                $hmail = $user->email;
                 $user->save();
+
+                Mail::send('email.welcome',array('firstname' => $fname, 'lastname' => $lname, 'email' => $hmail ), function($message) use ($hmail) {
+                    $message->to($hmail , "CareNation Customer")->subject('Welcome');
+                });
 
                 return Redirect::route('care_givers.show', array('uid' => $uid)); 
             break;
@@ -256,11 +265,6 @@ class GiversController extends Controller
         foreach ($av as $a){
             $my_availability[$a->week][$a->time] = $a->av; 
         }
-
-        $test = Rating::getAvgRating();
-        Mail::send('email.welcome',array('firstname' => 'Heng'), function($message) {
-            $message->sender('noreply@test.com')->to('hzou@gsquared.com.au', 'Heng')->subject('Welcome');
-        });
 
         return view('giver.show', compact(array(
             'the_user',

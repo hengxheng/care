@@ -1,5 +1,5 @@
-<p>Dear {{ $firstname }}</p>
+<p>Dear {{ $firstname }} {{ $lastname }}</p>
 <p>Welcome to join CareNation</p>
 
-<p>CareNation Team</p>
 <p>Best regards</p>
+<p>CareNation Team</p>
