@@ -18,6 +18,7 @@ use Illuminate\Http\Request;
 use Session;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Mail;
 
 class GiversController extends Controller
 {
@@ -257,6 +258,10 @@ class GiversController extends Controller
         }
 
         $test = Rating::getAvgRating();
+        Mail::send('email.welcome',array('firstname' => 'Heng'), function($message) {
+            $message->sender('noreply@test.com')->to('hzou@gsquared.com.au', 'Heng')->subject('Welcome');
+        });
+
         return view('giver.show', compact(array(
             'the_user',
             'the_giver',

@@ -12,6 +12,13 @@
 					<div class="block-content">
 					{{ $the_user -> firstname }} {{ $the_user -> lastname }}
 					</div>
+					<div class="block-content">
+						@if($the_seeker->subscription_ends_at == null)
+						Monthly Subcription
+						@else
+						Subscrtipion ends: {{ $the_seeker->subscription_ends_at }}
+						@endif
+					</div>
 				</div>
 			</div>
 		</div>
@@ -20,13 +27,13 @@
 				<div class="profile-contact block">
 					<h2 class="block-title">Contact <a class="edit-btn" href="{{ URL::route('care_seekers.edit', array('id'=>$the_user->id)) }}">Edit</a></h2>
 					<div class="block-content">
-						<p>Email: {{ $the_user -> email }}</p>
-						<p>Phone: {{ $the_user -> phone }}</p>
-						<p>Address: {{ $the_seeker -> address1 }}</p>
-						<p>Address2: {{ $the_seeker -> address2 }}</p>
-						<p>Suburb: {{ $the_seeker -> suburb }}</p>
-						<p>State: {{ $the_seeker -> state }}</p>
-						<p>Postcode: {{ $the_seeker -> postcode }}</p>
+						<p>Email: {{ $the_user->email }}</p>
+						<p>Phone: {{ $the_user->phone }}</p>
+						<p>Address: {{ $the_seeker->address1 }}</p>
+						<p>Address2: {{ $the_seeker->address2 }}</p>
+						<p>Suburb: {{ $the_seeker->suburb }}</p>
+						<p>State: {{ $the_seeker->state }}</p>
+						<p>Postcode: {{ $the_seeker->postcode }}</p>
 					</div>
 				</div>
 			</div>

@@ -33,7 +33,6 @@ Route::post('getsuburbs', ['as'=>'getsuburbs', 'uses'=>'LocationController@getSu
 
 Route::group(['middleware' => 'auth'], function(){
 	Route::resource('care_givers','GiversController');
-	// Route::get('profile/{uid}', ['as' => 'care_givers.create', 'uses' => 'GiversController@create']);
 	Route::get('care_givers/{uid}',['as' => 'care_givers.show', 'uses' => 'GiversController@show']);
 	Route::get('givers/list',['as' => 'care_givers.list', 'uses' => 'GiversController@listing']);
 	Route::get('profile1', ['as' => 'care_givers.storeProfile1', 'uses' => 'GiversController@storeProfile1']);
@@ -44,10 +43,7 @@ Route::group(['middleware' => 'auth'], function(){
 	//Ajax call
 	Route::get('ajax', ['as' => 'care_givers.ajax', 'uses' => 'GiversController@ajaxCall']);
 
-
 	Route::resource('care_seekers','SeekersController');
-	// Route::get('care_seekers/profile/{uid}', ['as' => 'care_seekers.create', 'uses' => 'SeekersController@create']);
-	// Route::post('care_seekers/profile/{uid}', ['as' => 'care_seekers.create', 'uses' => 'SeekersController@create']);
 	Route::get('care_seekers/{uid}',['as' => 'care_seekers.show', 'users' => 'SeekersController@show']);
 
 
@@ -78,9 +74,7 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::resource('rating', 'RatingController');
 
 	Route::post('user_status', [ 'as' => 'changeUserStatus', 'uses' => 'Admin\AdminController@changeUserStatus']);
-
 	Route::get('seeker/member-signup', ['as'=>'seeker.signup', 'uses' => 'SeekersController@signup']);
-
 	Route::post('seeker/upgrade', ['as'=> 'seeker.upgrade', 'uses'=>'SeekersController@upgrade']);
 
 });
