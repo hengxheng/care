@@ -6,7 +6,7 @@
     <input type="hidden" name="uid" value="{{ Auth::user() -> id }}">
     <input type="hidden" name="step" value="2">
     <div class="form-row">
-        <label for="bio">Descript yourself</label>
+        <label for="bio">Describt yourself</label>
         <textarea name="bio"></textarea>
     </div>
     <div class="form-row">

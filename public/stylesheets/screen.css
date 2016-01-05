@@ -83,7 +83,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 body {
   font-family: 'Gotham-Book';
   font-size: 12px;
-  color: #336f7b;
+  color: #164856;
 }
 
 /* line 46, ../sass/screen.scss */
@@ -109,12 +109,12 @@ h3 {
 /* line 59, ../sass/screen.scss */
 h1, h2, h3, h4 {
   font-family: 'Gotham-Bold';
-  color: #336f7b;
+  color: #164856;
 }
 
 /* line 64, ../sass/screen.scss */
 .dark-blue-btn {
-  background: #336f7b;
+  background: #164856;
   color: #fff;
   display: inline-block;
   border: 0;
@@ -130,7 +130,7 @@ h1, h2, h3, h4 {
 
 /* line 78, ../sass/screen.scss */
 .blue-btn {
-  background: #68bed6;
+  background: #1E6073;
   color: #fff;
   display: inline-block;
   border: 0;
@@ -200,27 +200,27 @@ header#site-header .header-top ul {
 /* line 137, ../sass/screen.scss */
 header#site-header .header-top ul li {
   display: inline-block;
-  color: #336f7b;
+  color: #164856;
   margin: 0 5px;
 }
 /* line 141, ../sass/screen.scss */
 header#site-header .header-top ul li a {
-  color: #336f7b;
+  color: #164856;
 }
 /* line 148, ../sass/screen.scss */
 header#site-header .header-content {
-  background: #68bed6;
+  background: #1E6073;
   padding: 15px 45px;
 }
 
 /* line 157, ../sass/screen.scss */
 #site-nav ul li {
   padding: 10px 10px;
-  border-bottom: 1px solid #336f7b;
+  border-bottom: 1px solid #164856;
 }
 /* line 161, ../sass/screen.scss */
 #site-nav ul li a {
-  color: #336f7b;
+  color: #164856;
   font-size: 16px;
   padding-left: 25px;
 }
@@ -243,11 +243,11 @@ header#site-header .header-content {
   height: 100%;
   top: 0;
   left: 0;
-  background: #bcd9de;
+  background: #ddd;
 }
 /* line 187, ../sass/screen.scss */
 .page-main .page-sidebar .user-block {
-  background: #336f7b;
+  background: #164856;
   text-align: left;
   color: #fff;
   overflow: hidden;
@@ -317,7 +317,7 @@ form .form-row input[type="text"],
 form .form-row input[type="email"],
 form .form-row input[type="password"],
 form .form-row select {
-  border: 1px solid #336f7b;
+  border: 1px solid #164856;
   width: 100%;
   box-sizing: border-box;
   color: #000;
@@ -354,7 +354,7 @@ form .form-row select::-webkit-input-placeholder {
 }
 /* line 261, ../sass/screen.scss */
 form .form-row textarea {
-  border: 1px solid #336f7b;
+  border: 1px solid #164856;
   width: 100%;
   box-sizing: border-box;
   padding: 5px 5px 5px 10px;
@@ -365,15 +365,15 @@ form .form-row input[type="submit"] {
   width: 100%;
   color: #fff;
   text-transform: uppercase;
-  background: #336f7b;
-  border: 1px solid #336f7b;
+  background: #164856;
+  border: 1px solid #164856;
   padding: 3px;
   height: 35px;
 }
 
 /* line 281, ../sass/screen.scss */
 .block .block-title {
-  background: #68bed6;
+  background: #1E6073;
   color: #fff;
   font-size: 18px;
   padding: 10px;
@@ -390,7 +390,7 @@ form .form-row input[type="submit"] {
 .block .block-content {
   padding: 15px;
   box-sizing: border-box;
-  color: #68bed6;
+  color: #1E6073;
   font-size: 14px;
 }
 /* line 299, ../sass/screen.scss */
@@ -407,14 +407,14 @@ form .form-row input[type="submit"] {
 #message-menu ul li {
   display: inline-block;
   width: 49.5%;
-  border: 1px solid #68bed6;
+  border: 1px solid #1E6073;
   text-align: center;
   background: #fff;
 }
 /* line 317, ../sass/screen.scss */
 #message-menu ul li a {
   font-size: 16px;
-  color: #336f7b;
+  color: #164856;
   display: block;
   height: 100%;
   width: 100%;
@@ -422,7 +422,7 @@ form .form-row input[type="submit"] {
 }
 /* line 325, ../sass/screen.scss */
 #message-menu ul li.active {
-  background: #68bed6;
+  background: #1E6073;
 }
 /* line 327, ../sass/screen.scss */
 #message-menu ul li.active a {
@@ -436,7 +436,7 @@ form .form-row input[type="submit"] {
 /* line 340, ../sass/screen.scss */
 #message-main ul li {
   border-bottom: 1px solid #ccc;
-  color: #336f7b;
+  color: #164856;
   padding: 15px;
   margin-bottom: 25px;
   position: relative;
@@ -470,7 +470,7 @@ form .form-row input[type="submit"] {
 #message-main ul li .message-tease .user-name {
   font-size: 20px;
   font-family: 'Gotham-Bold';
-  color: #336f7b;
+  color: #164856;
   margin-bottom: 15px;
   text-transform: capitalize;
 }
@@ -526,7 +526,7 @@ form .form-row input[type="submit"] {
 .message .message-tease .user-name {
   font-size: 20px;
   font-family: 'Gotham-Bold';
-  color: #336f7b;
+  color: #164856;
   margin-bottom: 15px;
   text-transform: capitalize;
 }
@@ -655,7 +655,7 @@ form .form-row input[type="submit"] {
 .job-block .job-title {
   font-size: 20px;
   margin-bottom: 15px;
-  color: #336f7b;
+  color: #164856;
 }
 /* line 582, ../sass/screen.scss */
 .job-block .job-title .active {
@@ -674,7 +674,7 @@ form .form-row input[type="submit"] {
 
 /* line 597, ../sass/screen.scss */
 #site-footer {
-  background: #336f7b;
+  background: #164856;
 }
 /* line 599, ../sass/screen.scss */
 #site-footer .footer-content {
@@ -715,7 +715,7 @@ form .form-row input[type="submit"] {
   float: right;
   text-align: center;
   padding: 20px 15px;
-  background: #336f7b;
+  background: #164856;
   color: #fff;
 }
 /* line 636, ../sass/screen.scss */
@@ -726,7 +726,7 @@ form .form-row input[type="submit"] {
 }
 /* line 641, ../sass/screen.scss */
 .rating-block i {
-  color: #68bed6;
+  color: #1E6073;
 }
 
 /* line 646, ../sass/screen.scss */
@@ -756,7 +756,7 @@ form .form-row input[type="submit"] {
 .user-block .user-info .user-name {
   font-size: 32px;
   font-family: "Gotham-Bold";
-  color: #336f7b;
+  color: #164856;
   margin-bottom: 15px;
   text-transform: capitalize;
 }
@@ -769,7 +769,7 @@ form .form-row input[type="submit"] {
 /* line 675, ../sass/screen.scss */
 .user-block .user-info .user-rate {
   font-size: 14px;
-  color: #68bed6;
+  color: #1E6073;
   margin-bottom: 15px;
 }
 /* line 680, ../sass/screen.scss */
@@ -785,7 +785,7 @@ form .form-row input[type="submit"] {
   color: #fff;
   box-sizing: border-box;
   float: right;
-  background: #336f7b;
+  background: #164856;
   text-align: center;
   padding: 20px 15px;
 }
@@ -811,7 +811,7 @@ form .form-row input[type="submit"] {
 .filter-sidebar {
   width: 20%;
   float: left;
-  border: 1px solid #336f7b;
+  border: 1px solid #164856;
   box-sizing: border-box;
   padding: 30px 15px;
 }
@@ -832,30 +832,30 @@ form .form-row input[type="submit"] {
 /* line 730, ../sass/screen.scss */
 .filter-sidebar .form-ele label {
   font-size: 14px;
-  color: #336f7b;
+  color: #164856;
   display: block;
   margin-bottom: 5px;
 }
 /* line 736, ../sass/screen.scss */
 .filter-sidebar .form-ele select {
   width: 100%;
-  border: 1px solid #336f7b;
-  color: #336f7b;
+  border: 1px solid #164856;
+  color: #164856;
   padding: 10px;
   text-transform: uppercase;
 }
 /* line 744, ../sass/screen.scss */
 .filter-sidebar .form-ele input[type="text"] {
   width: 100%;
-  border: 1px solid #336f7b;
-  color: #336f7b;
+  border: 1px solid #164856;
+  color: #164856;
   padding: 10px;
   box-sizing: border-box;
 }
 /* line 751, ../sass/screen.scss */
 .filter-sidebar .form-ele input[type="submit"] {
   width: 100%;
-  background: #336f7b;
+  background: #164856;
   color: #fff;
   border: 0;
   font-size: 20px;

@@ -18,11 +18,11 @@
 			>Female
 		</div>
 		<div class="form-row">
-			<label for="address1">Address1</label>
+			<label for="address1">Address line 1</label>
 			<input type="text" name="address1" value="{{ $giver->address1 }}" required>
 		</div>
 		<div class="form-row">
-			<label for="address2">Address2</label>
+			<label for="address2">Address line 2</label>
 			<input type="text" name="address2" value="{{ $giver->address2 }}">
 		</div>
 		<div class="form-row">
@@ -50,7 +50,7 @@
 		</div>	
 		<div class="form-row">	
 			<img src="{{ URL::asset('images/user/'.$giver->picture) }}" alt="">
-			<label for="picture">Your Photo</label>
+			<label for="picture">Profile Picture</label>
 			<input type="file" name="picture">
 		</div> 
 		<div class="form-row">

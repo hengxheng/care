@@ -7,9 +7,9 @@
 @import "compass/css3";
 
 $site-width: 960px;
-$blue: #68bed6;
-$dark-blue: #336f7b;
-$light-blue: #bcd9de;
+$blue: #1E6073;
+$dark-blue: #164856;
+$light-blue: #164856;
 $dark-blue-hover: #234b54;
 $blue-hover: #3197b5;
 $text-color:#000;
@@ -183,7 +183,7 @@ header#site-header{
 		height:100%;
 		top:0;
 		left:0;
-		background: $light-blue;
+		background: #ddd;
 		.user-block{
 			background:$dark-blue;
 			text-align: left;
