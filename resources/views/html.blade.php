@@ -18,6 +18,7 @@
 	<body ng-app="myApp">
 		<header id="site-header">
 			<div class="header-top">
+				<div class="site-inner">
 					<nav id="sub-nav">
 						<ul>
 							<li><a href="#">FAQS</a></li>
@@ -27,32 +28,19 @@
 							<li><a href="#">CONTACT US</a></li>
 						</ul>
 					</nav>
+				</div>
 			</div>
 			<div class="header-content">
+				<div class="site-inner">
 					<div class="logo">
 						<a href="#"><img src="{{ URL::asset('images/logo.png') }}" alt=""></a>
 					</div>		
 				</div>
-		</header>
-		<div class="page-main">
-			<div class="page-content">
-				@if (Session::has('message'))
-					<div class="flash alert-info">
-						<p>{{ Session::get('message') }}</p>
-					</div>
-				@endif
-				@if ($errors->any())
-					<div class='flash alert-danger'>
-						@foreach ( $errors->all() as $error )
-							<p>{{ $error }}</p>
-						@endforeach
-					</div>
-				@endif
-
-				@yield('content')
 			</div>
-			<div class="page-sidebar">
-				@if(Auth::check())
+		</header>
+		<nav id="main-nav">
+			<div class="site-inner">
+			@if(Auth::check())
 				<div class="user-block">
 						<img src="{{ URL::asset('images/user/'.Auth::user()->picture) }}" alt="">
 						<h2 class="user-name">
@@ -68,36 +56,58 @@
 								<a id="logout-btn" href="{{ URL::route('logout') }}">Logout</a>
 						</div>
 				</div>
-				@endif
-				<nav id="site-nav">
-					<ul>
-						@if (Auth::guest())
-							<li><a href="{{ URL::route('login') }}">Login</a></li>
-							<li><a href="{{ URL::route('register') }}">Register</a></li>
-						@else
-							@if (Auth::user() -> user_type == 'giver')
-							<li><a href="{{ URL::route('care_givers.show', array('uid' => Auth::user()->id)) }}" >My Profile</a></li>
-							<li><a href="{{ URL::route('job.search', array('uid' => Auth::user()->id)) }}">View Jobs</a></li>
-							@elseif (Auth::user() -> user_type == 'seeker')
-							<li><a href="{{ URL::route('care_seekers.show', array('uid' => Auth::user()->id)) }}">My Profile</a></li>
-							<li><a href="{{ URL::route('job.create', array('uid' => Auth::user()->id)) }}">Post a job</a></li>
-							<li><a href="{{ URL::route('care_givers.list')}}">Find Caregivers</a></li>
-							<li><a href="{{ URL::route('job.list', array('poster_id' => Auth::user()->id)) }}">My posted jobs</a></li>
-							@endif
-							<li><a href="{{ URL::route('message.inbox') }}">Inbox 
-								@if(isset($unread))
-								  <span class="msg-notify">{{ $unread }}</span>
-								@endif
-							</a></li>						
+			@endif
+
+
+			<nav id="site-nav">
+				<ul>
+					@if (Auth::guest())
+						<li><a href="{{ URL::route('login') }}">Login</a></li>
+						<li><a href="{{ URL::route('register') }}">Register</a></li>
+					@else
+						@if (Auth::user() -> user_type == 'giver')
+						<li><a href="{{ URL::route('care_givers.show', array('uid' => Auth::user()->id)) }}" >My Profile</a></li>
+						<li><a href="{{ URL::route('job.search', array('uid' => Auth::user()->id)) }}">View Jobs</a></li>
+						@elseif (Auth::user() -> user_type == 'seeker')
+						<li><a href="{{ URL::route('care_seekers.show', array('uid' => Auth::user()->id)) }}">My Profile</a></li>
+						<li><a href="{{ URL::route('job.create', array('uid' => Auth::user()->id)) }}">Post a job</a></li>
+						<li><a href="{{ URL::route('care_givers.list')}}">Find Caregivers</a></li>
+						<li><a href="{{ URL::route('job.list', array('poster_id' => Auth::user()->id)) }}">My posted jobs</a></li>
 						@endif
-					</ul>
-				</nav>
+						<li><a href="{{ URL::route('message.inbox') }}">Inbox 
+							@if(isset($unread))
+							  <span class="msg-notify">{{ $unread }}</span>
+							@endif
+						</a></li>						
+					@endif
+				</ul>
+			</nav>
+			</div>
+		</nav>
+		
+
+		<div class="page-main">
+			<div class="page-content site-inner">
+				@if (Session::has('message'))
+					<div class="flash alert-info">
+						<p>{{ Session::get('message') }}</p>
+					</div>
+				@endif
+				@if ($errors->any())
+					<div class='flash alert-danger'>
+						@foreach ( $errors->all() as $error )
+							<p>{{ $error }}</p>
+						@endforeach
+					</div>
+				@endif
+
+				@yield('content')
 			</div>
 		</div>
 		
 		<div class="clear"></div>
 		<footer id="site-footer">
-			<div class="footer-content">
+			<div class="footer-content site-inner">
 				<div class="footer-1">
 					<a href="/"><img src="{{ URL::asset('images/logo.png') }}" alt=""></a>
 				</div>

@@ -6,7 +6,7 @@
 @import "compass/reset";
 @import "compass/css3";
 
-$site-width: 960px;
+$site-width: 1280px;
 $blue: #1E6073;
 $dark-blue: #164856;
 $light-blue: #164856;
@@ -97,6 +97,7 @@ h1, h2, h3, h4{
 	width: $site-width;
 	margin:0 auto;
 	padding:15px;
+	box-sizing: border-box;
 }
 
 .row{
@@ -127,10 +128,8 @@ h1, h2, h3, h4{
 }
 
 header#site-header{
-	
 	.header-top{
 		background:#ddd;
-		padding: 5px 45px;
 		text-align: right;
 		ul{
 			display:inline-block;
@@ -147,73 +146,64 @@ header#site-header{
 	}
 	.header-content{
 		background:$blue;
-		padding: 15px 45px;
+		text-align: center;
 	}
 	
 }
 
-#site-nav{
-	ul{
-		li{
-			padding:10px 10px;
 
-			border-bottom:1px solid $dark-blue;
+
+#main-nav{
+	background:$dark-blue;
+	overflow:hidden;
+	.user-block{	
+		float:left;	
+		text-align: left;
+		color:#fff;
+		overflow: hidden;
+		.user-name{
+			color:#fff;
+			font-size: 18px;
+			margin-top: 18px;
+			text-transform: capitalize;
+		}
+		img{
+			width: 60px;
+			float:left;
+			margin-right: 25px;
+		}
+		.user-block-btns{
+			clear:both;
+			text-align:left;
 			a{
-				color: $dark-blue;
+				display:inline-block;
+				margin:10px;
+				color:#fff;
 				font-size: 16px;
-				padding-left: 25px;
+			}
+		}
+	}
+
+	#site-nav{
+		float:right;
+		ul{
+			li{
+				padding:10px 10px;
+				display:inline-block;
+				a{
+					color: #fff;
+					font-size: 16px;
+					padding-left: 25px;
+				}
 			}
 		}
 	}
 }
 
-
 // main content area
 .page-main{
-	position: relative;
-	padding: 45px 25px 45px 400px;
+	padding: 45px 0;
 	min-height: 800px;
-	.page-content{
-		width:960px;
-		overflow:hidden;
-	}
-	.page-sidebar{
-		position: absolute;
-		width: 375px;
-		height:100%;
-		top:0;
-		left:0;
-		background: #ddd;
-		.user-block{
-			background:$dark-blue;
-			text-align: left;
-			color:#fff;
-			overflow: hidden;
-			padding:25px;
-			.user-name{
-				color:#fff;
-				font-size: 18px;
-				margin-top: 18px;
-				text-transform: capitalize;
-			}
-			img{
-				width: 100px;
-				float:left;
-				margin-right: 25px;
-			}
-			.user-block-btns{
-				clear:both;
-				text-align:left;
-				padding-top:25px;
-				a{
-					display:inline-block;
-					margin:10px;
-					color:#fff;
-					font-size: 16px;
-				}
-			}
-		}
-	}
 }
 
 
@@ -222,10 +212,10 @@ header#site-header{
 	box-sizing: border-box;
 	ul{
 		li{
-			margin:10px;
-			border:1px solid #68bed6;
+			border:1px solid #ccc;
 			box-sizing: border-box;
-			padding:15px;
+			padding:10px;
+			margin-bottom: 20px;
 		}
 	}
 }
@@ -597,9 +587,6 @@ form{
 #site-footer{
 	background:$dark-blue;
 	.footer-content{
-		width:1300px;
-		margin: 0 auto;
-		padding:15px;
 		color: #fff;
 		overflow:hidden;
 		.footer-1{
@@ -763,6 +750,7 @@ form{
 	width: 80%;
 	float: left;
 	box-sizing: border-box;
+	padding-left: 30px;
 }
 
 .giver-list-block{
