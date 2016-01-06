@@ -105,7 +105,7 @@ class SeekersController extends Controller
         $hmail = $user->email;
 
         Mail::send('email.welcome',array('firstname' => $fname, 'lastname' => $lname, 'email' => $hmail ), function($message) use ($hmail) {
-            $message->to($hmail , "CareNation Customer")->subject('Welcome');
+            $message->to($hmail , "CareNation Customer")->subject('Thanks for joining CareNation.com.au!');
         });
 
         return Redirect::route('care_seekers.show',array('uid'=>$id));
