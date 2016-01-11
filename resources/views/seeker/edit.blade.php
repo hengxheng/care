@@ -37,7 +37,7 @@
 	</div>	
 	<div class="form-row">	
 		<img src="{{ URL::asset('images/user/'.$seeker->picture) }}" alt="">
-		<label for="picture">Your Photo</label>
+		<label for="picture">Profile Picture</label>
 		<input type="file" name="picture">
 	</div> 
 	<div class="form-row">

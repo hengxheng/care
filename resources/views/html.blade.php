@@ -47,14 +47,6 @@
 							{{ camel_case(Auth::user()->firstname) }} {{ camel_case(Auth::user()->lastname) }}
 						</h2>
 						<p>Care {{ Auth::user()->user_type }}</p>
-						<div class="user-block-btns">
-							@if (Auth::user() -> user_type == 'giver')
-								<a id="view-profile-btn" href="{{ URL::route('care_givers.show', array('uid' => Auth::user()->id)) }}" >View Profile</a>
-							@elseif (Auth::user() -> user_type == 'seeker')
-								<a id="view-profile-btn"  href="{{ URL::route('care_seekers.show', array('uid' => Auth::user()->id)) }}">View Profile</a>
-							@endif
-								<a id="logout-btn" href="{{ URL::route('logout') }}">Logout</a>
-						</div>
 				</div>
 			@endif
 
@@ -82,6 +74,10 @@
 					@endif
 				</ul>
 			</nav>
+
+			<div class="user-block-btns">
+					<a id="logout-btn" href="{{ URL::route('logout') }}">Logout</a>
+			</div>
 			</div>
 		</nav>
 		

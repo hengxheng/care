@@ -12,6 +12,7 @@
 					<div class="block-content">
 					{{ $the_user -> firstname }} {{ $the_user -> lastname }}
 					</div>
+				
 					<div class="block-content">
 						@if($the_seeker->subscription_ends_at == null)
 						Monthly Subcription
@@ -19,6 +20,7 @@
 						Subscrtipion ends: {{ $the_seeker->subscription_ends_at }}
 						@endif
 					</div>
+		
 				</div>
 			</div>
 		</div>
