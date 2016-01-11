@@ -59,6 +59,7 @@ h3{
 h1, h2, h3, h4{
 	font-family: 'Gotham-Bold';
 	color: $dark-blue;
+	margin-bottom:10px;
 }
 
 .dark-blue-btn{
@@ -588,7 +589,8 @@ form{
 
 .job-view{
 	margin-bottom:25px;
-	.job-block{
+}
+.job-block{
 		.job-title{
 			font-size: 20px;
 			margin-bottom:15px;
@@ -606,8 +608,6 @@ form{
 			padding: 15px 0;
 		}
 	}
-}
-
 
 
 #site-footer{
