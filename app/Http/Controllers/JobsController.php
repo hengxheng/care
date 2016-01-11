@@ -44,6 +44,9 @@ class JobsController extends Controller
             Session::put('job-services-filter', Input::get('job-services-filter'));
             $services_filter = Input::get('job-services-filter');
         }
+        else{
+            $services_filter = array();
+        }
         if(Input::has('job-order')){
             Session::put('job-order', Input::get('job-order'));
             $order = Input::get('job-order');
@@ -232,6 +235,11 @@ class JobsController extends Controller
 
     public function listing($poster_id){
         $jobs = Job::where('poster_id', '=', $poster_id)->paginate(10);
+        return view("job.list", compact('jobs'));
+    }
+
+    public function applied($uid){
+        $jobs = Job::getSubmitedJobs($uid);
         return view("job.list", compact('jobs'));
     }
 

@@ -9,12 +9,12 @@ class Job extends Model
 {
     protected $table = "job";
 
-    public static function getSubmitedJob($uid){
+    public static function getSubmitedJobs($uid){
     	return DB::table('submission')
     			->leftJoin('job','submission.job_id','=', 'job.id')
     			->where('submission.submited_uid','=',$uid)
     			->groupBy('job.id')
-    			->get();
+    			->paginate(10);
     } 
 
     public static function getAllSuburbs(){
@@ -42,4 +42,5 @@ class Job extends Model
         $jobs->orderBy($order, 'desc');
         return $jobs->paginate(10);
     }
+
 }
