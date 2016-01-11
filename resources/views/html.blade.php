@@ -57,21 +57,23 @@
 						<li><a href="{{ URL::route('login') }}">Login</a></li>
 						<li><a href="{{ URL::route('register') }}">Register</a></li>
 					@else
-						@if (Auth::user() -> user_type == 'giver')
-						<li><a href="{{ URL::route('care_givers.show', array('uid' => Auth::user()->id)) }}" >My Profile</a></li>
-						<li><a href="{{ URL::route('job.search', array('uid' => Auth::user()->id)) }}">View Jobs</a></li>
-						<li><a href="{{ URL::route('job.applied', array('uid' => Auth::user()->id)) }}">Applied Jobs</a></li>
-						@elseif (Auth::user()->user_type == 'seeker' && Auth::user()->status == 'Active')
-						<li><a href="{{ URL::route('care_seekers.show', array('uid' => Auth::user()->id)) }}">My Profile</a></li>
-						<li><a href="{{ URL::route('job.create', array('uid' => Auth::user()->id)) }}">Post a job</a></li>
-						<li><a href="{{ URL::route('care_givers.list')}}">Find Caregivers</a></li>
-						<li><a href="{{ URL::route('job.list', array('poster_id' => Auth::user()->id)) }}">My posted jobs</a></li>
-						@endif
-						<li><a href="{{ URL::route('message.inbox') }}">Inbox 
-							@if(isset($unread))
-							  <span class="msg-notify">{{ $unread }}</span>
+						if(Auth::user()->status == 'Active')
+							@if (Auth::user() -> user_type == 'giver')
+							<li><a href="{{ URL::route('care_givers.show', array('uid' => Auth::user()->id)) }}" >My Profile</a></li>
+							<li><a href="{{ URL::route('job.search', array('uid' => Auth::user()->id)) }}">View Jobs</a></li>
+							<li><a href="{{ URL::route('job.applied', array('uid' => Auth::user()->id)) }}">Applied Jobs</a></li>
+							@elseif (Auth::user()->user_type == 'seeker')
+							<li><a href="{{ URL::route('care_seekers.show', array('uid' => Auth::user()->id)) }}">My Profile</a></li>
+							<li><a href="{{ URL::route('job.create', array('uid' => Auth::user()->id)) }}">Post a job</a></li>
+							<li><a href="{{ URL::route('care_givers.list')}}">Find Caregivers</a></li>
+							<li><a href="{{ URL::route('job.list', array('poster_id' => Auth::user()->id)) }}">My posted jobs</a></li>
 							@endif
-						</a></li>						
+							<li><a href="{{ URL::route('message.inbox') }}">Inbox 
+								@if(isset($unread))
+								  <span class="msg-notify">{{ $unread }}</span>
+								@endif
+							</a></li>	
+						@endif					
 					@endif
 				</ul>
 			</nav>
