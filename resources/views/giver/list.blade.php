@@ -178,7 +178,7 @@
             @if (count($givers) > 0)
             <ul>
                 @foreach( $givers as $giver )
-                    <li class="{{ $giver->state }} {{ $giver->suburb }} rate-{{ $giver->rate }} rating-{{$rating[$giver->uid] }}">
+                    <li>
                         <div class="user-block">
                             <div class="user-img">
                                 <img src="{{ URL::asset('images/user/'.$giver->picture) }}" alt="">

@@ -47,10 +47,41 @@
 			<a class="dark-blue-btn" href="{{ URL::route('job.delete', array('id' => $job->id )) }}">Delete</a>
 		</div>
 		@endif
-		@if (Auth::user()->user_type == "giver")
+		@if (Auth::user()->user_type == "giver" && !$applied)
 		<div class="job-action">
 			<a href="{{ URL::route('submission.create', array('jid' => $job->id, 'uid'=> Auth::user()->id)) }}" class="blue-btn">Apply this job</a>
 		</div>
 		@endif
+	</div>
+	<div class="sub-list block">
+		<h2 class="block-title">Job Submissions</h2>
+		<ul>
+			@foreach ($submissions as $s)
+			 <li>
+			 	<div class="sub-block">
+	                <div class="user-block">
+	                    <div class="user-img">
+	                        <img src="{{ URL::asset('images/user/'.$s->picture) }}" alt="">
+	                    </div>
+	                     <div class="user-info">
+	                         <div class="user-name">
+	                             {{ $s->firstname }} {{ $s->lastname}}
+	                         </div>                 
+	                         <div class="cta">
+	                            <a class="blue-btn" href="{{ URL::route('care_givers.show', array('uid' => $s->uid )) }}">View</a>
+	                            <a class="dark-blue-btn" href="{{ URL::route('message.create', array('to_id'=>$s->uid )) }}">Send a message</a>
+	                        </div>
+	                     </div>
+	                </div>  
+	                <div class="sub-content">
+						{{ $s->content }}
+					</div>
+					<div class="sub-date">
+						{{ $s->created_at }}
+					</div>
+				</div>	          
+            </li>
+			@endforeach
+		</ul>
 	</div>
 @endsection

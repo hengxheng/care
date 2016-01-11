@@ -4,10 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Job;
+use App\Submission;
 use Input;
 use Redirect;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Auth;
 use Session;
 
 class JobsController extends Controller
@@ -129,10 +131,15 @@ class JobsController extends Controller
      */
     public function show($id)
     {
+        $user = Auth::user();
         $job = Job::find($id);
         $_serv = $job->service_name;
         $serv = explode("," ,$_serv);
-        return view("job.show", compact('job', 'serv'));
+        $submissions = Submission::getSubmissionByJob($id);
+
+        $applied = Submission::checkSubmitted($user->id, $id);
+        
+        return view("job.show", compact('job', 'serv', 'submissions', 'applied'));
     }
 
     /**

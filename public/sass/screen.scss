@@ -586,24 +586,28 @@ form{
 	background-size: contain;
 }
 
-.job-block{
-	.job-title{
-		font-size: 20px;
-		margin-bottom:15px;
-		color:$dark-blue;
-		.active{
-			color: green;
+.job-view{
+	margin-bottom:25px;
+	.job-block{
+		.job-title{
+			font-size: 20px;
+			margin-bottom:15px;
+			color:$dark-blue;
+			.active{
+				color: green;
+			}
+			.inactive{
+				color: red;
+			}
 		}
-		.inactive{
-			color: red;
+		.job-desc{
+			font-size: 16px;
+			color:$text-color;
+			padding: 15px 0;
 		}
-	}
-	.job-desc{
-		font-size: 16px;
-		color:$text-color;
-		padding: 15px 0;
 	}
 }
+
 
 
 #site-footer{
