@@ -52,5 +52,8 @@
             </ul>
             @endif
         </div>
+        <div class="pagination-block">
+            {!! $givers->render() !!}
+        </div>
     </div>
 @endsection

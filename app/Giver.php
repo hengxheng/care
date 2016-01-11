@@ -73,7 +73,7 @@ class Giver extends Model
         }
 
         $givers->orderBy($order, 'desc');  
-        return $givers->get();
+        return $givers->paginate(10);
         
     }
 

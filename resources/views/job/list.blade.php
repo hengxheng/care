@@ -21,7 +21,6 @@
                     </div>
                     <div class="job-action">
                         <a class="blue-btn" href="{{ URL::route('job.show', array('id' => $job->id )) }}">View</a>
-                    	{{ dd($job)}}
                         <a class="blue-btn" href="{{ URL::route('job.edit', array('id' => $job->id )) }}">Edit</a>
                     	<a class="dark-blue-btn" href="{{ URL::route('job.delete', array('id' => $job->id )) }}">Delete</a>
                     </div>
@@ -30,5 +29,8 @@
             @endforeach
         </ul>
     @endif
+</div>
+<div class="pagination-block">
+    {!! $jobs->render() !!}
 </div>
 @endsection

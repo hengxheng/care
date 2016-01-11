@@ -84,6 +84,9 @@
             </ul>
             @endif
         </div>
+        <div class="pagination-block">
+            {!! $givers->render() !!}
+        </div>
     </div>
 
     <div class="filter-sidebar">

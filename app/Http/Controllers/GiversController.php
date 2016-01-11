@@ -97,7 +97,6 @@ class GiversController extends Controller
         }
 
         $givers = Giver::filterAllGivers($postcode_filter, $radius_filter, $gender_filter, $service_filter, $service2_filter, $min_price, $max_price, $min_rating, $max_rating, $order);
-
         foreach ($givers as $g){
             $rating[$g->uid] = Rating::MyRating($g->uid);
         }

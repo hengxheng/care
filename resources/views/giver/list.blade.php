@@ -223,6 +223,7 @@
                     </li>
                 @endforeach
             </ul>
+            
             @else
             <ul>
                 <li>
@@ -232,6 +233,9 @@
                 </li>
             </ul>
             @endif
+        </div>
+        <div class="pagination-block">
+            {!! $givers->render() !!}
         </div>
     </div>
 @endsection

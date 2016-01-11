@@ -4,7 +4,7 @@
 	{!! Form::token() !!}
 	<input type="hidden" name="uid" value="{{ Auth::user()->id }}">
 	<div class="payment-errors"></div>
-	<div class="form-ele">
+	<div class="form-row">
 		<label for="subscription">Subscription plan: </label>
 		<select name="subscription">
 			<option value="001">$99.00/month</option>
@@ -13,11 +13,11 @@
 			<option value="004">$831.60 for 12 months</option>
 		</select>
 	</div>
-	<div class="form-ele">
+	<div class="form-row">
 		<label for="ccn">Credit card number: </label>
 		<input type="text" name="ccn" data-stripe="number" required pattern="[0-9]{13,16}">
 	</div>
-	<div class="form-ele">
+	<div class="form-row-2">
 		<label for="expiration">Expiration date: </label>
 		<select name="month" data-stripe="exp-month">
 			<option value="01">01</option>
@@ -48,11 +48,11 @@
 		</select>
 	</div>
 
-	<div class="form-ele">
+	<div class="form-row-2">
 		<label for="cvc">CVC number</label>
 		<input type="text" name="cvc" data-stripe="cvc">
 	</div>
-	<div class="form-ele">
+	<div class="form-row">
 		<input id="subscript-submit" type="submit" value="SIGN UP">
 	</div>
 

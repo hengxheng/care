@@ -40,6 +40,6 @@ class Job extends Model
         	}
         }
         $jobs->orderBy($order, 'desc');
-        return $jobs->get();
+        return $jobs->paginate(10);
     }
 }

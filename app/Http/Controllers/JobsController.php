@@ -231,7 +231,7 @@ class JobsController extends Controller
     }
 
     public function listing($poster_id){
-        $jobs = Job::where('poster_id', '=', $poster_id) -> get();
+        $jobs = Job::where('poster_id', '=', $poster_id)->paginate(10);
         return view("job.list", compact('jobs'));
     }
 
