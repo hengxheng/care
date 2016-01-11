@@ -35,5 +35,8 @@
 			@endforeach
 		</ul>
 	</div>
+	<div class="pagination-block">
+	    {!! $messages->render() !!}
+	</div>
 </div>
 @endsection

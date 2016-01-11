@@ -11,12 +11,10 @@ class Message extends Model
     public static function myMessages($uid){
     	return DB::table('message')
     			->leftJoin('users', 'message.sender_id', '=', 'users.id')
-                // ->leftJoin('seeker', 'message.sender_id', '=' ,'seeker.uid')
-                // ->leftJoin('giver', 'message.sender_id', '=', 'giver.uid')
                 ->select('message.*','users.id as uid','users.firstname','users.lastname','users.user_type','users.picture')
     			->where('message.receiver_id', '=', $uid)
     			->orderBy('message.created_at', 'DESC')
-    			->get();
+    			->paginate(10);
     }
 
     public static function myUnReadMsg($uid){
@@ -36,7 +34,7 @@ class Message extends Model
                 ->select('message.*','users.id as uid','users.firstname','users.lastname','users.user_type','users.picture')
                 ->where('message.sender_id', '=', $uid)
                 ->orderBy('message.created_at', 'DESC')
-                ->get();
+                ->paginate(10);
     }
 
     public static function getTheMessage($id, $type){

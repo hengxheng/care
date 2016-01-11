@@ -54,7 +54,7 @@
 		@endif
 	</div>
 	<div class="sub-list block">
-		<h2 class="block-title">Job Submissions</h2>
+		<h2>Job Submissions</h2>
 		<ul>
 			@foreach ($submissions as $s)
 			 <li>
@@ -66,19 +66,20 @@
 	                     <div class="user-info">
 	                         <div class="user-name">
 	                             {{ $s->firstname }} {{ $s->lastname}}
-	                         </div>                 
+	                         </div>            
+	                         <div class="sub-content">
+								{{ $s->content }}
+							</div>
+							<div class="sub-date">
+								{{ $s->created_at }}
+							</div>     
 	                         <div class="cta">
 	                            <a class="blue-btn" href="{{ URL::route('care_givers.show', array('uid' => $s->uid )) }}">View</a>
 	                            <a class="dark-blue-btn" href="{{ URL::route('message.create', array('to_id'=>$s->uid )) }}">Send a message</a>
 	                        </div>
 	                     </div>
 	                </div>  
-	                <div class="sub-content">
-						{{ $s->content }}
-					</div>
-					<div class="sub-date">
-						{{ $s->created_at }}
-					</div>
+	                
 				</div>	          
             </li>
 			@endforeach
