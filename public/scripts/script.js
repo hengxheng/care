@@ -57,4 +57,18 @@ $(function(){
     	dateFormat: 'yy-m-d'
     });
 
+    
+
+    $("#account-down").click(function(e){
+    	e.preventDefault();
+    	$("#account-block-menu").addClass("open");
+    });
+
+    
+    $(document).click(function(e){
+    	console.log(e.target);
+    	if(! $(e.target).closest('#account-down').length){
+    		$("#account-block-menu").removeClass("open");
+    	}
+    });
 });

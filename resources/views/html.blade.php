@@ -67,16 +67,25 @@
 				</ul>
 			</nav>
 			@if(Auth::check())
-				<div class="user-block">
+				<div class="account-block">
+					<div class="account-block-img">
 						<img src="{{ URL::asset('images/user/'.Auth::user()->picture) }}" alt="">
+					</div>	
+					<div class="account-block-content">
 						<h2 class="user-name">
 							{{ camel_case(Auth::user()->firstname) }} {{ camel_case(Auth::user()->lastname) }}
 						</h2>
-						<p>Care {{ Auth::user()->user_type }}</p>
-						<div class="user-block-btns">
-								<a id="logout-btn" href="{{ URL::route('logout') }}">Logout</a>
-						</div>
+						<p class="user-type">Care {{ Auth::user()->user_type }}</p>
+					</div>			
+					<a id="account-down" href="#"><i class="fa fa-chevron-circle-down"></i></a>		
+					<div id="account-block-menu">
+						<ul>
+							<li><a href="#">Account Setting</a></li>
+							<li><a id="logout-btn" href="{{ URL::route('logout') }}">Logout</a></li>
+						</ul>	
+					</div>
 				</div>
+				
 			@endif
 			
 			</div>

@@ -97,7 +97,7 @@ h1, h2, h3, h4{
 .site-inner{
 	width: $site-width;
 	margin:0 auto;
-	padding:15px;
+	padding: 0 15px;
 	box-sizing: border-box;
 }
 
@@ -130,6 +130,7 @@ h1, h2, h3, h4{
 
 header#site-header{
 	.header-top{
+		padding: 15px 0;
 		background:#ddd;
 		text-align: right;
 		ul{
@@ -146,6 +147,7 @@ header#site-header{
 		}
 	}
 	.header-content{
+		padding: 15px 0;
 		background:$blue;
 		text-align: center;
 	}
@@ -156,41 +158,73 @@ header#site-header{
 
 #main-nav{
 	background:$dark-blue;
-	overflow:hidden;
-	.site-inner{
-		overflow:hidden;
-	}
-	.user-block{	
-		float:left;	
+	min-height: 78px;
+	.account-block{
+		position:relative;	
+		float:right;	
 		text-align: left;
 		color:#fff;
-		overflow: hidden;
-		.user-name{
-			color:#fff;
-			font-size: 18px;
-			margin-top: 18px;
-			text-transform: capitalize;
-		}
-		img{
-			width: 60px;
-			float:left;
-			margin-right: 25px;
-		}
-		
-	}
-	.user-block-btns{
-		float:right;
-		text-align:left;
-		a{
+	    padding-top: 10px;
+		.account-block-img{
 			display:inline-block;
-			margin:10px;
+			vertical-align: top;
+			margin-right: 25px;
+			img{
+				width: 60px;	
+			}
+		}
+		.account-block-content{
+			display:inline-block;
+			vertical-align: top;
+			margin-right: 15px;
+			padding-top: 9px;
+			.user-name{
+				color:#fff;
+				font-size: 18px;
+				margin-bottom: 10px;
+				text-transform: capitalize;
+			}
+			.user-type{
+				font-size: 16px;
+			}
+
+		}
+		#account-down{
+			display:inline-block;
+			vertical-align: top;
+			font-size: 18px;
 			color:#fff;
-			font-size: 16px;
+		    margin-top: 25px;
+		}	
+
+		#account-block-menu{
+			display:none;
+			position: absolute;
+			right: 0;
+			bottom: -79px;
+			background: #ddd;
+			border: 1px solid $dark-blue;
+			z-index:99;
+			&.open{
+				display:block;
+			}
+			ul{
+				li{
+					width:100%;
+					padding: 10px;
+					box-sizing: border-box;
+					a{
+						color: $dark-blue;
+    					font-size: 16px;
+					}
+				}
+			}
 		}
 	}
 
 	#site-nav{
-		float:left;
+		display:inline-block;
+		padding: 20px 0;
 		ul{
 			li{
 				padding:10px 10px;
@@ -575,17 +609,17 @@ form{
 // 	background-size:cover;
 // }
 
-#logout-btn{
-	background:url(../images/logout-icon.png) no-repeat center left;
-	padding: 5px 0 5px 35px;
-	background-size: contain;
-}
+// #logout-btn{
+// 	background:url(../images/logout-icon.png) no-repeat center left;
+// 	padding: 5px 0 5px 35px;
+// 	background-size: contain;
+// }
 
-#view-profile-btn{
-	background:url(../images/view-profile-icon.png) no-repeat center left;
-	padding: 5px 0 5px 35px;
-	background-size: contain;
-}
+// #view-profile-btn{
+// 	background:url(../images/view-profile-icon.png) no-repeat center left;
+// 	padding: 5px 0 5px 35px;
+// 	background-size: contain;
+// }
 
 .job-view{
 	margin-bottom:25px;
@@ -615,6 +649,7 @@ form{
 	.footer-content{
 		color: #fff;
 		overflow:hidden;
+		padding: 15px 0;
 		.footer-1{
 			float:left;
 			width:28%;
