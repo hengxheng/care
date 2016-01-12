@@ -10,6 +10,7 @@ use App\User;
 use App\Seeker;
 use Redirect;
 use Carbon\Carbon;
+use Mail;
 
 class SeekersController extends Controller
 {

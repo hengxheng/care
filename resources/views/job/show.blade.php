@@ -49,7 +49,7 @@
 		@endif
 		@if (Auth::user()->user_type == "giver" && !$applied)
 		<div class="job-action">
-			<a href="{{ URL::route('submission.create', array('jid' => $job->id, 'uid'=> Auth::user()->id)) }}" class="blue-btn">Apply this job</a>
+			<a href="{{ URL::route('submission.create', array('jid' => $job->id, 'uid'=> Auth::user()->id)) }}" class="blue-btn">APPLY VIA MESSAGE</a>
 		</div>
 		@endif
 	</div>

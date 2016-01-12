@@ -263,12 +263,12 @@ header#site-header .header-content {
 #main-nav #site-nav ul li {
   padding: 10px 10px;
   display: inline-block;
+  color: #fff;
 }
-/* line 198, ../sass/screen.scss */
+/* line 199, ../sass/screen.scss */
 #main-nav #site-nav ul li a {
   color: #fff;
   font-size: 16px;
-  padding-left: 25px;
 }
 
 /* line 209, ../sass/screen.scss */
@@ -490,7 +490,7 @@ form .form-row input[type="submit"] {
 }
 /* line 373, ../sass/screen.scss */
 #message-main ul li .message-tease {
-  width: 60%;
+  width: 78%;
   box-sizing: border-box;
   display: inline-block;
   vertical-align: top;

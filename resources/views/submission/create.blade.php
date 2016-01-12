@@ -8,7 +8,8 @@
 	<input type="hidden" value="{{ $uid }}" name = "uid">
 
 	<div class="form-row">
-		<label for="description">Comments</label>
+		<label for="description">To apply, please leave a message below which will be sent to the care seeker. 
+			Monitor your CareNation inbox for a reply</label>
 		<textarea name="content"></textarea>
 	</div>
 	<div class="form-row">

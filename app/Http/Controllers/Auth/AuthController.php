@@ -91,4 +91,11 @@ class AuthController extends Controller
         ]);
     }
 
+    protected function seekerRegister(){
+        return view('auth.seeker_register');
+    }
+
+    protected function giverRegister(){
+        return view('auth.giver_register');
+    }
 }

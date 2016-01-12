@@ -27,6 +27,8 @@ Route::group(['middleware' => 'admin.login'], function(){
 
 Route::post('getsuburbs', ['as'=>'getsuburbs', 'uses'=>'LocationController@getSuburbs']);
 
+Route::get('/seeker/register', ['as'=>'seeker_register', 'uses'=>'Auth\AuthController@seekerRegister']);
+Route::get('/giver/register',['as'=>'giver_register','uses'=>'Auth\AuthController@giverRegister']);
 
 
 //Route need to be auth

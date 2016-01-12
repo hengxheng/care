@@ -40,17 +40,6 @@
 		</header>
 		<nav id="main-nav">
 			<div class="site-inner">
-			@if(Auth::check())
-				<div class="user-block">
-						<img src="{{ URL::asset('images/user/'.Auth::user()->picture) }}" alt="">
-						<h2 class="user-name">
-							{{ camel_case(Auth::user()->firstname) }} {{ camel_case(Auth::user()->lastname) }}
-						</h2>
-						<p>Care {{ Auth::user()->user_type }}</p>
-				</div>
-			@endif
-
-
 			<nav id="site-nav">
 				<ul>
 					@if (Auth::guest())
@@ -71,14 +60,25 @@
 								@if(isset($unread))
 								  <span class="msg-notify">{{ $unread }}</span>
 								@endif
-							</a></li>						
+							</a></li>
+					@elseif (Auth::user()->status == 'Pending')
+							<li>To apply for jobs, you must first verify your account by adding a background check approved by us.</li>
 					@endif
 				</ul>
 			</nav>
-
-			<div class="user-block-btns">
-					<a id="logout-btn" href="{{ URL::route('logout') }}">Logout</a>
-			</div>
+			@if(Auth::check())
+				<div class="user-block">
+						<img src="{{ URL::asset('images/user/'.Auth::user()->picture) }}" alt="">
+						<h2 class="user-name">
+							{{ camel_case(Auth::user()->firstname) }} {{ camel_case(Auth::user()->lastname) }}
+						</h2>
+						<p>Care {{ Auth::user()->user_type }}</p>
+						<div class="user-block-btns">
+								<a id="logout-btn" href="{{ URL::route('logout') }}">Logout</a>
+						</div>
+				</div>
+			@endif
+			
 			</div>
 		</nav>
 		
