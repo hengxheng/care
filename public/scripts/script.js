@@ -66,7 +66,6 @@ $(function(){
 
     
     $(document).click(function(e){
-    	console.log(e.target);
     	if(! $(e.target).closest('#account-down').length){
     		$("#account-block-menu").removeClass("open");
     	}

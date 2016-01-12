@@ -13,11 +13,11 @@
 						<input type="radio" name="gender" value="female">Female
 					</div>
 					<div class="form-row">
-						<label for="address1">Address1</label>
+						<label for="address1">Address line 1</label>
 						<input type="text" name="address1" required>
 					</div>
 					<div class="form-row">
-						<label for="address2">Address2</label>
+						<label for="address2">Address line 2</label>
 						<input type="text" name="address2">
 					</div>
 					<div class="form-row">

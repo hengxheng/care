@@ -9,6 +9,9 @@
 </div>
 <div id="message-main">
 	<div class="message-listing-box">
+		@if ( !$messages->count() )
+			No message!
+		@else
 		<ul>
 			@foreach ($messages as $message)
 				<li>
@@ -34,6 +37,7 @@
 				</li>
 			@endforeach
 		</ul>
+		@endif
 	</div>
 	<div class="pagination-block">
 	    {!! $messages->render() !!}
