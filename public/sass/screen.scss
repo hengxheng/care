@@ -10,7 +10,7 @@ $site-width: 1280px;
 $blue: #1E6073;
 $dark-blue: #164856;
 $light-blue: #164856;
-$dark-blue-hover: #234b54;
+$dark-blue-hover: #3197b5;
 $blue-hover: #3197b5;
 $text-color:#000;
 $placeholder-color:#bbb;
@@ -70,6 +70,7 @@ h1, h2, h3, h4{
 	text-transform: uppercase;
 	padding: 8px 7px;
 	font-family: "Gotham-Bold";
+	border-bottom: 5px solid $blue;
 }
 
 .dark-blue-btn:hover{
@@ -84,6 +85,7 @@ h1, h2, h3, h4{
 	text-transform: uppercase;
 	padding: 8px 7px;
 	font-family: "Gotham-Bold";
+	border-bottom: 5px solid $dark-blue;
 }
 
 .blue-btn:hover{
@@ -316,10 +318,13 @@ form{
 			width:100%;
 			color:#fff;
 			text-transform: uppercase;
-			background:$dark-blue;
-			border: 1px solid $dark-blue;
+			background:$blue;
+			border: 1px solid $blue;
 			padding:3px;
 			height: 35px;
+			border-bottom: 5px solid $dark-blue;
+    		font-size: 16px;
+    		font-family: "Gotham-Bold";
 		}
 	}
 }
