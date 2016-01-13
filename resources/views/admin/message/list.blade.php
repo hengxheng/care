@@ -55,7 +55,7 @@
                                                 <i class="fa fa-star fa-2x"></i>
                                             @endfor
                                         @else
-                                           Not Rating yet
+                                           Not ratings yet
                                         @endif
                                     </div>
                                 </div>

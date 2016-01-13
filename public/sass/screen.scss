@@ -183,7 +183,7 @@ header#site-header{
 			.user-name{
 				color:#fff;
 				font-size: 18px;
-				margin-bottom: 10px;
+				margin-bottom: 5px;
 				text-transform: capitalize;
 			}
 			.user-type{
@@ -213,11 +213,20 @@ header#site-header{
 			ul{
 				li{
 					width:100%;
-					padding: 10px;
+					padding: 10px 25px;
 					box-sizing: border-box;
+					border-bottom: 1px solid $dark-blue;
+					&:last-child{
+						border:0;
+					}
 					a{
+						display:inline-block;
+						width:100%;
 						color: $dark-blue;
     					font-size: 16px;
+					}
+					a:hover{
+						color: $dark-blue-hover;
 					}
 				}
 			}
@@ -495,9 +504,9 @@ form{
 	}
 }
 
-.giver-profile-block{
+.profile-block{
 	.profile-image{
-		width: 200px;
+		width: 160px;
 		height: auto;
 		display: inline-block;
     	vertical-align: top;
@@ -527,16 +536,6 @@ form{
 }
 
 
-.seeker-profile-block{
-	.profile-image{
-		width: 300px;
-		height: auto;
-		float:left;
-		img{
-			width:100%;
-		}
-	}
-}
 .av-tick{
 	display:inline-block;
 	width:25px;
@@ -871,6 +870,9 @@ form{
 	width: 45%;
 	box-sizing: border-box;
 	padding: 0 15px;
+	p{
+		margin-bottom: 25px;
+	}
 	form{
 		width:100%;
 	}

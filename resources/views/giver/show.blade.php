@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="giver-profile-block">
+<div class="profile-block">
 	<div class="profile-row">
 		<div class="row">
 			<div class="col-1">
@@ -32,7 +32,7 @@
 								<i class="fa fa-star fa-2x"></i>
 							@endfor
 						@else
-						   Not Rating yet
+						   Not ratings yet
 						@endif
 					</div>
 				</div>

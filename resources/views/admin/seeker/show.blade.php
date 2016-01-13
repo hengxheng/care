@@ -1,7 +1,7 @@
 @extends ('admin.master')
 @section ('content')
 	@if($the_user->user_type == "seeker")
-	<div class="seeker-profile-block">
+	<div class="profile-block">
 
 		<div class="row">
 			<div class="col-1">

@@ -252,7 +252,7 @@ header#site-header .header-content {
 #main-nav .account-block .account-block-content .user-name {
   color: #fff;
   font-size: 18px;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   text-transform: capitalize;
 }
 /* line 189, ../sass/screen.scss */
@@ -284,43 +284,54 @@ header#site-header .header-content {
 /* line 214, ../sass/screen.scss */
 #main-nav .account-block #account-block-menu ul li {
   width: 100%;
-  padding: 10px;
+  padding: 10px 25px;
   box-sizing: border-box;
+  border-bottom: 1px solid #164856;
 }
-/* line 218, ../sass/screen.scss */
+/* line 219, ../sass/screen.scss */
+#main-nav .account-block #account-block-menu ul li:last-child {
+  border: 0;
+}
+/* line 222, ../sass/screen.scss */
 #main-nav .account-block #account-block-menu ul li a {
+  display: inline-block;
+  width: 100%;
   color: #164856;
   font-size: 16px;
 }
-/* line 227, ../sass/screen.scss */
+/* line 228, ../sass/screen.scss */
+#main-nav .account-block #account-block-menu ul li a:hover {
+  color: #3197b5;
+}
+/* line 236, ../sass/screen.scss */
 #main-nav #site-nav {
   display: inline-block;
   padding: 20px 0;
 }
-/* line 231, ../sass/screen.scss */
+/* line 240, ../sass/screen.scss */
 #main-nav #site-nav ul li {
   padding: 10px 10px;
   display: inline-block;
   color: #fff;
 }
-/* line 235, ../sass/screen.scss */
+/* line 244, ../sass/screen.scss */
 #main-nav #site-nav ul li a {
   color: #fff;
   font-size: 16px;
 }
 
-/* line 245, ../sass/screen.scss */
+/* line 254, ../sass/screen.scss */
 .page-main {
   padding: 45px 0;
   min-height: 800px;
 }
 
-/* line 251, ../sass/screen.scss */
+/* line 260, ../sass/screen.scss */
 .listing-box {
   padding: 25px 0;
   box-sizing: border-box;
 }
-/* line 255, ../sass/screen.scss */
+/* line 264, ../sass/screen.scss */
 .listing-box ul li {
   border: 1px solid #ccc;
   box-sizing: border-box;
@@ -328,26 +339,26 @@ header#site-header .header-content {
   margin-bottom: 20px;
 }
 
-/* line 264, ../sass/screen.scss */
+/* line 273, ../sass/screen.scss */
 .full-wide {
   width: 100%;
 }
 
-/* line 267, ../sass/screen.scss */
+/* line 276, ../sass/screen.scss */
 form {
   display: inline-block;
   width: 40%;
 }
-/* line 270, ../sass/screen.scss */
+/* line 279, ../sass/screen.scss */
 form .form-row-2 {
   margin-bottom: 15px;
 }
-/* line 272, ../sass/screen.scss */
+/* line 281, ../sass/screen.scss */
 form .form-row-2 label {
   font-size: 16px;
   line-height: 28px;
 }
-/* line 276, ../sass/screen.scss */
+/* line 285, ../sass/screen.scss */
 form .form-row-2 input, form .form-row-2 select {
   border: 1px solid #164856;
   width: 120px;
@@ -372,16 +383,16 @@ form .form-row-2 input:-ms-input-placeholder, form .form-row-2 select:-ms-input-
 form .form-row-2 input::-webkit-input-placeholder, form .form-row-2 select::-webkit-input-placeholder {
   color: #bbb;
 }
-/* line 288, ../sass/screen.scss */
+/* line 297, ../sass/screen.scss */
 form .form-row {
   margin-bottom: 15px;
 }
-/* line 291, ../sass/screen.scss */
+/* line 300, ../sass/screen.scss */
 form .form-row label {
   font-size: 16px;
   line-height: 28px;
 }
-/* line 296, ../sass/screen.scss */
+/* line 305, ../sass/screen.scss */
 form .form-row input[type="text"],
 form .form-row input[type="email"],
 form .form-row input[type="password"],
@@ -421,7 +432,7 @@ form .form-row input[type="password"]::-webkit-input-placeholder,
 form .form-row select::-webkit-input-placeholder {
   color: #bbb;
 }
-/* line 310, ../sass/screen.scss */
+/* line 319, ../sass/screen.scss */
 form .form-row textarea {
   border: 1px solid #164856;
   width: 100%;
@@ -429,7 +440,7 @@ form .form-row textarea {
   padding: 5px 5px 5px 10px;
   height: 70px;
 }
-/* line 317, ../sass/screen.scss */
+/* line 326, ../sass/screen.scss */
 form .form-row input[type="submit"] {
   width: 100%;
   color: #fff;
@@ -443,14 +454,14 @@ form .form-row input[type="submit"] {
   font-family: "Gotham-Bold";
 }
 
-/* line 333, ../sass/screen.scss */
+/* line 342, ../sass/screen.scss */
 .block .block-title {
   background: #1E6073;
   color: #fff;
   font-size: 18px;
   padding: 10px;
 }
-/* line 338, ../sass/screen.scss */
+/* line 347, ../sass/screen.scss */
 .block .block-title .edit-btn {
   display: inline-block;
   float: right;
@@ -458,24 +469,24 @@ form .form-row input[type="submit"] {
   font-size: 14px;
   margin-right: 15px;
 }
-/* line 346, ../sass/screen.scss */
+/* line 355, ../sass/screen.scss */
 .block .block-content {
   padding: 15px;
   box-sizing: border-box;
   color: #1E6073;
   font-size: 14px;
 }
-/* line 351, ../sass/screen.scss */
+/* line 360, ../sass/screen.scss */
 .block .block-content p {
   margin-bottom: 5px;
 }
 
-/* line 357, ../sass/screen.scss */
+/* line 366, ../sass/screen.scss */
 .welcome {
   margin-bottom: 25px;
 }
 
-/* line 363, ../sass/screen.scss */
+/* line 372, ../sass/screen.scss */
 #message-menu ul li {
   display: inline-block;
   width: 49.5%;
@@ -483,7 +494,7 @@ form .form-row input[type="submit"] {
   text-align: center;
   background: #fff;
 }
-/* line 369, ../sass/screen.scss */
+/* line 378, ../sass/screen.scss */
 #message-menu ul li a {
   font-size: 16px;
   color: #164856;
@@ -492,20 +503,20 @@ form .form-row input[type="submit"] {
   width: 100%;
   padding: 10px 0;
 }
-/* line 377, ../sass/screen.scss */
+/* line 386, ../sass/screen.scss */
 #message-menu ul li.active {
   background: #1E6073;
 }
-/* line 379, ../sass/screen.scss */
+/* line 388, ../sass/screen.scss */
 #message-menu ul li.active a {
   color: #fff;
 }
 
-/* line 389, ../sass/screen.scss */
+/* line 398, ../sass/screen.scss */
 #message-main {
   padding: 15px;
 }
-/* line 392, ../sass/screen.scss */
+/* line 401, ../sass/screen.scss */
 #message-main ul li {
   border-bottom: 1px solid #ccc;
   color: #164856;
@@ -513,11 +524,11 @@ form .form-row input[type="submit"] {
   margin-bottom: 25px;
   position: relative;
 }
-/* line 398, ../sass/screen.scss */
+/* line 407, ../sass/screen.scss */
 #message-main ul li:first-child {
   border-top: 1px solid #ccc;
 }
-/* line 402, ../sass/screen.scss */
+/* line 411, ../sass/screen.scss */
 #message-main ul li .user-img {
   width: 20%;
   box-sizing: border-box;
@@ -525,11 +536,11 @@ form .form-row input[type="submit"] {
   vertical-align: top;
   padding: 10px;
 }
-/* line 408, ../sass/screen.scss */
+/* line 417, ../sass/screen.scss */
 #message-main ul li .user-img img {
   width: 100%;
 }
-/* line 412, ../sass/screen.scss */
+/* line 421, ../sass/screen.scss */
 #message-main ul li .message-tease {
   width: 78%;
   box-sizing: border-box;
@@ -538,7 +549,7 @@ form .form-row input[type="submit"] {
   padding: 10px 20px;
   position: relative;
 }
-/* line 419, ../sass/screen.scss */
+/* line 428, ../sass/screen.scss */
 #message-main ul li .message-tease .user-name {
   font-size: 20px;
   font-family: 'Gotham-Bold';
@@ -546,34 +557,34 @@ form .form-row input[type="submit"] {
   margin-bottom: 15px;
   text-transform: capitalize;
 }
-/* line 426, ../sass/screen.scss */
+/* line 435, ../sass/screen.scss */
 #message-main ul li .message-tease .message-content {
   font-size: 16px;
   margin-bottom: 15px;
 }
-/* line 430, ../sass/screen.scss */
+/* line 439, ../sass/screen.scss */
 #message-main ul li .message-tease .message-date {
   font-style: italic;
   font-size: 16px;
   margin-bottom: 15px;
 }
-/* line 435, ../sass/screen.scss */
+/* line 444, ../sass/screen.scss */
 #message-main ul li .message-tease .cta {
   position: absolute;
   right: 0;
   top: 20%;
 }
-/* line 439, ../sass/screen.scss */
+/* line 448, ../sass/screen.scss */
 #message-main ul li .message-tease .cta .dark-blue-btn {
   font-size: 20px;
   padding: 10px;
 }
 
-/* line 451, ../sass/screen.scss */
+/* line 460, ../sass/screen.scss */
 .message {
   padding: 15px;
 }
-/* line 454, ../sass/screen.scss */
+/* line 463, ../sass/screen.scss */
 .message .user-img {
   width: 20%;
   box-sizing: border-box;
@@ -581,11 +592,11 @@ form .form-row input[type="submit"] {
   vertical-align: top;
   padding: 10px;
 }
-/* line 460, ../sass/screen.scss */
+/* line 469, ../sass/screen.scss */
 .message .user-img img {
   width: 100%;
 }
-/* line 464, ../sass/screen.scss */
+/* line 473, ../sass/screen.scss */
 .message .message-tease {
   width: 60%;
   box-sizing: border-box;
@@ -594,7 +605,7 @@ form .form-row input[type="submit"] {
   padding: 10px 20px;
   position: relative;
 }
-/* line 471, ../sass/screen.scss */
+/* line 480, ../sass/screen.scss */
 .message .message-tease .user-name {
   font-size: 20px;
   font-family: 'Gotham-Bold';
@@ -602,73 +613,62 @@ form .form-row input[type="submit"] {
   margin-bottom: 15px;
   text-transform: capitalize;
 }
-/* line 478, ../sass/screen.scss */
+/* line 487, ../sass/screen.scss */
 .message .message-tease .message-content {
   font-size: 16px;
   margin-bottom: 15px;
 }
-/* line 482, ../sass/screen.scss */
+/* line 491, ../sass/screen.scss */
 .message .message-tease .message-date {
   font-style: italic;
   font-size: 16px;
   margin-bottom: 15px;
 }
-/* line 489, ../sass/screen.scss */
+/* line 498, ../sass/screen.scss */
 .message .message-body {
   padding: 15px;
   font-size: 16px;
 }
-/* line 493, ../sass/screen.scss */
+/* line 502, ../sass/screen.scss */
 .message .msg-cta {
   padding: 15px;
 }
 
-/* line 499, ../sass/screen.scss */
-.giver-profile-block .profile-image {
-  width: 200px;
+/* line 508, ../sass/screen.scss */
+.profile-block .profile-image {
+  width: 160px;
   height: auto;
   display: inline-block;
   vertical-align: top;
   margin-right: 20px;
 }
-/* line 505, ../sass/screen.scss */
-.giver-profile-block .profile-image img {
+/* line 514, ../sass/screen.scss */
+.profile-block .profile-image img {
   width: 100%;
 }
-/* line 510, ../sass/screen.scss */
-.giver-profile-block .profile-info {
+/* line 519, ../sass/screen.scss */
+.profile-block .profile-info {
   display: inline-block;
   vertical-align: top;
 }
-/* line 513, ../sass/screen.scss */
-.giver-profile-block .profile-info h2 {
+/* line 522, ../sass/screen.scss */
+.profile-block .profile-info h2 {
   font-size: 20px;
   margin-bottom: 15px;
   text-transform: capitalize;
 }
-/* line 518, ../sass/screen.scss */
-.giver-profile-block .profile-info .gender {
+/* line 527, ../sass/screen.scss */
+.profile-block .profile-info .gender {
   text-transform: capitalize;
   margin-bottom: 5px;
 }
-/* line 522, ../sass/screen.scss */
-.giver-profile-block .profile-info .user-location {
+/* line 531, ../sass/screen.scss */
+.profile-block .profile-info .user-location {
   text-transform: uppercase;
   margin-bottom: 20px;
 }
 
-/* line 531, ../sass/screen.scss */
-.seeker-profile-block .profile-image {
-  width: 300px;
-  height: auto;
-  float: left;
-}
-/* line 535, ../sass/screen.scss */
-.seeker-profile-block .profile-image img {
-  width: 100%;
-}
-
-/* line 540, ../sass/screen.scss */
+/* line 539, ../sass/screen.scss */
 .av-tick {
   display: inline-block;
   width: 25px;
@@ -680,7 +680,7 @@ form .form-row input[type="submit"] {
   border: 1px solid #000;
 }
 
-/* line 552, ../sass/screen.scss */
+/* line 551, ../sass/screen.scss */
 #avaiability-table td {
   padding: 10px;
   border: 1px solid #000;
@@ -688,7 +688,7 @@ form .form-row input[type="submit"] {
   color: #055B05;
 }
 
-/* line 560, ../sass/screen.scss */
+/* line 559, ../sass/screen.scss */
 .av-icon {
   display: inline-block;
   width: 20px;
@@ -699,79 +699,79 @@ form .form-row input[type="submit"] {
   border-radius: 50%;
 }
 
-/* line 568, ../sass/screen.scss */
+/* line 567, ../sass/screen.scss */
 .av-icon.a-0 {
   background: #fff;
 }
 
-/* line 571, ../sass/screen.scss */
+/* line 570, ../sass/screen.scss */
 .av-icon.a-1 {
   background: #055B05;
 }
 
-/* line 629, ../sass/screen.scss */
+/* line 628, ../sass/screen.scss */
 .job-view {
   margin-bottom: 25px;
 }
 
-/* line 633, ../sass/screen.scss */
+/* line 632, ../sass/screen.scss */
 .job-block .job-title {
   font-size: 20px;
   margin-bottom: 15px;
   color: #164856;
 }
-/* line 637, ../sass/screen.scss */
+/* line 636, ../sass/screen.scss */
 .job-block .job-title .active {
   color: green;
 }
-/* line 640, ../sass/screen.scss */
+/* line 639, ../sass/screen.scss */
 .job-block .job-title .inactive {
   color: red;
 }
-/* line 644, ../sass/screen.scss */
+/* line 643, ../sass/screen.scss */
 .job-block .job-desc {
   font-size: 16px;
   color: #000;
   padding: 15px 0;
 }
 
-/* line 652, ../sass/screen.scss */
+/* line 651, ../sass/screen.scss */
 #site-footer {
   background: #164856;
 }
-/* line 654, ../sass/screen.scss */
+/* line 653, ../sass/screen.scss */
 #site-footer .footer-content {
   color: #fff;
   overflow: hidden;
   padding: 15px 0;
 }
-/* line 658, ../sass/screen.scss */
+/* line 657, ../sass/screen.scss */
 #site-footer .footer-content .footer-1 {
   float: left;
   width: 28%;
 }
-/* line 662, ../sass/screen.scss */
+/* line 661, ../sass/screen.scss */
 #site-footer .footer-content .footer-2 {
   float: left;
   width: 35%;
   font-size: 12px;
 }
-/* line 666, ../sass/screen.scss */
+/* line 665, ../sass/screen.scss */
 #site-footer .footer-content .footer-2 p {
   margin-bottom: 10px;
 }
-/* line 668, ../sass/screen.scss */
+/* line 667, ../sass/screen.scss */
 #site-footer .footer-content .footer-2 p a {
   color: #fff;
 }
-/* line 673, ../sass/screen.scss */
+/* line 672, ../sass/screen.scss */
 #site-footer .footer-content .footer-3 {
   float: left;
   width: 35%;
   font-size: 11px;
 }
 
-/* line 683, ../sass/screen.scss */
+/* line 682, ../sass/screen.scss */
 .rating-block {
   float: right;
   text-align: center;
@@ -779,33 +779,33 @@ form .form-row input[type="submit"] {
   background: #164856;
   color: #fff;
 }
-/* line 689, ../sass/screen.scss */
+/* line 688, ../sass/screen.scss */
 .rating-block h3 {
   color: #fff;
   margin-bottom: 15px;
   font-size: 18px;
 }
-/* line 694, ../sass/screen.scss */
+/* line 693, ../sass/screen.scss */
 .rating-block i {
   color: #1E6073;
 }
 
-/* line 699, ../sass/screen.scss */
+/* line 698, ../sass/screen.scss */
 .user-block {
   overflow: hidden;
 }
-/* line 701, ../sass/screen.scss */
+/* line 700, ../sass/screen.scss */
 .user-block .user-img {
   width: 20%;
   box-sizing: border-box;
   float: left;
   padding: 10px;
 }
-/* line 706, ../sass/screen.scss */
+/* line 705, ../sass/screen.scss */
 .user-block .user-img img {
   width: 100%;
 }
-/* line 710, ../sass/screen.scss */
+/* line 709, ../sass/screen.scss */
 .user-block .user-info {
   width: 60%;
   box-sizing: border-box;
@@ -813,7 +813,7 @@ form .form-row input[type="submit"] {
   padding: 10px 20px;
   position: relative;
 }
-/* line 716, ../sass/screen.scss */
+/* line 715, ../sass/screen.scss */
 .user-block .user-info .user-name {
   font-size: 32px;
   font-family: "Gotham-Bold";
@@ -821,26 +821,26 @@ form .form-row input[type="submit"] {
   margin-bottom: 15px;
   text-transform: capitalize;
 }
-/* line 723, ../sass/screen.scss */
+/* line 722, ../sass/screen.scss */
 .user-block .user-info .user-exp {
   font-size: 14px;
   color: #000;
   margin-bottom: 10px;
 }
-/* line 728, ../sass/screen.scss */
+/* line 727, ../sass/screen.scss */
 .user-block .user-info .user-rate {
   font-size: 14px;
   color: #1E6073;
   margin-bottom: 15px;
 }
-/* line 733, ../sass/screen.scss */
+/* line 732, ../sass/screen.scss */
 .user-block .user-info .user-rating {
   position: absolute;
   top: 0;
   right: 0;
   padding: 10px;
 }
-/* line 741, ../sass/screen.scss */
+/* line 740, ../sass/screen.scss */
 .user-block .user-right-box {
   width: 20%;
   color: #fff;
@@ -850,25 +850,25 @@ form .form-row input[type="submit"] {
   text-align: center;
   padding: 20px 15px;
 }
-/* line 749, ../sass/screen.scss */
+/* line 748, ../sass/screen.scss */
 .user-block .user-right-box h2 {
   font-size: 32px;
   color: #fff;
 }
-/* line 753, ../sass/screen.scss */
+/* line 752, ../sass/screen.scss */
 .user-block .user-right-box .user-rate {
   margin-bottom: 15px;
 }
-/* line 755, ../sass/screen.scss */
+/* line 754, ../sass/screen.scss */
 .user-block .user-right-box .user-rate p {
   font-size: 20px;
 }
-/* line 760, ../sass/screen.scss */
+/* line 759, ../sass/screen.scss */
 .user-block .user-right-box .year-exp p {
   font-size: 16px;
 }
 
-/* line 767, ../sass/screen.scss */
+/* line 766, ../sass/screen.scss */
 .filter-sidebar {
   width: 20%;
   float: left;
@@ -876,28 +876,28 @@ form .form-row input[type="submit"] {
   box-sizing: border-box;
   padding: 30px 15px;
 }
-/* line 773, ../sass/screen.scss */
+/* line 772, ../sass/screen.scss */
 .filter-sidebar form {
   width: 100%;
 }
-/* line 776, ../sass/screen.scss */
+/* line 775, ../sass/screen.scss */
 .filter-sidebar h2 {
   font-size: 20px;
   margin-bottom: 35px;
 }
-/* line 780, ../sass/screen.scss */
+/* line 779, ../sass/screen.scss */
 .filter-sidebar .form-ele {
   width: 100%;
   margin-bottom: 15px;
 }
-/* line 783, ../sass/screen.scss */
+/* line 782, ../sass/screen.scss */
 .filter-sidebar .form-ele label {
   font-size: 14px;
   color: #164856;
   display: block;
   margin-bottom: 5px;
 }
-/* line 789, ../sass/screen.scss */
+/* line 788, ../sass/screen.scss */
 .filter-sidebar .form-ele select {
   width: 100%;
   border: 1px solid #164856;
@@ -905,7 +905,7 @@ form .form-row input[type="submit"] {
   padding: 10px;
   text-transform: uppercase;
 }
-/* line 797, ../sass/screen.scss */
+/* line 796, ../sass/screen.scss */
 .filter-sidebar .form-ele input[type="text"] {
   width: 100%;
   border: 1px solid #164856;
@@ -913,7 +913,7 @@ form .form-row input[type="submit"] {
   padding: 10px;
   box-sizing: border-box;
 }
-/* line 804, ../sass/screen.scss */
+/* line 803, ../sass/screen.scss */
 .filter-sidebar .form-ele input[type="submit"] {
   width: 100%;
   background: #164856;
@@ -923,7 +923,7 @@ form .form-row input[type="submit"] {
   padding: 10px;
 }
 
-/* line 815, ../sass/screen.scss */
+/* line 814, ../sass/screen.scss */
 .content-with-sidebar {
   width: 80%;
   float: left;
@@ -931,37 +931,37 @@ form .form-row input[type="submit"] {
   padding-left: 30px;
 }
 
-/* line 825, ../sass/screen.scss */
+/* line 824, ../sass/screen.scss */
 .giver-list-block .listing-box ul li {
   border: 0;
   border-bottom: 1px solid #ccc;
 }
 
-/* line 833, ../sass/screen.scss */
+/* line 832, ../sass/screen.scss */
 .tool-bar {
   text-align: right;
 }
-/* line 835, ../sass/screen.scss */
+/* line 834, ../sass/screen.scss */
 .tool-bar #sort-by {
   text-transform: uppercase;
 }
 
-/* line 842, ../sass/screen.scss */
+/* line 841, ../sass/screen.scss */
 .service2-list li {
   display: inline-block;
   width: 30%;
   margin-bottom: 10px;
 }
-/* line 846, ../sass/screen.scss */
+/* line 845, ../sass/screen.scss */
 .service2-list li input {
   vertical-align: middle;
 }
-/* line 849, ../sass/screen.scss */
+/* line 848, ../sass/screen.scss */
 .service2-list li span {
   vertical-align: middle;
 }
 
-/* line 855, ../sass/screen.scss */
+/* line 854, ../sass/screen.scss */
 .msg-notify {
   display: inline-block;
   background: #BC1414;
@@ -978,23 +978,27 @@ form .form-row input[type="submit"] {
   border-radius: 2px;
 }
 
-/* line 869, ../sass/screen.scss */
+/* line 868, ../sass/screen.scss */
 .register-block {
   display: inline-block;
   width: 45%;
   box-sizing: border-box;
   padding: 0 15px;
 }
-/* line 874, ../sass/screen.scss */
+/* line 873, ../sass/screen.scss */
+.register-block p {
+  margin-bottom: 25px;
+}
+/* line 876, ../sass/screen.scss */
 .register-block form {
   width: 100%;
 }
 
-/* line 879, ../sass/screen.scss */
+/* line 881, ../sass/screen.scss */
 .pagination-block {
   text-align: right;
 }
-/* line 882, ../sass/screen.scss */
+/* line 884, ../sass/screen.scss */
 .pagination-block .pagination li {
   display: inline-block;
   padding: 5px;
@@ -1002,11 +1006,11 @@ form .form-row input[type="submit"] {
   background: #1E6073;
   color: #fff;
 }
-/* line 888, ../sass/screen.scss */
+/* line 890, ../sass/screen.scss */
 .pagination-block .pagination li a {
   color: #fff;
 }
-/* line 891, ../sass/screen.scss */
+/* line 893, ../sass/screen.scss */
 .pagination-block .pagination li.active {
   background: #164856;
 }
