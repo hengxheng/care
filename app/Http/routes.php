@@ -49,6 +49,9 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::get('care_seekers/{uid}',['as' => 'care_seekers.show', 'users' => 'SeekersController@show']);
 	Route::get('seeker/member-signup', ['as'=>'seeker.signup', 'uses' => 'SeekersController@signup']);
 	Route::post('seeker/upgrade', ['as'=> 'seeker.upgrade', 'uses'=>'SeekersController@upgrade']);
+	Route::get('seeker/payment', ['as'=>'seeker.payment', 'uses'=>'SeekersController@manageSubscription']);
+	Route::post('seeker/cancel', ['as'=>'seeker.cancel', 'uses'=>'SeekersController@cancel']);
+
 
 	Route::resource('job','JobsController');
 	Route::get('job/create/{uid}', ['as'=>'job.create', 'uses'=>'JobsController@create']);

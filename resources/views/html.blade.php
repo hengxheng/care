@@ -81,6 +81,9 @@
 					<div id="account-block-menu">
 						<ul>
 							<li><a href="{{ URL::route('account.settings') }}">Account Settings</a></li>
+							@if (Auth::user()->user_type == 'seeker')
+							<li><a href="{{ URL::route('seeker.payment') }}">Payments</a></li>
+							@endif
 							<li><a id="logout-btn" href="{{ URL::route('logout') }}">Logout</a></li>
 						</ul>	
 					</div>

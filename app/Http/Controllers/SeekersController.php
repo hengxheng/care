@@ -11,6 +11,8 @@ use App\Seeker;
 use Redirect;
 use Carbon\Carbon;
 use Mail;
+use Auth;
+use Session;
 
 class SeekersController extends Controller
 {
@@ -113,6 +115,29 @@ class SeekersController extends Controller
 
     }
 
+    public function cancel(){
+        Seeker::setStripeKey("sk_test_wRuhjbZ3DfAaPzMYUWc1DzHP");
+        if(Input::get("cancel-subscription")){
+            $id = Auth::user()->id;
+            $seeker = Seeker::findorFail($id);
+            $seeker->subscription()->cancel();
+        }
+
+        // $subscribed = $seeker->subscribed();
+        Session::flash('message', 'Your subscription has been cancelled');
+        return Redirect::back();
+        
+    }
+
+    public function manageSubscription(){
+        Seeker::setStripeKey("sk_test_wRuhjbZ3DfAaPzMYUWc1DzHP");
+        $id = Auth::user()->id;
+        $seeker = Seeker::findorFail($id);
+        $subscribed = $seeker->subscribed();
+
+        return view('seeker.payment', compact('subscribed', 'seeker'));
+    }
+
     /**
      * Display the specified resource.
      *
@@ -187,4 +212,6 @@ class SeekersController extends Controller
     {
         //
     }
+
+    
 }

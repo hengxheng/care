@@ -272,7 +272,7 @@ header#site-header .header-content {
   display: none;
   position: absolute;
   right: 0;
-  bottom: -79px;
+  top: 77px;
   background: #ddd;
   border: 1px solid #164856;
   z-index: 99;
