@@ -80,7 +80,7 @@
 					<a id="account-down" href="#"><i class="fa fa-chevron-circle-down"></i></a>		
 					<div id="account-block-menu">
 						<ul>
-							<li><a href="#">Account Setting</a></li>
+							<li><a href="#">Account Settings</a></li>
 							<li><a id="logout-btn" href="{{ URL::route('logout') }}">Logout</a></li>
 						</ul>	
 					</div>
