@@ -256,6 +256,12 @@ header#site-header{
 	min-height: 800px;
 }
 
+.page-title{
+	font-size: 22px;
+	color:$dark-blue;
+	margin-bottom: 25px;
+}
+
 
 .listing-box{
 	padding: 25px 0;
@@ -894,5 +900,16 @@ form{
 				background: $dark-blue;
 			}
 		}
+	}
+}
+
+.flash{
+	padding: 15px;
+	font-size: 18px;
+	&.alert-info{
+		color: #0C9A0C; 
+	}
+	&.alert-danger{
+		color: #C10B0B;
 	}
 }

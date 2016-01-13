@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 
 use Auth;
 use Redirect;
+use Input;
+use Hash;
+use Session;
 use App\User;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -109,5 +112,24 @@ class HelloController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    protected function changeSettings(){
+        return view('auth.settings');
+    }
+
+    protected function changePassword(Request $request){
+        $this->validate($request, [
+                'password' => 'required|min:6',
+                'confirm_new_password' => 'required|same:password'
+            ]);
+
+        $user = User::find(Auth::user()->id);
+        $new_pass = Input::get('password');
+
+        $user->password = Hash::make($new_pass);
+        $user->save();
+        Session::flash('message', 'Your password has been changed!');
+        return Redirect::back();
     }
 }

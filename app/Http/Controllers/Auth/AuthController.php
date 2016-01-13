@@ -98,4 +98,6 @@ class AuthController extends Controller
     protected function giverRegister(){
         return view('auth.giver_register');
     }
+
+
 }

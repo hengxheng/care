@@ -21,10 +21,6 @@ Route::get('logout', ['as' => 'logout', 'uses' => 'Auth\AuthController@getLogout
 Route::get('register', ['as' => 'register', 'uses' => 'Auth\AuthController@getRegister']);
 Route::post('register', ['as' => 'register', 'uses' => 'Auth\AuthController@postRegister']);
 
-Route::group(['middleware' => 'admin.login'], function(){
-	Route::get('admin/login', ['as' => 'admin.login', 'uses' => 'Admin\AdminController@login']);
-});
-
 Route::post('getsuburbs', ['as'=>'getsuburbs', 'uses'=>'LocationController@getSuburbs']);
 
 Route::get('/seeker/register', ['as'=>'seeker_register', 'uses'=>'Auth\AuthController@seekerRegister']);
@@ -34,6 +30,10 @@ Route::get('/giver/register',['as'=>'giver_register','uses'=>'Auth\AuthControlle
 //Route need to be auth
 
 Route::group(['middleware' => 'auth'], function(){
+
+	Route::get('account',['as'=>'account.settings', 'uses'=>'HelloController@changeSettings']);
+	Route::post('change_pass',['as'=>'account.changepass', 'uses'=>'HelloController@changePassword']);
+
 	Route::resource('care_givers','GiversController');
 	Route::get('care_givers/{uid}',['as' => 'care_givers.show', 'uses' => 'GiversController@show']);
 	Route::get('givers/list',['as' => 'care_givers.list', 'uses' => 'GiversController@listing']);
@@ -47,7 +47,8 @@ Route::group(['middleware' => 'auth'], function(){
 
 	Route::resource('care_seekers','SeekersController');
 	Route::get('care_seekers/{uid}',['as' => 'care_seekers.show', 'users' => 'SeekersController@show']);
-
+	Route::get('seeker/member-signup', ['as'=>'seeker.signup', 'uses' => 'SeekersController@signup']);
+	Route::post('seeker/upgrade', ['as'=> 'seeker.upgrade', 'uses'=>'SeekersController@upgrade']);
 
 	Route::resource('job','JobsController');
 	Route::get('job/create/{uid}', ['as'=>'job.create', 'uses'=>'JobsController@create']);
@@ -77,11 +78,13 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::resource('rating', 'RatingController');
 
 	Route::post('user_status', [ 'as' => 'changeUserStatus', 'uses' => 'Admin\AdminController@changeUserStatus']);
-	Route::get('seeker/member-signup', ['as'=>'seeker.signup', 'uses' => 'SeekersController@signup']);
-	Route::post('seeker/upgrade', ['as'=> 'seeker.upgrade', 'uses'=>'SeekersController@upgrade']);
+
 
 });
 
+Route::group(['middleware' => 'admin.login'], function(){
+	Route::get('admin/login', ['as' => 'admin.login', 'uses' => 'Admin\AdminController@login']);
+});
 
 	
 Route::group([ 'namespace' => 'Admin', 'middleware' => 'admin'], function(){
