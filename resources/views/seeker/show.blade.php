@@ -8,10 +8,10 @@
 				<div class="profile-image block">
 					<img src="{{ URL::asset('images/user/'.$the_user->picture) }}" alt="">
 				</div>
-				<div class="profile-name block">
-					<div class="block-content">
-					{{ $the_user -> firstname }} {{ $the_user -> lastname }}
-					</div>
+				<div class="profile-info">
+					<h2 class="profile-name">
+						{{ camel_case($the_user->firstname) }} {{ camel_case($the_user->lastname) }}
+					</h2>
 				
 					<div class="block-content">
 						@if($the_seeker->subscription_ends_at == null)
