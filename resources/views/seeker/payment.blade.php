@@ -5,7 +5,7 @@
         <h2>Payment</h2>
     </div>
 
-@if ($subscribed)
+
 <div class="block">
     <div class="block-title">
         Your subscription status
@@ -18,17 +18,21 @@
         @endif   
     </div> 
 </div>
-<div class="block">
-<div class="form-title">
-        <h3>Cancel subscription</h3>
-    </div>
-<form method="POST" action="{{ URL::route('seeker.cancel') }}">
-    {!! csrf_field() !!}
-    <input type="hidden" name="cancel-subscription" value="1">
-    <div class="form-row">
-        <input type="submit" value="Cancel">
-    </div>
-</form>
+
+@if ($subscribed)
+    @if($seeker->subscription_ends_at == null)
+        <div class="block">
+        <div class="form-title">
+            <h3>Cancel subscription</h3>
+        </div>
+        <form method="POST" action="{{ URL::route('seeker.cancel') }}">
+            {!! csrf_field() !!}
+            <input type="hidden" name="cancel-subscription" value="1">
+            <div class="form-row">
+                <input type="submit" value="Cancel">
+            </div>
+        </form>
+    @endif
 @else
     <div class="form-title">
         <h3>New subscription</h3>

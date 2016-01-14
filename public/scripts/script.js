@@ -1,16 +1,6 @@
 
 var base_url = "http://localhost/care/public/";
 
-var app = {
- 	
- 	inital: function(){
-
- 	}
-
-
-}
-
-
 $(function(){
 	// var quo_count = 1; 
 	// var service_count = 1;
@@ -60,14 +50,19 @@ $(function(){
     
 
     $("#account-down").click(function(e){
-    	e.preventDefault();
-    	$("#account-block-menu").addClass("open");
+    	e.preventDefault();  	
+		if($(".account-block").hasClass("actived")){
+			$(".account-block").removeClass("actived");
+		}
+		else{
+			$(".account-block").addClass("actived");
+		}
     });
 
     
     $(document).click(function(e){
     	if(! $(e.target).closest('#account-down').length){
-    		$("#account-block-menu").removeClass("open");
+    		$(".account-block").removeClass("actived");
     	}
     });
 });

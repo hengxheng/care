@@ -162,11 +162,30 @@ header#site-header{
 	background:$dark-blue;
 	min-height: 78px;
 	.account-block{
-		position:relative;	
 		float:right;	
 		text-align: left;
 		color:#fff;
-	    padding-top: 10px;
+		&.actived{
+			background: #ddd;
+			color: $dark-blue;
+			.account-inner{
+				border: 1px solid $dark-blue;
+			border-bottom: 0;
+			}
+			
+			#account-block-menu{
+				display:block;
+			}
+			.user-name{
+				color: $dark-blue !important;
+			}
+			i{
+				color:$dark-blue;
+			}
+		}
+	    .account-inner{
+	    	padding: 8px 5px 6px 15px;
+	    }
 		.account-block-img{
 			display:inline-block;
 			vertical-align: top;
@@ -201,32 +220,26 @@ header#site-header{
 
 		#account-block-menu{
 			display:none;
-			position: absolute;
-			right: 0;
-			top: 77px;
 			background: #ddd;
 			border: 1px solid $dark-blue;
 			z-index:99;
-			&.open{
-				display:block;
-			}
 			ul{
 				li{
 					width:100%;
-					padding: 10px 25px;
+					
 					box-sizing: border-box;
 					border-bottom: 1px solid $dark-blue;
 					&:last-child{
 						border:0;
 					}
 					a{
-						display:inline-block;
-						width:100%;
+						display:block;
+						padding: 10px 25px;
 						color: $dark-blue;
     					font-size: 16px;
 					}
 					a:hover{
-						color: $dark-blue-hover;
+						background: #ccc;
 					}
 				}
 			}

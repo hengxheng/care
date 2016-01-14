@@ -68,16 +68,18 @@
 			</nav>
 			@if(Auth::check())
 				<div class="account-block">
-					<div class="account-block-img">
-						<img src="{{ URL::asset('images/user/'.Auth::user()->picture) }}" alt="">
-					</div>	
-					<div class="account-block-content">
-						<h2 class="user-name">
-							{{ camel_case(Auth::user()->firstname) }} {{ camel_case(Auth::user()->lastname) }}
-						</h2>
-						<p class="user-type">Care {{ Auth::user()->user_type }}</p>
-					</div>			
-					<a id="account-down" href="#"><i class="fa fa-chevron-circle-down"></i></a>		
+					<div class="account-inner">
+						<div class="account-block-img">
+							<img src="{{ URL::asset('images/user/'.Auth::user()->picture) }}" alt="">
+						</div>	
+						<div class="account-block-content">
+							<h2 class="user-name">
+								{{ camel_case(Auth::user()->firstname) }} {{ camel_case(Auth::user()->lastname) }}
+							</h2>
+							<p class="user-type">Care {{ Auth::user()->user_type }}</p>
+						</div>			
+						<a id="account-down" href="#"><i class="fa fa-chevron-circle-down"></i></a>		
+					</div>
 					<div id="account-block-menu">
 						<ul>
 							<li><a href="{{ URL::route('account.settings') }}">Account Settings</a></li>
