@@ -65,4 +65,8 @@ $(function(){
     		$(".account-block").removeClass("actived");
     	}
     });
+
+    $("#mb-btn").click(function(e){
+    	$("#main-menu-block").slideToggle();
+    });
 });

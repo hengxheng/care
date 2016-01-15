@@ -40,32 +40,36 @@
 		</header>
 		<nav id="main-nav">
 			<div class="site-inner">
-			<nav id="site-nav">
-				<ul>
-					@if (Auth::guest())
-						<li><a href="{{ URL::route('login') }}">Login</a></li>
-						<li><a href="{{ URL::route('register') }}">Register</a></li>
-					@elseif(Auth::user()->status == 'Active')
-							@if (Auth::user() -> user_type == 'giver')
-								<li><a href="{{ URL::route('care_givers.show', array('uid' => Auth::user()->id)) }}" >My Profile</a></li>
-								<li><a href="{{ URL::route('job.search', array('uid' => Auth::user()->id)) }}">View Jobs</a></li>
-								<li><a href="{{ URL::route('job.applied', array('uid' => Auth::user()->id)) }}">Applied Jobs</a></li>
-							@elseif (Auth::user()->user_type == 'seeker')
-								<li><a href="{{ URL::route('care_seekers.show', array('uid' => Auth::user()->id)) }}">My Profile</a></li>
-								<li><a href="{{ URL::route('job.create', array('uid' => Auth::user()->id)) }}">Post a job</a></li>
-								<li><a href="{{ URL::route('care_givers.list')}}">Find Caregivers</a></li>
-								<li><a href="{{ URL::route('job.list', array('poster_id' => Auth::user()->id)) }}">My posted jobs</a></li>
-							@endif
-							<li><a href="{{ URL::route('message.inbox') }}">Inbox 
-								@if(isset($unread))
-								  <span class="msg-notify">{{ $unread }}</span>
+				<div class="nav-inner">
+					<nav id="site-nav">
+						<a href="#" id="mb-btn"><i class="fa fa-bars"></i></a>
+						<div id="main-menu-block">
+							<ul>
+								@if (Auth::guest())
+									<li><a href="{{ URL::route('login') }}">Login</a></li>
+									<li><a href="{{ URL::route('register') }}">Register</a></li>
+								@elseif(Auth::user()->status == 'Active')
+										@if (Auth::user() -> user_type == 'giver')
+											<li><a href="{{ URL::route('care_givers.show', array('uid' => Auth::user()->id)) }}" >My Profile</a></li>
+											<li><a href="{{ URL::route('job.search', array('uid' => Auth::user()->id)) }}">View Jobs</a></li>
+											<li><a href="{{ URL::route('job.applied', array('uid' => Auth::user()->id)) }}">Applied Jobs</a></li>
+										@elseif (Auth::user()->user_type == 'seeker')
+											<li><a href="{{ URL::route('care_seekers.show', array('uid' => Auth::user()->id)) }}">My Profile</a></li>
+											<li><a href="{{ URL::route('job.create', array('uid' => Auth::user()->id)) }}">Post a job</a></li>
+											<li><a href="{{ URL::route('care_givers.list')}}">Find Caregivers</a></li>
+											<li><a href="{{ URL::route('job.list', array('poster_id' => Auth::user()->id)) }}">My posted jobs</a></li>
+										@endif
+										<li><a href="{{ URL::route('message.inbox') }}">Inbox 
+											@if(isset($unread))
+											  <span class="msg-notify">{{ $unread }}</span>
+											@endif
+										</a></li>
+								@elseif (Auth::user()->status == 'Pending')
+										<li>To apply for jobs, you must first verify your account by adding a background check approved by us.</li>
 								@endif
-							</a></li>
-					@elseif (Auth::user()->status == 'Pending')
-							<li>To apply for jobs, you must first verify your account by adding a background check approved by us.</li>
-					@endif
-				</ul>
-			</nav>
+							</ul>
+						</div>
+					</nav>
 			@if(Auth::check())
 				<div class="account-block">
 					<div class="account-inner">
@@ -92,7 +96,7 @@
 				</div>
 				
 			@endif
-			
+				</div>
 			</div>
 		</nav>
 		
