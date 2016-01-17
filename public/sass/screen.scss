@@ -56,6 +56,7 @@ h2{
 h3{
 	font-size: 18px;
 }
+
 h1, h2, h3, h4{
 	font-family: 'Gotham-Bold';
 	color: $dark-blue;
@@ -103,6 +104,11 @@ h1, h2, h3, h4{
 	box-sizing: border-box;
 }
 
+
+.full-wide{
+	width:100%;
+}
+
 .row{
 	width:100%;
 	&:after{
@@ -130,6 +136,8 @@ h1, h2, h3, h4{
 	}
 }
 
+
+// header
 header#site-header{
 	.header-top{
 		padding: 15px 0;
@@ -154,15 +162,10 @@ header#site-header{
 		text-align: center;
 	}
 }
-#mb-btn{
-	    color: #fff;
-    	font-size: 35px;
-    	display:none;
-    	padding:0 10px;
-	}
+// end of header
 
-
-#main-nav{
+// main-nav
+nav#main-nav{
 	background:$dark-blue;
 	min-height: 78px;
 	.nav-inner{
@@ -256,6 +259,13 @@ header#site-header{
 			}
 		}
 	}
+	
+	#mb-btn{
+	    color: #fff;
+    	font-size: 35px;
+    	display:none;
+    	padding:0 10px;
+	}
 
 	#site-nav{
 		display:inline-block;
@@ -273,36 +283,10 @@ header#site-header{
 		}
 	}
 }
-
-// main content area
-.page-main{
-	padding: 45px 0;
-	min-height: 800px;
-}
-
-.page-title{
-	font-size: 22px;
-	color:$dark-blue;
-	margin-bottom: 25px;
-}
+// end of main nav
 
 
-.listing-box{
-	padding: 25px 0;
-	box-sizing: border-box;
-	ul{
-		li{
-			border:1px solid #ccc;
-			box-sizing: border-box;
-			padding:10px;
-			margin-bottom: 20px;
-		}
-	}
-}
-
-.full-wide{
-	width:100%;
-}
+// form
 form{
 	display:inline-block;
 	width:40%;
@@ -367,6 +351,39 @@ form{
 		}
 	}
 }
+// end of form
+
+
+// main content area
+.page-main{
+	padding: 45px 0;
+	min-height: 800px;
+
+	.page-title{
+		font-size: 22px;
+		color:$dark-blue;
+		margin-bottom: 25px;
+	}
+
+}
+
+
+
+.listing-box{
+	padding: 25px 0;
+	box-sizing: border-box;
+	ul{
+		li{
+			border:1px solid #ccc;
+			box-sizing: border-box;
+			padding:10px;
+			margin-bottom: 20px;
+		}
+	}
+}
+
+
+
 
 .block{
 	.block-title{
@@ -601,59 +618,6 @@ form{
 	background: #055B05;
 }
 
-// .service-list{
-// 	li{
-// 		display:inline-block;
-// 	}
-// }
-.service-icon{
-	// display:inline-block;
-	// width:80px;
-	// height:80px;
-	// margin:10px;
-	// font-size: 0;
-}
-// .meal-preparation{
-// 	background:url(../images/meal.png) no-repeat center center;
-// 	background-size:cover;
-// }
-
-// .alzheimers-care{
-// 	background:url(../images/al-care.png) no-repeat center center;
-// 	background-size:cover;
-// }
-
-// .companionship{
-// 	background:url(../images/companion.png) no-repeat center center;
-// 	background-size:cover;
-// }
-
-// .housekeeping{
-// 	background:url(../images/housekeeping.png) no-repeat center center;
-// 	background-size:cover;
-// }
-
-// .transportation{
-// 	background:url(../images/transport.png) no-repeat center center;
-// 	background-size:cover;
-// }
-
-// .personal-care{
-// 	background:url(../images/personal-care.png) no-repeat center center;
-// 	background-size:cover;
-// }
-
-// #logout-btn{
-// 	background:url(../images/logout-icon.png) no-repeat center left;
-// 	padding: 5px 0 5px 35px;
-// 	background-size: contain;
-// }
-
-// #view-profile-btn{
-// 	background:url(../images/view-profile-icon.png) no-repeat center left;
-// 	padding: 5px 0 5px 35px;
-// 	background-size: contain;
-// }
 
 .job-view{
 	margin-bottom:25px;
@@ -942,14 +906,9 @@ form{
 	.site-inner{
 		width:100%;
 	}
-
 }
 
 @media screen and (max-width: 800px){
-
-	#mb-btn{
-		display:inline-block;
-	}
 	#main-menu-block{
 		display:none;
 		padding: 20px 0;
@@ -964,7 +923,7 @@ form{
 			}
 		}
 	}
-	#main-nav{
+	nav#main-nav{
 		#site-nav{
 			ul{
 				li{
@@ -972,6 +931,9 @@ form{
 					box-sizing: border-box;
 				}
 			}
+		}
+		#mb-btn{
+			display:inline-block;
 		}
 	} 
 	form{
