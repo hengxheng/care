@@ -53,6 +53,8 @@
 		</div>
 		@endif
 	</div>
+
+
 	<div class="sub-list block">
 		<h2>Job Submissions</h2>
 		<ul>
@@ -74,7 +76,7 @@
 								{{ $s->created_at }}
 							</div>     
 	                         <div class="cta">
-	                            <a class="blue-btn" href="{{ URL::route('care_givers.show', array('uid' => $s->uid )) }}">View</a>
+	                            <a class="blue-btn" href="{{ URL::route('care_givers.show', array('uid' => $s->uid )) }}">View Profile</a>
 	                            <a class="dark-blue-btn" href="{{ URL::route('message.create', array('to_id'=>$s->uid )) }}">Send a message</a>
 	                        </div>
 	                     </div>
@@ -84,5 +86,10 @@
             </li>
 			@endforeach
 		</ul>
+	</div>
+	<div class="row">
+		<div class="col-1">
+			<a class="dark-blue-btn" href="{{ URL::previous() }}">&lt; Back</a>
+		</div>
 	</div>
 @endsection

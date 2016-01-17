@@ -287,6 +287,13 @@
 			</div>
 		</div>
 	</div>
+   	@endif
 
-   @endif
+   	@if (Auth::user()->user_type == "seeker")
+	<div class="row">
+		<div class="col-1">
+			<a class="dark-blue-btn" href="{{ URL::previous() }}">&lt; Back</a>
+		</div>
+	</div>
+	@endif
 @endsection('content')

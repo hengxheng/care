@@ -38,4 +38,9 @@
 	</div>
 	@endif
 </div>
+<div class="row">
+		<div class="col-1">
+			<a class="dark-blue-btn" href="{{ URL::previous() }}">&lt; Back</a>
+		</div>
+	</div>
 @endsection
