@@ -579,6 +579,9 @@ form{
 			text-transform: uppercase;
 			margin-bottom: 20px;
 		}
+		.user-status{
+			margin-bottom: 10px;
+		}
 	}
 }
 
@@ -712,6 +715,9 @@ form{
 			color: $dark-blue;
 			margin-bottom: 15px;
 			text-transform: capitalize;
+		}
+		.user-location{
+			margin-bottom:10px;
 		}
 		.user-exp{
 			font-size: 14px;

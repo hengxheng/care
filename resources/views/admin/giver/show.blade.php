@@ -20,15 +20,13 @@
 						{{ $the_giver->suburb }},{{ $the_giver->state }}
 					</div>
 					@if (Auth::user()->user_type == 'admin')
-					<div class="user-status">
-						<!-- <form id="user-status-form" action="{{ URL::route('changeUserStatus') }}"> -->
+					<div class="user-status">			
 							<label for="status">User Status: </label>
 							<select name="status" id="user-status">
 								<option value="{{ $the_user->status }}">{{ $the_user->status }}</option>
 								<option value="Active">Active</option>
 								<option value="Inactive">Inactive</option>
 							</select>
-						<!-- </form> -->
 					</div>
 					<div class="bg-check">
 						<a class="dark-blue-btn" href="{{ URL::asset('uploaded_files/user/'.$the_giver->background_check) }}" target="_blank">Background Check</a>
@@ -268,59 +266,29 @@
 		</div>
 	</div>
 </div>
-
-   @if(Auth::user()->id != $the_user->id) 
-	<div class="row">
-		<div class="col-1">
-			<div class="block">
-				<div class="block-title">
-					Rating
-				</div>
-				<div class="block-content">
-					<div id="rateit" class="rateit"></div>
-				</div>
-				
-				<script>
-					$(function(){
-						$("#rateit").bind('rated', function(event, value) { 
-							var ratedby = {{ Auth::user()->id }};
-							var ratefor = {{ $the_user->id }};
-							$.ajax({
-								type: 'POST',
-								url: '{{ URL::route("rating.index") }}',
-								data: { 
-										"_token" : "{{ Session::token()}}",
-										"rate_uid" : ratefor,
-							            "rateby_uid" : ratedby,
-							            "rate_star" : value
-							        },
-							    success: function(result){
-							    	console.log(result);
-							    }
-							});
-						 });
-
-					    $("#user-status").change(function(){
-					    	var v = $(this).val();
-					    	$.ajax({
-					    		type: 'POST',
-					    		url: "{{ URL::route('changeUserStatus') }}",
-					    		data: { 
-					    				"_token" : "{{ Session::token()}}",
-					    				"uid" : {{ $the_user->id }},
-					    				"status": $(this).val()
-					    			},
-					    		success: function(result){
-							    	console.log(result);
-							    }
-					    	});
-					    });
-
-					});
-				</script>
-			</div>
-		</div>
+<div class="row">
+	<div class="col-1">
+		<a class="dark-blue-btn" href="{{ URL::previous() }}">&lt; Back</a>
 	</div>
+</div>
 
-   @endif
+<script>
+	$(function(){
+		$("#user-status").change(function(){
+			var v = $(this).val();
+			$.ajax({
+					type: 'POST',
+					url: "{{ URL::route('changeUserStatus') }}",
+					data: { 
+							"_token" : "{{ Session::token()}}",
+							"uid" : {{ $the_user->id }},
+							"status": $(this).val()
+					},
+					success: function(result){
+						console.log(result);
+					}
+			});
+		});
+	});
+</script>
 @endsection('content')

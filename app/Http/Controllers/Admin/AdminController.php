@@ -24,13 +24,7 @@ class AdminController extends Controller
      * @return Response
      */
     public function index(){
-        $_givers = Giver::getAllGivers();
-        $givers = array_slice($_givers, 0, 3);
-
-        $_seekers = Seeker::getAllSeekers();
-        $seekers = array_slice($_seekers, 0, 3);
-
-        return view('admin.index', compact('givers', 'seekers'));
+        return view('admin.index');
     }
 
     /**
