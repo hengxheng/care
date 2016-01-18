@@ -1,8 +1,6 @@
 @extends('admin.master')
 
-
 @section('content')
-    
     <div class="giver-list-block">
         <div class="listing-box">
             @if (count($givers) > 0)
@@ -25,7 +23,6 @@
                                  </div>
                                  <div class="cta">
                                     <a class="blue-btn" href="{{ URL::route('admin.giver.show', array('uid' => $giver->id )) }}">View</a>
-                                    <!-- <a class="dark-blue-btn" href="{{ URL::route('message.create', array('to_id'=>$giver->id )) }}">Send a message</a> -->
                                 </div>
                              </div>
                              <div class="user-right-box">

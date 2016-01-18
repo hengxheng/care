@@ -1,7 +1,10 @@
 @extends ('html')
 
 @section ('content')
-
+<div class="page-title">
+    <h2>Post a job</h2>
+</div>
+<div class="block">
 <form action="{{ URL::route('job.store') }}" method="post">
 	{!! csrf_field() !!}
 	<input type="hidden" value="{{$id}}" name="uid">
@@ -52,5 +55,5 @@
 		<input type="submit" value="POST">
 	</div>
 </form>
-
+</div>
 @endsection

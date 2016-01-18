@@ -31,8 +31,49 @@
 					</div>		
 				</div>
 		</header>
+		<nav id="main-nav">
+			<div class="site-inner">
+				<div class="nav-inner">
+					<nav id="site-nav">
+						<a href="#" id="mb-btn"><i class="fa fa-bars"></i></a>
+						<div id="main-menu-block">
+							@if(Auth::check())
+							<ul>
+								<li><a href="{{ URL::route('admin.index') }}">Dashboard</a></li>
+								<li><a href="{{ URL::route('admin.givers.list') }}">Care givers</a></li>
+								<li><a href="{{ URL::route('admin.seekers.list') }}">Care seekers</a></li>
+							</ul>
+							@endif
+						</div>
+					</nav>
+			@if(Auth::check())
+				<div class="account-block">
+					<div class="account-inner">
+						<div class="account-block-img">
+							<img src="{{ URL::asset('images/user/'.Auth::user()->picture) }}" alt="">
+						</div>	
+						<div class="account-block-content">
+							<h2 class="user-name">
+								{{ camel_case(Auth::user()->firstname) }} {{ camel_case(Auth::user()->lastname) }}
+							</h2>
+							<p class="user-type">Care {{ Auth::user()->user_type }}</p>
+						</div>			
+						<a id="account-down" href="#"><i class="fa fa-chevron-circle-down"></i></a>		
+					</div>
+					<div id="account-block-menu">
+						<ul>
+							<li><a href="{{ URL::route('account.settings') }}">Account Settings</a></li>
+							<li><a id="logout-btn" href="{{ URL::route('logout') }}">Logout</a></li>
+						</ul>	
+					</div>
+				</div>
+				
+			@endif
+				</div>
+			</div>
+		</nav>
 		<div class="page-main">
-			<div class="page-content">
+			<div class="page-content site-inner">
 				@if (Session::has('message'))
 					<div class="flash alert-info">
 						<p>{{ Session::get('message') }}</p>
@@ -45,26 +86,7 @@
 						@endforeach
 					</div>
 				@endif
-
 				@yield('content')
-			</div>
-			<div class="page-sidebar">
-				<div class="user-block">
-					@if (Auth::check())
-					<p>Care {{ Auth::user()->user_type }}</p>
-					
-					<div class="user-block-btns">
-						<a id="logout-btn" href="{{ URL::route('logout') }}">Logout</a>
-					</div>
-					@endif
-				</div>
-				<nav id="site-nav">
-					<ul>
-						<li><a href="{{ URL::route('admin.index') }}">Dashboard</a></li>
-						<li><a href="{{ URL::route('admin.givers.list') }}">Care givers</a></li>
-						<li><a href="{{ URL::route('admin.seekers.list') }}">Care seekers</a></li>
-					</ul>
-				</nav>
 			</div>
 		</div>
 		<div class="clear"></div>

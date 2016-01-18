@@ -1,7 +1,8 @@
 @extends('html')
-
-
 @section('content')
+<div class="page-title">
+    <h2>Jobs</h2>
+</div>
 <div class="listing-box">
  @if ( !$jobs->count() )
         You have not posted any job yet.

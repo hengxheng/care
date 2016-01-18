@@ -119,7 +119,6 @@ class GiversController extends Controller
     public function listing(){
 
         $givers = Giver::getAllGivers();
-
         return view('admin.giver.list',compact('givers'));
     }
 }

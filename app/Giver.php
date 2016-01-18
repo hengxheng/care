@@ -16,7 +16,7 @@ class Giver extends Model
         return DB::table('giver')
         ->leftJoin('users', 'giver.uid','=','users.id')
         ->groupBy('giver.uid')
-        ->get();
+        ->paginate(5);
     }
 
     public static function filterAllGivers($postcode, $radius, $gender="null", $service_filter, $service2_filter, $min_rate="null", $max_rate="null", $min_rating="null", $max_rating="null", $order="avg", $status="Active"){
