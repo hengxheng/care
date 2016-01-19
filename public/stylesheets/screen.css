@@ -622,6 +622,7 @@ form .form-row input[type="submit"] {
 /* line 507, ../sass/screen.scss */
 .message {
   padding: 15px;
+  width: 80%;
 }
 /* line 510, ../sass/screen.scss */
 .message .user-img {
