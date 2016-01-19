@@ -139,7 +139,7 @@ class JobsController extends Controller
             $submissions = Submission::getSubmissionByUserByJob($user->id, $id);
         }
         else{
-             $submissions = Submission::getSubmissionByJob($id);
+            $submissions = Submission::getSubmissionByJob($id);
         }
        
 

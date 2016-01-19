@@ -78,11 +78,13 @@
 							<div class="sub-content">
 								<h2>Description:</h2>
 								{{ $s->content }}
-							</div>						 
+							</div>	
+							@if(Auth::user()->id != $s->uid)					 
 							<div class="cta">
 	                            <a class="blue-btn" href="{{ URL::route('care_givers.show', array('uid' => $s->uid )) }}">View Profile</a>
 	                            <a class="dark-blue-btn" href="{{ URL::route('message.create', array('to_id'=>$s->uid )) }}">Send a message</a>
 	                        </div>
+	                        @endif
 	                     </div>
 	                </div>  
 	                

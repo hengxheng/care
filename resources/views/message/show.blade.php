@@ -34,7 +34,7 @@
 	</div>
 	@if ($type == "from" )
 	<div class="msg-cta">
-		<a class="dark-blue-btn" href="{{ URL::route('message.create', array('to_id' => $message->sender_id))}}">Replay</a>
+		<a class="dark-blue-btn" href="{{ URL::route('message.create', array('to_id' => $message->sender_id))}}">Reply</a>
 	</div>
 	@endif
 </div>
