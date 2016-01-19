@@ -135,7 +135,13 @@ class JobsController extends Controller
         $job = Job::find($id);
         $_serv = $job->service_name;
         $serv = explode("," ,$_serv);
-        $submissions = Submission::getSubmissionByJob($id);
+        if($user->user_type == "giver"){
+            $submissions = Submission::getSubmissionByUserByJob($user->id, $id);
+        }
+        else{
+             $submissions = Submission::getSubmissionByJob($id);
+        }
+       
 
         $applied = Submission::checkSubmitted($user->id, $id);
         

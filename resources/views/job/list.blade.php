@@ -18,12 +18,13 @@
                     	{{ $job -> description }}
                     </div>
                     <div class="job-status">
-                    	
                     </div>
                     <div class="job-action">
                         <a class="blue-btn" href="{{ URL::route('job.show', array('id' => $job->id )) }}">View</a>
+                        @if ($job->poster_id == Auth::user()->id)
                         <a class="blue-btn" href="{{ URL::route('job.edit', array('id' => $job->id )) }}">Edit</a>
                     	<a class="dark-blue-btn" href="{{ URL::route('job.delete', array('id' => $job->id )) }}">Delete</a>
+                        @endif
                     </div>
                 </div>
             </li>

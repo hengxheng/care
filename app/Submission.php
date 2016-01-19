@@ -33,7 +33,16 @@ class Submission extends Model
     	return $submitted;
     }
 
-    public static function getSubmissionByUser($uid){
-    	return Submission::where('submited_uid','=',$uid);
+    public static function getSubmissionByUserByJob($uid, $jid){
+    	$sub = DB::table('job AS jo')
+            ->leftJoin('submission AS su','su.job_id','=', 'jo.id')
+            ->leftJoin('users AS u','su.submited_uid','=', 'u.id' )
+            ->leftJoin('giver AS g','g.uid','=', 'u.id')
+            ->select('su.*','u.firstname','u.lastname','u.picture','u.id AS uid','g.suburb','g.state','g.postcode')
+            ->where('job_id','=', $jid)
+            ->where('su.submited_uid', '=', $uid)
+            ->groupBy('u.id')
+            ->get();
+        return $sub;
     }
 }
