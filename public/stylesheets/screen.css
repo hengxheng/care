@@ -887,7 +887,15 @@ form .form-row input[type="submit"] {
   right: 0;
   padding: 10px;
 }
+/* line 738, ../sass/screen.scss */
+.user-block .user-info .sub-content {
+  padding: 15px 0;
+}
 /* line 740, ../sass/screen.scss */
+.user-block .user-info .sub-content h2 {
+  font-size: 16px;
+}
+/* line 746, ../sass/screen.scss */
 .user-block .user-right-box {
   width: 20%;
   color: #fff;
@@ -897,25 +905,25 @@ form .form-row input[type="submit"] {
   text-align: center;
   padding: 20px 15px;
 }
-/* line 748, ../sass/screen.scss */
+/* line 754, ../sass/screen.scss */
 .user-block .user-right-box h2 {
   font-size: 32px;
   color: #fff;
 }
-/* line 752, ../sass/screen.scss */
+/* line 758, ../sass/screen.scss */
 .user-block .user-right-box .user-rate {
   margin-bottom: 15px;
 }
-/* line 754, ../sass/screen.scss */
+/* line 760, ../sass/screen.scss */
 .user-block .user-right-box .user-rate p {
   font-size: 20px;
 }
-/* line 759, ../sass/screen.scss */
+/* line 765, ../sass/screen.scss */
 .user-block .user-right-box .year-exp p {
   font-size: 16px;
 }
 
-/* line 766, ../sass/screen.scss */
+/* line 772, ../sass/screen.scss */
 .filter-sidebar {
   width: 20%;
   float: left;
@@ -923,28 +931,28 @@ form .form-row input[type="submit"] {
   box-sizing: border-box;
   padding: 30px 15px;
 }
-/* line 772, ../sass/screen.scss */
+/* line 778, ../sass/screen.scss */
 .filter-sidebar form {
   width: 100%;
 }
-/* line 775, ../sass/screen.scss */
+/* line 781, ../sass/screen.scss */
 .filter-sidebar h2 {
   font-size: 20px;
   margin-bottom: 35px;
 }
-/* line 779, ../sass/screen.scss */
+/* line 785, ../sass/screen.scss */
 .filter-sidebar .form-ele {
   width: 100%;
   margin-bottom: 15px;
 }
-/* line 782, ../sass/screen.scss */
+/* line 788, ../sass/screen.scss */
 .filter-sidebar .form-ele label {
   font-size: 14px;
   color: #164856;
   display: block;
   margin-bottom: 5px;
 }
-/* line 788, ../sass/screen.scss */
+/* line 794, ../sass/screen.scss */
 .filter-sidebar .form-ele select {
   width: 100%;
   border: 1px solid #164856;
@@ -952,7 +960,7 @@ form .form-row input[type="submit"] {
   padding: 10px;
   text-transform: uppercase;
 }
-/* line 796, ../sass/screen.scss */
+/* line 802, ../sass/screen.scss */
 .filter-sidebar .form-ele input[type="text"] {
   width: 100%;
   border: 1px solid #164856;
@@ -960,7 +968,7 @@ form .form-row input[type="submit"] {
   padding: 10px;
   box-sizing: border-box;
 }
-/* line 803, ../sass/screen.scss */
+/* line 809, ../sass/screen.scss */
 .filter-sidebar .form-ele input[type="submit"] {
   width: 100%;
   background: #164856;
@@ -970,7 +978,7 @@ form .form-row input[type="submit"] {
   padding: 10px;
 }
 
-/* line 814, ../sass/screen.scss */
+/* line 820, ../sass/screen.scss */
 .content-with-sidebar {
   width: 80%;
   float: left;
@@ -978,37 +986,37 @@ form .form-row input[type="submit"] {
   padding-left: 30px;
 }
 
-/* line 824, ../sass/screen.scss */
+/* line 830, ../sass/screen.scss */
 .giver-list-block .listing-box ul li {
   border: 0;
   border-bottom: 1px solid #ccc;
 }
 
-/* line 832, ../sass/screen.scss */
+/* line 838, ../sass/screen.scss */
 .tool-bar {
   text-align: right;
 }
-/* line 834, ../sass/screen.scss */
+/* line 840, ../sass/screen.scss */
 .tool-bar #sort-by {
   text-transform: uppercase;
 }
 
-/* line 841, ../sass/screen.scss */
+/* line 847, ../sass/screen.scss */
 .service2-list li {
   display: inline-block;
   width: 30%;
   margin-bottom: 10px;
 }
-/* line 845, ../sass/screen.scss */
+/* line 851, ../sass/screen.scss */
 .service2-list li input {
   vertical-align: middle;
 }
-/* line 848, ../sass/screen.scss */
+/* line 854, ../sass/screen.scss */
 .service2-list li span {
   vertical-align: middle;
 }
 
-/* line 854, ../sass/screen.scss */
+/* line 860, ../sass/screen.scss */
 .msg-notify {
   display: inline-block;
   background: #BC1414;
@@ -1025,27 +1033,42 @@ form .form-row input[type="submit"] {
   border-radius: 2px;
 }
 
-/* line 868, ../sass/screen.scss */
+/* line 874, ../sass/screen.scss */
 .register-block {
   display: inline-block;
   width: 45%;
   box-sizing: border-box;
   padding: 0 15px;
 }
-/* line 873, ../sass/screen.scss */
+/* line 879, ../sass/screen.scss */
 .register-block p {
   margin-bottom: 25px;
 }
-/* line 876, ../sass/screen.scss */
+/* line 882, ../sass/screen.scss */
 .register-block form {
   width: 100%;
 }
 
-/* line 881, ../sass/screen.scss */
+/* line 889, ../sass/screen.scss */
+.sub-list ul li {
+  display: inline-block;
+  width: 49%;
+  vertical-align: top;
+}
+/* line 893, ../sass/screen.scss */
+.sub-list ul li .user-block .user-img {
+  width: 25%;
+}
+/* line 896, ../sass/screen.scss */
+.sub-list ul li:nth-child(2n) {
+  border-left: 2px solid #ccc;
+}
+
+/* line 904, ../sass/screen.scss */
 .pagination-block {
   text-align: right;
 }
-/* line 884, ../sass/screen.scss */
+/* line 907, ../sass/screen.scss */
 .pagination-block .pagination li {
   display: inline-block;
   padding: 5px;
@@ -1053,43 +1076,43 @@ form .form-row input[type="submit"] {
   background: #1E6073;
   color: #fff;
 }
-/* line 890, ../sass/screen.scss */
+/* line 913, ../sass/screen.scss */
 .pagination-block .pagination li a {
   color: #fff;
 }
-/* line 893, ../sass/screen.scss */
+/* line 916, ../sass/screen.scss */
 .pagination-block .pagination li.active {
   background: #164856;
 }
 
-/* line 900, ../sass/screen.scss */
+/* line 923, ../sass/screen.scss */
 .flash {
   padding: 15px;
   font-size: 18px;
 }
-/* line 903, ../sass/screen.scss */
+/* line 926, ../sass/screen.scss */
 .flash.alert-info {
   color: #0C9A0C;
 }
-/* line 906, ../sass/screen.scss */
+/* line 929, ../sass/screen.scss */
 .flash.alert-danger {
   color: #C10B0B;
 }
 
 @media screen and (max-width: 1280px) {
-  /* line 912, ../sass/screen.scss */
+  /* line 935, ../sass/screen.scss */
   .site-inner {
     width: 100%;
   }
 }
 @media screen and (max-width: 800px) {
-  /* line 918, ../sass/screen.scss */
+  /* line 941, ../sass/screen.scss */
   #main-menu-block {
     display: none;
     padding: 20px 0;
   }
 
-  /* line 924, ../sass/screen.scss */
+  /* line 947, ../sass/screen.scss */
   #site-footer .footer-content .footer-1, #site-footer .footer-content .footer-2, #site-footer .footer-content .footer-3 {
     width: 100%;
     text-align: center;
@@ -1097,17 +1120,17 @@ form .form-row input[type="submit"] {
     box-sizing: border-box;
   }
 
-  /* line 935, ../sass/screen.scss */
+  /* line 958, ../sass/screen.scss */
   nav#main-nav #site-nav ul li {
     width: 100%;
     box-sizing: border-box;
   }
-  /* line 941, ../sass/screen.scss */
+  /* line 964, ../sass/screen.scss */
   nav#main-nav #mb-btn {
     display: inline-block;
   }
 
-  /* line 945, ../sass/screen.scss */
+  /* line 968, ../sass/screen.scss */
   form {
     width: 80%;
     display: block;

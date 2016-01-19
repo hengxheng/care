@@ -17,11 +17,17 @@
 			<div class="header-top">
 					<nav id="sub-nav">
 						<ul>
-							<li><a href="#">FAQS</a></li>
-							<li> | </li>
-							<li><a href="#">ABOUT US</a></li>
-							<li> | </li>
-							<li><a href="#">CONTACT US</a></li>
+							<li><a href="/faqs">FAQS</a></li>
+							<li class="sep">|</li>
+							<li><a href="/about">ABOUT US</a></li>
+							<li class="sep">|</li>
+							<li><a href="/contact">CONTACT US</a></li>
+							<li class="sep">|</li>
+							<li><a href="/privacy-policy">Privacy Policy</a></li>
+							<li class="sep">|</li>
+							<li><a href="/terms-conditions">Terms &amp; Conditions</a></li>
+							<li class="sep">|</li>
+							<li><a href="/terms-of-use">Terms of Use</a></li>
 						</ul>
 					</nav>
 			</div>
@@ -38,37 +44,38 @@
 						<a href="#" id="mb-btn"><i class="fa fa-bars"></i></a>
 						<div id="main-menu-block">
 							@if(Auth::check())
-							<ul>
-								<li><a href="{{ URL::route('admin.index') }}">Dashboard</a></li>
-								<li><a href="{{ URL::route('admin.givers.list') }}">Care givers</a></li>
-								<li><a href="{{ URL::route('admin.seekers.list') }}">Care seekers</a></li>
-							</ul>
+								<ul>
+									<li><a href="{{ URL::route('admin.index') }}">Dashboard</a></li>
+									<li><a href="{{ URL::route('admin.givers.list') }}">Care givers</a></li>
+									<li><a href="{{ URL::route('admin.seekers.list') }}">Care seekers</a></li>
+								</ul>
+							@else
+								<h2 style="color: #fff;">Admin Login</h2>
 							@endif
 						</div>
 					</nav>
-			@if(Auth::check())
-				<div class="account-block">
-					<div class="account-inner">
-						<div class="account-block-img">
-							<img src="{{ URL::asset('images/user/'.Auth::user()->picture) }}" alt="">
-						</div>	
-						<div class="account-block-content">
-							<h2 class="user-name">
-								{{ camel_case(Auth::user()->firstname) }} {{ camel_case(Auth::user()->lastname) }}
-							</h2>
-							<p class="user-type">Care {{ Auth::user()->user_type }}</p>
+					@if(Auth::check())
+						<div class="account-block">
+							<div class="account-inner">
+								<div class="account-block-img">
+									<img src="{{ URL::asset('images/user/'.Auth::user()->picture) }}" alt="">
+								</div>	
+								<div class="account-block-content">
+									<h2 class="user-name">
+										{{ camel_case(Auth::user()->firstname) }} {{ camel_case(Auth::user()->lastname) }}
+									</h2>
+									<p class="user-type">Administrator</p>
+								</div>			
+								<a id="account-down" href="#"><i class="fa fa-chevron-circle-down"></i></a>		
+							</div>
+							<div id="account-block-menu">
+								<ul>
+									<li><a href="{{ URL::route('account.settings') }}">Account Settings</a></li>
+									<li><a id="logout-btn" href="{{ URL::route('logout') }}">Logout</a></li>
+								</ul>	
+							</div>
 						</div>			
-						<a id="account-down" href="#"><i class="fa fa-chevron-circle-down"></i></a>		
-					</div>
-					<div id="account-block-menu">
-						<ul>
-							<li><a href="{{ URL::route('account.settings') }}">Account Settings</a></li>
-							<li><a id="logout-btn" href="{{ URL::route('logout') }}">Logout</a></li>
-						</ul>	
-					</div>
-				</div>
-				
-			@endif
+					@endif
 				</div>
 			</div>
 		</nav>
@@ -106,7 +113,11 @@
 						&nbsp;&nbsp;|&nbsp;&nbsp;
 						<a href="#">FAQs</a>
 						&nbsp;&nbsp;|&nbsp;&nbsp;
-						<a href="#">Terms & Privacy</a>
+						<a href="/privacy-policy">Privacy Policy</a>
+						&nbsp;&nbsp;|&nbsp;&nbsp;
+						<a href="/terms-conditions">Terms & Conditions</a>
+						&nbsp;&nbsp;|&nbsp;&nbsp;
+						<a href="/terms-of-use">Terms of Use</a>
 					</p>
 				</div>
 

@@ -13,7 +13,8 @@ class Submission extends Model
     	$sub = DB::table('job AS jo')
     		->leftJoin('submission AS su','su.job_id','=', 'jo.id')
     		->leftJoin('users AS u','su.submited_uid','=', 'u.id' )
-    		->select('su.*','u.firstname','u.lastname','u.picture','u.id AS uid')
+            ->leftJoin('giver AS g','g.uid','=', 'u.id')
+    		->select('su.*','u.firstname','u.lastname','u.picture','u.id AS uid','g.suburb','g.state','g.postcode')
     		->where('job_id','=', $jid)
     		->groupBy('u.id')
     		->paginate(10);

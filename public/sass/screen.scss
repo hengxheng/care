@@ -735,6 +735,12 @@ form{
 			right:0;
 			padding:10px;
 		}
+		.sub-content{
+			padding: 15px 0;
+			h2{
+				font-size: 16px;
+			}
+		}
 	}
 
 	.user-right-box{
@@ -875,6 +881,23 @@ form{
 	}
 	form{
 		width:100%;
+	}
+}
+
+.sub-list{
+	ul{
+		li{
+			display:inline-block;
+			width:49%;
+			vertical-align: top;
+			.user-block .user-img{
+				width:25%;
+			}
+			&:nth-child(2n){
+				border-left: 2px solid #ccc;
+			}
+		}
+
 	}
 }
 

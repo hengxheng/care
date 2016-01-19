@@ -21,11 +21,17 @@
 				<div class="site-inner">
 					<nav id="sub-nav">
 						<ul>
-							<li><a href="#">FAQS</a></li>
-							<li> | </li>
-							<li><a href="#">ABOUT US</a></li>
-							<li> | </li>
-							<li><a href="#">CONTACT US</a></li>
+							<li><a href="/faqs">FAQS</a></li>
+							<li class="sep">|</li>
+							<li><a href="/about">ABOUT US</a></li>
+							<li class="sep">|</li>
+							<li><a href="/contact">CONTACT US</a></li>
+							<li class="sep">|</li>
+							<li><a href="/privacy-policy">Privacy Policy</a></li>
+							<li class="sep">|</li>
+							<li><a href="/terms-conditions">Terms &amp; Conditions</a></li>
+							<li class="sep">|</li>
+							<li><a href="/terms-of-use">Terms of Use</a></li>
 						</ul>
 					</nav>
 				</div>
@@ -137,7 +143,11 @@
 						&nbsp;&nbsp;|&nbsp;&nbsp;
 						<a href="#">FAQs</a>
 						&nbsp;&nbsp;|&nbsp;&nbsp;
-						<a href="#">Terms & Privacy</a>
+						<a href="/privacy-policy">Privacy Policy</a>
+						&nbsp;&nbsp;|&nbsp;&nbsp;
+						<a href="/terms-conditions">Terms & Conditions</a>
+						&nbsp;&nbsp;|&nbsp;&nbsp;
+						<a href="/terms-of-use">Terms of Use</a>
 					</p>
 				</div>
 

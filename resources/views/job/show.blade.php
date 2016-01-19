@@ -65,17 +65,21 @@
 	                    <div class="user-img">
 	                        <img src="{{ URL::asset('images/user/'.$s->picture) }}" alt="">
 	                    </div>
-	                     <div class="user-info">
-	                         <div class="user-name">
-	                             {{ $s->firstname }} {{ $s->lastname}}
-	                         </div>            
-	                         <div class="sub-content">
-								{{ $s->content }}
-							</div>
-							<div class="sub-date">
-								{{ $s->created_at }}
+                     	<div class="user-info">
+							<div class="user-name">
+						 		{{ $s->firstname }} {{ $s->lastname}}
 							</div>     
-	                         <div class="cta">
+							<div class="user-location">
+					     		{{ $s->suburb }},{{ $s->state }}
+							</div>       
+							<div class="sub-date">
+								Submitted on: {{ $s->created_at }}
+							</div>    
+							<div class="sub-content">
+								<h2>Description:</h2>
+								{{ $s->content }}
+							</div>						 
+							<div class="cta">
 	                            <a class="blue-btn" href="{{ URL::route('care_givers.show', array('uid' => $s->uid )) }}">View Profile</a>
 	                            <a class="dark-blue-btn" href="{{ URL::route('message.create', array('to_id'=>$s->uid )) }}">Send a message</a>
 	                        </div>
