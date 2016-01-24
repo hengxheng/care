@@ -236,7 +236,7 @@ class GiversController extends Controller
                 $hmail = $user->email;
                 $user->save();
 
-                Mail::send('email.welcome',array('firstname' => $fname, 'lastname' => $lname, 'email' => $hmail ), function($message) use ($hmail) {
+                Mail::send('emails.welcome',array('firstname' => $fname, 'lastname' => $lname, 'email' => $hmail ), function($message) use ($hmail) {
                     $message->to($hmail , "CareNation Customer")->subject('Thanks for joining CareNation.com.au!');
                 });
 

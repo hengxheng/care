@@ -107,7 +107,7 @@ class SeekersController extends Controller
         $lname = $user->lastname;
         $hmail = $user->email;
 
-        Mail::send('email.welcome',array('firstname' => $fname, 'lastname' => $lname, 'email' => $hmail ), function($message) use ($hmail) {
+        Mail::send('emails.welcome',array('firstname' => $fname, 'lastname' => $lname, 'email' => $hmail ), function($message) use ($hmail) {
             $message->to($hmail , "CareNation Customer")->subject('Thanks for joining CareNation.com.au!');
         });
 

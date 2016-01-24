@@ -30,6 +30,9 @@ Route::get('/giver/register',['as'=>'giver_register','uses'=>'Auth\AuthControlle
 //Route need to be auth
 
 Route::group(['middleware' => 'auth'], function(){
+	Route::get('home', function(){
+		return view('welcome');
+	});
 
 	Route::get('account',['as'=>'account.settings', 'uses'=>'HelloController@changeSettings']);
 	Route::post('change_pass',['as'=>'account.changepass', 'uses'=>'HelloController@changePassword']);
@@ -99,3 +102,11 @@ Route::group([ 'namespace' => 'Admin', 'middleware' => 'admin'], function(){
 	Route::get('admin/seekers/list', ['as' => 'admin.seekers.list', 'uses' => 'SeekersController@listing']);
 	Route::get('admin/seeker/{id}', ['as' => 'admin.seeker.show', 'uses' => 'SeekersController@show']);
 });
+
+// Password reset link request routes...
+Route::get('password/email', ['as'=>'password.getemail', 'uses'=>'Auth\PasswordController@getEmail']);
+Route::post('password/email',['as'=>'passwrod.postmail', 'uses'=>'Auth\PasswordController@postEmail']);
+
+// Password reset routes...
+Route::get('password/reset/{token}', ['as'=>'password.getreset', 'uses'=>'Auth\PasswordController@getReset']);
+Route::post('password/reset', ['as'=>'password.postreset', 'uses'=>'Auth\PasswordController@postReset']);
