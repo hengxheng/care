@@ -114,6 +114,11 @@
 						<p>{{ Session::get('message') }}</p>
 					</div>
 				@endif
+				@if (Session::has('status'))
+					<div class="flash alert-info">
+						<p>{{ Session::get('status') }}</p>
+					</div>
+				@endif
 				@if ($errors->any())
 					<div class='flash alert-danger'>
 						@foreach ( $errors->all() as $error )
@@ -122,7 +127,7 @@
 					</div>
 				@endif
 				
-				  @if (count($errors) > 0)
+				@if (count($errors) > 0)
 				  	<div class='flash alert-danger'>
 			            @foreach ($errors->all() as $error)
 			                <p>{{ $error }}</p>
