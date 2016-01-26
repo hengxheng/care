@@ -23,6 +23,7 @@
 					<div class="form-row">
 						<label for="state">State</label>
 						<select id="state-dropdown" name="state" required>
+							<option value="">---</option>
 							<option value="New South Wales">New South Wales</option>
 		                    <option value="Queensland">Queensland</option>
 		                    <option value="Northern Territory">Northern Territory</option>
@@ -42,7 +43,7 @@
 						<input type="text" name="postcode" required pattern="[0-9]{4}">
 					</div>	
 					<div class="form-row">	
-						<label for="picture">Your Photo</label>
+						<label for="picture">Profile Picture (Head shots only)</label>
 						<input type="file" name="picture">
 					</div>
 					<div class="form-row">

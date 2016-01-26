@@ -50,7 +50,7 @@
 		</div>	
 		<div class="form-row">	
 			<img src="{{ URL::asset('images/user/'.$giver->picture) }}" alt="">
-			<label for="picture">Profile Picture</label>
+			<label for="picture">Profile Picture (Head shots only)</label>
 			<input type="file" name="picture">
 		</div> 
 		<div class="form-row">

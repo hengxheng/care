@@ -20,11 +20,8 @@ class Service extends Model
     public static function WithService($service_names){
         if(is_array($service_names)){
             $givers = DB::table('service')
-            ->select('giver_id');
-            
-            foreach($service_names as $n){
-                $givers->where('service_name', '=', $n);
-            }
+            ->select('giver_id')
+            ->whereIn('service_name', $service_names);
 
             return $givers->get();
         }

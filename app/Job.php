@@ -35,9 +35,9 @@ class Job extends Model
             $jobs->where('suburb','=', $suburb);
         }
         if(!empty($services)){
-        	foreach ($services as $s){
-        		$jobs->where("service_name", "LIKE", '%'.$s.'%');
-        	}
+        	// foreach ($services as $s){
+        		$jobs->where("service_name", "LIKE", '%'.$services[0].'%');
+        	// }
         }
         $jobs->orderBy($order, 'desc');
         return $jobs->paginate(10);

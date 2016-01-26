@@ -173,12 +173,12 @@
 
 <script>
   $(function() {
-  	var base_url = "http://localhost/care/public/";
+  	var url = "{{ URL::route('getsuburbs') }}";
   	$("#state-dropdown").change(function(){
   		var state = $(this).val();
   		$.ajax({
   			type: "POST",
-  			url: base_url+"getsuburbs",
+  			url: url,
   			data:{
   				"state" : state,
   				"_token" : "{{ Session::token()}}"

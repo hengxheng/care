@@ -16,6 +16,7 @@ class Giver extends Model
         return DB::table('giver')
         ->leftJoin('users', 'giver.uid','=','users.id')
         ->groupBy('giver.uid')
+        ->orderBy('users.created_at', 'desc')
         ->paginate(5);
     }
 

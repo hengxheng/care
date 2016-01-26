@@ -10,6 +10,7 @@ use App\User;
 use App\Seeker;
 use App\Giver;
 use Input;
+use Mail;
 
 class AdminController extends Controller
 {
@@ -98,7 +99,20 @@ class AdminController extends Controller
         $status = Input::get('status');
         $user = User::findorFail($uid);
         $user->status = $status;
+        
+        $fname = $user->firstname;
+        $lname = $user->lastname;
+        $hmail = $user->email;
+
         $user->save();
+
+        if($status == "Active"){
+            Mail::send('emails.account_active',array('firstname' => $fname, 'lastname' => $lname, 'email' => $hmail ), function($message) use ($hmail) {
+                $message->to($hmail , "CareNation Customer")->subject('Account actived with CareNation.com.au!');
+            });
+        }
+
+
         return $status;
     }
 

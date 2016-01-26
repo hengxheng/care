@@ -21,6 +21,7 @@ class Seeker extends Model implements BillableContract
     	return DB::table('seeker')
         ->leftJoin('users', 'seeker.uid','=','users.id')
         ->groupBy('seeker.uid')
+        ->orderBy('users.created_at', 'desc')
         ->paginate(5);
     }
 }
