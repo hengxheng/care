@@ -63,7 +63,8 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::get('job/delete/{id}', ['as' => 'job.delete', 'uses'=>'JobsController@delete']);
 	Route::get('job/search/{id}', ['as' => 'job.search', 'uses'=>'JobsController@search']);
 	Route::get('job/applied/{uid}', ['as' => 'job.applied', 'uses'=>'JobsController@applied']);
-	
+	Route::post('job/getjobsuburbs', ['as' => 'job.suburbs', 'uses'=>'JobsController@getJobSuburbs']);
+
 	//Submission
 	Route::get('submission/create/{jid}/{uid}', ['as'=>'submission.create', 'uses'=>'SubmissionsController@create']);
 	Route::post('submission/store', ['as'=>'submission.store', 'uses'=>'SubmissionsController@store']);

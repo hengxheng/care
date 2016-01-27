@@ -76,13 +76,6 @@
                 <option value="start_date">Start Date</option>
             </select>
         </form>
-        <script>
-            $(function(){
-                $("#sort-by").change(function(){
-                    $("#sort-form").submit();
-                });
-            });
-        </script>
         </div>
     </div>
     <div class="listing-box">
@@ -109,4 +102,35 @@
     </ul>
     </div>
 </div>
+
+<script>
+$(function(){
+    $("#sort-by").change(function(){
+        $("#sort-form").submit();
+    });
+
+    var url = "{{ URL::route('job.suburbs') }}";
+    $("#state-filter").change(function(){
+        var state = $(this).val();
+        $.ajax({
+            type: "POST",
+            url: url,
+            data:{
+                "state" : state,
+                "_token" : "{{ Session::token()}}"
+            },
+            success: function(result){
+                    var html = '';
+                    for (var s in result){
+                        console.log(s);
+                        html+='<option value="'+result[s].suburb+'">'+result[s].suburb+'</option>';
+                    }
+                 
+                    $("#suburb-filter").html(html);
+            }
+        });
+    });
+    
+});
+</script>
 @endsection

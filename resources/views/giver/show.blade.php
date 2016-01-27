@@ -19,6 +19,16 @@
 					<div class="user-location">
 						{{ $the_giver->suburb }},{{ $the_giver->state }}
 					</div>
+					@if($the_user->status == "Active")
+					<div class="user-background-check">
+						Background Check (Verified)
+					</div>
+					@else
+					<div class="user-background-check">
+						Background Check (Not verified)
+					</div>
+					@endif
+
 					@if (Auth::user()->user_type == 'seeker' )
 						<a class="dark-blue-btn" href="{{ URL::route('message.create', array('to_id'=>$the_giver -> uid )) }}">Send a message</a>
 					@endif

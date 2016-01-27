@@ -17,9 +17,10 @@ class Job extends Model
     			->paginate(10);
     } 
 
-    public static function getAllSuburbs(){
+    public static function getAllSuburbs($state){
         return DB::table('job')
         ->select('suburb')
+        ->where('state', '=', $state)
         ->groupBy('suburb')
         ->get();
     }

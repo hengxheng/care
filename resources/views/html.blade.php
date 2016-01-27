@@ -157,7 +157,7 @@
 						<a href="#">FAQs</a>
 						&nbsp;&nbsp;|&nbsp;&nbsp;
 						<a href="/privacy-policy">Privacy Policy</a>
-						&nbsp;&nbsp;|&nbsp;&nbsp;
+						<br/>
 						<a href="/terms-conditions">Terms & Conditions</a>
 						&nbsp;&nbsp;|&nbsp;&nbsp;
 						<a href="/terms-of-use">Terms of Use</a>

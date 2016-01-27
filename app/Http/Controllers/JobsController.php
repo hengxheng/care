@@ -54,7 +54,7 @@ class JobsController extends Controller
             $order = Input::get('job-order');
         }
 
-        $suburbs = Job::getAllSuburbs();
+        $suburbs = Job::getAllSuburbs($state_filter);
 
         $serv = array( 
             "Meal preparation" => false,
@@ -254,6 +254,12 @@ class JobsController extends Controller
     public function applied($uid){
         $jobs = Job::getSubmitedJobs($uid);
         return view("job.list", compact('jobs'));
+    }
+
+    public function getJobSuburbs(){
+        $state = Input::get("state");
+        $suburbs = Job::getAllSuburbs($state);
+        return $suburbs;
     }
 
 }

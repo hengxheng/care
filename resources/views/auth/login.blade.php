@@ -16,9 +16,7 @@
 
     <div class="form-row">
         <input type="checkbox" name="remember"> <label for="remember">Remember Me</label>
-    </div>
-    <div class="form-row">
-        <a href="{{ URL::route('password.getemail')}}">Forgot password</a>
+         <a id='forgot_password' href="{{ URL::route('password.getemail')}}">Forgot password</a>
     </div>
     <div class="form-row">
         <input type="submit" value="Login">
