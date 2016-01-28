@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Input;
 use App\Submission;
+use App\Job;
+use App\Message;
+use App\user;
 use Redirect;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -45,6 +48,18 @@ class SubmissionsController extends Controller
         $submission->submited_uid = input::get('uid');
         $submission->content = input::get('content');
         $submission->save();
+
+        $poster = Job::getJobPoster(input::get('jid'));
+        $admin = User::getAdmin();
+
+        $job_url = url('job/'.input::get('jid'), $parameters = [], $secure = null);
+
+        $message = new Message;
+        $message->receiver_id = $poster->id;
+        $message->sender_id = $admin->id;
+        $message->subject = "New job submission";
+        $message->content = 'Hi '.$poster->firstname.'<br/>Someone just applied for your job, click <a href="'.$job_url.'">here</a> to view.<br/><br/>Admin';
+        $message->save();
 
         return Redirect::route('job.search', array('uid' => input::get('uid')));
     }

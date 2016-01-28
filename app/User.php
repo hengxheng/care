@@ -9,6 +9,7 @@ use Illuminate\Foundation\Auth\Access\Authorizable;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Contracts\Auth\Access\Authorizable as AuthorizableContract;
 use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
+use DB;
 
 
 class User extends Model implements AuthenticatableContract,
@@ -48,6 +49,12 @@ class User extends Model implements AuthenticatableContract,
             $user->picture = $pic_name.'.'.$pic_extension;
         }
         $user->save();
+    }
+
+    public static function getAdmin(){
+        return DB::table('users')
+        ->where('user_type', '=', 'Admin')
+        ->first();
     }
 
 }

@@ -30,7 +30,7 @@
 	</div>
 	<div class="clear"></div>
 	<div class="message-body">
-		{{ $message->content }}
+		{!! html_entity_decode($message->content) !!}
 	</div>
 	@if ($type == "from" )
 	<div class="msg-cta">

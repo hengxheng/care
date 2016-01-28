@@ -15,6 +15,8 @@ class DatabaseSeeder extends Seeder
         Model::unguard();
 
         $admin = array(
+                'firstname' => 'CareNation',
+                'lastname' => 'Admin',
                 'user_type' => 'admin', 
                 'email' => 'admin@carenation.com',
                 'status' => 'Active',

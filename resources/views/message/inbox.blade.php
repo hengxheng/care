@@ -24,7 +24,7 @@
 								From:  {{ $message->firstname}} {{ $message->lastname}}
 							</div>
 							<div class="message-content">
-								{{ str_limit($message->content, 100) }}
+								{!! html_entity_decode(str_limit(strip_tags($message->content,'<br>'), 100)) !!}
 							</div>
 							<div class="message-date">
 								{{ date('H:i D F d, Y', strtotime($message->created_at)) }}

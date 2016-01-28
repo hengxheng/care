@@ -44,4 +44,12 @@ class Job extends Model
         return $jobs->paginate(10);
     }
 
+    public static function getJobPoster($jid){
+        return DB::table('job')
+                ->leftJoin('users', 'job.poster_id', '=', 'users.id' )
+                ->select('users.firstname', 'users.lastname', 'users.email', 'job.id')
+                ->where('job.id', '=', $jid)
+                ->first();
+    }
+
 }
