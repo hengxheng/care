@@ -54,7 +54,7 @@ return [
     |
     */
 
-    'from' => ['address' => 'admin@carenation.com', 'name' => 'admin'],
+    'from' => ['address' => 'admin@carenation.com', 'name' => 'Care Nation'],
 
     /*
     |--------------------------------------------------------------------------
