@@ -12,13 +12,20 @@
 				<div class="profile-info">
 					<h2 class="profile-name">
 						{{ camel_case($the_user->firstname) }} {{ camel_case($the_user->lastname) }}
+						@if (Auth::user()->id == $the_user->id || Auth::user()->user_type == "Admin")
+							<span style="font-size:12px;">
+								[Last Login: {{ date('F d Y', strtotime(Auth::user()->last_login)) }}]
+							</span>
+						@endif
 					</h2>		
+				
 					<div class="gender">
 						{{ $the_giver->gender }}@if ($the_giver->live_in)&nbsp;&nbsp;|&nbsp;&nbsp;Live In @endif
 					</div>
 					<div class="user-location">
 						{{ $the_giver->suburb }},{{ $the_giver->state }}
 					</div>
+					
 					@if($the_user->status == "Active")
 					<div class="user-background-check">
 						Background Check (Verified)
@@ -32,6 +39,8 @@
 					@if (Auth::user()->user_type == 'seeker' )
 						<a class="dark-blue-btn" href="{{ URL::route('message.create', array('to_id'=>$the_giver -> uid )) }}">Send a message</a>
 					@endif
+
+					
 				</div>
 
 				<div class="rating-block">

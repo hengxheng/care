@@ -11,6 +11,11 @@
 				<div class="profile-info">
 					<h2 class="profile-name">
 						{{ camel_case($the_user->firstname) }} {{ camel_case($the_user->lastname) }}
+						@if (Auth::user()->id == $the_user->id || Auth::user()->user_type == "Admin")
+							<span style="font-size:12px;">
+								[Last Login: {{ date('F d Y', strtotime(Auth::user()->last_login)) }}]
+							</span>
+						@endif
 					</h2>
 				
 					<div class="block-content">

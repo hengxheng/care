@@ -23,6 +23,7 @@ class CreateUsersTable extends Migration
             $table->string('status')->default("Inactive");
             $table->string('password', 60);
             $table->rememberToken();
+            $table->timestamp('last_login')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamps();
         });
 
