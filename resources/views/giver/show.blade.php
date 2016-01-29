@@ -206,13 +206,13 @@
 
 		<div class="row">
 			<div class="col-1">
-				<div class="block">
+				<div class="block" >
 					<h2 class="block-title">My Availability
 						@if(Auth::user()->id == $the_user->id)
 						<a class="edit-btn" href="{{ URL::route('care_givers.edit3', array('id'=>$the_user->id)) }}">Edit</a>
 						@endif
 					</h2>
-					<div class="block-content">
+					<div class="block-content" style="padding:0;">
 						<table id="avaiability-table">
 							<tr>
 		                    <td></td>

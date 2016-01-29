@@ -92,7 +92,7 @@
      <div class="row">
         <div class="col-1">
         <h2>Availability</h2>
-        <div class="availability-block">
+        <div class="availability-block"  style="padding:0;">
             <table id="avaiability-table">
                 <tr>
                     <td></td>

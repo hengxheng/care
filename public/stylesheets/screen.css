@@ -1152,3 +1152,40 @@ form .form-row input[type="submit"] {
     margin: 0 auto;
   }
 }
+@media screen and (max-width: 550px) {
+  /* line 987, ../sass/screen.scss */
+  .header-top {
+    display: none;
+  }
+
+  /* line 991, ../sass/screen.scss */
+  .filter-sidebar {
+    width: 100%;
+  }
+
+  /* line 995, ../sass/screen.scss */
+  .content-with-sidebar {
+    width: 100%;
+    padding: 0;
+  }
+
+  /* line 1000, ../sass/screen.scss */
+  .tool-bar {
+    text-align: center;
+  }
+
+  /* line 1003, ../sass/screen.scss */
+  .user-right-box {
+    display: none;
+  }
+
+  /* line 1007, ../sass/screen.scss */
+  .user-rating {
+    display: none;
+  }
+
+  /* line 1012, ../sass/screen.scss */
+  #avaiability-table td {
+    padding: 3px;
+  }
+}

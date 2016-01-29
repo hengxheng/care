@@ -982,3 +982,36 @@ form{
 		margin:0 auto;
 	}
 }
+
+@media screen and (max-width:550px){
+	.header-top{
+		display:none;
+	}
+
+	.filter-sidebar{
+		width:100%;
+	}
+
+	.content-with-sidebar{
+		width:100%;
+		padding:0;
+	}
+
+	.tool-bar{
+		text-align: center;
+	}
+	.user-right-box{
+		display:none;
+	}
+
+	.user-rating{
+		display:none;
+	}
+
+	#avaiability-table{
+		td{
+			padding:3px;
+		}
+	}
+
+}
