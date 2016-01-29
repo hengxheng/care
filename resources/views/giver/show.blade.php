@@ -12,12 +12,13 @@
 				<div class="profile-info">
 					<h2 class="profile-name">
 						{{ camel_case($the_user->firstname) }} {{ camel_case($the_user->lastname) }}
-						@if (Auth::user()->id == $the_user->id || Auth::user()->user_type == "Admin")
-							<span style="font-size:12px;">
-								[Last Login: {{ date('F d Y', strtotime(Auth::user()->last_login)) }}]
-							</span>
-						@endif
-					</h2>		
+						
+					</h2>	
+					@if (Auth::user()->id == $the_user->id || Auth::user()->user_type == "Admin")
+						<h3 class="last-login" style="font-size:12px;">
+							[Last Login: {{ date('F d Y', strtotime(Auth::user()->last_login)) }}]
+						</h3>
+					@endif	
 				
 					<div class="gender">
 						{{ $the_giver->gender }}@if ($the_giver->live_in)&nbsp;&nbsp;|&nbsp;&nbsp;Live In @endif

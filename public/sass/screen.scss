@@ -563,8 +563,12 @@ form{
     	vertical-align: top;
 		h2{
 			font-size: 20px;
-			margin-bottom: 15px;
+			margin-bottom: 10px;
 			text-transform: capitalize;
+		}
+		h3.last-login{
+			font-size:12px;
+			margin-bottom:15px;
 		}
 		.gender{
 			text-transform: capitalize;
@@ -572,10 +576,13 @@ form{
 		}
 		.user-location{
 			text-transform: uppercase;
-			margin-bottom: 20px;
+			margin-bottom: 10px;
 		}
 		.user-status{
 			margin-bottom: 10px;
+		}
+		.user-background-check{
+			margin-bottom: 20px;
 		}
 	}
 }

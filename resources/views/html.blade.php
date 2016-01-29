@@ -70,7 +70,7 @@
 											  <span class="msg-notify">{{ $unread }}</span>
 											@endif
 										</a></li>
-								@elseif (Auth::user()->status == 'Pending')
+								@elseif (Auth::user()->status == 'Pending' && Auth::user()->user_type == "giver")
 										<li>To apply for jobs, you must first verify your account by adding a background check approved by us.</li>
 								@endif
 							</ul>

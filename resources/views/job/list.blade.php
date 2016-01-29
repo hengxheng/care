@@ -5,7 +5,7 @@
 </div>
 <div class="listing-box">
  @if ( !$jobs->count() )
-        You have not posted any job yet.
+        You have no posted jobs.
     @else
         <ul>
             @foreach( $jobs as $job )
