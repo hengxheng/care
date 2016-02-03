@@ -14,7 +14,7 @@
                     <li>
                         <div class="user-block">
                             <div class="user-img">
-                                <img src="{{ URL::asset('images/user/'.$seeker->picture) }}" alt="test alt">
+                                <img src="{{ URL::asset('images/user/'.$seeker->picture) }}" alt="test">
                             </div>
                              <div class="user-info">
                                  <div class="user-name">
