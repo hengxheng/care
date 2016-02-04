@@ -48,7 +48,7 @@
                     <label>Qualification: </label><input type="text" name="quolification[]">
                 </div>
             </div>
-            <a id="add_quo" href="#" ng-click="add_quolification()" class="dark-blue-btn">Add a quolification</a>
+            <a id="add_quo" href="#" ng-click="add_quolification()" class="dark-blue-btn">Add a qualification</a>
         </div>
     </div>
     <div class="row">
