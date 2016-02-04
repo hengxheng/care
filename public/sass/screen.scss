@@ -68,8 +68,8 @@ h1, h2, h3, h4{
 	color:#fff;
 	display:inline-block;
 	border:0;
-	text-transform: uppercase;
-	padding: 8px 7px;
+	
+	padding: 11px 27px;
 	font-family: "Gotham-Bold";
 	border-bottom: 5px solid $blue;
 }
@@ -83,8 +83,7 @@ h1, h2, h3, h4{
 	color:#fff;
 	display:inline-block;
 	border:0;
-	text-transform: uppercase;
-	padding: 8px 7px;
+	padding: 11px 27px;
 	font-family: "Gotham-Bold";
 	border-bottom: 5px solid $dark-blue;
 }
@@ -711,6 +710,7 @@ form{
 		float: left;
 		padding: 10px 20px;
 		position: relative;
+		font-size: 14px;
 		.user-name{
 			font-size: 32px;
 			font-family: "Gotham-Bold";
@@ -718,13 +718,22 @@ form{
 			margin-bottom: 15px;
 			text-transform: capitalize;
 		}
+
+		.last-login {
+			span {
+				font-weight: bold;
+			}
+		}
 		.user-location{
-			margin-bottom:10px;
+			margin-bottom:20px;
+			font-style: italic;
 		}
 		.user-exp{
 			font-size: 14px;
+			line-height: 18px;
+			font-weight: bold;
 			color: $text-color;
-			margin-bottom: 10px;
+			margin-bottom: 20px;
 		}
 		.user-rate{
 			font-size: 14px;

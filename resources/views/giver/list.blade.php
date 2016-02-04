@@ -187,8 +187,12 @@
                                  <div class="user-name">
                                      {{ $giver->firstname }} {{ $giver->lastname}}
                                  </div>
+                                <div class="last-login" style="margin-bottom: 10px;">
+                                    <p><span>Last Login:</span> {{ date('F d Y', strtotime($giver->last_login)) }}<p>
+                                </div>
+                                
                                  <div class="user-location">
-                                     {{ $giver->suburb }},{{ $giver->state }}
+                                     {{ $giver->suburb }}, {{ $giver->state }}
                                  </div>
                                  <div class="user-exp">
                                      {{ str_limit($giver->bio, 200) }}
@@ -207,6 +211,7 @@
                                            No ratings yet
                                         @endif
                                     </div>
+
                                 </div>
                              </div>
                              <div class="user-right-box">

@@ -7,7 +7,7 @@
 				<img src="{{ URL::asset('images/user/'.$the_seeker -> picture) }}" alt="">
 			</div>
 			<div class="profile-info">
-				<h2 class="profile-name" style="color: green;">
+				<h2 class="profile-name">
 					{{ $the_user->firstname }} {{ $the_user -> lastname }}
 				</h2>		
 				@if (Auth::user()->user_type == 'admin')
