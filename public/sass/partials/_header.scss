@@ -1,0 +1,174 @@
+
+// header
+header#site-header{
+	.header-top{
+		padding: 15px 0;
+		background:#fff;
+		text-align: left;
+		display: block;
+		@include full;
+
+		ul{
+			display:inline-block;
+			li{
+				display:inline-block;
+				color: #000;
+				margin:0 5px;
+
+				a{
+					color: #000;
+					font-size: 14px;
+				}
+
+				i {
+					color: $dark-blue;
+				}
+			}
+		}
+
+		.contact {	
+			float: left;
+
+			i {
+				margin-right: 5px;
+			}
+
+		}
+
+		#sub-nav {
+			float: right;
+			
+		}
+	}
+	.header-content{
+		padding: 15px 0;
+		background:$blue;
+		@include full;
+		text-align: center;
+		position: relative;
+
+		.site-inner {
+			position: relative;
+		}
+
+		.logo {
+			float: left;
+		}
+
+		.account-block{
+			position: absolute;
+			top: 0px;
+			right: 20px;
+			text-align: left;
+			float: right;
+			color:#fff;
+			z-index:999;
+			
+			.account-inner{
+				padding: 0px 0px 0px 0px;
+			}
+			.account-block-img{
+				display:inline-block;
+				vertical-align: top;
+				margin-right: 10px;
+
+				img{
+					width: 50px;
+					border: 2px solid #fff;	
+					@include border-radius (50px 50px 50px 50px);
+				}
+			}
+			.account-block-content{
+				display:inline-block;
+				vertical-align: top;
+				margin-right: 15px;
+				padding-top: 9px;
+				.user-name{
+					color:#fff;
+					font-size: 18px;
+					margin-bottom: 5px;
+					text-transform: capitalize;
+				}
+				.user-type{
+					font-size: 14px;
+				}
+
+			}
+			#account-down{
+				display:inline-block;
+				vertical-align: top;
+				font-size: 10px;
+				color:#fff;
+				margin-top: 25px;
+			}	
+
+			#account-block-menu{
+				display:none;
+				background: #fff;
+				border: 1px solid $dark-blue;
+				z-index:99;
+				ul{
+					li{
+						width:100%;
+
+						box-sizing: border-box;
+						border-bottom: 1px solid $dark-blue;
+						&:last-child{
+							border:0;
+						}
+						a{
+							display:block;
+							padding: 10px 25px;
+							color: $dark-blue;
+							font-size: 16px;
+						}
+						a:hover{
+							background: #ccc;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+// end of header
+
+// main-nav
+nav#main-nav{
+	background:$dark-blue;
+	@include full;
+	.nav-inner{
+		position:relative;
+	}
+	
+	
+	#mb-btn{
+		color: #fff;
+		font-size: 35px;
+		display:none;
+		padding:0 10px;
+	}
+
+	#site-nav{
+		display:inline-block;
+		padding: 5px 0;
+		width: 100%;
+		ul{
+			li{
+				padding:10px 10px;
+				display:inline-block;
+				color:#fff;
+				a{
+					color: #fff;
+					font-size: 16px;
+				}
+			}
+
+			.inbox {
+				float: right;
+				padding-right: 35px;
+			}
+		}
+	}
+}
+// end of main nav

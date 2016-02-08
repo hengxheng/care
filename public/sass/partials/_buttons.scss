@@ -1,0 +1,52 @@
+.dark-blue-btn{
+	background: $dark-blue;
+	color:#fff;
+	display:inline-block;
+	border:0;
+	padding: 11px 27px;
+	border-bottom: 5px solid $blue;
+}
+
+.dark-blue-btn:hover{
+	background: $dark-blue-hover;
+}
+
+.blue-btn{
+	background: $blue;
+	color:#fff;
+	display:inline-block;
+	border:0;
+	padding: 11px 27px;
+	border-bottom: 5px solid $dark-blue;
+}
+
+.blue-btn:hover{
+	background: $blue-hover;
+}
+
+.edit-btn{
+	display:inline-block;
+	background: $blue;
+	font-weight: $bold;
+	padding: 10px 20px 10px 40px;
+	float: left;
+	color:#fff;
+	font-size: 14px;
+	margin-right: 15px;
+	position: relative;
+
+	&:after {
+		font-family: FontAwesome;
+		font-style: normal;
+		font-weight: normal;
+		text-decoration: inherit;
+		/*--adjust as necessary--*/
+		color: #fff;
+		font-size: 13px;
+		padding-right: 0em;
+		position: absolute;
+		top: 9px;
+		left: 14px;
+		content: '\f040';
+	}
+}

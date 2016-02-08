@@ -1,0 +1,85 @@
+
+#site-footer{
+	background: $darkgrey;
+	color: #fff;
+	padding-top: 25px;
+	padding-bottom: 50px;
+	height: auto;
+	font-size: 14px;
+	line-height: 20px;
+
+	a, h3 {
+		color: #fff;
+	}
+
+	h3 {
+		margin-top: 20px;
+		margin-bottom: 20px;
+		font-size: 22px;
+	}
+
+	.logo {
+		margin-top: 1px;
+		margin-bottom: 20px;
+	}
+
+	.social {
+		i {
+			margin-right: 10px;
+		}
+	}
+
+	.copyright {
+		@include full;
+		margin-bottom: 20px;
+	}
+
+	p, ul, li, i {
+		opacity: 0.8;
+
+		.address {
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+	}
+
+	.contact-details {
+		li {
+			padding-left: 30px;
+			position: relative;
+
+			&:after {
+				font-family: FontAwesome;
+				font-style: normal;
+				font-weight: normal;
+				text-decoration: inherit;
+				/*--adjust as necessary--*/
+				color: #fff;
+				font-size: 13px;
+				padding-right: 0em;
+				position: absolute;
+				top: 0px;
+				left: 0;
+			}
+		}
+
+		.phone:after {content: '\f095'}
+		.address:after {content: '\f015'}
+		.email:after {content: '\f003'}
+		.map:after {content: '\f041'}
+	}
+
+	h3 {
+		font-weight: $bold;
+	}
+
+	.footer-content {
+		overflow: hidden;
+	}
+
+	.fourth {
+		display: inline-block;
+		width: 25%;
+		float: left;
+	}
+}

@@ -1,0 +1,86 @@
+
+.user-block{
+	overflow:hidden;
+	.user-img{
+		width: 20%;
+		box-sizing:border-box;
+		float: left;
+		padding: 10px;
+		img{
+			width: 100%;
+		}
+	}
+	.user-info{
+		width: 60%;
+		box-sizing:border-box;
+		float: left;
+		padding: 10px 20px;
+		position: relative;
+		font-size: 14px;
+		.user-name{
+			font-size: 32px;
+			color: $dark-blue;
+			margin-bottom: 15px;
+			text-transform: capitalize;
+		}
+
+		.last-login {
+			span {
+				font-weight: bold;
+			}
+		}
+		.user-location{
+			margin-bottom:20px;
+			font-style: italic;
+		}
+		.user-exp{
+			font-size: 14px;
+			line-height: 18px;
+			font-weight: bold;
+			color: $text-color;
+			margin-bottom: 20px;
+		}
+		.user-rate{
+			font-size: 14px;
+			color: $blue;
+			margin-bottom: 15px;
+		}
+		.user-rating{
+			position:absolute;
+			top:0;
+			right:0;
+			padding:10px;
+		}
+		.sub-content{
+			padding: 15px 0;
+			h2{
+				font-size: 16px;
+			}
+		}
+	}
+
+	.user-right-box{
+		width:20%;
+		color:#fff;
+		box-sizing:border-box;
+		float: right;
+		background:$dark-blue;
+		text-align: center;
+		padding: 20px 15px;
+		h2{
+			font-size: 32px;
+			color:#fff;
+		}
+		.user-rate{
+			margin-bottom: 15px;
+			p{
+				font-size: 20px;
+			}
+		}
+		.year-exp{
+			p{
+				font-size: 16px;
+			}
+		}
+	}
+}

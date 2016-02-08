@@ -1,0 +1,149 @@
+
+.message{
+	padding: 15px;
+	.user-img{
+		width: 15%;
+		box-sizing:border-box;
+		display: inline-block;
+		vertical-align: top;
+		padding: 10px;
+		img{
+			width: 100%;
+		}
+	}
+	.message-tease{
+		width: 60%;
+		box-sizing:border-box;
+		display: inline-block;
+		vertical-align: top;
+		padding: 10px 20px;
+		position: relative;
+		.user-name{
+			font-size: 20px;
+			color: $dark-blue;
+			margin-bottom: 15px;
+			text-transform: capitalize;
+		}
+		.message-content{
+			font-size: 16px;
+			margin-bottom: 15px;
+		}
+		.message-date{
+			font-style: italic;
+			font-size: 16px;
+			margin-bottom: 15px;
+		}
+	}
+
+	.message-body{
+		padding:15px;
+		font-size: 16px;
+	}
+	.msg-cta{
+		padding:15px;
+	}
+}
+
+
+#message-menu{
+	ul{
+		li{
+			display:inline-block;
+			width:49.5%;
+			border:1px solid $blue;
+			text-align:center;		
+			background: #fff;
+			a{
+				font-size: 16px;
+				color:$dark-blue;
+				display:block;
+				height:100%;
+				width: 100%;
+				padding: 10px 0;			
+			}
+			&.active{
+				background:$blue;
+				a{
+
+					color:#fff;
+				}
+				
+			}
+		}
+	}
+}
+
+#message-main{
+	padding: 15px;
+	ul{
+		li{
+			border-bottom:1px solid #ccc;
+			color:$dark-blue;
+			padding: 15px;
+			margin-bottom: 25px;
+			position: relative;
+			&:first-child{
+				border-top:1px solid #ccc;
+			}
+
+			.user-img{
+				width: 15%;
+				box-sizing:border-box;
+				display: inline-block;
+				vertical-align: top;
+				padding: 10px;
+				img{
+					width: 100%;
+				}
+			}
+			.message-tease{
+				width: 78%;
+				box-sizing:border-box;
+				display: inline-block;
+				vertical-align: top;
+				padding: 10px 20px;
+				position: relative;
+				.user-name{
+					font-size: 20px;
+					color: $dark-blue;
+					margin-bottom: 15px;
+					text-transform: capitalize;
+				}
+				.message-content{
+					font-size: 16px;
+					margin-bottom: 15px;
+				}
+				.message-date{
+					font-style: italic;
+					font-size: 16px;
+					margin-bottom: 15px;
+				}
+				.cta{
+					position:absolute;
+					right:0;
+					top:20%;
+				}
+			}
+			
+			
+		}
+	}
+}
+
+
+.msg-notify{
+	display:inline-block;
+	background:#fff;
+	padding:4px 6px;
+	font-size: 11px;
+	border: 2px solid #1e6073;
+	color:#000;
+	position: absolute;
+	top: 12px;
+	right: 0px;
+	text-align: center;
+	vertical-align: middle;
+	box-sizing:border-box;
+	font-weight: $bold;
+	@include border-radius(5px);
+}

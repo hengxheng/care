@@ -1,0 +1,31 @@
+
+#site-footer{
+	background:$dark-blue;
+	.footer-content{
+		color: #fff;
+		overflow:hidden;
+		padding: 15px;
+		.footer-1{
+			float:left;
+			width:28%;
+		}
+		.footer-2{
+			float:left;
+			width:35%;
+			font-size: 12px;
+			p{
+				margin-bottom: 10px;
+				a{
+					color:#fff;
+				}
+			}
+		}
+		.footer-3{
+			float:left;
+			width:35%;
+			font-size: 11px;
+		}
+
+	}
+
+}

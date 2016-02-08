@@ -3,42 +3,44 @@
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
 
-@import "compass/reset";
-@import "compass/css3";
+ @import "compass/reset";
+ @import "compass/css3";
 
-$site-width: 1280px;
-$blue: #1E6073;
-$dark-blue: #164856;
-$light-blue: #164856;
-$dark-blue-hover: #3197b5;
-$blue-hover: #3197b5;
-$text-color:#000;
-$placeholder-color:#bbb;
+ $site-width: 1280px;
+ $blue: #1E6073;
+ $dark-blue: #164856;
+ $light-blue: #164856;
+ $dark-blue-hover: #3197b5;
+ $blue-hover: #3197b5;
+ $text-color:#000;
+ $placeholder-color:#bbb;
+
+ $proxima: "proxima-nova",sans-serif;
 
 
-@font-face {
-  font-family: 'Gotham-Bold';
-  src: 	url('../fonts/Gotham-Bold.eot?#iefix') format('embedded-opentype'),  
-  		url('../fonts/Gotham-Bold.otf')  format('opentype'),
-		url('../fonts/Gotham-Bold.woff') format('woff'), 
-		url('../fonts/Gotham-Bold.ttf')  format('truetype'), 
-		url('../fonts/Gotham-Bold.svg#Gotham-Bold') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Gotham-Book';
-  src: url('../fonts/Gotham-Book.eot?#iefix') format('embedded-opentype'),  
-  		url('../fonts/Gotham-Book.otf')  format('opentype'),
-		url('../fonts/Gotham-Book.woff') format('woff'), 
-		url('../fonts/Gotham-Book.ttf')  format('truetype'), 
-		url('../fonts/Gotham-Book.svg#Gotham-Book') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
+// @font-face {
+//   font-family: 'Gotham-Bold';
+//   src: 	url('../fonts/Gotham-Bold.eot?#iefix') format('embedded-opentype'),  
+//   		url('../fonts/Gotham-Bold.otf')  format('opentype'),
+// 		url('../fonts/Gotham-Bold.woff') format('woff'), 
+// 		url('../fonts/Gotham-Bold.ttf')  format('truetype'), 
+// 		url('../fonts/Gotham-Bold.svg#Gotham-Bold') format('svg');
+//   font-weight: normal;
+//   font-style: normal;
+// }
+// @font-face {
+//   font-family: 'Gotham-Book';
+//   src: url('../fonts/Gotham-Book.eot?#iefix') format('embedded-opentype'),  
+//   		url('../fonts/Gotham-Book.otf')  format('opentype'),
+// 		url('../fonts/Gotham-Book.woff') format('woff'), 
+// 		url('../fonts/Gotham-Book.ttf')  format('truetype'), 
+// 		url('../fonts/Gotham-Book.svg#Gotham-Book') format('svg');
+//   font-weight: normal;
+//   font-style: normal;
+// }
 
 body{
-	font-family: 'Gotham-Book';	
+	font-family: $proxima;	
 	font-size: 12px;
 	color:$dark-blue;
 }
@@ -58,7 +60,6 @@ h3{
 }
 
 h1, h2, h3, h4{
-	font-family: 'Gotham-Bold';
 	color: $dark-blue;
 	margin-bottom:10px;
 }
@@ -68,9 +69,7 @@ h1, h2, h3, h4{
 	color:#fff;
 	display:inline-block;
 	border:0;
-	
 	padding: 11px 27px;
-	font-family: "Gotham-Bold";
 	border-bottom: 5px solid $blue;
 }
 
@@ -84,7 +83,6 @@ h1, h2, h3, h4{
 	display:inline-block;
 	border:0;
 	padding: 11px 27px;
-	font-family: "Gotham-Bold";
 	border-bottom: 5px solid $dark-blue;
 }
 
@@ -140,19 +138,31 @@ h1, h2, h3, h4{
 header#site-header{
 	.header-top{
 		padding: 15px 0;
-		background:#ddd;
-		text-align: right;
+		background:#fff;
+		text-align: left;
+
 		ul{
 			display:inline-block;
 			li{
 				display:inline-block;
-				color: $dark-blue;
+				color: #000;
 				margin:0 5px;
+
 				a{
-					color: $dark-blue;
+					color: #000;
 					text-transform:uppercase;
 				}
 			}
+		}
+
+		.contact {	
+			float: left;
+
+		}
+
+		#sub-nav {
+			float: right;
+			
 		}
 	}
 	.header-content{
@@ -196,9 +206,9 @@ nav#main-nav{
 				color:$dark-blue;
 			}
 		}
-	    .account-inner{
-	    	padding: 8px 5px 6px 15px;
-	    }
+		.account-inner{
+			padding: 8px 5px 6px 15px;
+		}
 		.account-block-img{
 			display:inline-block;
 			vertical-align: top;
@@ -228,7 +238,7 @@ nav#main-nav{
 			vertical-align: top;
 			font-size: 18px;
 			color:#fff;
-		    margin-top: 25px;
+			margin-top: 25px;
 		}	
 
 		#account-block-menu{
@@ -249,7 +259,7 @@ nav#main-nav{
 						display:block;
 						padding: 10px 25px;
 						color: $dark-blue;
-    					font-size: 16px;
+						font-size: 16px;
 					}
 					a:hover{
 						background: #ccc;
@@ -260,10 +270,10 @@ nav#main-nav{
 	}
 	
 	#mb-btn{
-	    color: #fff;
-    	font-size: 35px;
-    	display:none;
-    	padding:0 10px;
+		color: #fff;
+		font-size: 35px;
+		display:none;
+		padding:0 10px;
 	}
 
 	#site-nav{
@@ -345,8 +355,8 @@ form{
 			padding:3px;
 			height: 35px;
 			border-bottom: 5px solid $dark-blue;
-    		font-size: 16px;
-    		font-family: "Gotham-Bold";
+			font-size: 16px;
+			font-family: $proxima;	
 		}
 	}
 }
@@ -473,7 +483,6 @@ form{
 				position: relative;
 				.user-name{
 					font-size: 20px;
-					font-family: 'Gotham-Bold';
 					color: $dark-blue;
 					margin-bottom: 15px;
 					text-transform: capitalize;
@@ -520,7 +529,6 @@ form{
 		position: relative;
 		.user-name{
 			font-size: 20px;
-			font-family: 'Gotham-Bold';
 			color: $dark-blue;
 			margin-bottom: 15px;
 			text-transform: capitalize;
@@ -550,7 +558,7 @@ form{
 		width: 160px;
 		height: auto;
 		display: inline-block;
-    	vertical-align: top;
+		vertical-align: top;
 		margin-right: 20px;
 		img{
 			width:100%;		
@@ -559,7 +567,7 @@ form{
 
 	.profile-info{
 		display: inline-block;
-    	vertical-align: top;
+		vertical-align: top;
 		h2{
 			font-size: 20px;
 			margin-bottom: 10px;
@@ -627,23 +635,23 @@ form{
 	margin-bottom:25px;
 }
 .job-block{
-		.job-title{
-			font-size: 20px;
-			margin-bottom:15px;
-			color:$dark-blue;
-			.active{
-				color: green;
-			}
-			.inactive{
-				color: red;
-			}
+	.job-title{
+		font-size: 20px;
+		margin-bottom:15px;
+		color:$dark-blue;
+		.active{
+			color: green;
 		}
-		.job-desc{
-			font-size: 16px;
-			color:$text-color;
-			padding: 15px 0;
+		.inactive{
+			color: red;
 		}
 	}
+	.job-desc{
+		font-size: 16px;
+		color:$text-color;
+		padding: 15px 0;
+	}
+}
 
 
 #site-footer{
@@ -713,7 +721,6 @@ form{
 		font-size: 14px;
 		.user-name{
 			font-size: 32px;
-			font-family: "Gotham-Bold";
 			color: $dark-blue;
 			margin-bottom: 15px;
 			text-transform: capitalize;
@@ -944,11 +951,11 @@ form{
 
 #forgot_password{
 	display:inline-block;
-    font-size: 16px;
-    line-height: 28px;
-    color: $dark-blue;
-    text-decoration: underline;
-    margin-left: 25px;
+	font-size: 16px;
+	line-height: 28px;
+	color: $dark-blue;
+	text-decoration: underline;
+	margin-left: 25px;
 }
 
 @media screen and (max-width: 1280px){
@@ -1024,3 +1031,8 @@ form{
 	}
 
 }
+
+@import "partials/header";
+@import "partials/homepage";
+@import "partials/page";
+@import "partials/footer";
