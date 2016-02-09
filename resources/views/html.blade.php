@@ -85,8 +85,8 @@
 						<div id="main-menu-block">
 							<ul>
 								@if (Auth::guest())
-									<li><a href="{{ URL::route('login') }}">Login</a></li>
-									<li><a href="{{ URL::route('register') }}">Register</a></li>
+									<!-- <li><a href="{{ URL::route('login') }}">Login</a></li>
+									<li><a href="{{ URL::route('register') }}">Register</a></li> -->
 								@elseif(Auth::user()->status == 'Active')
 										@if (Auth::user() -> user_type == 'giver')
 											<li><a href="{{ URL::route('care_givers.show', array('uid' => Auth::user()->id)) }}" >My Profile</a></li>

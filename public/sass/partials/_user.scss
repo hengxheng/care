@@ -6,8 +6,10 @@
 		box-sizing:border-box;
 		float: left;
 		padding: 10px;
+
 		img{
 			width: 100%;
+			@include border-radius(200px);
 		}
 	}
 	.user-info{
@@ -21,6 +23,7 @@
 			font-size: 32px;
 			color: $dark-blue;
 			margin-bottom: 15px;
+			font-weight: $bold;
 			text-transform: capitalize;
 		}
 
@@ -31,14 +34,21 @@
 		}
 		.user-location{
 			margin-bottom:20px;
-			font-style: italic;
+
+			i {
+				color: $dark-blue;
+				margin-right: 5px;
+			}
 		}
 		.user-exp{
 			font-size: 14px;
 			line-height: 18px;
-			font-weight: bold;
 			color: $text-color;
 			margin-bottom: 20px;
+
+			span {
+				font-weight: $bold;
+			}
 		}
 		.user-rate{
 			font-size: 14px;
@@ -64,22 +74,45 @@
 		color:#fff;
 		box-sizing:border-box;
 		float: right;
-		background:$dark-blue;
-		text-align: center;
-		padding: 20px 15px;
-		h2{
+		text-align: left;
+		padding: 0px 15px 20px 15px;
+		color: #000;
+		
+		* {
+			color: #000;
+		}
+
+		h3{
 			font-size: 32px;
-			color:#fff;
+			margin: 0px 0px 0px 0px;
 		}
-		.user-rate{
-			margin-bottom: 15px;
-			p{
-				font-size: 20px;
-			}
+
+		span {
+			@include full;
+			color: $dark-blue;
+			font-weight: $bold;
+			margin: 15px 0px 5px 0px;
+			font-size: 14px;
 		}
-		.year-exp{
-			p{
-				font-size: 16px;
+
+		p {
+			font-weight: $bold;
+			font-size: 18px;
+		}
+
+		i {
+			font-size: 18px;
+			color: $blue;
+		}
+
+		.cta {
+			@include full;
+
+			a {
+				color: #fff;
+				font-weight: $bold;
+				font-size: 14px;
+				margin-top: 15px;
 			}
 		}
 	}

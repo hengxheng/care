@@ -5,6 +5,7 @@
 	border:0;
 	padding: 11px 27px;
 	border-bottom: 5px solid $blue;
+	@include border-radius (4px);
 }
 
 .dark-blue-btn:hover{
@@ -16,8 +17,11 @@
 	color:#fff;
 	display:inline-block;
 	border:0;
+	font-weight: $bold;
 	padding: 11px 27px;
 	border-bottom: 5px solid $dark-blue;
+	@include border-radius (4px);
+
 }
 
 .blue-btn:hover{

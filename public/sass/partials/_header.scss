@@ -136,6 +136,7 @@ header#site-header{
 // main-nav
 nav#main-nav{
 	background:$dark-blue;
+	margin-bottom: 30px;
 	@include full;
 	.nav-inner{
 		position:relative;

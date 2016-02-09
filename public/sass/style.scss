@@ -38,6 +38,20 @@ $proxima: "proxima-nova",sans-serif;
           border-radius: $radius;
 }
 
+@mixin fontawesome {
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+/*--adjust as necessary--*/
+    color: #000;
+    font-size: 18px;
+    padding-right: 0.5em;
+    position: absolute;
+    top: 10px;
+    left: 0;
+}
+
 @mixin full {
 	display: block;
 	width: 100%;
@@ -64,8 +78,17 @@ $proxima: "proxima-nova",sans-serif;
 }
 
 
-a{
+a,{
 	text-decoration:none;
+}
+
+a, p, span, ul, li, address, input, textarea {
+	font-family: $proxima;
+}
+
+textarea {
+	@include border-radius(4px);
+	border: 1px solid #909090;
 }
 
 h1, h2, h3, h4, h5 ,h6 {
@@ -90,7 +113,7 @@ h1, h2, h3, h4{
 .welcome.title {
 	h1 {
 		font-size: 42px;
-		margin: 40px 0px;
+		margin: 10px 0px 40px 0px;
 	}	
 }
 
@@ -157,11 +180,14 @@ body {
 	min-height: 800px;
 
 	.page-title{
-		font-size: 22px;
+		font-size: 34px;
 		color:$dark-blue;
 		margin-bottom: 25px;
-	}
 
+		h2 {
+			font-size: 32px;
+		}
+	}
 }
 
 .listing-box{
@@ -183,13 +209,6 @@ body {
 		color:#fff;
 		font-size: 18px;
 		padding: 10px;
-		.edit-btn{
-			display:inline-block;
-			float:right;
-			color:#fff;
-			font-size: 14px;
-			margin-right: 15px;
-		}
 	}
 	.block-content{
 		padding: 15px;

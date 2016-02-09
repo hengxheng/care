@@ -35,14 +35,14 @@
 
 <div class="register-block-container">
     <div class="register-block">
-    <h1>Find Care For Your Family Today!</h1>
-    <p>Get started by posting your care needs.</p>
+    <h1>Find Care For Your Family</h1>
+    <p>Get started by posting your care needs today and see who can hep.</p>
     <a href="{{ URL::route('seeker_register') }}" class="blue-btn">I'm looking for care</a>
 </div>
 
 <div class="register-block">
     <h1>Apply for Caregiver Jobs</h1>
-    <p>Connect with those seeking care</p>
+    <p>Connect with those seeking care today and see how you can help people in need.</p>
     <a href="{{ URL::route('giver_register') }}" class="blue-btn">I want to provide care</a>
 </div>
 </div>
