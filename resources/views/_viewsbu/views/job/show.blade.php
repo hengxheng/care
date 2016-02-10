@@ -2,21 +2,23 @@
 @section ('content')
 	<div class="job-view">
 		<div class="job-title block">
+			<h2 class="block-title">Job Title ({{ $job->status }})</h2>
+			
 			<div class="block-content">		
-				<h2>{{ $job->title }} <span>{{ $job->status }}</span></h2>
+				<h2>{{ $job->title }}</h2>
 				<p>{{ $job->created_at }}</p>
 			</div>	
 		</div>
 		<div class="job-description block">
 			<h2 class="block-title">Job Description</h2>
 			<div class="block-content">
-				<p>{{ $job->description }}</p>
+				{{ $job->description }}
 			</div>
 		</div>
 		<div class="block">
 			<h2 class="block-title">Start Date</h2>
 			<div class="block-content">
-				<p>{{ $job->start_date}}</p>
+				{{ $job->start_date}}
 			</div>
 		</div>
 		<div class="block">

@@ -60,6 +60,7 @@ a {
 
 a, p, span, ul, li, address, input, textarea {
   font-family: "proxima-nova", sans-serif;
+  line-height: 22px;
 }
 
 textarea {
@@ -88,6 +89,11 @@ h3 {
 
 h1, h2, h3, h4 {
   color: #164856;
+  margin-bottom: 10px;
+}
+
+p {
+  line-height: 20px;
   margin-bottom: 10px;
 }
 
@@ -163,72 +169,8 @@ body {
   font-size: 32px;
 }
 
-.listing-box {
-  padding: 25px 0;
-  box-sizing: border-box;
-}
-.listing-box ul li {
-  border: 1px solid #ccc;
-  box-sizing: border-box;
-  padding: 10px;
-  margin-bottom: 20px;
-}
-
-.block .block-title {
-  background: #1E6073;
-  color: #fff;
-  font-size: 18px;
-  padding: 10px;
-}
-.block .block-content {
-  padding: 15px;
-  box-sizing: border-box;
-  color: #1E6073;
-  font-size: 14px;
-}
-.block .block-content p {
-  margin-bottom: 5px;
-}
-
 .welcome {
   margin-bottom: 25px;
-}
-
-.job-view {
-  margin-bottom: 25px;
-}
-
-.job-block .job-title {
-  font-size: 20px;
-  margin-bottom: 15px;
-  color: #164856;
-}
-.job-block .job-title .active {
-  color: green;
-}
-.job-block .job-title .inactive {
-  color: red;
-}
-.job-block .job-desc {
-  font-size: 16px;
-  color: #000;
-  padding: 15px 0;
-}
-
-.rating-block {
-  float: right;
-  text-align: center;
-  padding: 20px 15px;
-  background: #164856;
-  color: #fff;
-}
-.rating-block h3 {
-  color: #fff;
-  margin-bottom: 15px;
-  font-size: 18px;
-}
-.rating-block i {
-  color: #1E6073;
 }
 
 .content-with-sidebar {
@@ -433,8 +375,10 @@ nav#main-nav #site-nav ul .inbox {
   background: #164856;
   color: #fff;
   display: inline-block;
+  position: relative;
   border: 0;
-  padding: 11px 27px;
+  padding: 3px 27px;
+  font-weight: 600;
   border-bottom: 5px solid #1E6073;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
@@ -450,9 +394,10 @@ nav#main-nav #site-nav ul .inbox {
   background: #1E6073;
   color: #fff;
   display: inline-block;
+  position: relative;
   border: 0;
   font-weight: 600;
-  padding: 11px 27px;
+  padding: 3px 27px;
   border-bottom: 5px solid #164856;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
@@ -464,29 +409,107 @@ nav#main-nav #site-nav ul .inbox {
   background: #3197b5;
 }
 
+.view {
+  padding: 6px 27px 6px 37px;
+}
+.view:after {
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: inherit;
+  /*--adjust as necessary--*/
+  color: #000;
+  font-size: 18px;
+  padding-right: 0.5em;
+  position: absolute;
+  top: 10px;
+  left: 0;
+  content: '\f002';
+  color: #fff;
+  left: 14px;
+  opacity: 0.6;
+  font-size: 13px;
+  top: 7px;
+}
+.view:hover:after {
+  opacity: 1;
+}
+
+.edit {
+  padding: 6px 27px 6px 37px;
+}
+.edit:after {
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: inherit;
+  /*--adjust as necessary--*/
+  color: #000;
+  font-size: 18px;
+  padding-right: 0.5em;
+  position: absolute;
+  top: 10px;
+  left: 0;
+  content: '\f040';
+  color: #fff;
+  left: 14px;
+  opacity: 0.6;
+  font-size: 13px;
+  top: 7px;
+}
+.edit:hover:after {
+  opacity: 1;
+}
+
+.delete {
+  padding: 6px 27px 6px 37px;
+}
+.delete:after {
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: inherit;
+  /*--adjust as necessary--*/
+  color: #000;
+  font-size: 18px;
+  padding-right: 0.5em;
+  position: absolute;
+  top: 10px;
+  left: 0;
+  content: '\f1f8';
+  color: #fff;
+  left: 14px;
+  opacity: 0.6;
+  font-size: 13px;
+  top: 7px;
+}
+.delete:hover:after {
+  opacity: 1;
+}
+
 .edit-btn {
   display: inline-block;
   background: #1E6073;
   font-weight: 600;
-  padding: 10px 20px 10px 40px;
+  padding: 4px 16px 4px 30px;
   float: left;
   color: #fff;
   font-size: 14px;
   margin-right: 15px;
-  position: relative;
+  position: absolute;
+  top: 5px;
 }
 .edit-btn:after {
   font-family: FontAwesome;
   font-style: normal;
   font-weight: normal;
   text-decoration: inherit;
-  /*--adjust as necessary--*/
   color: #fff;
-  font-size: 13px;
+  font-size: 10px;
   padding-right: 0em;
   position: absolute;
-  top: 9px;
-  left: 14px;
+  top: 3px;
+  left: 11px;
   content: '\f040';
 }
 
@@ -617,6 +640,7 @@ nav#main-nav #site-nav ul .inbox {
   color: #000;
   position: absolute;
   top: 12px;
+  line-height: 12px;
   right: 0px;
   text-align: center;
   vertical-align: middle;
@@ -628,6 +652,26 @@ nav#main-nav #site-nav ul .inbox {
   border-radius: 5px;
 }
 
+.giver-profile .profile-block .content {
+  width: 80%;
+}
+.giver-profile .profile-block .content .block {
+  float: left;
+}
+.giver-profile .profile-block .content .education {
+  border-bottom: 1px #164856 solid;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+.giver-profile .profile-block .content .service-cats,
+.giver-profile .profile-block .content .service-rate,
+.giver-profile .profile-block .content .services,
+.giver-profile .profile-block .content .qualifications {
+  float: left;
+  width: 25%;
+  margin-bottom: 30px;
+}
+
 .profile-block {
   margin-top: 40px;
 }
@@ -635,10 +679,30 @@ nav#main-nav #site-nav ul .inbox {
   float: left;
   width: 15%;
   min-height: 300px;
+  position: relative;
+}
+.profile-block aside.contact .edit-btn {
+  position: relative;
+}
+.profile-block aside.contact i {
+  width: 20px;
+}
+.profile-block aside.contact p {
+  font-weight: 600;
+}
+.profile-block aside.contact .dark-blue-btn {
+  padding-left: 10%;
+  padding-right: 10%;
+  margin-top: 20px;
+}
+.profile-block aside.contact .dark-blue-btn i {
+  opacity: 0.7;
+  font-size: 13px;
 }
 .profile-block aside.contact .profile-image {
   width: 90%;
   height: auto;
+  margin-bottom: 20px;
   display: inline-block;
   vertical-align: top;
 }
@@ -672,6 +736,13 @@ nav#main-nav #site-nav ul .inbox {
   width: 55%;
   padding: 0px 2.5%;
   min-height: 300px;
+}
+.profile-block .content .block {
+  position: relative;
+}
+.profile-block .content .block .edit-btn {
+  top: 13px;
+  right: 0px;
 }
 .profile-block .content .block-bio {
   display: block;
@@ -913,7 +984,7 @@ nav#main-nav #site-nav ul .inbox {
   float: left;
   color: #164856;
   font-weight: 600;
-  margin: 15px 0px 5px 0px;
+  margin: 0px 0px 0px 0px;
   font-size: 14px;
 }
 .user-block .user-right-box p {
@@ -934,6 +1005,140 @@ nav#main-nav #site-nav ul .inbox {
   font-weight: 600;
   font-size: 14px;
   margin-top: 15px;
+}
+
+.listing-box {
+  padding: 25px 0;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.listing-box ul li {
+  box-sizing: border-box;
+  margin-bottom: 30px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #e3e3e3;
+  overflow: hidden;
+}
+
+.job-view {
+  margin-bottom: 25px;
+}
+
+.job-block .job-content {
+  float: left;
+  width: 65%;
+}
+.job-block .job-title {
+  float: left;
+  width: 60%;
+}
+.job-block .job-title h3 {
+  font-size: 32px;
+  color: #164856;
+  margin-bottom: 15px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+.job-block .job-state {
+  float: right;
+  width: auto;
+  font-weight: 600;
+  position: relative;
+}
+.job-block .active {
+  background-color: #2F8A2F;
+  color: #fff;
+  width: auto;
+  text-align: right;
+  padding: 9px 20px 9px 33px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  border-radius: 4px;
+  float: right;
+}
+.job-block .active:after {
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: inherit;
+  /*--adjust as necessary--*/
+  color: #000;
+  font-size: 18px;
+  padding-right: 0.5em;
+  position: absolute;
+  top: 10px;
+  left: 0;
+  content: '\f00c';
+  color: #fff;
+  left: 11px;
+  font-size: 13px;
+}
+.job-block .inactive {
+  background-color: red;
+  color: #fff;
+  width: auto;
+  text-align: right;
+  padding: 9px 20px 9px 33px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  border-radius: 4px;
+  float: right;
+}
+.job-block .inactive:after {
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: inherit;
+  /*--adjust as necessary--*/
+  color: #000;
+  font-size: 18px;
+  padding-right: 0.5em;
+  position: absolute;
+  top: 10px;
+  left: 0;
+  content: '\f00d';
+  color: #fff;
+  left: 11px;
+  font-size: 13px;
+}
+.job-block .job-desc {
+  font-size: 16px;
+  display: block;
+  width: 100%;
+  float: left;
+  color: #000;
+  padding: 15px 0;
+}
+.job-block .job-action {
+  display: block;
+  width: 100%;
+  float: left;
+}
+.job-block .job-snapshot {
+  float: left;
+  width: 25%;
+  padding-left: 5%;
+}
+.job-block .job-snapshot span:first-child {
+  margin-top: 0px;
+}
+.job-block .job-snapshot span {
+  display: block;
+  width: 100%;
+  float: left;
+  color: #164856;
+  font-weight: 600;
+  margin: 15px 0px 5px 0px;
+  font-size: 14px;
+}
+.job-block .job-snapshot p {
+  font-weight: 600;
+  font-size: 18px;
+}
+.job-block .job-snapshot i {
+  margin-right: 5px;
 }
 
 .post-a-job form {
@@ -1066,6 +1271,8 @@ form .form-row input[type="email"] {
 }
 form .form-row textarea {
   width: 100%;
+  max-width: 100%;
+  max-height: 300px;
   box-sizing: border-box;
   padding: 2.5%;
   height: 70px;
@@ -1173,10 +1380,9 @@ form .desc textarea {
 }
 
 .block .block-title {
-  background: #1E6073;
-  color: #fff;
+  color: #164856;
   font-size: 18px;
-  padding: 10px;
+  margin-top: 20px;
 }
 .block .block-title .edit-btn {
   display: inline-block;
@@ -1186,9 +1392,8 @@ form .desc textarea {
   margin-right: 15px;
 }
 .block .block-content {
-  padding: 15px;
   box-sizing: border-box;
-  color: #1E6073;
+  color: #000;
   font-size: 14px;
 }
 .block .block-content p {
@@ -1310,7 +1515,8 @@ form .desc textarea {
   padding: 10px;
   border: 1px solid #000;
   text-align: center;
-  color: #055B05;
+  color: #164856;
+  font-weight: 600;
 }
 
 .av-icon {
@@ -1318,10 +1524,6 @@ form .desc textarea {
   width: 20px;
   height: 20px;
   text-align: center;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  border-radius: 50%;
 }
 
 .av-icon.a-0 {
@@ -1329,7 +1531,23 @@ form .desc textarea {
 }
 
 .av-icon.a-1 {
-  background: #055B05;
+  background: transparent;
+  position: relative;
+}
+.av-icon.a-1:after {
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: inherit;
+  /*--adjust as necessary--*/
+  color: #000;
+  font-size: 18px;
+  padding-right: 0.5em;
+  position: absolute;
+  top: 10px;
+  left: 0;
+  content: '\f00c';
+  top: 2px;
 }
 
 #site-footer {

@@ -2,8 +2,10 @@
 	background: $dark-blue;
 	color:#fff;
 	display:inline-block;
+	position: relative;
 	border:0;
-	padding: 11px 27px;
+	padding: 3px 27px;
+	font-weight: $bold;
 	border-bottom: 5px solid $blue;
 	@include border-radius (4px);
 }
@@ -16,9 +18,10 @@
 	background: $blue;
 	color:#fff;
 	display:inline-block;
+	position: relative;
 	border:0;
 	font-weight: $bold;
-	padding: 11px 27px;
+	padding: 3px 27px;
 	border-bottom: 5px solid $dark-blue;
 	@include border-radius (4px);
 
@@ -28,29 +31,80 @@
 	background: $blue-hover;
 }
 
+.view {
+	padding: 6px 27px 6px 37px;
+	&:after {
+		@include fontawesome;
+		content: '\f002';
+		color: #fff;
+		left: 14px;
+		opacity: 0.6;
+		font-size: 13px;
+		top: 7px;
+	}
+
+	&:hover:after {
+		opacity: 1;
+	}
+}
+
+.edit {
+	padding: 6px 27px 6px 37px;
+	&:after {
+		@include fontawesome;
+		content: '\f040';
+		color: #fff;
+		left: 14px;
+		opacity: 0.6;
+		font-size: 13px;
+		top: 7px;
+	}
+
+	&:hover:after {
+		opacity: 1;
+	}
+}
+
+.delete {
+	padding: 6px 27px 6px 37px;
+	&:after {
+		@include fontawesome;
+		content: '\f1f8';
+		color: #fff;
+		left: 14px;
+		opacity: 0.6;
+		font-size: 13px;
+		top: 7px;
+	}
+	
+	&:hover:after {
+		opacity: 1;
+	}
+}
+
 .edit-btn{
 	display:inline-block;
 	background: $blue;
 	font-weight: $bold;
-	padding: 10px 20px 10px 40px;
+	padding: 4px 16px 4px 30px;
 	float: left;
 	color:#fff;
 	font-size: 14px;
 	margin-right: 15px;
-	position: relative;
+	position: absolute;
+	top: 5px;
 
 	&:after {
 		font-family: FontAwesome;
-		font-style: normal;
-		font-weight: normal;
-		text-decoration: inherit;
-		/*--adjust as necessary--*/
-		color: #fff;
-		font-size: 13px;
-		padding-right: 0em;
-		position: absolute;
-		top: 9px;
-		left: 14px;
-		content: '\f040';
+    	font-style: normal;
+    	font-weight: normal;
+    	text-decoration: inherit;
+    	color: #fff;
+    	font-size: 10px;
+    	padding-right: 0em;
+    	position: absolute;
+    	top: 3px;
+    	left: 11px;
+    	content: '\f040';
 	}
 }

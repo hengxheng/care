@@ -84,6 +84,7 @@ a,{
 
 a, p, span, ul, li, address, input, textarea {
 	font-family: $proxima;
+	line-height: 22px;
 }
 
 textarea {
@@ -108,6 +109,11 @@ h3{
 h1, h2, h3, h4{
 	color: $dark-blue;
 	margin-bottom:10px;
+}
+
+p {
+	line-height: 20px;
+    margin-bottom: 10px;
 }
 
 .welcome.title {
@@ -190,81 +196,9 @@ body {
 	}
 }
 
-.listing-box{
-	padding: 25px 0;
-	box-sizing: border-box;
-	ul{
-		li{
-			border:1px solid #ccc;
-			box-sizing: border-box;
-			padding:10px;
-			margin-bottom: 20px;
-		}
-	}
-}
-
-.block{
-	.block-title{
-		background: $blue;
-		color:#fff;
-		font-size: 18px;
-		padding: 10px;
-	}
-	.block-content{
-		padding: 15px;
-		box-sizing: border-box;
-		color: $blue;
-		font-size: 14px;
-		p{
-			margin-bottom:5px;
-		}
-	}
-}
-
 .welcome{
 	margin-bottom:25px;
 }
-
-.job-view{
-	margin-bottom:25px;
-}
-.job-block{
-	.job-title{
-		font-size: 20px;
-		margin-bottom:15px;
-		color:$dark-blue;
-		.active{
-			color: green;
-		}
-		.inactive{
-			color: red;
-		}
-	}
-	.job-desc{
-		font-size: 16px;
-		color:$text-color;
-		padding: 15px 0;
-	}
-}
-
-
-
-.rating-block{
-	float:right;
-	text-align:center;
-	padding:20px 15px;
-	background: $dark-blue;
-	color:#fff;
-	h3{
-		color:#fff;
-		margin-bottom:15px;
-		font-size: 18px;
-	}
-	i{
-		color: $blue;
-	}
-}
-
 
 .content-with-sidebar{
 	width: 80%;
@@ -324,6 +258,7 @@ body {
 @import "partials/profile";
 @import "partials/sidebar";
 @import "partials/user";
+@import "partials/job";
 @import "partials/utilities";
 @import "partials/footer";
 
