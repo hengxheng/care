@@ -4,7 +4,7 @@
 	display:inline-block;
 	position: relative;
 	border:0;
-	padding: 3px 27px;
+	padding: 6px 27px;
 	font-weight: $bold;
 	border-bottom: 5px solid $blue;
 	@include border-radius (4px);
@@ -21,7 +21,7 @@
 	position: relative;
 	border:0;
 	font-weight: $bold;
-	padding: 3px 27px;
+	padding: 6px 27px;
 	border-bottom: 5px solid $dark-blue;
 	@include border-radius (4px);
 

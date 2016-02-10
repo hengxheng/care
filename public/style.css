@@ -258,9 +258,11 @@ header#site-header .header-content {
   float: left;
   text-align: center;
   position: relative;
+  overflow: visible;
 }
 header#site-header .header-content .site-inner {
   position: relative;
+  overflow: visible;
 }
 header#site-header .header-content .logo {
   float: left;
@@ -312,28 +314,77 @@ header#site-header .header-content .account-block #account-down {
   color: #fff;
   margin-top: 25px;
 }
-header#site-header .header-content .account-block #account-block-menu {
+
+.account-block.actived #account-block-menu {
+  display: block;
+}
+
+#account-block-menu {
   display: none;
   background: #fff;
-  border: 1px solid #164856;
   z-index: 99;
+  position: absolute;
+  right: -3px;
+  top: 30px;
+  background: transparent;
 }
-header#site-header .header-content .account-block #account-block-menu ul li {
+#account-block-menu ul {
+  width: 200px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  border-radius: 4px;
+  border: 1px #1E6073 solid;
+  position: relative;
+}
+#account-block-menu ul:after {
+  right: 3px;
+  top: -10px;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-color: rgba(172, 0, 53, 0);
+  border-bottom-color: #fff;
+  border-width: 5px;
+}
+#account-block-menu ul li {
   width: 100%;
+  background-color: #fff;
+  padding: 5px 5%;
+  color: #1E6073;
   box-sizing: border-box;
-  border-bottom: 1px solid #164856;
+  font-weight: 600;
+  border-top: rgba(22, 72, 86, 0.4) 1px dashed;
 }
-header#site-header .header-content .account-block #account-block-menu ul li:last-child {
+#account-block-menu ul li i {
+  width: 20px;
+}
+#account-block-menu ul li:hover {
+  background-color: #164856;
+}
+#account-block-menu ul li:hover a {
+  color: #fff;
+}
+#account-block-menu ul li:first-child {
   border: 0;
+  -webkit-border-radius: 4px 4px 0px 0px;
+  -moz-border-radius: 4px 4px 0px 0px;
+  -ms-border-radius: 4px 4px 0px 0px;
+  border-radius: 4px 4px 0px 0px;
 }
-header#site-header .header-content .account-block #account-block-menu ul li a {
+#account-block-menu ul li:last-child {
+  -webkit-border-radius: 0px 0px 4px 4px;
+  -moz-border-radius: 0px 0px 4px 4px;
+  -ms-border-radius: 0px 0px 4px 4px;
+  border-radius: 0px 0px 4px 4px;
+}
+#account-block-menu ul li a {
   display: block;
-  padding: 10px 25px;
-  color: #164856;
-  font-size: 16px;
-}
-header#site-header .header-content .account-block #account-block-menu ul li a:hover {
-  background: #ccc;
+  color: #1E6073;
+  font-size: 14px;
 }
 
 nav#main-nav {
@@ -377,7 +428,7 @@ nav#main-nav #site-nav ul .inbox {
   display: inline-block;
   position: relative;
   border: 0;
-  padding: 3px 27px;
+  padding: 6px 27px;
   font-weight: 600;
   border-bottom: 5px solid #1E6073;
   -webkit-border-radius: 4px;
@@ -397,7 +448,7 @@ nav#main-nav #site-nav ul .inbox {
   position: relative;
   border: 0;
   font-weight: 600;
-  padding: 3px 27px;
+  padding: 6px 27px;
   border-bottom: 5px solid #164856;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
@@ -1215,6 +1266,9 @@ form .form-row-2 input:-ms-input-placeholder, form .form-row-2 select:-ms-input-
 }
 form .form-row-2 input::-webkit-input-placeholder, form .form-row-2 select::-webkit-input-placeholder {
   color: #bbb;
+}
+form .form-row.submit {
+  margin-bottom: 0px;
 }
 form .form-row {
   margin-bottom: 15px;

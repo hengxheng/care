@@ -64,11 +64,11 @@
 					</div>
 					<div id="account-block-menu">
 						<ul>
-							<li><a href="{{ URL::route('account.settings') }}">Account Settings</a></li>
+							<li><a href="{{ URL::route('account.settings') }}"><i class="fa fa-cogs"></i> Account Settings</a></li>
 							@if (Auth::user()->user_type == 'seeker')
-							<li><a href="{{ URL::route('seeker.payment') }}">Payments</a></li>
+							<li><a href="{{ URL::route('seeker.payment') }}"><i class="fa fa-usd"></i> Payments</a></li>
 							@endif
-							<li><a id="logout-btn" href="{{ URL::route('logout') }}">Logout</a></li>
+							<li><a id="logout-btn" href="{{ URL::route('logout') }}"><i class="fa fa-sign-out"></i> Logout</a></li>
 						</ul>	
 					</div>
 				</div>

@@ -18,7 +18,7 @@
         <input type="checkbox" name="remember"> <label for="remember">Remember Me</label>
     </div>
 
-    <div class="form-row">
+    <div class="form-row submit">
         <input type="submit" value="Login">
     </div>
 </form>
