@@ -7,7 +7,7 @@
     <input type="hidden" name="step" value="2">
     <div class="form-row">
         <label for="bio">Describe yourself</label>
-        <textarea name="bio"></textarea>
+        <textarea name="bio" placeholder="This is a full description of yourself, detailing important information and services you provide. More words equals more views!"></textarea>
     </div>
     <div class="form-row">
         <label for="live_in">Live In</label>
@@ -19,7 +19,7 @@
     </div>
     <div class="form-row">
         <label for="experience">Experience</label>
-        <textarea name="experience"></textarea>
+        <textarea name="experience" placeholder="Places you worked, i.e. XYZ Home Care Agency"></textarea>
     </div>
 
     <div class="form-row">

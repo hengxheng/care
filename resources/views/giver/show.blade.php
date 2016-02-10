@@ -249,12 +249,13 @@
 					});
 				});
 				</script>
+
+				@if (Auth::user()->user_type == "seeker")
+				<a class="dark-blue-btn back" href="{{ URL::previous() }}">Back</a>
+			@endif
 			</div>
 			@endif
 
-						@if (Auth::user()->user_type == "seeker")
-				<a class="dark-blue-btn" href="{{ URL::previous() }}">&lt; Back</a>
-			@endif
 		</div>
 
 

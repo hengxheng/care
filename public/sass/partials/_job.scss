@@ -15,6 +15,12 @@
 
 .job-view{
 	margin-bottom:25px;
+
+	.job-description {
+		margin-bottom: 30px;
+		padding-bottom: 30px;
+		border-bottom: #e3e3e3 solid 1px
+	}
 }
 .job-block{
 	.job-content {
@@ -103,6 +109,7 @@
 			float: left;
 			color: #164856;
 			font-weight: 600;
+			line-height: 16px;
 			margin: 15px 0px 5px 0px;
 			font-size: 14px;
 		}

@@ -68,14 +68,14 @@
 						 		{{ $s->firstname }} {{ $s->lastname}}
 							</div>     
 							<div class="user-location">
-					     		{{ $s->suburb }},{{ $s->state }}
+					     		<p>{{ $s->suburb }},{{ $s->state }}</p>
 							</div>       
 							<div class="sub-date">
-								Submitted on: {{ $s->created_at }}
+								<p>Submitted on: {{ $s->created_at }}</p>
 							</div>    
 							<div class="sub-content">
 								<h2>Description:</h2>
-								{{ $s->content }}
+								<p>{{ $s->content }}</p>
 							</div>	
 							@if(Auth::user()->id != $s->uid)					 
 							<div class="cta">
@@ -93,7 +93,7 @@
 	</div>
 	<div class="row">
 		<div class="col-1">
-			<a class="dark-blue-btn" href="{{ URL::previous() }}">&lt; Back</a>
+			<a class="dark-blue-btn" href="{{ URL::previous() }}">Back</a>
 		</div>
 	</div>
 @endsection

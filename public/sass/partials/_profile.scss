@@ -4,6 +4,7 @@
 
 		.block {
 			float: left;
+			@include full;
 		}
 
 		.education {

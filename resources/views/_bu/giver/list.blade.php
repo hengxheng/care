@@ -74,7 +74,7 @@
                 </div> -->
 
 
-                <div class="form-ele">
+                <div class="form-ele checkbox">
                     <label for="service-filter[]">Service Categories</label>
                     <div><input type="checkbox" name="service-filter[]" value="Alzheimer's & Dementia Care"
                         @if( isset($sf["Alzheimer's & Dementia Care"]) && $sf["Alzheimer's & Dementia Care"]) checked @endif
@@ -97,7 +97,7 @@
                         ><span>Transition Care</span></div>
                 </div>
                 
-                <div class="form-ele">
+                <div class="form-ele checkbox">
                     <label for="service2-filter[]">Services</label>
                     <div><input type="checkbox" name="service2-filter[]" value="Bathing"
                         @if( isset($sf2["Bathing"]) && $sf2["Bathing"]) checked @endif
@@ -187,18 +187,37 @@
                                  <div class="user-name">
                                      {{ $giver->firstname }} {{ $giver->lastname}}
                                  </div>
+                                <div class="last-login" style="margin-bottom: 10px;">
+                                    <p><span>Last Login:</span> {{ date('F d Y', strtotime($giver->last_login)) }}<p>
+                                </div>
+                                
                                  <div class="user-location">
-                                     {{ $giver->suburb }},{{ $giver->state }}
+                                     <p><i class="fa fa-map-marker"></i> {{ $giver->suburb }}, {{ $giver->state }}</p>
                                  </div>
                                  <div class="user-exp">
-                                     {{ str_limit($giver->bio, 200) }}
+                                    <span>Past Experience</span>
+                                    <p>{{ str_limit($giver->bio, 200) }}</p>
                                  </div>
+
                                  <div class="cta">
                                     <a class="blue-btn" href="{{ URL::route('care_givers.show', array('uid' => $giver->id )) }}">View</a>
-                                    <a class="dark-blue-btn" href="{{ URL::route('message.create', array('to_id'=>$giver->id )) }}">Send a message</a>
+                        
                                 </div>
+                                
+                             </div>
+                             <div class="user-right-box">
+                                <div class="user-rate">
+                                    <span>Hourly Rate</span>
+                                    <p>${{ $giver->rate }} per hour</p>
+                                </div>
+                                <div class="year-exp">
+                                    <span>Experience</span>
+                                    <p><!-- {{ $giver->years_exp }} -->12 years</p>
+                                </div>
+
                                 <div class="user-rating">
                                     <div class="rating">
+                                        <span>Rating</span>
                                         @if($rating[$giver->id] >0 )
                                             @for ($i=0; $i< $rating[$giver->id]; $i++)
                                                 <i class="fa fa-star fa-2x"></i>
@@ -208,15 +227,9 @@
                                         @endif
                                     </div>
                                 </div>
-                             </div>
-                             <div class="user-right-box">
-                                <div class="user-rate">
-                                    <h2>${{ $giver->rate }}</h2>
-                                    <p>per hour</p>
-                                </div>
-                                <div class="year-exp">
-                                    <h2>{{ $giver->years_exp }}</h2>
-                                    <p>years<br/>experience</p>
+
+                                <div class="cta">
+                                    <a class="dark-blue-btn" href="{{ URL::route('message.create', array('to_id'=>$giver->id )) }}">Send a message</a>
                                 </div>
                              </div>
                         </div>              
