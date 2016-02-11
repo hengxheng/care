@@ -1,18 +1,16 @@
 @extends('html')
 
 @section('content')
-
 <div id="message-menu">
 	<ul>
 		<li><a href="{{ URL::route('message.inbox') }}">Inbox</a></li>
 		<li class="active"><a href="{{ URL::route('message.sent') }}">Sent</a></li>
 	</ul>
 </div>
-
 <div id="message-main">
 	<div class="message-listing-box">
 		@if ( !$messages->count() )
-			No message!
+			<h3>You have not sent any messages!</h3>
 		@else
 		<ul>
 			@foreach ($messages as $message)
@@ -23,16 +21,17 @@
 						</div>
 						<div class="message-tease">
 							<div class="user-name">
-								To: {{ $message->firstname}} {{ $message->lastname}}
+								<span>To:</span> <h2>{{ $message->firstname}} {{ $message->lastname}}</h2>
 							</div>
 							<div class="message-content">
-								{{ str_limit($message->content, 100) }}
+								{{ str_limit($message->content, 200) }}
 							</div>
 							<div class="message-date">
-								{{ date('H:i w F d Y', strtotime($message->created_at)) }}
+								<span class="time"><i class="fa fa-clock-o"></i>{{ date('H:i', strtotime($message->created_at)) }}</span>
+								<span class="date"><i class="fa fa-calendar"></i>{{ date('jS F Y', strtotime($message->created_at)) }}</span>
 							</div>
 							<div class="cta">
-								<a class="dark-blue-btn" href="{{ URL::route('message.show', array('type' => 'to', 'id' => $message->id))}}">View</a>
+								<a class="dark-blue-btn" href="{{ URL::route('message.show', array('type' => 'to', 'id' => $message->id))}}"><i class="fa fa-envelope-o"></i>View Message</a>
 							</div>
 						</div>
 					</div>

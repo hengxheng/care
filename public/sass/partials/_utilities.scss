@@ -252,51 +252,6 @@ form{
 	}
 }
 
-// Message
-.message{
-	padding: 15px;
-	.user-img{
-		width: 15%;
-		box-sizing:border-box;
-		display: inline-block;
-		vertical-align: top;
-		padding: 10px;
-		img{
-			width: 100%;
-		}
-	}
-	.message-tease{
-		width: 60%;
-		box-sizing:border-box;
-		display: inline-block;
-		vertical-align: top;
-		padding: 10px 20px;
-		position: relative;
-		.user-name{
-			font-size: 20px;
-			color: $dark-blue;
-			margin-bottom: 15px;
-			text-transform: capitalize;
-		}
-		.message-content{
-			font-size: 16px;
-			margin-bottom: 15px;
-		}
-		.message-date{
-			font-style: italic;
-			font-size: 16px;
-			margin-bottom: 15px;
-		}
-	}
-
-	.message-body{
-		padding:15px;
-		font-size: 16px;
-	}
-	.msg-cta{
-		padding:15px;
-	}
-}
 
 .pagination-block{
 	text-align: right;

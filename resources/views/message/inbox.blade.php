@@ -10,7 +10,7 @@
 <div id="message-main">
 	<div class="message-listing-box">
 		@if ( !$messages->count() )
-			No message!
+			<h3>There are no messages in your inbox!</h3>
 		@else
 		<ul>
 			@foreach ($messages as $message)

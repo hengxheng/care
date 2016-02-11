@@ -10,27 +10,30 @@
 </div>
 <div class="message">
 	<div class="message-list-block">
-		<div class="user-img">
-			<img src="{{ URL::asset('images/user/'.$message->picture) }}" alt="">
-		</div>
+		<aside class="contact">
+			<div class="user-img">
+				<img src="{{ URL::asset('images/user/'.$message->picture) }}" alt="">
+			</div>
+		</aside>
 		<div class="message-tease">
 			<div class="user-name">
-				@if ($type == "to") To:&nbsp;
-				@elseif ($type == "from") From:&nbsp;
+				@if ($type == "to") <span>To:</span>
+				@elseif ($type == "from") <span>From:</span>
 				@endif
-				{{ $message->firstname}} {{ $message->lastname}}
+				<h2>{{ $message->firstname}} {{ $message->lastname}}</h2>
 			</div>
 			<div class="message-content">
-				{{ $message->subject }}
+				<p><span>Subject</span> {{ $message->subject }}</p>
 			</div>
 			<div class="message-date">
-				{{ date('H:i w F d Y', strtotime($message->created_at)) }}
+				<span class="time"><i class="fa fa-clock-o"></i>{{ date('H:i', strtotime($message->created_at)) }}</span>
+				<span class="date"><i class="fa fa-calendar"></i>{{ date('jS F Y', strtotime($message->created_at)) }}</span>
 			</div>
 		</div>
 	</div>
 	<div class="clear"></div>
 	<div class="message-body">
-		{!! html_entity_decode($message->content) !!}
+		<p>{!! html_entity_decode($message->content) !!}</p>
 	</div>
 	@if ($type == "from" )
 	<div class="msg-cta">
@@ -39,8 +42,8 @@
 	@endif
 </div>
 <div class="row">
-		<div class="col-1">
-			<a class="dark-blue-btn" href="{{ URL::previous() }}">&lt; Back</a>
-		</div>
+	<div class="col-1">
+		<a class="dark-blue-btn" href="{{ URL::previous() }}">Back</a>
 	</div>
+</div>
 @endsection

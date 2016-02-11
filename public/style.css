@@ -325,7 +325,7 @@ header#site-header .header-content .account-block #account-down {
   z-index: 99;
   position: absolute;
   right: -3px;
-  top: 30px;
+  top: 60px;
   background: transparent;
 }
 #account-block-menu ul {
@@ -596,8 +596,6 @@ nav#main-nav #site-nav ul .inbox {
   margin-bottom: 15px;
 }
 .message .message-tease .message-date {
-  font-style: italic;
-  font-size: 16px;
   margin-bottom: 15px;
 }
 .message .message-body {
@@ -614,12 +612,17 @@ nav#main-nav #site-nav ul .inbox {
   border: 1px solid #1E6073;
   text-align: center;
   background: #fff;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  border-radius: 4px;
 }
 #message-menu ul li a {
-  font-size: 16px;
+  font-size: 14px;
   color: #164856;
   display: block;
   height: 100%;
+  font-weight: 600;
   width: 100%;
   padding: 10px 0;
 }
@@ -641,7 +644,7 @@ nav#main-nav #site-nav ul .inbox {
   position: relative;
 }
 #message-main ul li:first-child {
-  border-top: 1px solid #ccc;
+  border-top: 0px solid #ccc;
 }
 #message-main ul li .user-img {
   width: 15%;
@@ -652,6 +655,10 @@ nav#main-nav #site-nav ul .inbox {
 }
 #message-main ul li .user-img img {
   width: 100%;
+  -webkit-border-radius: 200px;
+  -moz-border-radius: 200px;
+  -ms-border-radius: 200px;
+  border-radius: 200px;
 }
 #message-main ul li .message-tease {
   width: 78%;
@@ -667,19 +674,90 @@ nav#main-nav #site-nav ul .inbox {
   margin-bottom: 15px;
   text-transform: capitalize;
 }
+#message-main ul li .message-tease .user-name span {
+  color: #164856;
+  font-size: 14px;
+  margin-top: 20px;
+  font-weight: 600;
+}
+#message-main ul li .message-tease .user-name h2 {
+  color: #343434;
+}
 #message-main ul li .message-tease .message-content {
   font-size: 16px;
   margin-bottom: 15px;
 }
 #message-main ul li .message-tease .message-date {
-  font-style: italic;
+  font-weight: 600;
   font-size: 16px;
   margin-bottom: 15px;
+  color: #1E6073;
+  float: left;
+}
+#message-main ul li .message-tease .message-date span {
+  clear: both;
+  float: left;
+}
+#message-main ul li .message-tease .message-date i {
+  width: 20px;
+  color: #164856;
 }
 #message-main ul li .message-tease .cta {
-  position: absolute;
-  right: 0;
-  top: 20%;
+  float: left;
+  margin-left: 30px;
+}
+#message-main ul li .message-tease .cta a i {
+  opacity: 0.5;
+  margin-right: 10px;
+}
+
+.message .message-list-block aside.contact {
+  float: left;
+  width: 11%;
+}
+.message .message-list-block aside.contact .user-img {
+  display: block;
+  width: 100%;
+  float: left;
+}
+.message .message-list-block aside.contact img {
+  width: 100%;
+  -webkit-border-radius: 200px;
+  -moz-border-radius: 200px;
+  -ms-border-radius: 200px;
+  border-radius: 200px;
+}
+.message .message-list-block .user-name span {
+  display: block;
+  width: 100%;
+  float: left;
+  color: #164856;
+  font-size: 14px;
+  font-weight: 600;
+}
+.message .message-list-block .message-content span {
+  display: block;
+  width: 100%;
+  float: left;
+  color: #164856;
+  font-size: 14px;
+  font-weight: 600;
+}
+.message .message-list-block .message-date {
+  font-weight: 600;
+  font-size: 16px;
+  margin-bottom: 15px;
+  color: #1E6073;
+  float: left;
+  font-style: normal;
+}
+.message .message-list-block .message-date span {
+  clear: both;
+  float: left;
+}
+.message .message-list-block .message-date i {
+  width: 20px;
+  color: #164856;
 }
 
 .msg-notify {
@@ -1461,50 +1539,6 @@ form .desc textarea {
 }
 .block .block-content p {
   margin-bottom: 5px;
-}
-
-.message {
-  padding: 15px;
-}
-.message .user-img {
-  width: 15%;
-  box-sizing: border-box;
-  display: inline-block;
-  vertical-align: top;
-  padding: 10px;
-}
-.message .user-img img {
-  width: 100%;
-}
-.message .message-tease {
-  width: 60%;
-  box-sizing: border-box;
-  display: inline-block;
-  vertical-align: top;
-  padding: 10px 20px;
-  position: relative;
-}
-.message .message-tease .user-name {
-  font-size: 20px;
-  color: #164856;
-  margin-bottom: 15px;
-  text-transform: capitalize;
-}
-.message .message-tease .message-content {
-  font-size: 16px;
-  margin-bottom: 15px;
-}
-.message .message-tease .message-date {
-  font-style: italic;
-  font-size: 16px;
-  margin-bottom: 15px;
-}
-.message .message-body {
-  padding: 15px;
-  font-size: 16px;
-}
-.message .msg-cta {
-  padding: 15px;
 }
 
 .pagination-block {

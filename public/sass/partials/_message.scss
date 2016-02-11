@@ -29,8 +29,6 @@
 			margin-bottom: 15px;
 		}
 		.message-date{
-			font-style: italic;
-			font-size: 16px;
 			margin-bottom: 15px;
 		}
 	}
@@ -53,11 +51,13 @@
 			border:1px solid $blue;
 			text-align:center;		
 			background: #fff;
+			@include border-radius(4px);
 			a{
-				font-size: 16px;
+				font-size: 14px;
 				color:$dark-blue;
 				display:block;
 				height:100%;
+				font-weight: $bold;
 				width: 100%;
 				padding: 10px 0;			
 			}
@@ -83,7 +83,7 @@
 			margin-bottom: 25px;
 			position: relative;
 			&:first-child{
-				border-top:1px solid #ccc;
+				border-top:0px solid #ccc;
 			}
 
 			.user-img{
@@ -94,6 +94,7 @@
 				padding: 10px;
 				img{
 					width: 100%;
+					@include border-radius(200px);
 				}
 			}
 			.message-tease{
@@ -108,25 +109,109 @@
 					color: $dark-blue;
 					margin-bottom: 15px;
 					text-transform: capitalize;
+
+					span {
+						color: #164856;
+						font-size: 14px;
+						margin-top: 20px;
+						font-weight: $bold;
+					}
+
+					h2 {
+						color: #343434;
+					}
 				}
 				.message-content{
 					font-size: 16px;
 					margin-bottom: 15px;
 				}
 				.message-date{
-					font-style: italic;
+					font-weight: $bold;
 					font-size: 16px;
 					margin-bottom: 15px;
+					color: $blue;
+					float: left;
+					
+					span {
+						clear: both;
+						float: left;
+					}
+
+					i {
+						width: 20px;
+						color: $dark-blue;
+					}
 				}
+
 				.cta{
-					position:absolute;
-					right:0;
-					top:20%;
+					float: left;
+					margin-left: 30px;
+
+					a {
+						i {
+							opacity: 0.5;
+							margin-right: 10px;
+						}
+					}
 				}
-			}
-			
-			
+			}	
 		}
+	}
+}
+
+
+.message {
+	.message-list-block {
+		aside.contact {
+			float: left;
+			width: 11%;
+
+			.user-img {
+				@include full;
+			}
+
+			img {
+				width: 100%;
+				@include border-radius(200px);
+			}
+		}
+
+		.user-name {
+			span {
+				@include full;
+				color: #164856;
+    			font-size: 14px;
+    			font-weight: 600;
+			}
+		}
+
+		.message-content {
+			span {
+				@include full;
+				color: #164856;
+    			font-size: 14px;
+    			font-weight: 600;
+			}
+		}
+
+		.message-date{
+					font-weight: $bold;
+					font-size: 16px;
+					margin-bottom: 15px;
+					color: $blue;
+					float: left;
+					font-style: normal;
+					
+					span {
+						clear: both;
+						float: left;
+					}
+
+					i {
+						width: 20px;
+						color: $dark-blue;
+					}
+				}
 	}
 }
 

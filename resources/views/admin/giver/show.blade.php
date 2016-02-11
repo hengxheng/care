@@ -36,6 +36,8 @@
 					@endif
 					@if (Auth::user()->user_type == 'seeker')
 						<a class="dark-blue-btn" href="{{ URL::route('message.create', array('to_id'=>$the_giver -> uid )) }}">Send a message</a>
+
+						
 					@endif
 				</div>
 
