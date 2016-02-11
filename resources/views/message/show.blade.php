@@ -1,5 +1,7 @@
 @extends('html')
 
+@section('pageType', 'sent-messages')
+@endsection
 @section('content')
 
 <div id="message-menu">
@@ -14,8 +16,8 @@
 			<div class="user-img">
 				<img src="{{ URL::asset('images/user/'.$message->picture) }}" alt="">
 			</div>
-		</aside>
-		<div class="message-tease">
+
+			<div class="message-tease">
 			<div class="user-name">
 				@if ($type == "to") <span>To:</span>
 				@elseif ($type == "from") <span>From:</span>
@@ -30,8 +32,8 @@
 				<span class="date"><i class="fa fa-calendar"></i>{{ date('jS F Y', strtotime($message->created_at)) }}</span>
 			</div>
 		</div>
+		</aside>
 	</div>
-	<div class="clear"></div>
 	<div class="message-body">
 		<p>{!! html_entity_decode($message->content) !!}</p>
 	</div>

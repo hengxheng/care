@@ -711,14 +711,25 @@ nav#main-nav #site-nav ul .inbox {
   margin-right: 10px;
 }
 
+.sent-messages .message-tease {
+  width: 50%;
+  float: left;
+  padding: 10px 0px 0px 0px;
+}
+
+.message .message-list-block {
+  float: left;
+  width: 30%;
+}
 .message .message-list-block aside.contact {
   float: left;
-  width: 11%;
+  width: 100%;
 }
 .message .message-list-block aside.contact .user-img {
-  display: block;
-  width: 100%;
   float: left;
+  width: 35%;
+  margin-right: 5%;
+  padding: 10px 0px 0px 0px;
 }
 .message .message-list-block aside.contact img {
   width: 100%;

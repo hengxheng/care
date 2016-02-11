@@ -42,7 +42,6 @@
 	}
 }
 
-
 #message-menu{
 	ul{
 		li{
@@ -160,14 +159,28 @@
 }
 
 
+.sent-messages {
+	.message-tease {
+		width: 50%;
+		float: left;
+		padding: 10px 0px 0px 0px;
+	}
+}
+
 .message {
 	.message-list-block {
+		float: left;
+		width: 30%;
+
 		aside.contact {
 			float: left;
-			width: 11%;
+			width: 100%;
 
 			.user-img {
-				@include full;
+				float: left;
+				width: 35%;
+				margin-right: 5%;
+				padding: 10px 0px 0px 0px;
 			}
 
 			img {
