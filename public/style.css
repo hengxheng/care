@@ -72,7 +72,8 @@ textarea {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-weight: 600;
+  font-family: "museo-sans", sans-serif;
+  font-weight: 900;
 }
 
 h1 {
@@ -1570,21 +1571,56 @@ form .desc textarea {
 }
 
 .flash {
-  padding: 20px 35px;
-  font-size: 18px;
-  margin: 10px 0px;
   font-weight: 600;
   width: auto;
 }
 .flash p {
   font-size: 14px;
+  display: block;
+  width: 100%;
+  float: left;
+}
+.flash ul {
+  display: block;
+  width: 100%;
+  float: left;
+  margin: 0px 0px 20px 0px;
+}
+.flash ul li {
+  float: left;
+  width: auto;
+  padding: 5px 1% 5px 2.5%;
+  margin-right: 20px;
+  position: relative;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  border-radius: 4px;
 }
 .flash.alert-info {
   color: #0C9A0C;
 }
-.flash.alert-danger {
+.flash.alert-danger li {
   color: #fff;
   background-color: #d80808;
+}
+.flash.alert-danger li:after {
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: inherit;
+  /*--adjust as necessary--*/
+  color: #000;
+  font-size: 18px;
+  padding-right: 0.5em;
+  position: absolute;
+  top: 10px;
+  left: 0;
+  content: '\f00d';
+  color: #fff;
+  left: 11px;
+  top: 4px;
+  font-size: 13px;
 }
 
 #forgot_password {

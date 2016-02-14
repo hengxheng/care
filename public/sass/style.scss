@@ -21,6 +21,7 @@ $text-color:#000;
 $placeholder-color:#bbb;
 
 $proxima: "proxima-nova",sans-serif;
+$museo: "museo-sans",sans-serif;
 
 //Transition Mixin
 @mixin transition($args...) {
@@ -93,7 +94,8 @@ textarea {
 }
 
 h1, h2, h3, h4, h5 ,h6 {
-	font-weight: $bold;
+	font-family: $museo;
+	font-weight: 900;
 }
 
 h1{

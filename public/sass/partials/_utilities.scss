@@ -273,22 +273,45 @@ form{
 }
 
 .flash{
-	padding: 20px 35px;
-	font-size: 18px;
-	margin: 10px 0px;
 	font-weight: $bold;
 	width: auto;
 	
 	p {
 		font-size: 14px;
+		@include full;
+	}
+
+	ul {
+		@include full; 
+		margin: 0px 0px 20px 0px;
+
+		li {
+			float: left;
+			width: auto;
+			padding: 5px 1% 5px 2.5%;
+			margin-right: 20px;
+			position: relative;
+			@include border-radius(4px);
+
+
+		}
 	}
 
 	&.alert-info{
 		color: #0C9A0C; 
 	}
-	&.alert-danger{
+	&.alert-danger li{
 		color: #fff;
 		background-color: #d80808;
+
+		&:after {
+			@include fontawesome;
+			content: '\f00d';
+			color: #fff;
+			left: 11px;
+			top: 4px;
+			font-size: 13px;
+		}
 	}
 }
 
