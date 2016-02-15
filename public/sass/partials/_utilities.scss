@@ -38,7 +38,7 @@ form{
 	width:40%;
 
 	input {
-		-webkit-appearance: !important;
+		-webkit-appearance: none !important;
 	}
 
 	@include bp-small {
