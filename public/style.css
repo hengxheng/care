@@ -1167,10 +1167,22 @@ nav#main-nav #site-nav ul .inbox {
 .job-view {
   margin-bottom: 25px;
 }
+.job-view .block {
+  display: block;
+  width: 100%;
+  float: left;
+}
 .job-view .job-description {
   margin-bottom: 30px;
   padding-bottom: 30px;
+  display: block;
+  width: 100%;
+  float: left;
   border-bottom: #e3e3e3 solid 1px;
+}
+.job-view .start-date, .job-view .service-type, .job-view .location {
+  float: left;
+  width: 20%;
 }
 
 .job-block .job-content {
@@ -1289,6 +1301,12 @@ nav#main-nav #site-nav ul .inbox {
 }
 .job-block .job-snapshot i {
   margin-right: 5px;
+}
+
+.sub-list {
+  display: block;
+  width: 100%;
+  float: left;
 }
 
 .post-a-job form {

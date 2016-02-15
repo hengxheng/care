@@ -4,22 +4,24 @@
 		<div class="job-title block">
 			<div class="block-content">		
 				<h2>{{ $job->title }} <span>{{ $job->status }}</span></h2>
-				<p>{{ $job->created_at }}</p>
 			</div>	
 		</div>
-		<div class="job-description block">
-			<h2 class="block-title">Job Description</h2>
+
+		<div class="block start-date">
+			<h2 class="block-title">Date Created</h2>
 			<div class="block-content">
-				<p>{{ $job->description }}</p>
+				<p>{{ $job->created_at }}</p>
 			</div>
 		</div>
-		<div class="block">
+
+		<div class="block start-date">
 			<h2 class="block-title">Start Date</h2>
 			<div class="block-content">
 				<p>{{ $job->start_date}}</p>
 			</div>
 		</div>
-		<div class="block">
+
+		<div class="block service-type">
 			<h2 class="block-title">Service Type</h2>
 			<div class="block-content">
 				<ul class="service-list">
@@ -33,10 +35,16 @@
 				</ul>
 			</div>
 		</div>
-		<div class="block">
+		<div class="block location">
 			<h2 class="block-title">Location</h2>
 			<div class="block-content">
 				<p>{{ $job->suburb }}, {{ $job->state }}</p>
+			</div>
+		</div>
+		<div class="job-description block">
+			<h2 class="block-title">Job Description</h2>
+			<div class="block-content">
+				<p>{{ $job->description }}</p>
 			</div>
 		</div>
 		@if (Auth::user()->id == $job->poster_id)

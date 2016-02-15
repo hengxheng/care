@@ -16,10 +16,20 @@
 .job-view{
 	margin-bottom:25px;
 
+	.block {
+		@include full;
+	}
+
 	.job-description {
 		margin-bottom: 30px;
 		padding-bottom: 30px;
+		@include full;
 		border-bottom: #e3e3e3 solid 1px
+	}
+
+	.start-date, .service-type, .location {
+		float: left;
+		width: 20%;
 	}
 }
 .job-block{
@@ -123,4 +133,8 @@
 			margin-right: 5px;
 		}
 	}
+}
+
+.sub-list {
+	@include full;
 }
