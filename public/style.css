@@ -1692,6 +1692,9 @@ form {
   display: inline-block;
   width: 40%;
 }
+form input {
+  -webkit-appearance: !important;
+}
 @media only screen and (max-width: 30em) {
   form {
     display: block;
@@ -2280,8 +2283,8 @@ form .desc textarea {
     margin-bottom: 10px;
   }
   #site-footer .fourth:nth-child(2) {
-    margin-left: 3.5%;
-    margin-right: 3.5%;
+    margin-left: 0px;
+    margin-right: 0px;
   }
   #site-footer .fourth:last-child {
     display: block;
