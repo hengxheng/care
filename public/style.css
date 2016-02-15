@@ -1151,6 +1151,10 @@ nav#main-nav #site-nav ul .inbox {
   margin-top: 15px;
 }
 
+.sub-block .user-location {
+  margin-bottom: 10px;
+}
+
 .listing-box {
   padding: 25px 0;
   box-sizing: border-box;
@@ -1167,9 +1171,52 @@ nav#main-nav #site-nav ul .inbox {
 .job-view {
   margin-bottom: 25px;
 }
+.job-view .page-title {
+  display: block;
+  width: 100%;
+  float: left;
+}
+.job-view .page-title h2 {
+  width: auto;
+  float: left;
+}
+.job-view .page-title span {
+  background-color: #2F8A2F;
+  color: #fff;
+  width: auto;
+  font-size: 14px;
+  text-align: right;
+  padding: 9px 20px 9px 33px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  border-radius: 4px;
+  float: right;
+  position: relative;
+}
+.job-view .page-title span:after {
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: inherit;
+  /*--adjust as necessary--*/
+  color: #000;
+  font-size: 18px;
+  padding-right: 0.5em;
+  position: absolute;
+  top: 10px;
+  left: 0;
+  content: '\f00c';
+  color: #fff;
+  left: 11px;
+  font-size: 13px;
+}
 .job-view .block {
   display: block;
   width: 100%;
+  float: left;
+}
+.job-view .job-action {
   float: left;
 }
 .job-view .job-description {
@@ -1307,6 +1354,7 @@ nav#main-nav #site-nav ul .inbox {
   display: block;
   width: 100%;
   float: left;
+  margin-top: 30px;
 }
 
 .post-a-job form {

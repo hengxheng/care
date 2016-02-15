@@ -1,10 +1,8 @@
 @extends ('html')
 @section ('content')
 	<div class="job-view">
-		<div class="job-title block">
-			<div class="block-content">		
-				<h2>{{ $job->title }} <span>{{ $job->status }}</span></h2>
-			</div>	
+		<div class="page-title">	
+			<h2>{{ $job->title }}</h2><span>{{ $job->status }}</span></h2>
 		</div>
 
 		<div class="block start-date">
@@ -47,15 +45,20 @@
 				<p>{{ $job->description }}</p>
 			</div>
 		</div>
+		
+		<div class="clear"></div>
+
 		@if (Auth::user()->id == $job->poster_id)
 		<div class="job-action">
 			<a class="blue-btn" href="{{ URL::route('job.edit', array('id' => $job -> id))}}">Edit</a>
 			<a class="dark-blue-btn" href="{{ URL::route('job.delete', array('id' => $job->id )) }}">Delete</a>
+			<a class="dark-blue-btn" href="{{ URL::previous() }}">Back</a>
 		</div>
 		@endif
 		@if (Auth::user()->user_type == "giver" && !$applied)
 		<div class="job-action">
-			<a href="{{ URL::route('submission.create', array('jid' => $job->id, 'uid'=> Auth::user()->id)) }}" class="blue-btn">APPLY VIA MESSAGE</a>
+			<a href="{{ URL::route('submission.create', array('jid' => $job->id, 'uid'=> Auth::user()->id)) }}" class="blue-btn">Apply for the role</a>
+			<a class="dark-blue-btn" href="{{ URL::previous() }}">Back</a>
 		</div>
 		@endif
 	</div>
@@ -73,13 +76,13 @@
 	                    </div>
                      	<div class="user-info">
 							<div class="user-name">
-						 		{{ $s->firstname }} {{ $s->lastname}}
+						 		<h3>{{ $s->firstname }} {{ $s->lastname}}</h3>
 							</div>     
 							<div class="user-location">
-					     		<p>{{ $s->suburb }},{{ $s->state }}</p>
+					     		<p><i class="fa fa-map-marker"></i> {{ $s->suburb }},{{ $s->state }}</p>
 							</div>       
 							<div class="sub-date">
-								<p>Submitted on: {{ $s->created_at }}</p>
+								<p><i class="fa fa-map-marker"></i>Submitted on: {{ $s->created_at }}</p>
 							</div>    
 							<div class="sub-content">
 								<h2>Description:</h2>
@@ -98,10 +101,5 @@
             </li>
 			@endforeach
 		</ul>
-	</div>
-	<div class="row">
-		<div class="col-1">
-			<a class="dark-blue-btn" href="{{ URL::previous() }}">Back</a>
-		</div>
 	</div>
 @endsection

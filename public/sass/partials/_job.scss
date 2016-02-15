@@ -16,8 +16,41 @@
 .job-view{
 	margin-bottom:25px;
 
+	.page-title {
+
+		@include full; 
+		h2 {
+			width: auto;
+			float: left;
+		}
+
+		span {
+			background-color: #2F8A2F;
+			color: #fff;
+			width: auto;
+			font-size: 14px;
+			text-align: right;
+			padding: 9px 20px 9px 33px;
+			@include border-radius(4px);
+			float: right;
+			position: relative;
+
+			&:after {
+				@include fontawesome;
+				content: '\f00c';
+				color: #fff;
+				left: 11px;
+				font-size: 13px;
+			}
+		}
+	}
+
 	.block {
 		@include full;
+	}
+
+	.job-action {
+		float: left;
 	}
 
 	.job-description {
@@ -137,4 +170,5 @@
 
 .sub-list {
 	@include full;
+	margin-top: 30px;
 }
