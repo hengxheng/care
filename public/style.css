@@ -102,6 +102,12 @@ p {
   font-size: 42px;
   margin: 10px 0px 40px 0px;
 }
+@media only screen and (max-width: 30em) {
+  .welcome.title h1 {
+    font-size: 30px;
+    margin: 30px 0px;
+  }
+}
 
 .home-page .page-main {
   background: url(images/temp-image.jpg) no-repeat center;
@@ -126,6 +132,13 @@ body {
   box-sizing: border-box;
   overflow: hidden;
 }
+@media only screen and (max-width: 1024px) {
+  .site-inner {
+    width: 95%;
+    margin: 0px 2.5%;
+    padding: 0px 0px 0px 0px;
+  }
+}
 
 .full-wide {
   width: 100%;
@@ -143,6 +156,12 @@ body {
   width: 100%;
   padding: 15px;
   box-sizing: border-box;
+}
+@media only screen and (max-width: 30em) {
+  .row .col-1 {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
 }
 .row .col-2 {
   width: 50%;
@@ -179,6 +198,18 @@ body {
   float: left;
   box-sizing: border-box;
   padding-left: 30px;
+}
+@media only screen and (max-width: 768px) {
+  .content-with-sidebar {
+    padding-left: 2%;
+    width: 67%;
+  }
+}
+@media only screen and (max-width: 30em) {
+  .content-with-sidebar {
+    padding-left: 0%;
+    width: 100%;
+  }
 }
 
 .service2-list li {
@@ -227,6 +258,16 @@ header#site-header .header-top {
   width: 100%;
   float: left;
 }
+@media only screen and (max-width: 1024px) {
+  header#site-header .header-top {
+    padding: 10px 0px;
+  }
+}
+@media only screen and (max-width: 30em) {
+  header#site-header .header-top {
+    padding: 0px 0px 0px 0px;
+  }
+}
 header#site-header .header-top ul {
   display: inline-block;
 }
@@ -245,11 +286,26 @@ header#site-header .header-top ul li i {
 header#site-header .header-top .contact {
   float: left;
 }
+@media only screen and (max-width: 768px) {
+  header#site-header .header-top .contact {
+    display: none;
+  }
+}
 header#site-header .header-top .contact i {
   margin-right: 5px;
 }
 header#site-header .header-top #sub-nav {
   float: right;
+}
+@media only screen and (max-width: 768px) {
+  header#site-header .header-top #sub-nav {
+    float: left;
+  }
+}
+@media only screen and (max-width: 30em) {
+  header#site-header .header-top #sub-nav {
+    display: none;
+  }
 }
 header#site-header .header-content {
   padding: 15px 0;
@@ -261,12 +317,33 @@ header#site-header .header-content {
   position: relative;
   overflow: visible;
 }
+@media only screen and (max-width: 30em) {
+  header#site-header .header-content {
+    border-bottom: #164856 solid 10px;
+    border-top: #164856 solid 10px;
+    margin-bottom: 20px;
+  }
+}
 header#site-header .header-content .site-inner {
   position: relative;
   overflow: visible;
 }
 header#site-header .header-content .logo {
   float: left;
+}
+header#site-header .header-content .menu-btn {
+  color: #fff;
+  font-weight: 900;
+  font-size: 22px;
+  position: absolute;
+  top: 15px;
+  right: 16px;
+  display: none;
+}
+@media only screen and (max-width: 30em) {
+  header#site-header .header-content .menu-btn {
+    display: block;
+  }
 }
 header#site-header .header-content .account-block {
   position: absolute;
@@ -276,6 +353,11 @@ header#site-header .header-content .account-block {
   float: right;
   color: #fff;
   z-index: 999;
+}
+@media only screen and (max-width: 30em) {
+  header#site-header .header-content .account-block {
+    display: none;
+  }
 }
 header#site-header .header-content .account-block .account-inner {
   padding: 0px 0px 0px 0px;
@@ -395,6 +477,11 @@ nav#main-nav {
   width: 100%;
   float: left;
 }
+@media only screen and (max-width: 30em) {
+  nav#main-nav {
+    display: none;
+  }
+}
 nav#main-nav .nav-inner {
   position: relative;
 }
@@ -421,6 +508,39 @@ nav#main-nav #site-nav ul li a {
 nav#main-nav #site-nav ul .inbox {
   float: right;
   padding-right: 35px;
+}
+
+.pushy .mini-account {
+  width: 90%;
+  padding: 10px 5%;
+  color: #fff !important;
+}
+.pushy .mini-account h2 {
+  text-transform: capitalize;
+  color: #fff;
+  margin-top: 8px;
+  margin-bottom: 5px;
+}
+.pushy .mini-account .account-block-img {
+  float: left;
+  width: 30%;
+  padding-right: 5%;
+}
+.pushy .mini-account img {
+  max-width: 100%;
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
+  -ms-border-radius: 100px;
+  border-radius: 100px;
+}
+.pushy ul {
+  display: block;
+  width: 100%;
+  float: left;
+  padding-bottom: 20px;
+}
+.pushy ul li {
+  position: relative;
 }
 
 .dark-blue-btn {
@@ -618,6 +738,11 @@ nav#main-nav #site-nav ul .inbox {
   -ms-border-radius: 4px;
   border-radius: 4px;
 }
+@media only screen and (max-width: 30em) {
+  #message-menu ul li {
+    width: 48.5%;
+  }
+}
 #message-menu ul li a {
   font-size: 14px;
   color: #164856;
@@ -637,12 +762,22 @@ nav#main-nav #site-nav ul .inbox {
 #message-main {
   padding: 15px;
 }
+@media only screen and (max-width: 30em) {
+  #message-main {
+    padding: 15px 0px;
+  }
+}
 #message-main ul li {
   border-bottom: 1px solid #ccc;
   color: #164856;
   padding: 15px;
   margin-bottom: 25px;
   position: relative;
+}
+@media only screen and (max-width: 30em) {
+  #message-main ul li {
+    padding: 15px 0px;
+  }
 }
 #message-main ul li:first-child {
   border-top: 0px solid #ccc;
@@ -653,6 +788,11 @@ nav#main-nav #site-nav ul .inbox {
   display: inline-block;
   vertical-align: top;
   padding: 10px;
+}
+@media only screen and (max-width: 30em) {
+  #message-main ul li .user-img {
+    display: none;
+  }
 }
 #message-main ul li .user-img img {
   width: 100%;
@@ -668,6 +808,14 @@ nav#main-nav #site-nav ul .inbox {
   vertical-align: top;
   padding: 10px 20px;
   position: relative;
+}
+@media only screen and (max-width: 30em) {
+  #message-main ul li .message-tease {
+    padding: 30px 0px 0px 0px;
+    display: block;
+    width: 100%;
+    float: left;
+  }
 }
 #message-main ul li .message-tease .user-name {
   font-size: 20px;
@@ -706,6 +854,12 @@ nav#main-nav #site-nav ul .inbox {
 #message-main ul li .message-tease .cta {
   float: left;
   margin-left: 30px;
+}
+@media only screen and (max-width: 30em) {
+  #message-main ul li .message-tease .cta {
+    margin-left: 0px;
+    clear: both;
+  }
 }
 #message-main ul li .message-tease .cta a i {
   opacity: 0.5;
@@ -792,6 +946,13 @@ nav#main-nav #site-nav ul .inbox {
   -ms-border-radius: 5px;
   border-radius: 5px;
 }
+@media only screen and (max-width: 30em) {
+  .msg-notify {
+    position: absolute;
+    top: 6px;
+    right: 14px;
+  }
+}
 
 .giver-profile .profile-block .content {
   width: 80%;
@@ -819,11 +980,29 @@ nav#main-nav #site-nav ul .inbox {
 .profile-block {
   margin-top: 40px;
 }
+@media only screen and (max-width: 30em) {
+  .profile-block {
+    margin-top: 0px;
+  }
+}
 .profile-block aside.contact {
   float: left;
   width: 15%;
   min-height: 300px;
   position: relative;
+}
+@media only screen and (max-width: 768px) {
+  .profile-block aside.contact {
+    width: 25%;
+  }
+}
+@media only screen and (max-width: 30em) {
+  .profile-block aside.contact {
+    width: 100%;
+  }
+  .profile-block aside.contact .profile-image img {
+    width: 40% !important;
+  }
 }
 .profile-block aside.contact .edit-btn {
   position: relative;
@@ -877,9 +1056,20 @@ nav#main-nav #site-nav ul .inbox {
 }
 .profile-block .content {
   float: left;
-  width: 55%;
+  width: 75%;
   padding: 0px 2.5%;
   min-height: 300px;
+}
+@media only screen and (max-width: 768px) {
+  .profile-block .content {
+    width: 65%;
+  }
+}
+@media only screen and (max-width: 30em) {
+  .profile-block .content {
+    width: 100%;
+    padding: 0px 0px 0px 0px;
+  }
 }
 .profile-block .content .block {
   position: relative;
@@ -894,16 +1084,11 @@ nav#main-nav #site-nav ul .inbox {
   float: left;
   padding-top: 30px;
   margin-top: 30px;
-  border-top: 1px solid #164856;
+  border-top: 1px solid #e3e3e3;
 }
 .profile-block .content p {
   line-height: 20px;
   margin-bottom: 10px;
-}
-.profile-block aside.ratings {
-  float: left;
-  width: 25%;
-  min-height: 300px;
 }
 .profile-block .profile-info {
   display: inline-block;
@@ -945,6 +1130,47 @@ nav#main-nav #site-nav ul .inbox {
   -moz-border-radius: 4px;
   -ms-border-radius: 4px;
   border-radius: 4px;
+}
+@media only screen and (max-width: 768px) {
+  .filter-sidebar {
+    width: 33%;
+  }
+}
+@media only screen and (max-width: 30em) {
+  .filter-sidebar {
+    display: block;
+    width: 100%;
+    float: left;
+  }
+  .filter-sidebar * {
+    display: none;
+  }
+  .filter-sidebar h2 {
+    display: block;
+    margin: 0px 0px 0px 0px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    position: relative;
+  }
+  .filter-sidebar h2:after {
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+    /*--adjust as necessary--*/
+    color: #000;
+    font-size: 18px;
+    padding-right: 0.5em;
+    position: absolute;
+    top: 10px;
+    left: 0;
+    content: '\f078';
+    color: #164856;
+    position: absolute;
+    top: 5px;
+    right: 0px;
+    left: auto;
+  }
 }
 .filter-sidebar form {
   width: 100%;
@@ -1063,6 +1289,18 @@ nav#main-nav #site-nav ul .inbox {
   position: relative;
   font-size: 14px;
 }
+@media only screen and (max-width: 768px) {
+  .user-block .user-info {
+    padding: 10px 0px;
+  }
+}
+@media only screen and (max-width: 30em) {
+  .user-block .user-info {
+    display: block;
+    width: 100%;
+    float: left;
+  }
+}
 .user-block .user-info .user-name {
   font-size: 32px;
   color: #164856;
@@ -1115,6 +1353,23 @@ nav#main-nav #site-nav ul .inbox {
   padding: 0px 15px 20px 15px;
   color: #000;
 }
+@media only screen and (max-width: 768px) {
+  .user-block .user-right-box {
+    padding: 0px 0px 0px 0px;
+    width: 34%;
+  }
+}
+@media only screen and (max-width: 30em) {
+  .user-block .user-right-box {
+    display: block;
+    width: 100%;
+    float: left;
+  }
+  .user-block .user-right-box > div {
+    float: left;
+    width: 50% !important;
+  }
+}
 .user-block .user-right-box * {
   color: #000;
 }
@@ -1152,7 +1407,11 @@ nav#main-nav #site-nav ul .inbox {
 }
 
 .sub-block .user-location {
-  margin-bottom: 10px;
+  margin-bottom: 0px !important;
+}
+.sub-block i {
+  color: #164856 !important;
+  margin-right: 5px !important;
 }
 
 .listing-box {
@@ -1168,9 +1427,6 @@ nav#main-nav #site-nav ul .inbox {
   overflow: hidden;
 }
 
-.job-view {
-  margin-bottom: 25px;
-}
 .job-view .page-title {
   display: block;
   width: 100%;
@@ -1231,7 +1487,27 @@ nav#main-nav #site-nav ul .inbox {
   float: left;
   width: 20%;
 }
+@media only screen and (max-width: 30em) {
+  .job-view .start-date, .job-view .service-type, .job-view .location {
+    width: 50%;
+  }
+}
 
+.listing-box ul li .job-content {
+  position: relative;
+}
+.listing-box ul li .job-title {
+  float: left;
+}
+.listing-box ul li .job-state {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+}
+
+.job-block {
+  position: relative;
+}
 .job-block .job-content {
   float: left;
   width: 65%;
@@ -1239,6 +1515,22 @@ nav#main-nav #site-nav ul .inbox {
 .job-block .job-title {
   float: left;
   width: 60%;
+}
+.job-block .job-title h2 .span {
+  background-color: #2F8A2F;
+  color: #fff;
+  width: auto;
+  text-align: right;
+  padding: 9px 20px 9px 33px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  border-radius: 4px;
+  float: right;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  font-size: 16px;
 }
 .job-block .job-title h3 {
   font-size: 32px;
@@ -1252,6 +1544,9 @@ nav#main-nav #site-nav ul .inbox {
   width: auto;
   font-weight: 600;
   position: relative;
+  position: absolute;
+  top: 0px;
+  right: 0px;
 }
 .job-block .active {
   background-color: #2F8A2F;
@@ -1264,6 +1559,10 @@ nav#main-nav #site-nav ul .inbox {
   -ms-border-radius: 4px;
   border-radius: 4px;
   float: right;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  font-size: 16px;
 }
 .job-block .active:after {
   font-family: FontAwesome;
@@ -1373,6 +1672,13 @@ nav#main-nav #site-nav ul .inbox {
   width: 33%;
   padding-top: 5px;
 }
+@media only screen and (max-width: 30em) {
+  .post-a-job form .form-row.service > div {
+    display: block;
+    width: 100%;
+    float: left;
+  }
+}
 .post-a-job form .form-row.postcode,
 .post-a-job form .form-row.start {
   width: 48%;
@@ -1386,9 +1692,23 @@ form {
   display: inline-block;
   width: 40%;
 }
+@media only screen and (max-width: 30em) {
+  form {
+    display: block;
+    width: 100%;
+    float: left;
+  }
+}
 form .half {
   width: 48%;
   float: left;
+}
+@media only screen and (max-width: 768px) {
+  form .half {
+    display: block;
+    width: 100%;
+    float: left;
+  }
 }
 form .half.first {
   margin-right: 2%;
@@ -1528,6 +1848,13 @@ form .desc textarea {
   -ms-border-radius: 4px;
   border-radius: 4px;
 }
+@media only screen and (max-width: 768px) {
+  .login-block {
+    display: block;
+    width: 100%;
+    float: left;
+  }
+}
 .login-block form {
   width: 100%;
 }
@@ -1536,8 +1863,24 @@ form .desc textarea {
   width: 49%;
   float: left;
 }
+@media only screen and (max-width: 30em) {
+  .login-block form .first,
+  .login-block form .second {
+    display: block;
+    width: 100%;
+    float: left;
+  }
+}
 .login-block form .first {
   margin-right: 2%;
+}
+.login-block .submit {
+  text-align: center;
+}
+@media only screen and (max-width: 30em) {
+  .login-block .submit input[type="submit"] {
+    float: none;
+  }
 }
 
 .register-block-container {
@@ -1553,6 +1896,24 @@ form .desc textarea {
   -ms-border-radius: 4px;
   border-radius: 4px;
 }
+@media only screen and (max-width: 768px) {
+  .register-block-container {
+    display: block;
+    width: 100%;
+    float: left;
+    margin-top: 25px;
+    min-height: 195px;
+  }
+}
+@media only screen and (max-width: 30em) {
+  .register-block-container {
+    display: block;
+    width: 100%;
+    float: left;
+    padding: 5% 1%;
+    text-align: center;
+  }
+}
 .register-block-container p {
   line-height: 22px;
   margin-top: 20px;
@@ -1560,6 +1921,17 @@ form .desc textarea {
 .register-block-container .register-block {
   float: left;
   width: 50%;
+  padding: 2.5%;
+}
+@media only screen and (max-width: 30em) {
+  .register-block-container .register-block {
+    display: block;
+    width: 100%;
+    float: left;
+  }
+  .register-block-container .register-block:nth-child(2) {
+    margin-top: 20px;
+  }
 }
 
 .testimonial-block {
@@ -1579,6 +1951,27 @@ form .desc textarea {
   -ms-border-radius: 4px;
   border-radius: 4px;
 }
+@media only screen and (max-width: 768px) {
+  .testimonial-block {
+    margin-top: 30px;
+  }
+  .testimonial-block img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+@media only screen and (max-width: 30em) {
+  .testimonial-block {
+    width: 100%;
+    text-align: center;
+  }
+  .testimonial-block img {
+    display: block;
+    width: 100%;
+    float: left;
+    display: none;
+  }
+}
 .testimonial-block h1 {
   margin-bottom: 20px;
 }
@@ -1586,9 +1979,27 @@ form .desc textarea {
   width: 15%;
   float: left;
 }
+@media only screen and (max-width: 30em) {
+  .testimonial-block .testimonial-featured {
+    width: 30%;
+  }
+}
 .testimonial-block .testimonial-content {
   width: 70%;
   float: left;
+}
+@media only screen and (max-width: 768px) {
+  .testimonial-block .testimonial-content {
+    padding-left: 5%;
+  }
+}
+@media only screen and (max-width: 30em) {
+  .testimonial-block .testimonial-content {
+    display: block;
+    width: 100%;
+    float: left;
+    padding: 0px 0px 0px 0px;
+  }
 }
 .testimonial-block .testimonial-content h3 {
   font-size: 26px;
@@ -1704,6 +2115,16 @@ form .desc textarea {
   border: 0;
   border-bottom: 1px solid #ccc;
 }
+@media only screen and (max-width: 768px) {
+  .giver-list-block .listing-box ul li .user-block {
+    display: block;
+    width: 100%;
+    float: left;
+  }
+  .giver-list-block .listing-box ul li .user-img {
+    display: none;
+  }
+}
 
 .tool-bar {
   border-bottom: dashed 1px #e3e3e3;
@@ -1768,6 +2189,10 @@ form .desc textarea {
   height: auto;
   font-size: 14px;
   line-height: 20px;
+}
+#site-footer img {
+  max-width: 100%;
+  height: auto;
 }
 #site-footer a, #site-footer h3 {
   color: #fff;
@@ -1837,66 +2262,157 @@ form .desc textarea {
   width: 25%;
   float: left;
 }
-
-@media screen and (max-width: 1280px) {
-  .site-inner {
-    width: 100%;
+@media only screen and (max-width: 768px) {
+  #site-footer .fourth {
+    width: 31%;
+  }
+  #site-footer .fourth:nth-child(2) {
+    margin-left: 3.5%;
+    margin-right: 3.5%;
+  }
+  #site-footer .fourth:last-child {
+    display: none;
   }
 }
-@media screen and (max-width: 800px) {
-  #main-menu-block {
-    display: none;
-    padding: 20px 0;
-  }
-
-  #site-footer .footer-content .footer-1, #site-footer .footer-content .footer-2, #site-footer .footer-content .footer-3 {
+@media only screen and (max-width: 30em) {
+  #site-footer .fourth {
     width: 100%;
-    text-align: center;
-    margin-bottom: 15px;
-    box-sizing: border-box;
+    margin-bottom: 10px;
   }
-
-  nav#main-nav #site-nav ul li {
-    width: 100%;
-    box-sizing: border-box;
+  #site-footer .fourth:nth-child(2) {
+    margin-left: 3.5%;
+    margin-right: 3.5%;
   }
-  nav#main-nav #mb-btn {
-    display: inline-block;
-  }
-
-  form {
-    width: 80%;
+  #site-footer .fourth:last-child {
     display: block;
-    margin: 0 auto;
   }
 }
-@media screen and (max-width: 550px) {
-  .header-top {
-    display: none;
-  }
 
-  .filter-sidebar {
-    width: 100%;
-  }
+/*! Pushy - v0.9.2 - 2014-9-13
+* Pushy is a responsive off-canvas navigation menu using CSS transforms & transitions.
+* https://github.com/christophery/pushy/
+* by Christopher Yee */
+/* Menu Appearance */
+.pushy {
+  position: fixed;
+  width: 200px;
+  height: 100%;
+  top: 0;
+  z-index: 9999;
+  background: #333332;
+  font-size: 0.9em;
+  font-weight: bold;
+  -webkit-box-shadow: inset -10px 0 6px -9px rgba(0, 0, 0, 0.7);
+  -moz-box-shadow: inset -10px 0 6px -9px rgba(0, 0, 0, 0.7);
+  box-shadow: inset -10px 0 6px -9px rgba(0, 0, 0, 0.7);
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  /* enables momentum scrolling in iOS overflow elements */
+}
 
-  .content-with-sidebar {
-    width: 100%;
-    padding: 0;
-  }
+.pushy a {
+  display: block;
+  color: #b3b3b1;
+  padding: 5px 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  text-decoration: none;
+  font-weight: 300;
+  font-family: "museo-sans", sans-serif;
+}
 
-  .tool-bar {
-    text-align: center;
-  }
+.pushy a:hover {
+  background: #00b4ff;
+  color: #FFF;
+}
 
-  .user-right-box {
-    display: none;
-  }
+/* Menu Movement */
+.pushy-left {
+  -webkit-transform: translate3d(-200px, 0, 0);
+  -moz-transform: translate3d(-200px, 0, 0);
+  -ms-transform: translate3d(-200px, 0, 0);
+  -o-transform: translate3d(-200px, 0, 0);
+  transform: translate3d(-200px, 0, 0);
+}
 
-  .user-rating {
-    display: none;
-  }
+.pushy-open {
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
 
-  #avaiability-table td {
-    padding: 3px;
+.container-push, .push-push {
+  -webkit-transform: translate3d(200px, 0, 0);
+  -moz-transform: translate3d(200px, 0, 0);
+  -ms-transform: translate3d(200px, 0, 0);
+  -o-transform: translate3d(200px, 0, 0);
+  transform: translate3d(200px, 0, 0);
+}
+
+/* Menu Transitions */
+.pushy, #container, .push {
+  -webkit-transition: -webkit-transform 0.2s cubic-bezier(0.16, 0.68, 0.43, 0.99);
+  -moz-transition: -moz-transform 0.2s cubic-bezier(0.16, 0.68, 0.43, 0.99);
+  -o-transition: -o-transform 0.2s cubic-bezier(0.16, 0.68, 0.43, 0.99);
+  transition: transform 0.2s cubic-bezier(0.16, 0.68, 0.43, 0.99);
+}
+
+/* Site Overlay */
+.site-overlay {
+  display: none;
+}
+
+.pushy-active .site-overlay {
+  display: block;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 9998;
+  background-color: rgba(0, 0, 0, 0.5);
+  -webkit-animation: fade 500ms;
+  -moz-animation: fade 500ms;
+  -o-animation: fade 500ms;
+  animation: fade 500ms;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-moz-keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-o-keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/* Example Media Query */
+@media screen and (max-width: 768px) {
+  .pushy {
+    font-size: 1.0em;
   }
 }

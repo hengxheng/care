@@ -13,6 +13,10 @@
 				width: auto;
 				width: 33%;
 				padding-top: 5px;
+
+				@include bp-small {
+					@include full;
+				}
 			}
 		}
 
@@ -33,9 +37,17 @@ form{
 	display:inline-block;
 	width:40%;
 
+	@include bp-small {
+		@include full;
+	}
+
 	.half {
 		width: 48%;
 		float: left;
+
+		@include bp-mlarge {
+			@include full;
+		}
 	}
 
 	.half.first {
@@ -154,6 +166,10 @@ form{
 	padding: 2.5%;
 	@include border-radius (4px);
 
+	@include bp-mlarge {
+		@include full;
+	}
+
 	form {
 		width: 100%;
 
@@ -161,10 +177,24 @@ form{
 		.second {
 			width: 49%;
 			float: left;
+
+			@include bp-small {
+				@include full;
+			}
 		}
 
 		.first {
 			margin-right: 2%;
+		}
+	}
+	
+	.submit {
+		text-align: center;
+
+			input[type="submit"] {
+				@include bp-small {
+				float: none;
+			}
 		}
 	}
 }
@@ -179,6 +209,21 @@ form{
 	background-color: rgba(255, 255, 255, 0.8);
 	@include border-radius(4px);
 
+	@include bp-mlarge {
+		@include full;
+		margin-top: 25px;
+		min-height: 195px;
+	}
+
+	@include bp-small {
+		@include full;
+		padding: 5% 1%;
+		text-align: center;
+	}
+
+
+
+
 	p {
 		line-height: 22px;
 		margin-top: 20px;
@@ -187,6 +232,15 @@ form{
 	.register-block {
 		float: left;
 		width: 50%;
+		padding: 2.5%;
+
+		@include bp-small {
+			@include full;
+
+			&:nth-child(2) {
+				margin-top: 20px;
+			}
+		}
 	}
 }
 
@@ -202,6 +256,25 @@ form{
 	border-top: 1px solid rgba(255, 255, 255, 0.5);
 	@include border-radius(4px);
 
+	@include bp-mlarge {
+		margin-top: 30px;
+
+		img {
+			max-width: 100%;
+			height: auto;
+		}
+	}
+
+	@include bp-small {
+		width: 100%;
+		text-align: center;
+
+		img {
+			@include full;
+			display: none;
+		}
+	}
+
 	h1 {
 		margin-bottom: 20px;
 	}
@@ -209,11 +282,24 @@ form{
 	.testimonial-featured {
 		width: 15%;
 		float: left;
+
+		@include bp-small {
+			width: 30%;
+		}
 	}
 
 	.testimonial-content {
 		width: 70%;
 		float: left;
+
+		@include bp-mlarge {
+			padding-left: 5%;
+		}
+
+		@include bp-small {
+			@include full;
+			padding: 0px 0px 0px 0px;
+		}
 
 		h3 {
 			font-size: 26px;
@@ -332,6 +418,16 @@ form{
 			li{
 				border:0;
 				border-bottom: 1px solid #ccc;
+
+				@include bp-mlarge {
+					.user-block {
+						@include full;
+					}
+
+					.user-img {
+						display: none;
+					}
+				}
 			}
 		}
 	}

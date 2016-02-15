@@ -84,7 +84,7 @@
         <li>
             <div class="job-block">
                 <div class="job-title">
-                    {{ $job -> title }} (<span class="{{ str_slug($job->status) }}">{{ $job->status }}</span>)
+                    <h2>{{ $job -> title }} <span class="{{ str_slug($job->status) }}">{{ $job->status }}</span></h2>
                 </div>
                 <div class="job-desc">
                     {{ $job -> description }}

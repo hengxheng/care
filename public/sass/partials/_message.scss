@@ -51,6 +51,11 @@
 			text-align:center;		
 			background: #fff;
 			@include border-radius(4px);
+
+			@include bp-small {
+				width: 48.5%;
+			}
+
 			a{
 				font-size: 14px;
 				color:$dark-blue;
@@ -74,6 +79,11 @@
 
 #message-main{
 	padding: 15px;
+	
+	@include bp-small {
+		padding: 15px 0px;
+	}
+
 	ul{
 		li{
 			border-bottom:1px solid #ccc;
@@ -81,6 +91,11 @@
 			padding: 15px;
 			margin-bottom: 25px;
 			position: relative;
+
+			@include bp-small {
+				padding: 15px 0px;
+			}
+
 			&:first-child{
 				border-top:0px solid #ccc;
 			}
@@ -91,6 +106,11 @@
 				display: inline-block;
 				vertical-align: top;
 				padding: 10px;
+
+				@include bp-small {
+					display: none;
+				}
+
 				img{
 					width: 100%;
 					@include border-radius(200px);
@@ -103,6 +123,12 @@
 				vertical-align: top;
 				padding: 10px 20px;
 				position: relative;
+
+				@include bp-small {
+					padding: 30px 0px 0px 0px;
+					@include full;
+				}
+
 				.user-name{
 					font-size: 20px;
 					color: $dark-blue;
@@ -145,6 +171,11 @@
 				.cta{
 					float: left;
 					margin-left: 30px;
+
+					@include bp-small {
+						margin-left: 0px;
+						clear: both;
+					}
 
 					a {
 						i {
@@ -245,4 +276,10 @@
 	box-sizing:border-box;
 	font-weight: $bold;
 	@include border-radius(5px);
+
+	@include bp-small {
+		position: absolute;
+		top: 6px;
+		right: 14px;
+	}
 }

@@ -12,6 +12,7 @@
 		<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
 		<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 		<script src="{{URL::asset('scripts/script.js') }}"></script>
+		<script src="{{URL::asset('scripts/pushy.min.js') }}"></script>
 		<script src="{{URL::asset('scripts/rateit/src/jquery.rateit.min.js') }}"></script>
 		<link rel="stylesheet" href="{{URL::asset('scripts/rateit/src/rateit.css') }}">
 
@@ -20,6 +21,57 @@
 		<script>try{Typekit.load({ async: true });}catch(e){}</script>
 	</head>
 	<body ng-app="myApp" class="@yield('pageType')">
+		<nav class="pushy pushy-left">
+			@if(Auth::check())
+			<div class="mini-account">
+				<div class="account-block-img">
+					<img src="{{ URL::asset('images/user/'.Auth::user()->picture) }}" alt="">
+				</div>	
+				
+				<div class="account-info">
+					<h2 class="user-name">{{ camel_case(Auth::user()->firstname) }} {{ camel_case(Auth::user()->lastname) }}</h2>
+					<p class="user-type">Care {{ Auth::user()->user_type }}</p>
+				</div>		
+			</div>	
+			@endif	
+			
+
+			<ul>
+			@if (Auth::guest())
+				<!-- <li><a href="{{ URL::route('login') }}">Login</a></li>
+				<li><a href="{{ URL::route('register') }}">Register</a></li> -->
+			@elseif(Auth::user()->status == 'Active')
+				@if (Auth::user() -> user_type == 'giver')
+				<li><a href="{{ URL::route('care_givers.show', array('uid' => Auth::user()->id)) }}" >My Profile</a></li>
+				<li><a href="{{ URL::route('job.search', array('uid' => Auth::user()->id)) }}">View Jobs</a></li>
+				<li><a href="{{ URL::route('job.applied', array('uid' => Auth::user()->id)) }}">Job Submissions</a></li>
+					@elseif (Auth::user()->user_type == 'seeker')
+					<li><a href="{{ URL::route('care_seekers.show', array('uid' => Auth::user()->id)) }}">My Profile</a></li>
+					<li><a href="{{ URL::route('job.create', array('uid' => Auth::user()->id)) }}">Post a job</a></li>
+					<li><a href="{{ URL::route('care_givers.list')}}">Find Caregivers</a></li>
+					<li><a href="{{ URL::route('job.list', array('poster_id' => Auth::user()->id)) }}">My posted jobs</a></li>
+				@endif
+				<li class="inbox"><a href="{{ URL::route('message.inbox') }}">Inbox 
+				@if(isset($unread))
+					<span class="msg-notify">{{ $unread }}</span>
+				@endif
+				</a></li>
+				@elseif (Auth::user()->status == 'Pending' && Auth::user()->user_type == "giver")
+				<li>To apply for jobs, you must first verify your account by adding a background check approved by us.</li>
+			@endif
+			</ul>
+
+		</nav>
+
+<!-- Site Overlay -->
+<div class="site-overlay"></div>
+
+<!-- Your Content -->
+
+    
+
+<div id="container">
+
 		<header id="site-header">
 			<div class="header-top">
 				<div class="site-inner">
@@ -47,6 +99,8 @@
 					<div class="logo">
 						<a href="#"><img src="{{ URL::asset('images/logo.png') }}" alt=""></a>
 					</div>	
+
+					<div class="menu-btn"><i class="fa fa-bars"></i></div>
 
 					@if(Auth::check())
 				<div class="account-block">
@@ -189,6 +243,7 @@
 				</div>
 			</div>
 		</footer>
+	</div>
 	</body>
 
 <script>

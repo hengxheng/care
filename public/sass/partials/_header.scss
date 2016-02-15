@@ -8,8 +8,17 @@ header#site-header{
 		display: block;
 		@include full;
 
+		@include bp-large {
+			padding: 10px 0px;
+		}
+
+		@include bp-small {
+			padding: 0px 0px 0px 0px;
+		}
+
 		ul{
 			display:inline-block;
+
 			li{
 				display:inline-block;
 				color: #000;
@@ -29,6 +38,10 @@ header#site-header{
 		.contact {	
 			float: left;
 
+			@include bp-mlarge {
+				display: none;
+			}
+
 			i {
 				margin-right: 5px;
 			}
@@ -37,7 +50,14 @@ header#site-header{
 
 		#sub-nav {
 			float: right;
-			
+
+			@include bp-mlarge {
+				float: left;
+			}
+
+			@include bp-small {
+				display: none;
+			}
 		}
 	}
 	.header-content{
@@ -48,6 +68,12 @@ header#site-header{
 		position: relative;
 		overflow: visible;
 
+		@include bp-small {
+			border-bottom: $dark-blue solid 10px;
+			border-top: $dark-blue solid 10px;
+			margin-bottom: 20px;
+		}
+
 		.site-inner {
 			position: relative;
 			overflow: visible;
@@ -55,6 +81,20 @@ header#site-header{
 
 		.logo {
 			float: left;
+		}
+
+		.menu-btn {
+			color: #fff;
+			font-weight: 900;
+			font-size: 22px;
+			position: absolute;
+			top: 15px;
+			right: 16px;
+			display: none;
+
+			@include bp-small {
+				display: block;
+			} 
 		}
 
 		.account-block{
@@ -65,6 +105,10 @@ header#site-header{
 			float: right;
 			color:#fff;
 			z-index:999;
+
+			@include bp-small {
+				display: none;
+			}
 			
 			.account-inner{
 				padding: 0px 0px 0px 0px;
@@ -124,6 +168,8 @@ header#site-header{
 	right: -3px;
 	top: 60px;
 	background: transparent;
+
+
 
 	ul{
 		width: 200px;
@@ -189,6 +235,11 @@ nav#main-nav{
 	background:$dark-blue;
 	margin-bottom: 30px;
 	@include full;
+
+	@include bp-small {
+		display: none;
+	}
+
 	.nav-inner{
 		position:relative;
 	}
@@ -224,3 +275,38 @@ nav#main-nav{
 	}
 }
 // end of main nav
+
+.pushy {
+	.mini-account {
+		width: 90%;
+		padding: 10px 5%;
+		color: #fff !important;
+
+		h2 {
+			text-transform: capitalize;
+			color: #fff;
+			margin-top: 8px;
+			margin-bottom: 5px;
+		}
+
+		.account-block-img {
+			float: left;
+			width: 30%;
+			padding-right: 5%;
+		}
+
+		img {
+			max-width: 100%;
+			@include border-radius(100px);
+		}
+	}
+
+	ul {
+		@include full;
+		padding-bottom: 20px;
+
+		li {
+			position: relative;
+		}
+	}
+}

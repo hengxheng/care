@@ -6,6 +6,37 @@
 	background-color: #e3e3e3;
 	box-sizing: border-box;
 	@include border-radius(4px);
+
+	@include bp-mlarge {
+		width: 33%;
+	}
+
+	@include bp-small {
+		@include full;
+
+		* {
+			display: none;
+		}
+
+		h2 {
+			display: block;
+			margin: 0px 0px 0px 0px;
+			padding-top: 5px;
+			padding-bottom: 5px;
+			position: relative;
+
+			&:after {
+				@include fontawesome;
+				content: '\f078';
+				color: $dark-blue;
+				position: absolute;
+				top: 5px; 
+				right: 0px;
+				left: auto;
+			}
+		}
+	}
+
 	form{
 		width:100%
 	}

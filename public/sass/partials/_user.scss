@@ -19,6 +19,15 @@
 		padding: 10px 20px;
 		position: relative;
 		font-size: 14px;
+
+		@include bp-mlarge {
+			padding: 10px 0px;
+		}
+
+		@include bp-small {
+			@include full;
+		}
+
 		.user-name{
 			font-size: 32px;
 			color: $dark-blue;
@@ -77,6 +86,20 @@
 		text-align: left;
 		padding: 0px 15px 20px 15px;
 		color: #000;
+
+		@include bp-mlarge {
+			padding: 0px 0px 0px 0px;
+			width: 34%;
+		}
+
+		@include bp-small {
+			@include full;
+
+			> div {
+				float: left;
+				width: 50% !important;
+			}
+		}
 		
 		* {
 			color: #000;
@@ -120,6 +143,11 @@
 
 .sub-block {
 	.user-location {
-		margin-bottom: 10px;
+		margin-bottom: 0px !important;
+	}
+
+	i {
+		color: #164856 !important;
+    	margin-right: 5px !important;
 	}
 }

@@ -82,7 +82,7 @@
 					     		<p><i class="fa fa-map-marker"></i> {{ $s->suburb }},{{ $s->state }}</p>
 							</div>       
 							<div class="sub-date">
-								<p><i class="fa fa-map-marker"></i>Submitted on: {{ $s->created_at }}</p>
+								<p><i class="fa fa-calendar"></i>Submitted on: {{ $s->created_at }}</p>
 							</div>    
 							<div class="sub-content">
 								<h2>Description:</h2>

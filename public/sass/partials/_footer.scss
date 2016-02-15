@@ -8,6 +8,11 @@
 	font-size: 14px;
 	line-height: 20px;
 
+	img {
+		max-width: 100%;
+		height: auto;
+	}
+
 	a, h3 {
 		color: #fff;
 	}
@@ -81,5 +86,32 @@
 		display: inline-block;
 		width: 25%;
 		float: left;
+
+		@include bp-mlarge {
+			width: 31%;
+
+			&:nth-child(2) {
+				margin-left: 3.5%;
+				margin-right: 3.5%;
+			}
+
+			&:last-child {
+				display: none;
+			}
+		}
+
+		@include bp-small {
+			width: 100%;
+			margin-bottom: 10px;
+
+			&:nth-child(2) {
+				margin-left: 3.5%;
+				margin-right: 3.5%;
+			}
+
+			&:last-child {
+				display: block;
+			}
+		}
 	}
 }

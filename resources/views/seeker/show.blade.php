@@ -41,13 +41,7 @@
 
 
 			</div>
-
 		</div>
-
-		<aside class="ratings">
-			<h3>Ratings</h3>
-		</aside>
-
 	</div>
 
 	<!-- <a class="btn" href="{{ URL::route('job.create', array('uid' => $the_user->id)) }}">Post a job</a> -->

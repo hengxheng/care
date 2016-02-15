@@ -61,7 +61,14 @@ $museo: "museo-sans",sans-serif;
 
 //Respoonsive Mixins
 @mixin bp-large {
-  @media only screen and (max-width: 60em) {
+  @media only screen and (max-width: 1024px) {
+    @content;
+  }
+}
+
+//Respoonsive Mixins
+@mixin bp-mlarge {
+  @media only screen and (max-width: 768px) {
     @content;
   }
 }
@@ -122,6 +129,11 @@ p {
 	h1 {
 		font-size: 42px;
 		margin: 10px 0px 40px 0px;
+
+		@include bp-small {
+			font-size: 30px;
+			margin: 30px 0px;
+		}
 	}	
 }
 
@@ -149,6 +161,12 @@ body {
 	padding: 0 15px;
 	box-sizing: border-box;
 	overflow: hidden;
+
+	@include bp-large {
+		width: 95%;
+		margin: 0px 2.5%;
+		padding: 0px 0px 0px 0px;
+	}
 }
 
 .full-wide{
@@ -166,6 +184,11 @@ body {
 		width:100%;
 		padding:15px;
 		box-sizing: border-box;
+
+		@include bp-small {
+			padding-left: 0px;
+			padding-right: 0px;
+		}
 	}
 	.col-2{
 		width: 50%;
@@ -207,6 +230,16 @@ body {
 	float: left;
 	box-sizing: border-box;
 	padding-left: 30px;
+
+	@include bp-mlarge {
+		padding-left: 2%;
+		width: 67%;
+	}
+
+	@include bp-small {
+		padding-left: 0%;
+		width: 100%;
+	}
 }
 
 .service2-list{
@@ -263,79 +296,6 @@ body {
 @import "partials/job";
 @import "partials/utilities";
 @import "partials/footer";
+@import "partials/pushy";
 
-
-@media screen and (max-width: 1280px){
-	.site-inner{
-		width:100%;
-	}
-}
-
-@media screen and (max-width: 800px){
-	#main-menu-block{
-		display:none;
-		padding: 20px 0;
-	}
-	#site-footer{
-		.footer-content{
-			.footer-1, .footer-2, .footer-3{
-				width:100%;
-				text-align: center;
-				margin-bottom: 15px;
-				box-sizing:border-box;
-			}
-		}
-	}
-	nav#main-nav{
-		#site-nav{
-			ul{
-				li{
-					width:100%;
-					box-sizing: border-box;
-				}
-			}
-		}
-		#mb-btn{
-			display:inline-block;
-		}
-	} 
-	form{
-		width:80%;
-		display:block;
-		margin:0 auto;
-	}
-}
-
-@media screen and (max-width:550px){
-	.header-top{
-		display:none;
-	}
-
-	.filter-sidebar{
-		width:100%;
-	}
-
-	.content-with-sidebar{
-		width:100%;
-		padding:0;
-	}
-
-	.tool-bar{
-		text-align: center;
-	}
-	.user-right-box{
-		display:none;
-	}
-
-	.user-rating{
-		display:none;
-	}
-
-	#avaiability-table{
-		td{
-			padding:3px;
-		}
-	}
-
-}
 

@@ -14,8 +14,6 @@
 }
 
 .job-view{
-	margin-bottom:25px;
-
 	.page-title {
 
 		@include full; 
@@ -63,9 +61,36 @@
 	.start-date, .service-type, .location {
 		float: left;
 		width: 20%;
+
+		@include bp-small {
+			width: 50%;
+		}
 	}
 }
+
+.listing-box {
+	ul {
+		li {
+			.job-content {
+				position: relative;
+			}
+
+			.job-title{
+				float: left;
+			}
+
+			.job-state {
+				position: absolute;
+				right: 0px;
+				top: 0px;
+			}
+		}
+	}
+}
+
 .job-block{
+
+	position: relative;
 	.job-content {
 		float: left;
 		width: 65%;
@@ -74,6 +99,22 @@
 	.job-title{
 		float: left;
 		width: 60%;
+
+		h2 {
+			.span {
+				background-color: #2F8A2F;
+				color: #fff;
+				width: auto;
+				text-align: right;
+				padding: 9px 20px 9px 33px;
+				@include border-radius(4px);
+				float: right;
+				position: absolute;
+				top: 0px;
+				right: 0px;
+				font-size: 16px;
+			}
+		}
 
 		h3 {
 			font-size: 32px;
@@ -89,6 +130,9 @@
 		width: auto;
 		font-weight: $bold;
 		position: relative;
+		position: absolute;
+		top: 0px;
+		right: 0px;
 	}
 
 	.active{
@@ -99,6 +143,10 @@
 		padding: 9px 20px 9px 33px;
 		@include border-radius(4px);
 		float: right;
+		position: absolute;
+		top: 0px;
+		right: 0px;
+		font-size: 16px;
 
 		&:after {
 			@include fontawesome;
