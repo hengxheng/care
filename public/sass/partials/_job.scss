@@ -94,6 +94,10 @@
 	.job-content {
 		float: left;
 		width: 65%;
+
+		@include bp-small {
+			@include full;
+		}
 	}
 
 	.job-title{
@@ -189,6 +193,12 @@
 		float: left;
 		width: 25%;
 		padding-left: 5%;
+
+		@include bp-small {
+			@include full;
+			padding-left: 0px;
+			margin-top: 20px;
+		}
 
 		span:first-child {
 			margin-top: 0px;

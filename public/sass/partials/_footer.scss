@@ -26,6 +26,10 @@
 	.logo {
 		margin-top: 1px;
 		margin-bottom: 20px;
+
+		@include bp-small {
+			display: none;
+		}
 	}
 
 	.social {
@@ -107,6 +111,22 @@
 			&:nth-child(2) {
 				margin-left: 0px;
 				margin-right: 0px;
+				width: 50%;
+			}
+
+			&:nth-child(3) {
+				margin-left: 0px;
+				margin-right: 0px;
+				width: 50%;
+
+				li {
+					padding-left: 0px;
+					@include full;
+
+					&:after {
+						display: none;
+					}
+				}
 			}
 
 			&:last-child {

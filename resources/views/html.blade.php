@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
 		<title>Care Nation</title>
 		<link rel="stylesheet" href="{{ URL::asset('style.css') }}">
 		<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
@@ -38,8 +38,14 @@
 
 			<ul>
 			@if (Auth::guest())
-				<!-- <li><a href="{{ URL::route('login') }}">Login</a></li>
-				<li><a href="{{ URL::route('register') }}">Register</a></li> -->
+			
+				<li><a href="/faqs">FAQs</a></li>		
+				<li><a href="/about">About Us</a></li>		
+				<li><a href="/contact">Contact Us</a></li>
+				<li><a href="/privacy-policy">Privacy Policy</a></li>
+				<li><a href="/terms-conditions">Terms &amp; Conditions</a></li>
+				<li><a href="/terms-of-use">Terms of Use</a></li>
+				
 			@elseif(Auth::user()->status == 'Active')
 				@if (Auth::user() -> user_type == 'giver')
 				<li><a href="{{ URL::route('care_givers.show', array('uid' => Auth::user()->id)) }}" >My Profile</a></li>

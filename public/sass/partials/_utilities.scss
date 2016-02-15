@@ -37,10 +37,6 @@ form{
 	display:inline-block;
 	width:40%;
 
-	input {
-		-webkit-appearance: none !important;
-	}
-
 	@include bp-small {
 		@include full;
 	}

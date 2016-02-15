@@ -688,6 +688,14 @@ nav#main-nav #site-nav ul .inbox {
 .message {
   padding: 15px;
 }
+@media only screen and (max-width: 30em) {
+  .message {
+    display: block;
+    width: 100%;
+    float: left;
+    padding: 15px 0px;
+  }
+}
 .message .user-img {
   width: 15%;
   box-sizing: border-box;
@@ -722,6 +730,14 @@ nav#main-nav #site-nav ul .inbox {
 .message .message-body {
   padding: 15px;
   font-size: 16px;
+}
+@media only screen and (max-width: 30em) {
+  .message .message-body {
+    display: block;
+    width: 100%;
+    float: left;
+    padding: 15px 0px;
+  }
 }
 .message .msg-cta {
   padding: 15px;
@@ -876,6 +892,13 @@ nav#main-nav #site-nav ul .inbox {
   float: left;
   width: 30%;
 }
+@media only screen and (max-width: 30em) {
+  .message .message-list-block {
+    display: block;
+    width: 100%;
+    float: left;
+  }
+}
 .message .message-list-block aside.contact {
   float: left;
   width: 100%;
@@ -885,6 +908,11 @@ nav#main-nav #site-nav ul .inbox {
   width: 35%;
   margin-right: 5%;
   padding: 10px 0px 0px 0px;
+}
+@media only screen and (max-width: 30em) {
+  .message .message-list-block aside.contact .user-img {
+    display: none;
+  }
 }
 .message .message-list-block aside.contact img {
   width: 100%;
@@ -1512,6 +1540,13 @@ nav#main-nav #site-nav ul .inbox {
   float: left;
   width: 65%;
 }
+@media only screen and (max-width: 30em) {
+  .job-block .job-content {
+    display: block;
+    width: 100%;
+    float: left;
+  }
+}
 .job-block .job-title {
   float: left;
   width: 60%;
@@ -1628,6 +1663,15 @@ nav#main-nav #site-nav ul .inbox {
   width: 25%;
   padding-left: 5%;
 }
+@media only screen and (max-width: 30em) {
+  .job-block .job-snapshot {
+    display: block;
+    width: 100%;
+    float: left;
+    padding-left: 0px;
+    margin-top: 20px;
+  }
+}
 .job-block .job-snapshot span:first-child {
   margin-top: 0px;
 }
@@ -1691,9 +1735,6 @@ nav#main-nav #site-nav ul .inbox {
 form {
   display: inline-block;
   width: 40%;
-}
-form input {
-  -webkit-appearance: none !important;
 }
 @media only screen and (max-width: 30em) {
   form {
@@ -2209,6 +2250,11 @@ form .desc textarea {
   margin-top: 1px;
   margin-bottom: 20px;
 }
+@media only screen and (max-width: 30em) {
+  #site-footer .logo {
+    display: none;
+  }
+}
 #site-footer .social i {
   margin-right: 10px;
 }
@@ -2285,6 +2331,21 @@ form .desc textarea {
   #site-footer .fourth:nth-child(2) {
     margin-left: 0px;
     margin-right: 0px;
+    width: 50%;
+  }
+  #site-footer .fourth:nth-child(3) {
+    margin-left: 0px;
+    margin-right: 0px;
+    width: 50%;
+  }
+  #site-footer .fourth:nth-child(3) li {
+    padding-left: 0px;
+    display: block;
+    width: 100%;
+    float: left;
+  }
+  #site-footer .fourth:nth-child(3) li:after {
+    display: none;
   }
   #site-footer .fourth:last-child {
     display: block;
