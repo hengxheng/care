@@ -1140,6 +1140,10 @@ nav#main-nav #site-nav ul .inbox {
   top: 13px;
   right: 0px;
 }
+.profile-block .content .fa {
+  font-size: 1.5em;
+  color: #1E6073;
+}
 .profile-block .content .block-bio {
   display: block;
   width: 100%;
@@ -1528,6 +1532,11 @@ nav#main-nav #site-nav ul .inbox {
   float: right;
   position: relative;
 }
+@media only screen and (max-width: 30em) {
+  .job-view .page-title span {
+    float: left;
+  }
+}
 .job-view .page-title span:after {
   font-family: FontAwesome;
   font-style: normal;
@@ -1578,9 +1587,16 @@ nav#main-nav #site-nav ul .inbox {
   float: left;
 }
 .listing-box ul li .job-state {
-  position: absolute;
+  position: relative;
   right: 0px;
   top: 0px;
+}
+@media only screen and (max-width: 30em) {
+  .listing-box ul li .job-state {
+    position: relative !important;
+    float: left;
+    clear: both;
+  }
 }
 
 .job-block {
@@ -1600,6 +1616,13 @@ nav#main-nav #site-nav ul .inbox {
 .job-block .job-title {
   float: left;
   width: 60%;
+}
+@media only screen and (max-width: 30em) {
+  .job-block .job-title {
+    display: block;
+    width: 100%;
+    float: left;
+  }
 }
 .job-block .job-title h2 .span {
   background-color: #2F8A2F;

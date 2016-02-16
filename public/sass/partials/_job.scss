@@ -33,6 +33,10 @@
 			float: right;
 			position: relative;
 
+			@include bp-small {
+				float: left;
+			}
+
 			&:after {
 				@include fontawesome;
 				content: '\f00c';
@@ -80,9 +84,15 @@
 			}
 
 			.job-state {
-				position: absolute;
+				position: relative;
 				right: 0px;
 				top: 0px;
+
+				@include bp-small {
+					position: relative !important;
+					float: left;
+					clear: both;
+				}
 			}
 		}
 	}
@@ -103,6 +113,10 @@
 	.job-title{
 		float: left;
 		width: 60%;
+		
+		@include bp-small {
+			@include full;
+		}
 
 		h2 {
 			.span {

@@ -9,14 +9,65 @@
 		<!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script> -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 		<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-			<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+		<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 		<script src="{{URL::asset('scripts/script.js') }}"></script>
+		<script src="{{URL::asset('scripts/pushy.min.js') }}"></script>
 
 		<!--Typekit-->
 		<script src="https://use.typekit.net/zbk6zbg.js"></script>
 		<script>try{Typekit.load({ async: true });}catch(e){}</script>
 	</head>
 	<body ng-app="myApp">
+		<nav class="pushy pushy-left">
+			@if(Auth::check())
+			<div class="mini-account">
+				<div class="account-block-img">
+					<img src="{{ URL::asset('images/user/'.Auth::user()->picture) }}" alt="">
+				</div>	
+				
+				<div class="account-info">
+					<h2 class="user-name">{{ camel_case(Auth::user()->firstname) }} {{ camel_case(Auth::user()->lastname) }}</h2>
+					<p class="user-type">Care {{ Auth::user()->user_type }}</p>
+				</div>		
+			</div>	
+			@endif	
+			
+
+			<ul>
+			@if (Auth::guest())
+			
+				<li><a href="/faqs">FAQs</a></li>		
+				<li><a href="/about">About Us</a></li>		
+				<li><a href="/contact">Contact Us</a></li>
+				<li><a href="/privacy-policy">Privacy Policy</a></li>
+				<li><a href="/terms-conditions">Terms &amp; Conditions</a></li>
+				<li><a href="/terms-of-use">Terms of Use</a></li>
+				
+			@elseif(Auth::user()->status == 'Active')
+				@if (Auth::user() -> user_type == 'giver')
+				<li><a href="{{ URL::route('care_givers.show', array('uid' => Auth::user()->id)) }}" >My Profile</a></li>
+				<li><a href="{{ URL::route('job.search', array('uid' => Auth::user()->id)) }}">View Jobs</a></li>
+				<li><a href="{{ URL::route('job.applied', array('uid' => Auth::user()->id)) }}">Job Submissions</a></li>
+					@elseif (Auth::user()->user_type == 'seeker')
+					<li><a href="{{ URL::route('care_seekers.show', array('uid' => Auth::user()->id)) }}">My Profile</a></li>
+					<li><a href="{{ URL::route('job.create', array('uid' => Auth::user()->id)) }}">Post a job</a></li>
+					<li><a href="{{ URL::route('care_givers.list')}}">Find Caregivers</a></li>
+					<li><a href="{{ URL::route('job.list', array('poster_id' => Auth::user()->id)) }}">My posted jobs</a></li>
+				@endif
+				<li class="inbox"><a href="{{ URL::route('message.inbox') }}">Inbox 
+				@if(isset($unread))
+					<span class="msg-notify">{{ $unread }}</span>
+				@endif
+				</a></li>
+				@elseif (Auth::user()->status == 'Pending' && Auth::user()->user_type == "giver")
+				<li>To apply for jobs, you must first verify your account by adding a background check approved by us.</li>
+			@endif
+			</ul>
+
+		</nav>
+		
+		<div class="site-overlay"></div>
+
 		<header id="site-header">
 			<div class="header-top">
 				<div class="site-inner">
@@ -57,12 +108,12 @@
 									</h2>
 									<p class="user-type">Administrator</p>
 								</div>			
-								<a id="account-down" href="#"><i class="fa fa-chevron-circle-down"></i></a>		
+								<a id="account-down" href="#"><i class="fa fa-chevron-down"></i></a>		
 							</div>
 							<div id="account-block-menu">
 								<ul>
-									<li><a href="{{ URL::route('account.settings') }}">Account Settings</a></li>
-									<li><a id="logout-btn" href="{{ URL::route('logout') }}">Logout</a></li>
+									<li><a href="{{ URL::route('account.settings') }}"><i class="fa fa-cogs"></i> Account Settings</a></li>
+									<li><a id="logout-btn" href="{{ URL::route('logout') }}"><i class="fa fa-sign-out"></i> Logout</a></li>
 								</ul>	
 							</div>
 						</div>			

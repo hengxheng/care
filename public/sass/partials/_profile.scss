@@ -166,6 +166,11 @@
 			}
 		}
 
+		.fa {
+			font-size: 1.5em;
+			color: $blue;
+		}
+
 		// .block:nth-child(odd) {
 		// 	clear: both;
 		// 	width:48%;
@@ -194,6 +199,7 @@
 		display: inline-block;
 		vertical-align: top;
 		width: 100%;
+
 		h2{
 			font-size: 42px;
 			margin-top: 10px;
