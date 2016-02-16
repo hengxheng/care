@@ -461,6 +461,11 @@ form{
 		text-align: center;
 		color: $dark-blue;
 		font-weight: $bold;
+
+		@include bp-small {
+			width: 100%;
+			padding: 3px;
+		}
 	}
 }
 

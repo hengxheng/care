@@ -126,6 +126,10 @@
 			margin-bottom: 15px;
 			font-weight: 600;
 			text-transform: capitalize;
+
+			@include bp-small {
+				line-height: 36px;
+			}
 		}
 	}
 	
@@ -229,4 +233,35 @@
 .sub-list {
 	@include full;
 	margin-top: 30px;
+
+	ul{
+		@include full;
+
+		li{
+			display:inline-block;
+			width:49%;
+			vertical-align: top;
+			.user-block .user-img{
+				width:25%;
+
+				@include bp-small {
+					padding-left: 0px;
+				}
+			}
+			&:nth-child(2n){
+				border-left: 2px solid #ccc;
+
+				@include bp-small {
+					border-left: 0px #fff solid;
+				}
+			}
+
+			@include bp-small {
+				@include full;
+			}
+		}
+	}
+}
+
+.sub-list{
 }

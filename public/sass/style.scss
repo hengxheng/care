@@ -270,22 +270,6 @@ body {
 	}
 }
 
-.sub-list{
-	ul{
-		li{
-			display:inline-block;
-			width:49%;
-			vertical-align: top;
-			.user-block .user-img{
-				width:25%;
-			}
-			&:nth-child(2n){
-				border-left: 2px solid #ccc;
-			}
-		}
-
-	}
-}
 @import "partials/header";
 // @import "partials/nav";
 @import "partials/buttons";

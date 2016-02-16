@@ -69,4 +69,8 @@ $(function(){
     $("#mb-btn").click(function(e){
     	$("#main-menu-block").slideToggle();
     });
+
+    $(".filter-sidebar h2").click(function(e){
+    	$(".filter-sidebar form").slideToggle();
+    });
 });

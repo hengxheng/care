@@ -2,6 +2,10 @@
 	.content {
 		width: 80%;
 
+		@include bp-small {
+			@include full;
+		}
+
 		.block {
 			float: left;
 			@include full;
@@ -20,6 +24,10 @@
 			float: left;
 			width: 25%;
 			margin-bottom: 30px;
+
+			@include bp-small {
+				@include full;
+			}
 		}
 	}
 }
@@ -37,6 +45,10 @@
 		min-height: 300px;
 		position: relative;
 
+		@include bp-small {
+			min-height: 0px;
+		}
+
 		@include bp-mlarge {
 			width: 25%;
 		}
@@ -45,8 +57,9 @@
 			width: 100%;
 
 			.profile-image {
+				@include full;
 				img {
-					width: 40% !important;
+					width: 80% !important;
 				}
 			}
 		}
@@ -74,9 +87,18 @@
 			padding-right: 10%;
 			margin-top: 20px;
 
+			@include bp-small {
+				padding-left: 5%;
+				padding-right: 5%;
+			}
+
 			i {
 				opacity: 0.7;
-				font-size: 13px;
+				font-size: 13px; 
+
+				@include bp-small {
+					display: none;
+				}
 			}
 		}
 
@@ -86,6 +108,12 @@
 			margin-bottom: 20px;
 			display: inline-block;
 			vertical-align: top;
+			
+			@include bp-small {
+				@include full;
+				width: 50%;
+			}
+
 			img{
 				width:100%;	
 				@include border-radius(300px)	
@@ -171,6 +199,10 @@
 			margin-top: 10px;
 			margin-bottom: 10px;
 			text-transform: capitalize;
+
+			@include bp-small {
+				margin-bottom: 20px;
+			}
 		}
 		h3.last-login{
 			font-size:12px;

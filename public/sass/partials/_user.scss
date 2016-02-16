@@ -131,6 +131,11 @@
 		.cta {
 			@include full;
 
+			@include bp-small {
+				clear: both;
+				width: 100% !important;
+			}
+
 			a {
 				color: #fff;
 				font-weight: $bold;

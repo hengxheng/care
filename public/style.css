@@ -237,18 +237,6 @@ body {
   width: 100%;
 }
 
-.sub-list ul li {
-  display: inline-block;
-  width: 49%;
-  vertical-align: top;
-}
-.sub-list ul li .user-block .user-img {
-  width: 25%;
-}
-.sub-list ul li:nth-child(2n) {
-  border-left: 2px solid #ccc;
-}
-
 header#site-header .header-top {
   padding: 15px 0;
   background: #fff;
@@ -985,6 +973,13 @@ nav#main-nav #site-nav ul .inbox {
 .giver-profile .profile-block .content {
   width: 80%;
 }
+@media only screen and (max-width: 30em) {
+  .giver-profile .profile-block .content {
+    display: block;
+    width: 100%;
+    float: left;
+  }
+}
 .giver-profile .profile-block .content .block {
   float: left;
   display: block;
@@ -1004,6 +999,16 @@ nav#main-nav #site-nav ul .inbox {
   width: 25%;
   margin-bottom: 30px;
 }
+@media only screen and (max-width: 30em) {
+  .giver-profile .profile-block .content .service-cats,
+  .giver-profile .profile-block .content .service-rate,
+  .giver-profile .profile-block .content .services,
+  .giver-profile .profile-block .content .qualifications {
+    display: block;
+    width: 100%;
+    float: left;
+  }
+}
 
 .profile-block {
   margin-top: 40px;
@@ -1019,6 +1024,11 @@ nav#main-nav #site-nav ul .inbox {
   min-height: 300px;
   position: relative;
 }
+@media only screen and (max-width: 30em) {
+  .profile-block aside.contact {
+    min-height: 0px;
+  }
+}
 @media only screen and (max-width: 768px) {
   .profile-block aside.contact {
     width: 25%;
@@ -1028,8 +1038,13 @@ nav#main-nav #site-nav ul .inbox {
   .profile-block aside.contact {
     width: 100%;
   }
+  .profile-block aside.contact .profile-image {
+    display: block;
+    width: 100%;
+    float: left;
+  }
   .profile-block aside.contact .profile-image img {
-    width: 40% !important;
+    width: 80% !important;
   }
 }
 .profile-block aside.contact .edit-btn {
@@ -1046,9 +1061,20 @@ nav#main-nav #site-nav ul .inbox {
   padding-right: 10%;
   margin-top: 20px;
 }
+@media only screen and (max-width: 30em) {
+  .profile-block aside.contact .dark-blue-btn {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+}
 .profile-block aside.contact .dark-blue-btn i {
   opacity: 0.7;
   font-size: 13px;
+}
+@media only screen and (max-width: 30em) {
+  .profile-block aside.contact .dark-blue-btn i {
+    display: none;
+  }
 }
 .profile-block aside.contact .profile-image {
   width: 90%;
@@ -1056,6 +1082,14 @@ nav#main-nav #site-nav ul .inbox {
   margin-bottom: 20px;
   display: inline-block;
   vertical-align: top;
+}
+@media only screen and (max-width: 30em) {
+  .profile-block aside.contact .profile-image {
+    display: block;
+    width: 100%;
+    float: left;
+    width: 50%;
+  }
 }
 .profile-block aside.contact .profile-image img {
   width: 100%;
@@ -1129,6 +1163,11 @@ nav#main-nav #site-nav ul .inbox {
   margin-bottom: 10px;
   text-transform: capitalize;
 }
+@media only screen and (max-width: 30em) {
+  .profile-block .profile-info h2 {
+    margin-bottom: 20px;
+  }
+}
 .profile-block .profile-info h3.last-login {
   font-size: 12px;
   margin-bottom: 15px;
@@ -1170,9 +1209,6 @@ nav#main-nav #site-nav ul .inbox {
     width: 100%;
     float: left;
   }
-  .filter-sidebar * {
-    display: none;
-  }
   .filter-sidebar h2 {
     display: block;
     margin: 0px 0px 0px 0px;
@@ -1202,6 +1238,12 @@ nav#main-nav #site-nav ul .inbox {
 }
 .filter-sidebar form {
   width: 100%;
+}
+@media only screen and (max-width: 30em) {
+  .filter-sidebar form {
+    display: none;
+    margin-top: 20px;
+  }
 }
 .filter-sidebar .form-ele {
   width: 100%;
@@ -1291,6 +1333,8 @@ nav#main-nav #site-nav ul .inbox {
   -moz-border-radius: 4px;
   -ms-border-radius: 4px;
   border-radius: 4px;
+  margin-bottom: 20px;
+  text-transform: lowercase;
 }
 
 .user-block {
@@ -1426,6 +1470,12 @@ nav#main-nav #site-nav ul .inbox {
   display: block;
   width: 100%;
   float: left;
+}
+@media only screen and (max-width: 30em) {
+  .user-block .user-right-box .cta {
+    clear: both;
+    width: 100% !important;
+  }
 }
 .user-block .user-right-box .cta a {
   color: #fff;
@@ -1574,6 +1624,11 @@ nav#main-nav #site-nav ul .inbox {
   font-weight: 600;
   text-transform: capitalize;
 }
+@media only screen and (max-width: 30em) {
+  .job-block .job-title h3 {
+    line-height: 36px;
+  }
+}
 .job-block .job-state {
   float: right;
   width: auto;
@@ -1698,6 +1753,39 @@ nav#main-nav #site-nav ul .inbox {
   width: 100%;
   float: left;
   margin-top: 30px;
+}
+.sub-list ul {
+  display: block;
+  width: 100%;
+  float: left;
+}
+.sub-list ul li {
+  display: inline-block;
+  width: 49%;
+  vertical-align: top;
+}
+.sub-list ul li .user-block .user-img {
+  width: 25%;
+}
+@media only screen and (max-width: 30em) {
+  .sub-list ul li .user-block .user-img {
+    padding-left: 0px;
+  }
+}
+.sub-list ul li:nth-child(2n) {
+  border-left: 2px solid #ccc;
+}
+@media only screen and (max-width: 30em) {
+  .sub-list ul li:nth-child(2n) {
+    border-left: 0px #fff solid;
+  }
+}
+@media only screen and (max-width: 30em) {
+  .sub-list ul li {
+    display: block;
+    width: 100%;
+    float: left;
+  }
 }
 
 .post-a-job form {
@@ -2192,6 +2280,12 @@ form .desc textarea {
   text-align: center;
   color: #164856;
   font-weight: 600;
+}
+@media only screen and (max-width: 30em) {
+  #avaiability-table td {
+    width: 100%;
+    padding: 3px;
+  }
 }
 
 .av-icon {
