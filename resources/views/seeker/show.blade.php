@@ -33,7 +33,7 @@
 					</h3>
 
 					<div class="block-bio">
-						<h3>About Me</h3>
+						<h3>About Me - This needs to be dynamic</h3>
 
 						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eget orci eget risus cursus posuere nec a nulla. Sed et dictum mauris. Nullam fermentum tortor quis felis eleifend iaculis. Vivamus odio ex, tempor vitae massa porttitor, convallis tempor odio. Integer rhoncus rhoncus dictum. Pellentesque interdum lacus justo, a ultrices risus euismod non. Etiam convallis sapien in finibus aliquet. Sed rhoncus nec felis non suscipit. Sed in massa ut lectus porttitor finibus nec vitae arcu.</p>
 						<p>Donec sed lorem lectus. Curabitur a sem quam. Sed congue non augue non dignissim. Duis non lacus sed eros efficitur dapibus non id leo. Vivamus at imperdiet erat. Donec elementum justo vel nunc euismod faucibus. Nam dapibus vehicula velit sollicitudin lobortis. Sed turpis augue, mattis at est id, aliquam tincidunt sem. Mauris libero nunc, lacinia quis nunc ut, egestas tincidunt magna. Etiam sed eros sit amet arcu suscipit pretium. Donec a convallis mauris, in ornare justo. Nullam eu imperdiet orci.</p>

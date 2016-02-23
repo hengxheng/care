@@ -75,7 +75,7 @@
 
 
                 <div class="form-ele checkbox">
-                    <label for="service-filter[]">Service Categories</label>
+                    <label for="service-filter[]">Types of Care</label>
                     <div><input type="checkbox" name="service-filter[]" value="Alzheimer's & Dementia Care"
                         @if( isset($sf["Alzheimer's & Dementia Care"]) && $sf["Alzheimer's & Dementia Care"]) checked @endif
                         ><span>Alzheimer's & Dementia Care</span></div>
