@@ -98,6 +98,24 @@ p {
   margin-bottom: 10px;
 }
 
+.fa-star {
+  color: #f47521 !important;
+}
+
+.background-image {
+  display: block;
+  width: 100%;
+  float: left;
+  min-height: 300px;
+  background-color: #e3e3e3;
+  z-index: 9999;
+  position: relative;
+}
+
+.profile-block {
+  overflow: hidden;
+}
+
 .welcome.title h1 {
   font-size: 42px;
   margin: 10px 0px 40px 0px;
@@ -985,11 +1003,12 @@ nav#main-nav #site-nav ul .inbox {
   display: block;
   width: 100%;
   float: left;
-}
-.giver-profile .profile-block .content .education {
-  border-bottom: 1px #164856 solid;
+  border-bottom: 1px #d3d3d3 solid;
   padding-bottom: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 0px;
+}
+.giver-profile .profile-block .content .block.availabilty {
+  border-bottom: 0px solid #fff;
 }
 .giver-profile .profile-block .content .service-cats,
 .giver-profile .profile-block .content .service-rate,
@@ -998,6 +1017,7 @@ nav#main-nav #site-nav ul .inbox {
   float: left;
   width: 25%;
   margin-bottom: 30px;
+  border-bottom: 1px solid #fff;
 }
 @media only screen and (max-width: 30em) {
   .giver-profile .profile-block .content .service-cats,

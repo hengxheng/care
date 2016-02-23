@@ -9,12 +9,13 @@
 		.block {
 			float: left;
 			@include full;
-		}
-
-		.education {
-			border-bottom: 1px $dark-blue solid;
+			border-bottom: 1px #d3d3d3 solid;
 			padding-bottom: 20px;
-			margin-bottom: 20px;
+			margin-bottom: 0px;
+
+			&.availabilty {
+				border-bottom: 0px solid #fff;
+			}
 		}
 
 		.service-cats,
@@ -24,6 +25,7 @@
 			float: left;
 			width: 25%;
 			margin-bottom: 30px;
+			border-bottom: 1px solid #fff;
 
 			@include bp-small {
 				@include full;

@@ -8,7 +8,7 @@
 					<img src="{{ URL::asset('images/user/'.$the_user->picture) }}" alt="">
 				</div>
 
-				<h3 class="block-title">Contact Information</h3>
+				
 				<ul>
 					<li class="email"><p><span>Email:</span>{{ $the_user->email }}</p></li>
 					<li class="phone"><p><span>Phone: </span>{{ $the_user->phone }}</p></li>
