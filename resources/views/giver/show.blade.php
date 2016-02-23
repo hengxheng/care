@@ -30,7 +30,7 @@
 				<li class="address"><span>Address</span>{{ $the_giver->address1 }}, <br />{{ $the_giver->suburb }}, <br />{{ $the_giver->state }}, <br />{{ $the_giver->postcode }}</li>
 			</ul>
 
-			<a class="edit-btn" href="{{ URL::route('care_givers.edit', array('id'=>$the_user->id)) }}">Edit</a>	
+			<a class="edit-btn" href="{{ URL::route('care_givers.edit', array('id'=>$the_user->id)) }}"><i class="fa fa-pencil"></i></a>	
 			@endif
 
 			@if (Auth::user()->user_type == 'seeker' )
@@ -62,7 +62,7 @@
 			<div class="block">
 				<h2 class="block-title">Bio
 					@if(Auth::user()->id == $the_user->id)
-					<a class="edit-btn" href="{{ URL::route('care_givers.edit2', array('id'=>$the_user->id)) }}">Edit</a>
+					<a class="edit-btn" href="{{ URL::route('care_givers.edit2', array('id'=>$the_user->id)) }}"><i class="fa fa-pencil"></i></a>
 					@endif
 				</h2>
 				<div class="block-content">
@@ -73,7 +73,7 @@
 			<div class="block">
 				<h2 class="block-title">Experiece
 					@if(Auth::user()->id == $the_user->id)
-					<a class="edit-btn" href="{{ URL::route('care_givers.edit2', array('id'=>$the_user->id)) }}">Edit</a>
+					<a class="edit-btn" href="{{ URL::route('care_givers.edit2', array('id'=>$the_user->id)) }}"><i class="fa fa-pencil"></i></a>
 					@endif
 				</h2>
 				<div class="block-content">
@@ -84,7 +84,7 @@
 			<div class="block education">
 				<h2 class="block-title">Education
 					@if(Auth::user()->id == $the_user->id) 
-					<a class="edit-btn" href="{{ URL::route('care_givers.edit2', array('id'=>$the_user->id)) }}">Edit</a>
+					<a class="edit-btn" href="{{ URL::route('care_givers.edit2', array('id'=>$the_user->id)) }}"><i class="fa fa-pencil"></i></a>
 					@endif
 				</h2>
 				<div class="block-content">
@@ -95,7 +95,7 @@
 			<div class="block service-cats">
 				<h2 class="block-title">Service categories 
 					@if(Auth::user()->id == $the_user->id) 
-					<a class="edit-btn" href="{{ URL::route('care_givers.edit3', array('id'=>$the_user->id)) }}">Edit</a>
+					<a class="edit-btn" href="{{ URL::route('care_givers.edit3', array('id'=>$the_user->id)) }}"><i class="fa fa-pencil"></i></a>
 					@endif
 				</h2>
 				<div class="block-content">
@@ -114,7 +114,7 @@
 			<div class="block service-rate">
 				<h2 class="block-title">Rate 
 					@if(Auth::user()->id == $the_user->id)
-					<a class="edit-btn" href="{{ URL::route('care_givers.edit2', array('id'=>$the_user->id)) }}">Edit</a>
+					<a class="edit-btn" href="{{ URL::route('care_givers.edit2', array('id'=>$the_user->id)) }}"><i class="fa fa-pencil"></i></a>
 					@endif
 				</h2>
 				<div class="block-content">
@@ -125,7 +125,7 @@
 			<div class="block services">
 				<h2 class="block-title">Services
 					@if(Auth::user()->id == $the_user->id) 
-					<a class="edit-btn" href="{{ URL::route('care_givers.edit3', array('id'=>$the_user->id)) }}">Edit</a>
+					<a class="edit-btn" href="{{ URL::route('care_givers.edit3', array('id'=>$the_user->id)) }}"><i class="fa fa-pencil"></i></a>
 					@endif
 				</h2>
 				<div class="block-content">
@@ -144,7 +144,7 @@
 			<div class="block qualifications">
 				<h2 class="block-title">My Qualifications
 					@if(Auth::user()->id == $the_user->id) 
-					<a class="edit-btn" href="{{ URL::route('care_givers.edit3', array('id'=>$the_user->id)) }}">Edit</a>
+					<a class="edit-btn" href="{{ URL::route('care_givers.edit3', array('id'=>$the_user->id)) }}"><i class="fa fa-pencil"></i></a>
 					@endif
 				</h2>
 				<div class="block-content">
@@ -159,7 +159,7 @@
 			<div class="block availabilty" >
 				<h2 class="block-title">My Availability
 					@if(Auth::user()->id == $the_user->id)
-					<a class="edit-btn" href="{{ URL::route('care_givers.edit3', array('id'=>$the_user->id)) }}">Edit</a>
+					<a class="edit-btn" href="{{ URL::route('care_givers.edit3', array('id'=>$the_user->id)) }}"><i class="fa fa-pencil"></i></a>
 					@endif
 				</h2>
 				<div class="block-content" style="padding:0;">
