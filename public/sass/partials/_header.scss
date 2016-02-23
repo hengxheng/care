@@ -2,7 +2,7 @@
 // header
 header#site-header{
 	.header-top{
-		padding: 15px 0;
+		padding: 0px 0;
 		background:#fff;
 		text-align: left;
 		display: block;
@@ -18,15 +18,42 @@ header#site-header{
 
 		ul{
 			display:inline-block;
+			position: relative;
 
 			li{
 				display:inline-block;
 				color: #000;
 				margin:0 5px;
+				padding: 15px 0px;
+				position: relative;
+
+				&:before {
+					position: absolute;
+					top: 0px;
+					left: 0px;
+					height: 0px;
+					width: 100%;
+					background-color: $blue;
+					content: '';
+					@include transition (all 0.1s linear);
+				}
+
+				&:hover {
+					&:before {
+						position: absolute;
+						top: 0px;
+						left: 0px;
+						height: 4px;
+						width: 100%;
+						background-color: $blue;
+						content: '';
+					}					
+				}
 
 				a{
 					color: #000;
 					font-size: 14px;
+					display:block;
 				}
 
 				i {
@@ -40,6 +67,14 @@ header#site-header{
 
 			@include bp-mlarge {
 				display: none;
+			}
+
+			ul {
+				li {
+					&:before {
+						display: none;
+					}
+				}
 			}
 
 			i {
