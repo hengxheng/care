@@ -61,6 +61,7 @@ a {
 a, p, span, ul, li, address, input, textarea {
   font-family: "proxima-nova", sans-serif;
   line-height: 22px;
+  font-size: 16px;
 }
 
 textarea {
@@ -94,8 +95,9 @@ h1, h2, h3, h4 {
 }
 
 p {
-  line-height: 20px;
+  line-height: 22px;
   margin-bottom: 10px;
+  font-size: 16px;
 }
 
 .fa-star {
@@ -1203,7 +1205,6 @@ nav#main-nav #site-nav ul .inbox {
   border-top: 1px solid #e3e3e3;
 }
 .profile-block .content p {
-  line-height: 20px;
   margin-bottom: 10px;
 }
 .profile-block .profile-info {
@@ -2216,7 +2217,7 @@ form .desc textarea {
 
 .block .block-title {
   color: #164856;
-  font-size: 18px;
+  font-size: 20px;
   margin-top: 20px;
 }
 .block .block-title .edit-btn {
