@@ -15,6 +15,8 @@
 		<script src="{{URL::asset('scripts/pushy.min.js') }}"></script>
 		<script src="{{URL::asset('scripts/rateit/src/jquery.rateit.min.js') }}"></script>
 		<link rel="stylesheet" href="{{URL::asset('scripts/rateit/src/rateit.css') }}">
+		
+		<link rel="shortcut icon" href="http://localhost/CareNationWP/wp-content/themes/CareNationWP/images/favicon.png">
 
 		<!--Typekit-->
 		<script src="https://use.typekit.net/zbk6zbg.js"></script>
