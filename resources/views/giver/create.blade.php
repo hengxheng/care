@@ -1,13 +1,15 @@
 @extends('html')
 
+@section('pageType', 'giver-signup')
+@endsection
 
 @section('content')
-<div id="provider-create-form" ng-controller="GiverCtrl">
+<div id="provider-create-form" ng-controller="GiverCtrl" class="register-block">
 				<form action="{{ URL::route('care_givers.store') }}" method="post" enctype="multipart/form-data">
 					<input type="hidden" name="uid" value="{{ Auth::user() -> id }}">
 					<input type="hidden" name="step" value="1">
 					{!! Form::token() !!}
-					<div class="form-row">
+					<div class="form-row gender">
 						<label for="gender">Gender</label>
 						<input type="radio" name="gender" value="male" checked>Male
 						<input type="radio" name="gender" value="female">Female
@@ -46,13 +48,13 @@
 						<label for="picture">Profile Picture (Head shots only)</label>
 						<input type="file" name="picture">
 					</div>
-					<div class="form-row">
+					<div class="form-row background">
 						<label for="background-check">Background Check</label>
 						<input type="file" name="background-check">
 						<p>It is mandatory to have a background check in order for your profile to be live.</p>
 						<p>To apply, please visit <a href="https://www.veritascheck.com.au/apply" target="_blank">https://www.veritascheck.com.au/apply</a></p>
 					</div>
-					<div class="form-row">
+					<div class="form-row submit">
 						<input type="submit" value="Save">
 					</div>
 				</form>

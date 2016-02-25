@@ -1,6 +1,10 @@
 @extends ('html')
 
+@section('pageType', 'seeker-signup')
+@endsection
+
 @section ('content')
+<div id="provider-create-form" ng-controller="GiverCtrl" class="register-block">
 <form action="{{ URL::route('care_seekers.store')}}" method="post" enctype="multipart/form-data">
 	{!! Form::token() !!}
 	<input type="hidden" name="uid" value="{{ Auth::user() -> id }}">
@@ -43,4 +47,5 @@
 	</div>
 	
 </form>
+	</div>
 @endsection

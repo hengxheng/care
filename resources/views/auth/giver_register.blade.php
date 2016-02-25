@@ -1,4 +1,8 @@
 @extends('html')
+
+@section('pageType', 'giver-signup')
+@endsection
+
 @section('content')
 <div id="user-1" class="register-block">
 <form method="POST" action="{{ URL::route('register') }}">

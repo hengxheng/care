@@ -8,6 +8,7 @@
 	font-weight: $bold;
 	border-bottom: 5px solid $blue;
 	@include border-radius (4px);
+	@include transition(all 0.2s linear);
 }
 
 .dark-blue-btn:hover{
@@ -24,6 +25,7 @@
 	padding: 6px 27px;
 	border-bottom: 5px solid $dark-blue;
 	@include border-radius (4px);
+	@include transition(all 0.2s linear);
 
 }
 
@@ -84,9 +86,9 @@
 
 .edit-btn{
 	display:inline-block;
-	background: $blue;
+	background: $orange;
 	font-weight: $bold;
-	padding: 4px 16px 4px 30px;
+	padding: 4px 10px;
 	float: left;
 	color:#fff;
 	font-size: 14px;

@@ -1,5 +1,10 @@
 @extends ('html')
+
+@section('pageType', 'seeker-signup')
+@endsection
+
 @section ('content')
+<div class="register-block">
 <form id="subscription-form" action="{{ URL::route('seeker.upgrade') }}" method="POST" >
 	{!! Form::token() !!}
 	<input type="hidden" name="uid" value="{{ Auth::user()->id }}">
@@ -53,10 +58,11 @@
 		<input type="text" name="cvc" data-stripe="cvc">
 	</div>
 	<div class="form-row">
-		<input id="subscript-submit" type="submit" value="SIGN UP">
+		<input id="subscript-submit" type="submit" value="Sign Up">
 	</div>
 
 </form>
+</div>
 
 <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
 <script>

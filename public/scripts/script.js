@@ -7,7 +7,7 @@ $(function(){
 
 	$("#add_quo").click(function(e){
 		e.preventDefault();
-		$(".quolification-block").append('<div class="form-row"><label>Quolification: </label><input type="text" name="quolification[]"></div>');
+		$(".quolification-block").append('<div class="form-row"><label>Qualification: </label><input type="text" name="quolification[]"></div>');
 	});
 
 
@@ -27,7 +27,7 @@ $(function(){
 		}
 		else{
 			el.val("1");
-			$(this).css("background","green");
+			$(this).css("background","#f47521");
 		}
 	});
 

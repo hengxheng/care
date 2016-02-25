@@ -102,6 +102,7 @@ p {
 
 .fa-star {
   color: #f47521 !important;
+  font-size: 22px !important;
 }
 
 .background-image {
@@ -130,7 +131,7 @@ p {
 }
 
 .home-page .page-main {
-  background: url(images/temp-image.jpg) no-repeat center;
+  background: url(images/Image2.jpg) no-repeat center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -234,8 +235,7 @@ body {
 
 .service2-list li {
   display: inline-block;
-  width: 30%;
-  margin-bottom: 10px;
+  width: 48%;
 }
 .service2-list li input {
   vertical-align: middle;
@@ -255,6 +255,49 @@ body {
 }
 .register-block form {
   width: 100%;
+}
+
+.seeker-signup .register-block, .giver-signup .register-block {
+  display: inline-block;
+  width: 35%;
+  box-sizing: border-box;
+  padding: 2.5%;
+  background-color: #fff;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  border-radius: 4px;
+}
+.seeker-signup .register-block h2, .giver-signup .register-block h2 {
+  display: block;
+  width: 100%;
+  float: left;
+  text-align: center;
+}
+.seeker-signup .register-block p, .giver-signup .register-block p {
+  margin-bottom: 25px;
+}
+.seeker-signup .register-block form, .giver-signup .register-block form {
+  width: 100%;
+}
+@media only screen and (max-width: 1024px) {
+  .seeker-signup .register-block, .giver-signup .register-block {
+    width: 40%;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .seeker-signup .register-block, .giver-signup .register-block {
+    width: 50%;
+  }
+}
+@media only screen and (max-width: 30em) {
+  .seeker-signup .register-block, .giver-signup .register-block {
+    width: 90%;
+    padding: 7%;
+  }
 }
 
 header#site-header .header-top {
@@ -594,6 +637,11 @@ nav#main-nav #site-nav ul .inbox {
   -moz-border-radius: 4px;
   -ms-border-radius: 4px;
   border-radius: 4px;
+  -webkit-transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear;
+  -ms-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
 }
 
 .dark-blue-btn:hover {
@@ -613,6 +661,11 @@ nav#main-nav #site-nav ul .inbox {
   -moz-border-radius: 4px;
   -ms-border-radius: 4px;
   border-radius: 4px;
+  -webkit-transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear;
+  -ms-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
 }
 
 .blue-btn:hover {
@@ -699,28 +752,15 @@ nav#main-nav #site-nav ul .inbox {
 
 .edit-btn {
   display: inline-block;
-  background: #1E6073;
+  background: #f47521;
   font-weight: 600;
-  padding: 4px 16px 4px 30px;
+  padding: 4px 10px;
   float: left;
   color: #fff;
   font-size: 14px;
   margin-right: 15px;
   position: absolute;
   top: 5px;
-}
-.edit-btn:after {
-  font-family: FontAwesome;
-  font-style: normal;
-  font-weight: normal;
-  text-decoration: inherit;
-  color: #fff;
-  font-size: 10px;
-  padding-right: 0em;
-  position: absolute;
-  top: 3px;
-  left: 11px;
-  content: '\f040';
 }
 
 .message {
@@ -1023,6 +1063,11 @@ nav#main-nav #site-nav ul .inbox {
 .giver-profile .profile-block .content {
   width: 80%;
 }
+@media only screen and (max-width: 1024px) {
+  .giver-profile .profile-block .content {
+    width: 70%;
+  }
+}
 @media only screen and (max-width: 30em) {
   .giver-profile .profile-block .content {
     display: block;
@@ -1051,6 +1096,14 @@ nav#main-nav #site-nav ul .inbox {
   margin-bottom: 30px;
   border-bottom: 1px solid #fff;
 }
+@media only screen and (max-width: 768px) {
+  .giver-profile .profile-block .content .service-cats,
+  .giver-profile .profile-block .content .service-rate,
+  .giver-profile .profile-block .content .services,
+  .giver-profile .profile-block .content .qualifications {
+    width: 50%;
+  }
+}
 @media only screen and (max-width: 30em) {
   .giver-profile .profile-block .content .service-cats,
   .giver-profile .profile-block .content .service-rate,
@@ -1059,6 +1112,11 @@ nav#main-nav #site-nav ul .inbox {
     display: block;
     width: 100%;
     float: left;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .giver-profile .profile-block .content .services {
+    clear: both;
   }
 }
 
@@ -1095,18 +1153,17 @@ nav#main-nav #site-nav ul .inbox {
     width: 100%;
     float: left;
   }
-  .profile-block aside.contact .profile-image img {
-    width: 80% !important;
-  }
 }
 .profile-block aside.contact .edit-btn {
   position: relative;
 }
-.profile-block aside.contact i {
-  width: 20px;
-}
 .profile-block aside.contact p {
   font-weight: 600;
+}
+@media only screen and (max-width: 30em) {
+  .profile-block aside.contact p {
+    text-align: center;
+  }
 }
 .profile-block aside.contact .dark-blue-btn {
   padding-left: 10%;
@@ -1140,7 +1197,7 @@ nav#main-nav #site-nav ul .inbox {
     display: block;
     width: 100%;
     float: left;
-    width: 50%;
+    text-align: center;
   }
 }
 .profile-block aside.contact .profile-image img {
@@ -1150,8 +1207,23 @@ nav#main-nav #site-nav ul .inbox {
   -ms-border-radius: 300px;
   border-radius: 300px;
 }
+@media only screen and (max-width: 30em) {
+  .profile-block aside.contact .profile-image img {
+    width: 30%;
+  }
+}
 .profile-block aside.contact h3 {
   margin-top: 20px;
+}
+@media only screen and (max-width: 30em) {
+  .profile-block aside.contact h3 {
+    text-align: center;
+  }
+}
+@media only screen and (max-width: 30em) {
+  .profile-block aside.contact ul {
+    text-align: center;
+  }
 }
 .profile-block aside.contact ul li {
   display: inline-block;
@@ -1160,6 +1232,23 @@ nav#main-nav #site-nav ul .inbox {
   box-sizing: border-box;
   font-weight: bold;
   position: relative;
+}
+@media only screen and (max-width: 30em) {
+  .profile-block aside.contact ul li br {
+    display: none;
+  }
+}
+@media only screen and (max-width: 30em) {
+  .profile-block aside.contact ul li.email {
+    float: left;
+    width: 50%;
+  }
+}
+@media only screen and (max-width: 30em) {
+  .profile-block aside.contact ul li.phone {
+    float: left;
+    width: 50%;
+  }
 }
 .profile-block aside.contact span {
   font-weight: 600;
@@ -1193,8 +1282,8 @@ nav#main-nav #site-nav ul .inbox {
   right: 0px;
 }
 .profile-block .content .fa {
-  font-size: 1.5em;
-  color: #1E6073;
+  font-size: 12px;
+  color: #fff;
 }
 .profile-block .content .block-bio {
   display: block;
@@ -1862,6 +1951,110 @@ nav#main-nav #site-nav ul .inbox {
   }
 }
 
+.seeker-signup .page-main {
+  background: url(images/seeker-signup.jpg) no-repeat center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.giver-signup .page-main {
+  background: url(images/cagegiver-signup.jpg) no-repeat center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.giver-signup #giver-profile-3 {
+  width: 100%;
+  background-color: #fff;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  border-radius: 4px;
+  box-sizing: border-box;
+  padding: 2.5% 2.5%;
+  float: left;
+}
+@media only screen and (max-width: 30em) {
+  .giver-signup #giver-profile-3 {
+    padding: 5%;
+  }
+}
+.giver-signup #giver-profile-3 .row {
+  width: 48%;
+  float: left;
+}
+@media only screen and (max-width: 768px) {
+  .giver-signup #giver-profile-3 .row {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+.giver-signup #giver-profile-3 .row .service-cats div {
+  margin-bottom: 5px;
+}
+.giver-signup #giver-profile-3 .row ul li {
+  margin-bottom: 5px;
+}
+@media only screen and (max-width: 30em) {
+  .giver-signup #giver-profile-3 .row ul li {
+    display: block;
+    width: 100%;
+    float: left;
+  }
+}
+.giver-signup #giver-profile-3 .row:nth-child(odd) {
+  float: right;
+}
+@media only screen and (max-width: 30em) {
+  .giver-signup #giver-profile-3 .row:nth-child(odd) {
+    float: left;
+  }
+}
+.giver-signup #giver-profile-3 .row input[type="submit"] {
+  margin-top: 20px;
+}
+.giver-signup #provider-create-form {
+  width: 60%;
+}
+.giver-signup #provider-create-form a {
+  color: #164856;
+}
+@media only screen and (max-width: 768px) {
+  .giver-signup #provider-create-form {
+    width: 90%;
+  }
+}
+.giver-signup #provider-create-form .form-row {
+  width: 48%;
+}
+@media only screen and (max-width: 30em) {
+  .giver-signup #provider-create-form .form-row {
+    width: 100%;
+  }
+}
+.giver-signup #provider-create-form .form-row label {
+  display: block;
+  width: 100%;
+  float: left;
+}
+.giver-signup #provider-create-form .form-row.gender, .giver-signup #provider-create-form .form-row.background, .giver-signup #provider-create-form .form-row.submit {
+  display: block;
+  width: 100%;
+  float: left;
+}
+.giver-signup #provider-create-form .form-row.background input {
+  margin-bottom: 15px;
+}
+.giver-signup #provider-create-form .form-row.background p {
+  margin: 0px 0px 0px 0px;
+}
+.giver-signup #provider-create-form .form-row:nth-child(even) {
+  float: right;
+}
+
 .post-a-job form {
   display: block;
   width: 100%;
@@ -1926,12 +2119,18 @@ form .form-row-2 {
   margin-bottom: 15px;
 }
 form .form-row-2 label {
-  font-size: 16px;
-  line-height: 28px;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 600;
+  display: block;
+  width: 100%;
+  float: left;
+  color: #164856;
 }
 form .form-row-2 input, form .form-row-2 select {
   border: 1px solid #164856;
-  width: 120px;
+  width: 90px;
+  clear: both;
   box-sizing: border-box;
   color: #000;
   padding: 3px 0 3px 10px;

@@ -10,6 +10,7 @@ $bold: 600;
 $gold: #be9b2e;
 $darkgrey: #343434;
 $white: #fff;
+$orange: #f47521;  
 
 $site-width: 1280px;
 $blue: #1E6073;
@@ -25,32 +26,32 @@ $museo: "museo-sans",sans-serif;
 
 //Transition Mixin
 @mixin transition($args...) {
-  -webkit-transition: $args;
-  -moz-transition: $args;
-  -ms-transition: $args;
-  -o-transition: $args;
-  transition: $args;
+	-webkit-transition: $args;
+	-moz-transition: $args;
+	-ms-transition: $args;
+	-o-transition: $args;
+	transition: $args;
 }
 
 @mixin border-radius($radius) {
-  -webkit-border-radius: $radius;
-     -moz-border-radius: $radius;
-      -ms-border-radius: $radius;
-          border-radius: $radius;
+	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
+	-ms-border-radius: $radius;
+	border-radius: $radius;
 }
 
 @mixin fontawesome {
-    font-family: FontAwesome;
-    font-style: normal;
-    font-weight: normal;
-    text-decoration: inherit;
-/*--adjust as necessary--*/
-    color: #000;
-    font-size: 18px;
-    padding-right: 0.5em;
-    position: absolute;
-    top: 10px;
-    left: 0;
+	font-family: FontAwesome;
+	font-style: normal;
+	font-weight: normal;
+	text-decoration: inherit;
+	/*--adjust as necessary--*/
+	color: #000;
+	font-size: 18px;
+	padding-right: 0.5em;
+	position: absolute;
+	top: 10px;
+	left: 0;
 }
 
 @mixin full {
@@ -61,28 +62,28 @@ $museo: "museo-sans",sans-serif;
 
 //Respoonsive Mixins
 @mixin bp-large {
-  @media only screen and (max-width: 1024px) {
-    @content;
-  }
+	@media only screen and (max-width: 1024px) {
+		@content;
+	}
 }
 
 //Respoonsive Mixins
 @mixin bp-mlarge {
-  @media only screen and (max-width: 768px) {
-    @content;
-  }
+	@media only screen and (max-width: 768px) {
+		@content;
+	}
 }
 
 @mixin bp-medium {
-  @media only screen and (max-width: 40em) {
-    @content;
-  }
+	@media only screen and (max-width: 40em) {
+		@content;
+	}
 }
 
 @mixin bp-small {
-  @media only screen and (max-width: 30em) {
-    @content;
-  }
+	@media only screen and (max-width: 30em) {
+		@content;
+	}
 }
 
 
@@ -123,12 +124,13 @@ h1, h2, h3, h4{
 
 p {
 	line-height: 22px;
-    margin-bottom: 10px;
-    font-size: 16px;
+	margin-bottom: 10px;
+	font-size: 16px;
 }
 
 .fa-star {
 	color: #f47521 !important;
+	font-size: 22px !important;
 }
 
 .background-image {
@@ -158,11 +160,11 @@ p {
 
 .home-page {
 	.page-main {
-		background: url(images/temp-image.jpg) no-repeat center; 
-  		-webkit-background-size: cover;
-  		-moz-background-size: cover;
-  		-o-background-size: cover;
-  		background-size: cover;
+		background: url(images/Image2.jpg) no-repeat center; 
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
 	}
 }
 
@@ -264,8 +266,8 @@ body {
 .service2-list{
 	li{
 		display:inline-block;
-		width: 30%;
-		margin-bottom: 10px;
+		width: 48%;
+
 		input{
 			vertical-align: middle;
 		}
@@ -281,11 +283,52 @@ body {
 	width: 45%;
 	box-sizing: border-box;
 	padding: 0 15px;
+
 	p{
 		margin-bottom: 25px;
 	}
 	form{
 		width:100%;
+	}
+}
+
+.seeker-signup, .giver-signup {
+	.register-block{
+		display:inline-block;
+		width: 35%;
+		box-sizing: border-box;
+		padding: 2.5%;
+		background-color: #fff;
+		position: absolute;
+		left: 50%;
+		transform: translate( -50%, 0%);
+
+		@include border-radius(4px);
+
+		h2 {
+			@include full;
+			text-align: center;
+		}
+
+		p{
+			margin-bottom: 25px;
+		}
+		form{
+			width:100%;
+		}
+
+		@include bp-large {
+			width: 40%;
+		}
+
+		@include bp-mlarge {
+			width: 50%;
+		}
+
+		@include bp-small {
+			width: 90%;
+			padding: 7%;
+		}
 	}
 }
 

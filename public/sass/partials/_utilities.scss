@@ -1,3 +1,117 @@
+//Seeker Sign up - Unique body class styles 
+.seeker-signup {
+	.page-main {
+    	background: url(images/seeker-signup.jpg) no-repeat center;
+    	-webkit-background-size: cover;
+    	-moz-background-size: cover;
+    	-o-background-size: cover;
+    	background-size: cover;
+	}
+}
+
+//Care Giver Sign up - Unique body class styles
+.giver-signup {
+	.page-main {
+    	background: url(images/cagegiver-signup.jpg) no-repeat center;
+    	-webkit-background-size: cover;
+    	-moz-background-size: cover;
+    	-o-background-size: cover;
+    	background-size: cover;
+	}	
+
+	#giver-profile-3 {
+		width: 100%;
+		background-color: #fff;
+		@include border-radius(4px);
+		box-sizing: border-box;
+		padding: 2.5% 2.5%;
+		float: left;
+
+		@include bp-small {
+			padding: 5%;
+		}
+
+		.row {
+			width: 48%;
+			float: left;
+
+			@include bp-mlarge {
+				width: 100%;
+				margin-bottom: 20px;
+			}
+
+			.service-cats div {
+				margin-bottom: 5px;
+			}
+
+			ul {
+				li {
+					margin-bottom: 5px;
+
+					@include bp-small {
+						@include full;
+					}
+				}
+			}
+
+			&:nth-child(odd) {
+				float: right;
+
+				@include bp-small {
+					float: left;
+				}
+			}
+
+			input[type="submit"] {
+				margin-top: 20px;
+			}
+		}		
+	}
+
+	#provider-create-form {
+		width: 60%;
+
+		a {
+			color: $dark-blue;
+		}
+
+		@include bp-mlarge {
+			width: 90%;
+		}
+
+		.form-row {
+			width: 48%;
+
+			@include bp-small {
+				width: 100%;
+			}
+
+			label {
+				@include full;
+			}
+
+			&.gender, 
+			&.background,
+			&.submit {
+				@include full;
+			}
+
+			&.background {
+				input {
+					margin-bottom: 15px;
+				}
+				p {
+					margin: 0px 0px 0px 0px;
+				}
+			}
+
+			&:nth-child(even) {
+				float: right;
+			}
+		}
+	}
+}
+
 
 .post-a-job {
 	form {
@@ -65,12 +179,17 @@ form{
 	.form-row-2{
 		margin-bottom: 15px;
 		label{
-			font-size: 16px;
-			line-height: 28px;
+			font-size: 14px;
+ 			line-height: 20px;
+    		font-weight: 600;
+    		@include full;
+    		color: $dark-blue;
 		}
+
 		input, select{
 			border: 1px solid $dark-blue;
-			width: 120px;
+			width: 90px;
+			clear: both;
 			box-sizing:border-box;
 			color:#000;
 			padding:3px 0 3px 10px;

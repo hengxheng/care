@@ -1,4 +1,8 @@
 @extends('html')
+
+@section('pageType', 'seeker-signup')
+@endsection
+
 @section('content')
 
 <div id="user-2" class="register-block">

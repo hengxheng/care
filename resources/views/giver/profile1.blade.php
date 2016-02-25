@@ -1,6 +1,10 @@
 @extends('html')
 
+@section('pageType', 'giver-signup')
+@endsection
+
 @section('content')
+<div class="register-block">
 <form method="POST" action="{{ URL::route('care_givers.store') }}">
     {!! csrf_field() !!}
     <input type="hidden" name="uid" value="{{ Auth::user() -> id }}">
@@ -36,5 +40,6 @@
         <input type="submit" value="Save">
     </div>
 </form>
+</div>
 
 @endsection

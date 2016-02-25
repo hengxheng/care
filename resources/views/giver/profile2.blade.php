@@ -1,5 +1,8 @@
 @extends('html')
 
+@section('pageType', 'giver-signup')
+@endsection
+
 @section('content')
 <div id="giver-profile-3" ng-controller="GiverCtrl">
 <form method="POST" action="{{ URL::route('care_givers.store') }}" class="full-wide">
@@ -7,20 +10,18 @@
     <input type="hidden" name="uid" value="{{ Auth::user() -> id }}">
     <input type="hidden" name="step" value="3">
     <div class="row">
-         <div class="col-1">
+
             <h2>Do you have experience in any of the following</h2>
-            <div class="form-row">
+            <div class="form-row service-cats">
                 <div><input type="checkbox" name="service[]" value="Alzheimer's & Dementia Care"><span>Alzheimer's & Dementia Care</span></div>
                 <div><input type="checkbox" name="service[]" value="Companion Care"><span>Companion Care</span></div>
                 <div><input type="checkbox" name="service[]" value="Palliative Care"><span>Palliative Care</span></div>
                 <div><input type="checkbox" name="service[]" value="Respite Care"><span>Respite Care</span></div>
                 <div><input type="checkbox" name="service[]" value="Transition Care"><span>Transition Care</span></div>
             </div>
-         </div>
     </div>
 
     <div class="row">
-        <div class="col-1">
             <h2>Which of the following services can you provide?</h2>
             <div class="form-row">
                 <ul class="service2-list">
@@ -37,22 +38,21 @@
                     <li><input type="checkbox" name="service2[]" value="Companionship"><span>Companionship</span></li>
                 </ul>
             </div>
-        </div>
     </div>
 
     <div class="row">
-        <div class="col-1">
+  
             <h2>Qualifications</h2>
             <div class="quolification-block">
                 <div class="form-row">
                     <label>Qualification: </label><input type="text" name="quolification[]">
                 </div>
             </div>
-            <a id="add_quo" href="#" ng-click="add_quolification()" class="dark-blue-btn">Add a qualification</a>
-        </div>
+            <a id="add_quo" href="#" ng-click="add_quolification()" class="dark-blue-btn">Add a Qualification</a>
+
     </div>
     <div class="row">
-        <div class="col-1">
+
         <h2>Availability</h2>
         <div class="availability-block">      
             <table id="avaiability-table">
@@ -145,11 +145,13 @@
                 </tr>
             </table>
         </div>
-        </div>
+
+            <div class="form-row" style="width:300px;">
+                <input type="submit" value="Submit">
+            </div>
+
     </div>
-    <div class="form-row" style="width:300px;">
-        <input type="submit" value="Submit">
-    </div>
+
 </form>
 
 </div>

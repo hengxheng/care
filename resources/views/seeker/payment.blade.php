@@ -1,4 +1,8 @@
 @extends('html')
+
+@section('pageType', 'seeker-signup')
+@endsection
+
 @section('content')
 <div class="block">
     <div class="page-title">
