@@ -292,7 +292,7 @@ body {
 	}
 }
 
-.seeker-signup, .giver-signup {
+.seeker-signup, .giver-signup, .edit-profile {
 	.register-block{
 		display:inline-block;
 		width: 35%;
@@ -328,6 +328,37 @@ body {
 		@include bp-small {
 			width: 90%;
 			padding: 7%;
+		}
+	}
+}
+
+.edit-profile {
+
+	.page-main {
+		min-height: 840px;
+	}
+	.register-block {
+		img {
+			width: 40%;
+			margin: 0px 30%;
+			@include border-radius(200px);
+		}
+
+		.form-row.image {
+			text-align: center;
+
+			input {
+				width: auto;
+				width: 210px;
+			}
+		}
+
+		.form-row.submit {
+			text-align: center;
+
+			input {
+				float: none;
+			}
 		}
 	}
 }

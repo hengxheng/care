@@ -42,6 +42,7 @@
 	.message-body{
 		padding:15px;
 		font-size: 16px;
+		@include full;
 
 		@include bp-small {
 			@include full;
@@ -50,6 +51,11 @@
 	}
 	.msg-cta{
 		padding:15px;
+		float: right;
+	}
+
+	.row {
+		@include full;
 	}
 }
 
@@ -212,7 +218,7 @@
 .message {
 	.message-list-block {
 		float: left;
-		width: 30%;
+		width: 100%;
 
 		@include bp-small {
 			@include full;
@@ -220,7 +226,7 @@
 
 		aside.contact {
 			float: left;
-			width: 100%;
+			width: 39%;
 
 			.user-img {
 				float: left;

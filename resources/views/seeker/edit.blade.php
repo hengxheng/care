@@ -1,6 +1,10 @@
 @extends ('html')
 
+@section('pageType', 'edit-profile')
+@endsection
+
 @section ('content')
+<div id="user-2" class="register-block">
 <form action="{{ URL::route('care_seekers.update', array('id'=>$seeker->uid))}}" method="post" enctype="multipart/form-data">
 	<input name="_method" type="hidden" value="PATCH">
 	{!! Form::token() !!}
@@ -34,13 +38,14 @@
 		<label for="postcode">Postcode</label>
 		<input type="text" name="postcode" value="{{ $seeker->postcode }}">
 	</div>	
-	<div class="form-row">	
-		<img src="{{ URL::asset('images/user/'.$seeker->picture) }}" alt="">
+	<div class="form-row image">	
+		<img src="{{ URL::asset('images/user/'.Auth::user()->picture) }}" alt="">
 		<label for="picture">Profile Picture (Head shots only)</label>
 		<input type="file" name="picture">
 	</div> 
-	<div class="form-row">
+	<div class="form-row submit">
 		<input type="submit" value="Submit">
 	</div>
 </form>
+</div>
 @endsection

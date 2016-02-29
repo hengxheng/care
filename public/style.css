@@ -257,7 +257,7 @@ body {
   width: 100%;
 }
 
-.seeker-signup .register-block, .giver-signup .register-block {
+.seeker-signup .register-block, .giver-signup .register-block, .edit-profile .register-block {
   display: inline-block;
   width: 35%;
   box-sizing: border-box;
@@ -271,33 +271,58 @@ body {
   -ms-border-radius: 4px;
   border-radius: 4px;
 }
-.seeker-signup .register-block h2, .giver-signup .register-block h2 {
+.seeker-signup .register-block h2, .giver-signup .register-block h2, .edit-profile .register-block h2 {
   display: block;
   width: 100%;
   float: left;
   text-align: center;
 }
-.seeker-signup .register-block p, .giver-signup .register-block p {
+.seeker-signup .register-block p, .giver-signup .register-block p, .edit-profile .register-block p {
   margin-bottom: 25px;
 }
-.seeker-signup .register-block form, .giver-signup .register-block form {
+.seeker-signup .register-block form, .giver-signup .register-block form, .edit-profile .register-block form {
   width: 100%;
 }
 @media only screen and (max-width: 1024px) {
-  .seeker-signup .register-block, .giver-signup .register-block {
+  .seeker-signup .register-block, .giver-signup .register-block, .edit-profile .register-block {
     width: 40%;
   }
 }
 @media only screen and (max-width: 768px) {
-  .seeker-signup .register-block, .giver-signup .register-block {
+  .seeker-signup .register-block, .giver-signup .register-block, .edit-profile .register-block {
     width: 50%;
   }
 }
 @media only screen and (max-width: 30em) {
-  .seeker-signup .register-block, .giver-signup .register-block {
+  .seeker-signup .register-block, .giver-signup .register-block, .edit-profile .register-block {
     width: 90%;
     padding: 7%;
   }
+}
+
+.edit-profile .page-main {
+  min-height: 840px;
+}
+.edit-profile .register-block img {
+  width: 40%;
+  margin: 0px 30%;
+  -webkit-border-radius: 200px;
+  -moz-border-radius: 200px;
+  -ms-border-radius: 200px;
+  border-radius: 200px;
+}
+.edit-profile .register-block .form-row.image {
+  text-align: center;
+}
+.edit-profile .register-block .form-row.image input {
+  width: auto;
+  width: 210px;
+}
+.edit-profile .register-block .form-row.submit {
+  text-align: center;
+}
+.edit-profile .register-block .form-row.submit input {
+  float: none;
 }
 
 header#site-header .header-top {
@@ -808,6 +833,9 @@ nav#main-nav #site-nav ul .inbox {
 .message .message-body {
   padding: 15px;
   font-size: 16px;
+  display: block;
+  width: 100%;
+  float: left;
 }
 @media only screen and (max-width: 30em) {
   .message .message-body {
@@ -819,6 +847,12 @@ nav#main-nav #site-nav ul .inbox {
 }
 .message .msg-cta {
   padding: 15px;
+  float: right;
+}
+.message .row {
+  display: block;
+  width: 100%;
+  float: left;
 }
 
 #message-menu ul li {
@@ -968,7 +1002,7 @@ nav#main-nav #site-nav ul .inbox {
 
 .message .message-list-block {
   float: left;
-  width: 30%;
+  width: 100%;
 }
 @media only screen and (max-width: 30em) {
   .message .message-list-block {
@@ -979,7 +1013,7 @@ nav#main-nav #site-nav ul .inbox {
 }
 .message .message-list-block aside.contact {
   float: left;
-  width: 100%;
+  width: 39%;
 }
 .message .message-list-block aside.contact .user-img {
   float: left;
@@ -1951,7 +1985,8 @@ nav#main-nav #site-nav ul .inbox {
   }
 }
 
-.seeker-signup .page-main {
+.seeker-signup .page-main,
+.edit-profile .page-main {
   background: url(images/seeker-signup.jpg) no-repeat center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
