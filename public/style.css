@@ -981,7 +981,8 @@ nav#main-nav #site-nav ul .inbox {
 }
 #message-main ul li .message-tease .cta {
   float: left;
-  margin-left: 30px;
+  margin-left: 0px;
+  clear: both;
 }
 @media only screen and (max-width: 30em) {
   #message-main ul li .message-tease .cta {
