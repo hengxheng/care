@@ -107,7 +107,7 @@ class AdminController extends Controller
         $user->save();
 
         if($status == "Active"){
-            Mail::send('emails.account_active',array('firstname' => $fname, 'lastname' => $lname, 'email' => $hmail ), function($message) use ($hmail) {
+            Mail::send('emails.account_actived',array('firstname' => $fname, 'lastname' => $lname, 'email' => $hmail ), function($message) use ($hmail) {
                 $message->to($hmail , "CareNation Customer")->subject('Account actived with CareNation.com.au!');
             });
         }
