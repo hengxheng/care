@@ -20,7 +20,7 @@
 		</div>
 
 		<div class="block service-type">
-			<h2 class="block-title">Service Type</h2>
+			<h2 class="block-title">Types of care</h2>
 			<div class="block-content">
 				<ul class="service-list">
 					@foreach ($serv as $s)
@@ -33,6 +33,21 @@
 				</ul>
 			</div>
 		</div>
+		<div class="block service-type">
+			<h2 class="block-title">Services</h2>
+			<div class="block-content">
+				<ul class="service-list">
+					@foreach ($serv2 as $s)
+					<li>
+						<div class="{{ str_slug($s, '-') }} service-icon">
+						{{ $s }}
+						</div>
+					</li>
+					@endforeach
+				</ul>
+			</div>
+		</div>
+
 		<div class="block location">
 			<h2 class="block-title">Location</h2>
 			<div class="block-content">

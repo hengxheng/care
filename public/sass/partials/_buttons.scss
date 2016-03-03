@@ -7,6 +7,7 @@
 	padding: 6px 27px;
 	font-weight: $bold;
 	border-bottom: 5px solid $blue;
+	text-transform: capitalize;
 	@include border-radius (4px);
 	@include transition(all 0.2s linear);
 }
@@ -23,6 +24,7 @@
 	border:0;
 	font-weight: $bold;
 	padding: 6px 27px;
+	text-transform: capitalize;
 	border-bottom: 5px solid $dark-blue;
 	@include border-radius (4px);
 	@include transition(all 0.2s linear);
@@ -33,6 +35,9 @@
 	background: $blue-hover;
 }
 
+input[type="submit"]{
+	text-transform: capitalize;
+}
 .view {
 	padding: 6px 27px 6px 37px;
 	&:after {
@@ -95,4 +100,5 @@
 	margin-right: 15px;
 	position: absolute;
 	top: 5px;
+	text-transform: capitalize;
 }

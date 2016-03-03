@@ -53,7 +53,7 @@
 					<i class="fa fa-star fa-2x"></i>
 					@endfor
 					@else
-					Not ratings yet
+					This Care Giver has not been rated by any Care Seekers yet
 					@endif
 				</div>
 			</div>

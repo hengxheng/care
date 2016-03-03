@@ -658,6 +658,7 @@ nav#main-nav #site-nav ul .inbox {
   padding: 6px 27px;
   font-weight: 600;
   border-bottom: 5px solid #1E6073;
+  text-transform: capitalize;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   -ms-border-radius: 4px;
@@ -681,6 +682,7 @@ nav#main-nav #site-nav ul .inbox {
   border: 0;
   font-weight: 600;
   padding: 6px 27px;
+  text-transform: capitalize;
   border-bottom: 5px solid #164856;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
@@ -695,6 +697,10 @@ nav#main-nav #site-nav ul .inbox {
 
 .blue-btn:hover {
   background: #3197b5;
+}
+
+input[type="submit"] {
+  text-transform: capitalize;
 }
 
 .view {
@@ -786,6 +792,7 @@ nav#main-nav #site-nav ul .inbox {
   margin-right: 15px;
   position: absolute;
   top: 5px;
+  text-transform: capitalize;
 }
 
 .message {

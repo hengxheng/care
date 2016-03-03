@@ -111,7 +111,17 @@ class JobsController extends Controller
             $_serv .= $s.',';
         }
         $_serv = substr($_serv,0,-1);
+
+        $serv2 = Input::get('service2');
+        $_serv2 = "";
+        foreach ($serv2 as $s){
+            $_serv2 .= $s.',';
+        }
+        $_serv2 = substr($_serv2,0,-1);
+
+
         $job->service_name = $_serv;
+        $job->service2_name = $_serv2;
         $job->state = Input::get('state');
         $job->start_date = date("Y-m-d", strtotime(Input::get('start_date')));
         $job->description = Input::get('description');
@@ -134,7 +144,10 @@ class JobsController extends Controller
         $user = Auth::user();
         $job = Job::find($id);
         $_serv = $job->service_name;
+        $_serv2 = $job->service2_name;
+
         $serv = explode("," ,$_serv);
+        $serv2 = explode("," ,$_serv2);
         if($user->user_type == "giver"){
             $submissions = Submission::getSubmissionByUserByJob($user->id, $id);
         }
@@ -145,7 +158,7 @@ class JobsController extends Controller
 
         $applied = Submission::checkSubmitted($user->id, $id);
         
-        return view("job.show", compact('job', 'serv', 'submissions', 'applied'));
+        return view("job.show", compact('job', 'serv', 'serv2', 'submissions', 'applied'));
     }
 
     /**

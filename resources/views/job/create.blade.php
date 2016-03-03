@@ -22,7 +22,7 @@
     
     <div class="half second">
     <div class="form-row service">
-        <label for="service[]">Service</label>
+        <label for="service[]">TYPES OF CARE</label>
         <div><input type="checkbox" name="service[]" value="Meal preparation"><span>Meal preparation</span></div>
         <div><input type="checkbox" name="service[]" value="Alzheimer's Care"><span>Alzheimer's Care</span></div>
         <div><input type="checkbox" name="service[]" value="Companionship"><span>Companionship</span></div>
@@ -30,6 +30,22 @@
         <div><input type="checkbox" name="service[]" value="Transportation"><span>Transportation</span></div>
         <div><input type="checkbox" name="service[]" value="Personal Care"><span>Personal Care</span></div>
     </div>
+
+    <div class="form-row service">
+        <label for="service2[]">SERVICES</label>
+        <div><input type="checkbox" name="service2[]" value="Bathing"><span>Bathing</span></div>
+        <div><input type="checkbox" name="service2[]" value="Grooming"><span>Grooming</span></div>
+        <div><input type="checkbox" name="service2[]" value="Toileting"><span>Toileting</span></div>
+        <div><input type="checkbox" name="service2[]" value="Managing Medications"><span>Managing Medications</span></div>
+        <div><input type="checkbox" name="service2[]" value="Meal prep"><span>Meal prep</span></div>
+        <div><input type="checkbox" name="service2[]" value="Groceries & Shopping"><span>Groceries & Shopping</span></div>
+        <div><input type="checkbox" name="service2[]" value="Transferring & Mobility"><span>Transferring & Mobility</span></div>
+        <div><input type="checkbox" name="service2[]" value="Exercise"><span>Exercise</span></div>
+        <div><input type="checkbox" name="service2[]" value="Transportation"><span>Transportation</span></div>
+        <div><input type="checkbox" name="service2[]" value="Housekeeping"><span>Housekeeping</span></div>
+        <div><input type="checkbox" name="service2[]" value="Companionship"><span>Companionship</span></div>
+    </div>
+
     <div class="form-row state">
     	<label for="state">State</label>
     	<select name="state" id="state-dropdown">

@@ -18,6 +18,7 @@ class CreateJobTable extends Migration
             $table->text('description');
             $table->integer('poster_id')->unsigned();;
             $table->string('service_name');
+            $table->string('service2_name');
             $table->string('state');
             $table->string('suburb');
             $table->string('postcode');
