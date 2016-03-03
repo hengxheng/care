@@ -34,6 +34,7 @@ class CreateJobTable extends Migration
             $table->foreign('job_id')->references('id')->on('job')->onDelete('cascade');
             $table->integer('submited_uid')->unsigned();;
             $table->foreign('submited_uid')->references('uid')->on('giver')->onDelete('cascade');
+            $table->boolean('like')->default(false);
             $table->text('content');
             $table->timestamps();
         });
