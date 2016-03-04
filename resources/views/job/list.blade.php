@@ -4,8 +4,12 @@
     <h2>Jobs</h2>
 </div>
 <div class="listing-box">
- @if ( !$jobs->count() )
-        You have no posted jobs.
+    @if ( !$jobs->count() )
+        @if(Auth::user()->user_type == "giver")
+            You have no job submissions
+        @else
+            You have no posted jobs.
+        @endif
     @else
         <ul>
             @foreach( $jobs as $job )

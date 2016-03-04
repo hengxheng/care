@@ -34,6 +34,23 @@ class SubmissionsController extends Controller
 
         return view('submission.create', compact(array('jid','uid')));
     }
+    
+
+    public function like(){
+        $id = Input::get('id');
+        $submission = Submission::find($id);
+        $like = $submission->like;
+        if($like){
+            $like = 0;
+        }
+        else{
+            $like = 1;
+        }
+        $submission->like = $like;
+        $submission->save();
+        return $like;
+
+    }
 
     /**
      * Store a newly created resource in storage.

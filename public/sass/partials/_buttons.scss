@@ -102,3 +102,13 @@ input[type="submit"]{
 	top: 5px;
 	text-transform: capitalize;
 }
+
+.sub-like{
+	float:right;
+	i{
+		color: #164856 !important;
+	}
+	i.like{
+		color: #f47521 !important;
+	}
+}

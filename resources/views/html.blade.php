@@ -105,7 +105,7 @@
 			<div class="header-content">
 				<div class="site-inner">
 					<div class="logo">
-						<a href="#"><img src="{{ URL::asset('images/logo.png') }}" alt=""></a>
+						<a href="/"><img src="{{ URL::asset('images/logo.png') }}" alt=""></a>
 					</div>	
 
 					<div class="menu-btn"><i class="fa fa-bars"></i></div>

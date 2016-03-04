@@ -91,7 +91,9 @@
 	                    </div>
                      	<div class="user-info">
 							<div class="user-name">
-						 		<h3>{{ $s->firstname }} {{ $s->lastname}}</h3>
+						 		<h3>{{ $s->firstname }} {{ $s->lastname}} <a class="sub-like" data-sid="{{ $s->id }}" href="#"><i class="fa fa-star 
+										@if($s->like) like @endif
+						 			"></i></a></h3>
 							</div>     
 							<div class="user-location">
 					     		<p><i class="fa fa-map-marker"></i> {{ $s->suburb }},{{ $s->state }}</p>
@@ -117,4 +119,31 @@
 			@endforeach
 		</ul>
 	</div>
+
+	<script>
+		jQuery(function($){
+			$(".sub-like").click(function(e){
+				e.preventDefault();
+				var id = $(this).data('sid');
+				var el = $(this);
+				$.ajax({
+					type: 'POST',
+					url: "{{ URL::route('submission.like') }}",
+					data: { 
+							"_token" : "{{ Session::token()}}",
+							"id" : id
+					},
+					success: function(result){				
+						if(result == "1"){
+								el.find('i').addClass("like");
+						}
+						else{
+								el.find('i').removeClass("like");
+						}
+						
+					}
+			});
+			});
+		});
+	</script>
 @endsection

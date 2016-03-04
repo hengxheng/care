@@ -795,6 +795,16 @@ input[type="submit"] {
   text-transform: capitalize;
 }
 
+.sub-like {
+  float: right;
+}
+.sub-like i {
+  color: #164856 !important;
+}
+.sub-like i.like {
+  color: #f47521 !important;
+}
+
 .message {
   padding: 15px;
 }

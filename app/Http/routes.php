@@ -68,6 +68,7 @@ Route::group(['middleware' => 'auth'], function(){
 	//Submission
 	Route::get('submission/create/{jid}/{uid}', ['as'=>'submission.create', 'uses'=>'SubmissionsController@create']);
 	Route::post('submission/store', ['as'=>'submission.store', 'uses'=>'SubmissionsController@store']);
+	Route::post('submission/like', ['as'=>'submission.like', 'uses'=>'SubmissionsController@like']);
 
 	//Messaging
 	Route::get('message/create/{to_id}', ['as'=>'message.create', 'uses' => 'MessagesController@create'] );
