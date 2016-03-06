@@ -91,9 +91,13 @@
 	                    </div>
                      	<div class="user-info">
 							<div class="user-name">
-						 		<h3>{{ $s->firstname }} {{ $s->lastname}} <a class="sub-like" data-sid="{{ $s->id }}" href="#"><i class="fa fa-star 
+						 		<h3>{{ $s->firstname }} {{ $s->lastname}} 
+									@if (Auth::user()->user_type == "seeker")
+						 			<a class="sub-like" data-sid="{{ $s->id }}" href="#"><i class="fa fa-star 
 										@if($s->like) like @endif
-						 			"></i></a></h3>
+						 			"></i></a>
+									@endif
+						 		</h3>
 							</div>     
 							<div class="user-location">
 					     		<p><i class="fa fa-map-marker"></i> {{ $s->suburb }},{{ $s->state }}</p>

@@ -85,8 +85,8 @@
 				<div class="site-inner">
 					<div class="contact">
 						<ul>
-							<li><a href="tel:02052692359"><i class="fa fa-phone"></i>020 5269 2359</a></li>
-							<li><a href="mailto:support@carenation.com.au"><i class="fa fa-envelope"></i>support@carenation.com</a></li>
+							<!-- <li><a href="tel:02052692359"><i class="fa fa-phone"></i><span>020 5269 2359</span></a></li> -->
+						<li><a href="mailto:info@carenation.com.au"><i class="fa fa-envelope"></i><span>info@carenation.com</span></a></li>
 						</ul>
 					</div>
 
@@ -215,8 +215,8 @@
 
 					<span class="social">
 						<ul>
-							<li><a href="#"><i class="fa fa-twitter"></i>@CareNation</a></li>
-							<li><a href="#"><i class="fa fa-facebook"></i>/CareNation</a></li>
+							<!-- <li><a href="#"><i class="fa fa-twitter"></i>@CareNation</a></li> -->
+							<li><a href="https://www.facebook.com/CareNation-373168729475054/?ref=bookmarks" target="_blank"><i class="fa fa-facebook"></i>/CareNation</a></li>
 						</ul>
 					</span>
 				</div>
@@ -237,17 +237,17 @@
 					<h3>Contact Us</h3>
 						
 					<ul class="contact-details">
-						<li class="phone"><a href="">020 5269 2359</a></li>
-						<li class="email"><a href="">support@carenation.com.au</a></li>
-						<li class="address">123 Care Street, <br />Sydney, <br />New South Wales, <br />2020 </li>
+						<!-- <li class="phone"><a href="">020 5269 2359</a></li> -->
+						<li class="email"><a href="mailto:info@carenation.com.au">info@carenation.com.au</a></li>
+						<!-- <li class="address">123 Care Street, <br />Sydney, <br />New South Wales, <br />2020 </li> -->
 
-						<li class="map"><a hrefr="#">View map</a></li>
+						<!-- <li class="map"><a hrefr="#">View map</a></li> -->
 					</ul>
 				</div>
 
 				<div class="fourth">
 					<h3>Important Information</h3>
-					<p>While we verify certain key information (police checks, key qualifications, references) during the on-boarding of each carer, carers’ represent other information about themselves to customers...</p>
+					<p>CareNation does not employ or recommend any care provider or care seeker nor is it responsible for the conduct of any care provider or care seeker. The CareNation website is a platform that provides tools to help care seekers and care providers connect online. Each care seeker and care provider is solely responsible for selecting a care provider or care seeker for themselves or their families and for complying with all laws in connection with any employment relationship they establish.</p>
 				</div>
 			</div>
 		</footer>

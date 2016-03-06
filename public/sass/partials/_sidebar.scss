@@ -129,6 +129,6 @@
 		font-family: $proxima;	
 		@include border-radius (4px);
 		margin-bottom: 20px;
-		text-transform: lowercase;
+		text-transform: capitalize;
 	}
 }

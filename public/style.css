@@ -1531,7 +1531,7 @@ input[type="submit"] {
   -ms-border-radius: 4px;
   border-radius: 4px;
   margin-bottom: 20px;
-  text-transform: lowercase;
+  text-transform: capitalize;
 }
 
 .user-block {

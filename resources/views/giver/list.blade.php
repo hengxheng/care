@@ -144,7 +144,7 @@
                             ><span>Companionship</span></div>
                 </div>
                 <div class="form-ele">
-                    <input type="submit" value="FILTER" />
+                    <input type="submit" value="Filter" />
                 </div>
             </form>
         </div>
