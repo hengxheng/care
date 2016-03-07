@@ -139,6 +139,9 @@ class GiversController extends Controller
         $step = Input::get('step');
         switch ($step){
             case "1":
+             $this->validate($request, [
+                'background-check' => 'required'
+            ]);
                 $giver = new Giver;
                 $giver->uid = $uid;
                 $giver->gender = Input::get("gender");

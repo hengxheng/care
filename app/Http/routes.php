@@ -22,6 +22,8 @@ Route::get('register', ['as' => 'register', 'uses' => 'Auth\AuthController@getRe
 Route::post('register', ['as' => 'register', 'uses' => 'Auth\AuthController@postRegister']);
 
 Route::post('getsuburbs', ['as'=>'getsuburbs', 'uses'=>'LocationController@getSuburbs']);
+Route::post('getpostcode', ['as'=>'getpostcode','uses'=>'LocationController@getPostcode']);
+
 
 Route::get('/seeker/register', ['as'=>'seeker_register', 'uses'=>'Auth\AuthController@seekerRegister']);
 Route::get('/giver/register',['as'=>'giver_register','uses'=>'Auth\AuthController@giverRegister']);

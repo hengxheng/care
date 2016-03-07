@@ -32,6 +32,15 @@ class LocationController extends Controller
         return $sub;
     }
 
+    public function getPostcode(){
+        $locality = Input::get('locality');
+        $state = Input::get('state');
+        $postcode = Location::getPostcodeBySub($locality, $state);
+        // var_dump($postcode);
+        // exit;
+        return $postcode[0]->postcode;
+    }
+
     /**
      * Show the form for creating a new resource.
      *

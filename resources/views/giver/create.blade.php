@@ -4,7 +4,31 @@
 @endsection
 
 @section('content')
-<div id="provider-create-form" ng-controller="GiverCtrl" class="register-block">
+<style>
+	.sys-message{
+		display:none;
+	}
+</style>
+			<div id="provider-create-form" ng-controller="GiverCtrl" class="register-block">
+				@if (Session::has('message'))
+					<div class="flash alert-info">
+						<p>{{ Session::get('message') }}</p>
+					</div>
+				@endif
+				@if (Session::has('status'))
+					<div class="flash alert-info">
+						<p>{{ Session::get('status') }}</p>
+					</div>
+				@endif
+				@if ($errors->any())
+					<div class='flash alert-danger'>
+						<ul>
+						@foreach ( $errors->all() as $error )
+							<li>{{ $error }}</li>
+						@endforeach
+						</ul>
+					</div>
+				@endif
 				<form action="{{ URL::route('care_givers.store') }}" method="post" enctype="multipart/form-data">
 					<input type="hidden" name="uid" value="{{ Auth::user() -> id }}">
 					<input type="hidden" name="step" value="1">

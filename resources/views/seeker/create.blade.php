@@ -36,7 +36,7 @@
 	</div>
 	<div class="form-row">
 		<label for="postcode">Postcode</label>
-		<input type="text" name="postcode" required pattern="[0-9]{4}">
+		<input type="text" id="postcode-field" name="postcode" required pattern="[0-9]{4}">
 	</div>	
 	<div class="form-row">	
 		<label for="picture">Profile Picture (Head shots only)</label>

@@ -67,6 +67,13 @@
 				@elseif (Auth::user()->status == 'Pending' && Auth::user()->user_type == "giver")
 				<li>To apply for jobs, you must first verify your account by adding a background check approved by us.</li>
 			@endif
+				@if(Auth::check())
+					<li><a href="{{ URL::route('account.settings') }}">Account Settings</a></li>
+					@if (Auth::user()->user_type == 'seeker')
+						<li><a href="{{ URL::route('seeker.payment') }}">Payments</a></li>
+					@endif
+					<li><a id="logout-btn" href="{{ URL::route('logout') }}">Logout</a></li>
+				@endif	
 			</ul>
 
 		</nav>
@@ -178,6 +185,7 @@
 
 		<div class="page-main">
 			<div class="page-content site-inner">
+				<div class="sys-message">
 				@if (Session::has('message'))
 					<div class="flash alert-info">
 						<p>{{ Session::get('message') }}</p>
@@ -197,7 +205,7 @@
 						</ul>
 					</div>
 				@endif
-
+				</div>
 				@yield('content')
 			</div>
 		</div>
@@ -270,6 +278,26 @@
   				$( "#suburb-dropdown" ).autocomplete({
 			      source: result
 			    });
+  			}
+  		});
+  	});
+
+  	var url2 = "{{ URL::route('getpostcode') }}";
+
+  	$("#suburb-dropdown").on("focusout", function(){
+
+  		var loc = $(this).val();
+  		var state = $("#state-dropdown").val();
+  		$.ajax({
+  			type: "POST",
+  			url: url2,
+  			data:{
+  				"locality" : loc,
+  				"state" : state,
+  				"_token" : "{{ Session::token()}}"
+  			},
+  			success: function(result){
+  				$("#postcode-field").val(result);
   			}
   		});
   	});

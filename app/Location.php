@@ -33,4 +33,13 @@ class Location extends Model
     	->get();
     }
 
+    public static function getPostcodeBySub($locality, $state){
+        return DB::table("location")
+        ->select("postcode")
+        ->where("locality", "like", $locality)
+        ->where("region1","=", $state)
+        ->orderBy('id', 'DESC')
+        ->get();
+    }
+
 }

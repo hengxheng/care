@@ -31,9 +31,9 @@ $(function(){
 		}
 	});
 
-	 $("#rateit").bind('rated', function (event, value) { 
-	 	// console.log('You\'ve rated it: ' + value); 
-	 });
+	$("#rateit").bind('rated', function (event, value) { 
+		// console.log('You\'ve rated it: ' + value); 
+	});
 
     $("#rateit").bind('reset', function () { 
     	// console.log('Rating reset'); 

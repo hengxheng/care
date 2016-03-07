@@ -48,7 +48,7 @@
 
     <div class="form-row state">
     	<label for="state">State</label>
-    	<select name="state" id="state-dropdown">
+    	<select name="state" id="state-dropdown" required>
     		<option value="">---</option>
     		<option value="New South Wales">New South Wales</option>
     		<option value="Queensland">Queensland</option>
@@ -62,15 +62,15 @@
     </div>
     <div class="form-row suburb">
 		<label for="suburb">Suburb</label>
-		<input id="suburb-dropdown" type="text" name="suburb">
+		<input id="suburb-dropdown" type="text" name="suburb" required>
 	</div>
 	<div class="form-row postcode">
 		<label for="postcode">Postcode</label>
-		<input type="text" name="postcode">
+		<input id="postcode-field" type="text" name="postcode" required pattern="[0-9]{4}">
 	</div>
 	<div class="form-row start">
 		<label for="start_date">Start Date</label>
-		<input type="text" name="start_date" class="datepicker">
+		<input type="text" name="start_date" class="datepicker" required>
 	</div>
 	<div class="form-row">
 		<input type="submit" value="Post this Job">
