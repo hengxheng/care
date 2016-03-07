@@ -155,7 +155,8 @@
 					</ul>
 				</div>
 			</div>
-
+			
+			@if (!empty($my_availability))
 			<div class="block availabilty" >
 				<h2 class="block-title">My Availability
 					@if(Auth::user()->id == $the_user->id)
@@ -217,7 +218,8 @@
 					</table>
 				</div>
 			</div>
-
+			@endif
+			
 			@if(Auth::user()->id != $the_user->id) 
 
 			<div class="block rating">

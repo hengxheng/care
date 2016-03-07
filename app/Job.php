@@ -47,7 +47,7 @@ class Job extends Model
     public static function getJobPoster($jid){
         return DB::table('job')
                 ->leftJoin('users', 'job.poster_id', '=', 'users.id' )
-                ->select('users.firstname', 'users.lastname', 'users.email', 'job.id')
+                ->select('users.firstname', 'users.lastname', 'users.email', 'users.id')
                 ->where('job.id', '=', $jid)
                 ->first();
     }

@@ -200,7 +200,7 @@
 				</div>
 			</div>
 		</div>
-
+	@if (!empty($my_availability))
 		<div class="row">
 			<div class="col-1">
 				<div class="block">
@@ -268,6 +268,7 @@
 		</div>
 	</div>
 </div>
+@endif
 <div class="row">
 	<div class="col-1">
 		<a class="dark-blue-btn" href="{{ URL::previous() }}">&lt; Back</a>
