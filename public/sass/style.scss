@@ -363,6 +363,12 @@ body {
 	}
 }
 
+form .form-row input[name="start_date"]{
+	background: url(images/calendar.png) no-repeat 7px center;
+    background-size: 20px 20px;
+    padding-left: 30px;
+}
+
 @import "partials/header";
 // @import "partials/nav";
 @import "partials/buttons";
