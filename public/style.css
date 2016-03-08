@@ -153,7 +153,7 @@ body {
   box-sizing: border-box;
   overflow: hidden;
 }
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 1280px) {
   .site-inner {
     width: 95%;
     margin: 0px 2.5%;
@@ -258,14 +258,12 @@ body {
 }
 
 .seeker-signup .register-block, .giver-signup .register-block, .edit-profile .register-block {
-  display: inline-block;
+  display: block;
   width: 35%;
   box-sizing: border-box;
   padding: 2.5%;
   background-color: #fff;
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%, 0%);
+  margin: 0 auto;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   -ms-border-radius: 4px;
@@ -283,7 +281,7 @@ body {
 .seeker-signup .register-block form, .giver-signup .register-block form, .edit-profile .register-block form {
   width: 100%;
 }
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 1280px) {
   .seeker-signup .register-block, .giver-signup .register-block, .edit-profile .register-block {
     width: 40%;
   }
@@ -297,6 +295,7 @@ body {
   .seeker-signup .register-block, .giver-signup .register-block, .edit-profile .register-block {
     width: 90%;
     padding: 7%;
+    overflow: hidden;
   }
 }
 
@@ -340,7 +339,7 @@ header#site-header .header-top {
   width: 100%;
   float: left;
 }
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 1280px) {
   header#site-header .header-top {
     padding: 10px 0px;
   }
@@ -1121,7 +1120,7 @@ input[type="submit"] {
 .giver-profile .profile-block .content {
   width: 80%;
 }
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 1280px) {
   .giver-profile .profile-block .content {
     width: 70%;
   }
@@ -1143,7 +1142,8 @@ input[type="submit"] {
   margin-bottom: 0px;
 }
 .giver-profile .profile-block .content .block.availabilty {
-  border-bottom: 0px solid #fff;
+  border-top: 1px #d3d3d3 solid;
+  border-bottom: 1px #d3d3d3 solid;
 }
 .giver-profile .profile-block .content .service-cats,
 .giver-profile .profile-block .content .service-rate,
@@ -2010,8 +2010,7 @@ input[type="submit"] {
   }
 }
 
-.seeker-signup .page-main,
-.edit-profile .page-main {
+.seeker-signup .page-main {
   background: url(images/seeker-signup.jpg) no-repeat center;
   -webkit-background-size: cover;
   -moz-background-size: cover;

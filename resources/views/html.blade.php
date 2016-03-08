@@ -227,6 +227,10 @@
 							<li><a href="https://www.facebook.com/CareNation-373168729475054/?ref=bookmarks" target="_blank"><i class="fa fa-facebook"></i>/CareNation</a></li>
 						</ul>
 					</span>
+
+					<div class="comodo">
+						<img src="{{ URL::asset('images/comodo-ssl.png') }}" alt="" style="width:200px; margin-top:30px;">
+					</div>
 				</div>
 
 				<div class="fourth">

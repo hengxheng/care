@@ -62,7 +62,7 @@ $museo: "museo-sans",sans-serif;
 
 //Respoonsive Mixins
 @mixin bp-large {
-	@media only screen and (max-width: 1024px) {
+	@media only screen and (max-width: 1280px) {
 		@content;
 	}
 }
@@ -294,14 +294,12 @@ body {
 
 .seeker-signup, .giver-signup, .edit-profile {
 	.register-block{
-		display:inline-block;
+		display:block;
 		width: 35%;
 		box-sizing: border-box;
 		padding: 2.5%;
 		background-color: #fff;
-		position: absolute;
-		left: 50%;
-		transform: translate( -50%, 0%);
+		margin: 0 auto;
 
 		@include border-radius(4px);
 
@@ -328,6 +326,7 @@ body {
 		@include bp-small {
 			width: 90%;
 			padding: 7%;
+			overflow:hidden;
 		}
 	}
 }

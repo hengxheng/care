@@ -250,12 +250,16 @@
 						});
 					});
 				});
-				</script>
-
-				@if (Auth::user()->user_type == "seeker")
-				<a class="dark-blue-btn back" href="{{ URL::previous() }}">Back</a>
-			@endif
+				</script>				
 			</div>
+			
+			@if (Auth::user()->user_type == "seeker")
+			<div class="block">
+				<div class="block-title"></div>
+				<a class="dark-blue-btn back" href="{{ URL::previous() }}">Back</a>
+			</div>
+				
+			@endif
 			@endif
 
 		</div>
