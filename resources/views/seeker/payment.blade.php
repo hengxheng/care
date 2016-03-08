@@ -1,6 +1,6 @@
 @extends('html')
 
-@section('pageType', 'seeker-signup')
+@section('pageType', 'payment')
 @endsection
 
 @section('content')
