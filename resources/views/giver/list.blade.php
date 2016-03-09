@@ -158,7 +158,7 @@
                 <select name="sort-by" id="sort-by">
                     <option value="{{ $order }}">
                         @if($order == "avg") Rating
-                        @else {{ $order }}
+                        @else Rate
                         @endif
                     </option>
                     <option value="avg">Rating</option>
@@ -212,14 +212,14 @@
                                 </div>
                                 <div class="year-exp">
                                     <span>Experience</span>
-                                    <p><!-- {{ $giver->years_exp }} -->12 years</p>
+                                    <p>{{ $giver->years_exp }}  years</p>
                                 </div>
 
                                 <div class="user-rating">
                                     <div class="rating">
                                         <span>Rating</span>
                                         @if($rating[$giver->id] >0 )
-                                            @for ($i=0; $i< $rating[$giver->id]; $i++)
+                                            @for ($i=0; $i < $rating[$giver->id]; $i++)
                                                 <i class="fa fa-star fa-2x"></i>
                                             @endfor
                                         @else
