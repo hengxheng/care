@@ -407,6 +407,11 @@ body {
   float: none;
 }
 
+.error-page p {
+  font-size: 42px;
+  line-height: 50px;
+}
+
 form .form-row input[name="start_date"] {
   background: url(images/calendar.png) no-repeat 7px center;
   background-size: 20px 20px;
