@@ -125,7 +125,7 @@
 		<div class="row">
 			<div class="col-2">
 				<div class="block">
-					<h2 class="block-title">Service categories 
+					<h2 class="block-title">Care Specialties
 						@if(Auth::user()->id == $the_user->id) 
 						<a class="edit-btn" href="{{ URL::route('care_givers.edit3', array('id'=>$the_user->id)) }}">Edit</a>
 						@endif

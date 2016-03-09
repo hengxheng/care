@@ -93,7 +93,7 @@
 			</div>
 
 			<div class="block service-cats">
-				<h2 class="block-title">Service categories 
+				<h2 class="block-title">Care Specialties
 					@if(Auth::user()->id == $the_user->id) 
 					<a class="edit-btn" href="{{ URL::route('care_givers.edit3', array('id'=>$the_user->id)) }}"><i class="fa fa-pencil"></i></a>
 					@endif
