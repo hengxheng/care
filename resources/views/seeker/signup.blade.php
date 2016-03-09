@@ -101,6 +101,7 @@
 	</div>
 	<div class="form-row">
 		<label for="ccn">Credit card number: </label>
+		<div><img src="{{ URL::asset('images/logo-stripe.png') }}" alt="" style="width: 200px;margin:5px 0;"></div>
 		<input type="text" name="ccn" data-stripe="number" required pattern="[0-9]{13,16}">
 	</div>
 	<div class="form-row-2">
