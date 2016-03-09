@@ -257,6 +257,88 @@ body {
   width: 100%;
 }
 
+.seeker-payment .register-block {
+  display: block;
+  width: 90%;
+  box-sizing: border-box;
+  padding: 2.5%;
+  background-color: #fff;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.seeker-payment .register-block input[name='ccn'] {
+  width: 400px;
+  display: block;
+}
+@media only screen and (max-width: 30em) {
+  .seeker-payment .register-block input[name='ccn'] {
+    width: 100%;
+  }
+}
+.seeker-payment .register-block .payment-plan {
+  overflow: hidden;
+}
+.seeker-payment .register-block .payment-plan .col-4 {
+  width: 25%;
+  box-sizing: border-box;
+  padding: 10px;
+  float: left;
+}
+@media screen and (max-width: 960px) {
+  .seeker-payment .register-block .payment-plan .col-4 {
+    width: 50%;
+  }
+}
+@media only screen and (max-width: 30em) {
+  .seeker-payment .register-block .payment-plan .col-4 {
+    width: 100%;
+  }
+}
+.seeker-payment .register-block .payment-plan .col-4 .plans {
+  border: 1px solid #ccc;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  border-radius: 6px;
+  box-sizing: border-box;
+  padding: 20px;
+  text-align: center;
+  color: #164856;
+  min-height: 360px;
+}
+.seeker-payment .register-block .payment-plan .col-4 .plans .plan-option {
+  margin-bottom: 25px;
+}
+.seeker-payment .register-block .payment-plan .col-4 .plans a {
+  color: #164856;
+}
+.seeker-payment .register-block .payment-plan .col-4 .plans h2 {
+  font-size: 44px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.seeker-payment .register-block .payment-plan .col-4 .plans h2 span {
+  font-size: 16px;
+}
+.seeker-payment .register-block .payment-plan .col-4 .plans h3 {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 25px;
+}
+.seeker-payment .register-block .payment-plan .col-4 .plans ul {
+  margin-bottom: 35px;
+}
+.seeker-payment .register-block .payment-plan .col-4 .plans ul li {
+  font-size: 12px;
+  font-weight: 500;
+  margin-bottom: 15px;
+  line-height: 16px;
+}
+.seeker-payment .register-block .payment-plan .col-4 .plans h4 {
+  font-size: 16px;
+  font-weight: 800;
+}
+
 .seeker-signup .register-block, .giver-signup .register-block, .edit-profile .register-block {
   display: block;
   width: 35%;
@@ -264,6 +346,7 @@ body {
   padding: 2.5%;
   background-color: #fff;
   margin: 0 auto;
+  overflow: hidden;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   -ms-border-radius: 4px;

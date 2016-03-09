@@ -291,7 +291,82 @@ body {
 		width:100%;
 	}
 }
+.seeker-payment{
+	.register-block{
+		display:block;
+		width: 90%;
+		box-sizing: border-box;
+		padding: 2.5%;
+		background-color: #fff;
+		margin: 0 auto;
+		overflow: hidden;
+		input[name='ccn']{
+			width: 400px;
+			display:block;
+			@include bp-small {
+				width: 100%;
+			}
+		}
 
+		.payment-plan{
+			overflow: hidden;
+			.col-4{
+				width:25%;
+				box-sizing: border-box;
+				padding: 10px;
+				float:left;
+				@media screen and (max-width: 960px) {
+					width: 50%;
+				}
+
+				@include bp-small {
+					width: 100%;
+				}
+				.plans{
+					border: 1px solid #ccc;
+					@include border-radius(6px);
+					box-sizing: border-box;
+					padding: 20px;
+					text-align: center;
+					color: $dark-blue;
+					min-height: 360px;
+					.plan-option{
+						margin-bottom: 25px;
+					}
+					a{
+						color: $dark-blue;
+					}
+					h2{
+						font-size: 44px;
+						font-weight: bold;
+						margin-bottom: 5px;
+						span{
+							font-size: 16px;
+						}
+					}
+					h3{
+						font-size: 16px;
+						font-weight: 500;
+						margin-bottom: 25px;
+					}	
+					ul{
+						margin-bottom: 35px;
+						li{
+							font-size: 12px;
+							font-weight: 500;
+							margin-bottom: 15px;
+							line-height: 16px;
+						}
+					}
+					h4{
+						font-size: 16px;
+						font-weight: 800;
+					}
+				}
+			}
+		}
+	}
+}
 .seeker-signup, .giver-signup, .edit-profile {
 	.register-block{
 		display:block;
@@ -300,7 +375,7 @@ body {
 		padding: 2.5%;
 		background-color: #fff;
 		margin: 0 auto;
-
+		overflow:hidden;
 		@include border-radius(4px);
 
 		h2 {

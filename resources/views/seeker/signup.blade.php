@@ -1,6 +1,6 @@
 @extends ('html')
 
-@section('pageType', 'seeker-signup')
+@section('pageType', 'seeker-payment')
 @endsection
 
 @section ('content')
@@ -9,7 +9,7 @@
 	{!! Form::token() !!}
 	<input type="hidden" name="uid" value="{{ Auth::user()->id }}">
 	<div class="payment-errors"></div>
-	<div class="form-row">
+<!-- 	<div class="form-row">
 		<label for="subscription">Subscription plan: </label>
 		<select name="subscription">
 			<option value="001">$99.00/month</option>
@@ -17,6 +17,87 @@
 			<option value="003">$445.50 for 6 months</option>
 			<option value="004">$831.60 for 12 months</option>
 		</select>
+	</div> -->
+	<div class="form-row payment-plan">
+		<h2>Choose your package</h2>
+		<div class="col-4">
+			<div class="plans">
+				<div class="plan-option">
+					<input id="op1" type="radio" name="subscription" value="001" required>
+				</div>
+				<a href="#" onclick=" $('#op1').prop('checked',true);return false;">
+				<div class="plan-content">
+					<h2><span class="dollar-sign">$</span>99</h2>
+					<h3>per month</h3>
+					<ul>
+						<li>Billed monthly</li>
+						<li>Unlimited Secure<br/>Private Messages</li>
+						<li>Unlimited Job Listings</li>
+					</ul>
+				</div>
+				</a>
+			</div>
+		</div>
+		<div class="col-4">
+			<div class="plans">
+				<div class="plan-option">
+					<input id="op2" type="radio" name="subscription" value="002">
+				</div>
+				<a href="#" onclick=" $('#op2').prop('checked',true);return false;">
+				<div class="plan-content">
+					<h2><span class="dollar-sign">$</span>237.60</h2>
+					<h3>for 3 months</h3>
+					<ul>
+						<li>One-off payment</li>
+						<li>Unlimited Secure<br/>Private Messages</li>
+						<li>Unlimited Job Listings</li>
+					</ul>
+
+					<h4>Save 20%</h4>
+				</div>
+				</a>
+			</div>
+		</div>
+		<div class="col-4">
+			<div class="plans">
+				<div class="plan-option">
+					<input id="op3" type="radio" name="subscription" value="003">
+				</div>
+				<a href="#" onclick=" $('#op3').prop('checked',true);return false;">
+				<div class="plan-content">
+					<h2><span class="dollar-sign">$</span>445.50</h2>
+					<h3>for 6 months</h3>
+					<ul>
+						<li>One-off payment</li>
+						<li>Unlimited Secure<br/>Private Messages</li>
+						<li>Unlimited Job Listings</li>
+					</ul>
+
+					<h4>Save 25%</h4>
+				</div>
+				</a>
+			</div>
+		</div>
+		<div class="col-4">
+			<div class="plans">
+				<div class="plan-option">
+					<input id="op4" type="radio" name="subscription" value="004">
+				</div>
+				<a href="#" onclick=" $('#op4').prop('checked',true);return false;">
+				<div class="plan-content">
+					<h2><span class="dollar-sign">$</span>831.60</h2>
+					<h3>for 12 months</h3>
+					<ul>
+						<li>One-off payment</li>
+						<li>Unlimited Secure<br/>Private Messages</li>
+						<li>Unlimited Job Listings</li>
+					</ul>
+
+					<h4>Save 30%</h4>
+				</div>
+				</a>
+			</div>
+		</div>
 	</div>
 	<div class="form-row">
 		<label for="ccn">Credit card number: </label>
