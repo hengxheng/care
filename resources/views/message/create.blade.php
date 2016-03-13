@@ -18,7 +18,7 @@
 		<textarea name="content"></textarea>
 	</div>
 	<div class="form-row">
-		<input type="submit" value="Send">
+		<input type="submit" value="Send"> <a class="dark-blue-btn" href="{{ URL::previous() }}" style="margin-left: 10px;">Cancel</a>
 	</div>
 </form>
 </div>

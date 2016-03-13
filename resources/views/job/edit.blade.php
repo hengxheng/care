@@ -62,7 +62,7 @@
 		<select name="status">
 			<option value="{{ $job->status }}">{{ $job->status }}</option>
 			<option value="Active">Active</option>
-			<option value="Close">Closed</option>
+			<option value="Closed">Closed</option>
 		</select>
 	</div>
 	@endif
