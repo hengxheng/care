@@ -67,7 +67,7 @@
 </div>
 
 <div class="content-with-sidebar">
-    <div class="tool-bar row">
+   <!--  <div class="tool-bar row">
         <div class="col-1">
         <form id="sort-form" action="{{ URL::route('care_givers.list')}}" method="get">
             <label for="sort-by">Sort By: </label>
@@ -77,7 +77,7 @@
             </select>
         </form>
         </div>
-    </div>
+    </div> -->
     <div class="listing-box">
     <ul>
         @foreach( $jobs as $job )
