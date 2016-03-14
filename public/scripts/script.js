@@ -73,4 +73,15 @@ $(function(){
     $(".filter-sidebar h2").click(function(e){
     	$(".filter-sidebar form").slideToggle();
     });
+
+    $(".delete").click(function(e){
+        var x = confirm("Delete this item?");
+        if(x){
+            return true;
+        }
+        else{
+            e.preventDefault();
+            return false;
+        }
+    });
 });

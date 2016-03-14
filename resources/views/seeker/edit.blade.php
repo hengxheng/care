@@ -44,7 +44,7 @@
 		<input type="file" name="picture">
 	</div> 
 	<div class="form-row submit">
-		<input type="submit" value="Submit">
+		<input type="submit" value="Update">
 	</div>
 </form>
 </div>
