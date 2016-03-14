@@ -30,14 +30,13 @@
 			<select name="state" id="state-dropdown" required>
 					<option value="{{ $giver->state }}">{{ $giver->state }}</option>
 					<option value="New South Wales">New South Wales</option>
-					<option value="Queensland">Queensland</option>
-					<option value="Northern Territory">Northern Territory</option>
-					<option value="Australian Capital Territory">Australian Capital Territory</option>
-					<option value="Victoria">Victoria</option>
-					<option value="Western Australia">Western Australia</option>
-					<option value="South Australia">South Australia</option>
-					<option value="Tasmania">Tasmania</option>
-					<option value="WA">WA</option>
+                    <option value="Queensland">Queensland</option>
+                    <option value="Northern Territory">Northern Territory</option>
+                    <option value="Australian Capital Territory">Australian Capital Territory</option>
+                    <option value="Victoria">Victoria</option>
+                    <option value="Western Australia">Western Australia</option>
+                    <option value="South Australia">South Australia</option>
+                    <option value="Tasmania">Tasmania</option>
 			</select>
 		</div>
 		<div class="form-row">
