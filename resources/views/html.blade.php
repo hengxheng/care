@@ -99,12 +99,14 @@
 
 					<nav id="sub-nav">
 						<ul>
-							<li><a href="/faqs">FAQs</a></li>		
-							<li><a href="/about">About Us</a></li>		
-							<li><a href="/contact">Contact Us</a></li>
+							<li><a href="/about">About Us</a></li>							
+							<li><a href="/terms-conditions">Terms &amp; Conditions</a></li>
 							<li><a href="/privacy-policy">Privacy Policy</a></li>
 							<li><a href="/terms-conditions">Terms &amp; Conditions</a></li>
 							<li><a href="/terms-of-use">Terms of Use</a></li>
+							<li><a href="#">Blog</a></li>
+							<li><a href="/faqs">FAQs</a></li>	
+							<li><a href="/contact">Contact</a></li>
 						</ul>
 					</nav>
 				</div>
