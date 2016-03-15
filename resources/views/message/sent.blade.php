@@ -24,7 +24,7 @@
 								<span>To:</span> <h2>{{ $message->firstname}} {{ $message->lastname}}</h2>
 							</div>
 							<div class="message-content">
-								{{ str_limit($message->content, 200) }}
+								{!! html_entity_decode(str_limit(strip_tags($message->content,'<br>'), 100)) !!}...
 							</div>
 							<div class="message-date">
 								<span class="time"><i class="fa fa-clock-o"></i>{{ date('H:i', strtotime($message->created_at)) }}</span>

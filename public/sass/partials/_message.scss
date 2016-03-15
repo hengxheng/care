@@ -186,9 +186,8 @@
 				}
 
 				.cta{
-					float: left;
+					float: right;
 					margin-left: 0px;
-					clear: both;
 
 					@include bp-small {
 						margin-left: 0px;

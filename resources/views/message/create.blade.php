@@ -7,7 +7,7 @@
 	<input type="hidden" name="to_id" value="{{ $to_user->id }}">
 	{!! Form::token() !!}
 	<div class="form-row">
-		<h2>TO: {{ $to_user->firstname}} {{ $to_user->lastname}}</h2>
+		<h2>New message to: {{ $to_user->firstname}} {{ $to_user->lastname}}</h2>
 	</div>
 	<div class="form-row">
 		<label for="subject">Subject</label>
@@ -15,7 +15,7 @@
 	</div>
 	<div class="form-row">
 		<label for="content">Message: </label>
-		<textarea name="content"></textarea>
+		<textarea name="content" style="height: 200px;"></textarea>
 	</div>
 	<div class="form-row">
 		<input type="submit" value="Send"> <a class="dark-blue-btn" href="{{ URL::previous() }}" style="margin-left: 10px;">Cancel</a>

@@ -21,16 +21,17 @@
 						</div>
 						<div class="message-tease">
 							<div class="user-name">
-								From:  {{ $message->firstname}} {{ $message->lastname}}
+								<span>From:</span>  <h2>{{ $message->firstname}} {{ $message->lastname}}</h2>
 							</div>
 							<div class="message-content">
 								{!! html_entity_decode(str_limit(strip_tags($message->content,'<br>'), 100)) !!}
 							</div>
 							<div class="message-date">
-								{{ date('H:i D F d, Y', strtotime($message->created_at)) }}
+								<span class="time"><i class="fa fa-clock-o"></i>{{ date('H:i', strtotime($message->created_at)) }}</span>
+								<span class="date"><i class="fa fa-calendar"></i>{{ date('jS F Y', strtotime($message->created_at)) }}</span>
 							</div>
 							<div class="cta">
-								<a class="dark-blue-btn" href="{{ URL::route('message.show', array('type' => 'from','id' => $message->id ))}}">View</a>
+								<a class="dark-blue-btn" href="{{ URL::route('message.show', array('type' => 'from','id' => $message->id ))}}"><i class="fa fa-envelope-o"></i>View Message</a>
 							</div>
 						</div>
 					</div>
