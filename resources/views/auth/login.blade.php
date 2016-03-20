@@ -55,8 +55,8 @@
         </div>
 
         <div class="testimonial-content">
-            <h3>J. Casey</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec interdum leo id tempor mollis. Nam elit tellus, finibus sit amet aliquam ut, venenatis at diam. Fusce ut dui vel lacus pulvinar auctor non ut mauris. Maecenas sit amet turpis eget eros luctus semper. Maecenas tempor odio id massa aliquam, id hendrerit nisl convallis.</p>
+            <h3>Nancy</h3>
+            <p>I am loving Care Nation, it is a very easy website to navigate and to get the help we need for our Mother. Neither my sister or I live close enough to Mom to be there to help her daily so we needed to find someone to be there for Mum. Care Nation can provide just that! </p>
         </div>
     </div>
 </div>

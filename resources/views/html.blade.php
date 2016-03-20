@@ -173,7 +173,7 @@
 										@endif
 										<li class="inbox"><a href="{{ URL::route('message.inbox') }}">Inbox 
 											@if(isset($unread))
-											  <span class="msg-notify">{{ $unread }}</span>
+											  <span class="msg-notify" @if($unread>0) style="background:red;border-color: red;color: #fff;" @endif >{{ $unread }}</span>
 											@endif
 										</a></li>
 								@elseif (Auth::user()->status == 'Pending' && Auth::user()->user_type == "giver")
