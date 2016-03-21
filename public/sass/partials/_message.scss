@@ -42,6 +42,23 @@
 	.message-body{
 		padding:15px;
 		font-size: 16px;
+		background: #ccc;
+		box-sizing: border-box;
+		margin-bottom: 20px;
+		position: relative;
+		margin-top: 50px;
+		&:before{
+			content:"";
+			display:block;
+			width: 0;
+			height: 0;
+			border-style: solid;
+			border-width: 0 25px 30px 25px;
+			border-color: transparent transparent #ccc transparent;
+			position: absolute;
+			top:-30px;
+			left:15px;
+		}
 		@include full;
 
 		@include bp-small {
@@ -105,7 +122,7 @@
 		li{
 			border-bottom:1px solid #ccc;
 			color:$dark-blue;
-			padding: 15px;
+			padding: 15px 0;
 			margin-bottom: 25px;
 			position: relative;
 
@@ -134,7 +151,7 @@
 				}
 			}
 			.message-tease{
-				width: 78%;
+				width: 83%;
 				box-sizing:border-box;
 				display: inline-block;
 				vertical-align: top;
@@ -151,7 +168,8 @@
 					color: $dark-blue;
 					margin-bottom: 15px;
 					text-transform: capitalize;
-
+					float: left;
+					margin-right: 70px;
 					span {
 						color: #164856;
 						font-size: 14px;
@@ -186,9 +204,11 @@
 				}
 
 				.cta{
-					float: right;
-					margin-left: 0px;
 
+					margin-left: 0px;
+					position: absolute;
+					top:50px;
+					right: 0;
 					@include bp-small {
 						margin-left: 0px;
 						clear: both;
