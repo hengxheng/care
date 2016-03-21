@@ -1042,7 +1042,7 @@ input[type="submit"] {
   border-top: 0px solid #ccc;
 }
 #message-main ul li .user-img {
-  width: 15%;
+  width: 10%;
   box-sizing: border-box;
   display: inline-block;
   vertical-align: top;
@@ -1061,7 +1061,7 @@ input[type="submit"] {
   border-radius: 200px;
 }
 #message-main ul li .message-tease {
-  width: 83%;
+  width: 89%;
   box-sizing: border-box;
   display: inline-block;
   vertical-align: top;

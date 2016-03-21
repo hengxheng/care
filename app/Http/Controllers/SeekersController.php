@@ -106,9 +106,14 @@ class SeekersController extends Controller
         $fname = $user->firstname;
         $lname = $user->lastname;
         $hmail = $user->email;
-
+        
         Mail::send('emails.welcome',array('firstname' => $fname, 'lastname' => $lname, 'email' => $hmail ), function($message) use ($hmail) {
             $message->to($hmail , "CareNation Customer")->subject('Thanks for joining CareNation.com.au!');
+        });
+
+        $admin_email = "info@carenation.com.au";
+        Mail::send('emails.cs_signup_notice',array('firstname' => $fname, 'lastname' => $lname, 'email' => $admin_email ), function($message) use ($admin_email) {
+            $message->to($admin_email , "CareNation")->subject('A new Care Seeker has signed up to CareNation');
         });
 
         return Redirect::route('care_seekers.show',array('uid'=>$id));
