@@ -2,46 +2,48 @@
 
 @section('content')
 
-<div class="profile-block">
-	<div class="profile-row">
-		<div class="row">
-			<div class="col-1">
+<div class="profile-block">.
+	<aside class="contact">
 				<div class="profile-image block">
 					<img src="{{ URL::asset('images/user/'.$the_giver->picture) }}" alt="">
 				</div>
-				<div class="profile-info">
-					<h2 class="profile-name">
-						{{ $the_user->firstname }} {{ $the_user -> lastname }}
-					</h2>		
-					<div class="gender">
-						{{ $the_giver->gender }}@if ($the_giver->live_in)&nbsp;&nbsp;|&nbsp;&nbsp;Live In @endif
-					</div>
-					<div class="user-location">
-						{{ $the_giver->suburb }},{{ $the_giver->state }}
-					</div>
-					@if (Auth::user()->user_type == 'admin')
-					<div class="user-status">			
-							<label for="status">User Status: </label>
-							<select name="status" id="user-status">
-								<option value="{{ $the_user->status }}">{{ $the_user->status }}</option>
-								<option value="Active">Active</option>
-								<option value="Inactive">Inactive</option>
-							</select>
-					</div>
-					<div class="bg-check">
-						<a class="dark-blue-btn" href="{{ URL::asset('uploaded_files/user/'.$the_giver->background_check) }}" target="_blank">Background Check</a>
-					</div>		
-
-
-					@endif
-					@if (Auth::user()->user_type == 'seeker')
-						<a class="dark-blue-btn" href="{{ URL::route('message.create', array('to_id'=>$the_giver -> uid )) }}">Send a message</a>
-
-						
-					@endif
+			</aside>
+	<div class="profile-row" style="float:left;">
+		<div class="row">
+			
+			<div class="profile-info">
+				<h2 class="profile-name">
+					{{ $the_user->firstname }} {{ $the_user -> lastname }}
+				</h2>		
+				<div class="gender">
+					{{ $the_giver->gender }}@if ($the_giver->live_in)&nbsp;&nbsp;|&nbsp;&nbsp;Live In @endif
 				</div>
+				<div class="user-location">
+					{{ $the_giver->suburb }},{{ $the_giver->state }}
+				</div>
+				@if (Auth::user()->user_type == 'admin')
+				<div class="user-status">			
+						<label for="status">User Status: </label>
+						<select name="status" id="user-status">
+							<option value="{{ $the_user->status }}">{{ $the_user->status }}</option>
+							<option value="Active">Active</option>
+							<option value="Inactive">Inactive</option>
+						</select>
+				</div>
+				<div class="bg-check">
+					<a class="dark-blue-btn" href="{{ URL::asset('uploaded_files/user/'.$the_giver->background_check) }}" target="_blank">Background Check</a>
+				</div>		
 
-				<div class="rating-block">
+
+				@endif
+				@if (Auth::user()->user_type == 'seeker')
+					<a class="dark-blue-btn" href="{{ URL::route('message.create', array('to_id'=>$the_giver -> uid )) }}">Send a message</a>
+
+					
+				@endif
+			</div>
+
+				<!-- <div class="rating-block">
 					<h3>My Rating</h3>
 					<div class="rating">
 						@if($my_rating >0 )
@@ -52,10 +54,10 @@
 						   This Care Giver has not been rated by any Care Seekers yet
 						@endif
 					</div>
-				</div>
+				</div> -->
 			</div>
 		</div>
-
+		<div class="clear"></div>
 		<div class="row">
 			<div class="col-1">
 			<div class="profile-contact block">

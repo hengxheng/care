@@ -4,8 +4,14 @@
 @section('content')
     
     <div class="seeker-list-block content-with-sidebar">
-        <div class="tool-bar">
-            
+        <div class="tool-bar row">
+            <div class="col-1">
+                <form id="sort-form" action="{{ URL::route('admin.seeker.searchbyname')}}" method="post">
+                    {!! Form::token() !!}
+                    <input type="text" name="name" placeholder="Search By name">
+                    <input type="submit" value="Search">
+                </form>
+            </div>
         </div>
         <div class="listing-box">
             @if (count($seekers) > 0)

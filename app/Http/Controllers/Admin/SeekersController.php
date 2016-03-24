@@ -94,4 +94,13 @@ class SeekersController extends Controller
     {
         //
     }
+
+    public function searchByName(Request $request){
+
+        $name = Input::get('name');
+
+   
+        $seekers = Seeker::searchByName($name);
+        return view('admin.seeker.list',compact('seekers'));
+    }
 }

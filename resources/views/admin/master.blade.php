@@ -33,36 +33,15 @@
 			@endif	
 			
 
-			<ul>
-			@if (Auth::guest())
-			
-				<li><a href="/faqs">FAQs</a></li>		
-				<li><a href="/about">About Us</a></li>		
-				<li><a href="/contact">Contact Us</a></li>
-				<li><a href="/privacy-policy">Privacy Policy</a></li>
-				<li><a href="/terms-conditions">Terms &amp; Conditions</a></li>
-				<li><a href="/terms-of-use">Terms of Use</a></li>
-				
-			@elseif(Auth::user()->status == 'Active')
-				@if (Auth::user() -> user_type == 'giver')
-				<li><a href="{{ URL::route('care_givers.show', array('uid' => Auth::user()->id)) }}" >My Profile</a></li>
-				<li><a href="{{ URL::route('job.search', array('uid' => Auth::user()->id)) }}">View Jobs</a></li>
-				<li><a href="{{ URL::route('job.applied', array('uid' => Auth::user()->id)) }}">Job Submissions</a></li>
-					@elseif (Auth::user()->user_type == 'seeker')
-					<li><a href="{{ URL::route('care_seekers.show', array('uid' => Auth::user()->id)) }}">My Profile</a></li>
-					<li><a href="{{ URL::route('job.create', array('uid' => Auth::user()->id)) }}">Post a job</a></li>
-					<li><a href="{{ URL::route('care_givers.list')}}">Find Caregivers</a></li>
-					<li><a href="{{ URL::route('job.list', array('poster_id' => Auth::user()->id)) }}">My posted jobs</a></li>
-				@endif
-				<li class="inbox"><a href="{{ URL::route('message.inbox') }}">Inbox 
-				@if(isset($unread))
-					<span class="msg-notify">{{ $unread }}</span>
-				@endif
-				</a></li>
-				@elseif (Auth::user()->status == 'Pending' && Auth::user()->user_type == "giver")
-				<li>To apply for jobs, you must first verify your account by adding a background check approved by us.</li>
+			@if(Auth::check())
+				<ul>
+					<li><a href="{{ URL::route('admin.index') }}">Dashboard</a></li>
+					<li><a href="{{ URL::route('admin.givers.list') }}">Care givers</a></li>
+					<li><a href="{{ URL::route('admin.seekers.list') }}">Care seekers</a></li>
+				</ul>
+			@else
+				<h2 style="color: #fff;">Admin Login</h2>
 			@endif
-			</ul>
 
 		</nav>
 		
@@ -73,19 +52,20 @@
 				<div class="site-inner">
 					<div class="contact">
 						<ul>
-							<li><a href="tel:02052692359"><i class="fa fa-phone"></i>020 5269 2359</a></li>
-							<li><a href="mailto:support@carenation.com.au"><i class="fa fa-envelope"></i>support@carenation.com</a></li>
+							<li><a href="mailto:info@carenation.com.au"><i class="fa fa-envelope"></i><span>info@carenation.com</span></a></li>
 						</ul>
 					</div>
 
 					<nav id="sub-nav">
 						<ul>
-							<li><a href="/faqs">FAQs</a></li>		
-							<li><a href="/about">About Us</a></li>		
-							<li><a href="/contact">Contact Us</a></li>
+							<li><a href="/about">About Us</a></li>							
+							<li><a href="/terms-conditions">Terms &amp; Conditions</a></li>
 							<li><a href="/privacy-policy">Privacy Policy</a></li>
 							<li><a href="/terms-conditions">Terms &amp; Conditions</a></li>
 							<li><a href="/terms-of-use">Terms of Use</a></li>
+							<li><a href="#">Blog</a></li>
+							<li><a href="/faqs">FAQs</a></li>	
+							<li><a href="/contact">Contact</a></li>
 						</ul>
 					</nav>
 				</div>
@@ -95,7 +75,7 @@
 					<div class="logo">
 						<a href="#"><img src="{{ URL::asset('images/logo.png') }}" alt=""></a>
 					</div>	
-
+					<div class="menu-btn"><i class="fa fa-bars"></i></div>
 					@if(Auth::check())
 						<div class="account-block">
 							<div class="account-inner">
@@ -112,7 +92,7 @@
 							</div>
 							<div id="account-block-menu">
 								<ul>
-									<li><a href="{{ URL::route('account.settings') }}"><i class="fa fa-cogs"></i> Account Settings</a></li>
+									<!-- <li><a href="{{ URL::route('account.settings') }}"><i class="fa fa-cogs"></i> Account Settings</a></li> -->
 									<li><a id="logout-btn" href="{{ URL::route('logout') }}"><i class="fa fa-sign-out"></i> Logout</a></li>
 								</ul>	
 							</div>
@@ -159,7 +139,7 @@
 				@yield('content')
 			</div>
 		</div>
-		<div class="clear"></div>
+				<div class="clear"></div>
 		<footer id="site-footer" class="footer">
 			<div class="footer-content site-inner">
 				<div class="fourth">
@@ -172,10 +152,14 @@
 
 					<span class="social">
 						<ul>
-							<li><a href="#"><i class="fa fa-twitter"></i>@CareNation</a></li>
-							<li><a href="#"><i class="fa fa-facebook"></i>/CareNation</a></li>
+							<!-- <li><a href="#"><i class="fa fa-twitter"></i>@CareNation</a></li> -->
+							<li><a href="https://www.facebook.com/CareNation-373168729475054/?ref=bookmarks" target="_blank"><i class="fa fa-facebook"></i>/CareNation</a></li>
 						</ul>
 					</span>
+
+					<div class="comodo">
+						<img src="{{ URL::asset('images/comodo-ssl.png') }}" alt="" style="width:200px; margin-top:30px;">
+					</div>
 				</div>
 
 				<div class="fourth">
@@ -194,17 +178,17 @@
 					<h3>Contact Us</h3>
 						
 					<ul class="contact-details">
-						<li class="phone"><a href="">020 5269 2359</a></li>
-						<li class="email"><a href="">support@carenation.com.au</a></li>
-						<li class="address">123 Care Street, <br />Sydney, <br />New South Wales, <br />2020 </li>
+						<!-- <li class="phone"><a href="">020 5269 2359</a></li> -->
+						<li class="email"><a href="mailto:info@carenation.com.au">info@carenation.com.au</a></li>
+						<!-- <li class="address">123 Care Street, <br />Sydney, <br />New South Wales, <br />2020 </li> -->
 
-						<li class="map"><a hrefr="#">View map</a></li>
+						<!-- <li class="map"><a hrefr="#">View map</a></li> -->
 					</ul>
 				</div>
 
 				<div class="fourth">
 					<h3>Important Information</h3>
-					<p>While we verify certain key information (police checks, key qualifications, references) during the on-boarding of each carer, carers’ represent other information about themselves to customers...</p>
+					<p>CareNation does not employ or recommend any care provider or care seeker nor is it responsible for the conduct of any care provider or care seeker. The CareNation website is a platform that provides tools to help care seekers and care providers connect online. Each care seeker and care provider is solely responsible for selecting a care provider or care seeker for themselves or their families and for complying with all laws in connection with any employment relationship they establish.</p>
 				</div>
 			</div>
 		</footer>

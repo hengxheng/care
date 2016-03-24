@@ -25,7 +25,10 @@ class AdminController extends Controller
      * @return Response
      */
     public function index(){
-        return view('admin.index');
+        $n = Seeker::getTotal();
+        $m = Giver::getTotal();
+
+        return view('admin.index', compact('n', 'm'));
     }
 
     /**

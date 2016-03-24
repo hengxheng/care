@@ -113,5 +113,25 @@ class Giver extends Model
                     ->get();
     }
 
+    public static function searchByName($name){
+        $names = explode(" ", $name);
+        $givers =  DB::table('giver')
+        ->leftJoin('users', 'giver.uid','=','users.id');
+        
+        foreach ($names as $n){
+            $givers->where('users.firstname','LIKE','%'.$n.'%')
+            ->orWhere('users.lastname','LIKE','%'.$n.'%');
+        }
+       
+        
+        $givers->groupBy('giver.uid')
+        ->orderBy('users.created_at', 'desc');
+       
 
+        return $givers->paginate(5);
+    }
+
+    public static function getTotal(){
+        return DB::table('giver')->count();
+    }
 }

@@ -121,4 +121,13 @@ class GiversController extends Controller
         $givers = Giver::getAllGivers();
         return view('admin.giver.list',compact('givers'));
     }
+
+    public function searchByName(Request $request){
+
+        $name = Input::get('name');
+
+   
+        $givers = Giver::searchByName($name);
+        return view('admin.giver.list',compact('givers'));
+    }
 }
