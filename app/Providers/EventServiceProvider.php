@@ -19,6 +19,9 @@ class EventServiceProvider extends ServiceProvider
         'auth.logout' => [
             'App\Handlers\Events\LoginEventHandler',
         ],
+        'auth.login' => [
+            'App\Handlers\Events\CheckSubscriptionHandler',
+        ],
     ];
 
     /**

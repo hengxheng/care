@@ -27,7 +27,7 @@
 						<select name="status" id="user-status">
 							<option value="{{ $the_user->status }}">{{ $the_user->status }}</option>
 							<option value="Active">Active</option>
-							<option value="Inactive">Inactive</option>
+							<option value="Pending">Pending</option>
 						</select>
 				</div>
 				<div class="bg-check">
