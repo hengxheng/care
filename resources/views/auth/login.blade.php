@@ -51,7 +51,7 @@
     <h1>What our users think</h1>
     <div class="single-testimonail">
         <div class="testimonial-featured">
-            <img src="https://s3.amazonaws.com/uifaces/faces/twitter/adellecharles/128.jpg" style="border-radius: 64px;" />
+            <img src="{{ URL::asset('images/fiverr.jpg') }}" style="border-radius: 50%;width: 128px; height: 128px;" />
         </div>
 
         <div class="testimonial-content">

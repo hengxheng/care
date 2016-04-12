@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\user;
 use App\Job;
 use App\Submission;
 use Input;
@@ -11,6 +12,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Auth;
 use Session;
+use Mail;
 
 class JobsController extends Controller
 {
@@ -129,6 +131,8 @@ class JobsController extends Controller
         $job->postcode = Input::get('postcode');
         $job->status = "Active";
         $job->save();
+
+        $carer = User::
 
         return Redirect::route("job.show",array('id' => $job->id));
     }

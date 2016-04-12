@@ -11,6 +11,7 @@ use App\Message;
 use Input;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Mail;
 
 class MessagesController extends Controller
 {
@@ -56,6 +57,25 @@ class MessagesController extends Controller
         $message->subject = input::get('subject');
         $message->content = input::get('content');
         $message->save();
+
+        $receiver = User::findorFail(input::get('to_id'));
+        $sender = User::findorFail(input::get('from_id'));
+
+        $re_fname = $receiver->firstname;
+        $re_lname = $receiver->lastname;
+        $re_email = $receiver->email;
+
+        $se_fname = $sender->firstname;
+        $se_lname = $sender->lastname;
+        $se_email = $sender->email;
+
+        Mail::send('emails.message_received',array('firstname' => $re_fname, 'lastname' => $re_lname, 'email' => $re_email ), function($message) use ($re_email) {
+                $message->to($re_email , "CareNation Customer")->subject('You got a new message in CareNation.com.au!');
+            });
+
+        Mail::send('emails.message_sent',array('firstname' => $se_fname, 'lastname' => $se_lname, 'email' => $sender->email ), function($message) use ($se_email) {
+                $message->to($se_email , "CareNation Customer")->subject('You sent a new message in CareNation.com.au!');
+            });
 
         return redirect::route('message.inbox');
     }

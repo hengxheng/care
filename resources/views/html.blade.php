@@ -41,14 +41,13 @@
 			<ul>
 			@if (Auth::guest())
 			
-				<li><a href="/about">About Us</a></li>							
-				<li><a href="/terms-conditions">Terms &amp; Conditions</a></li>
-				<li><a href="/privacy-policy">Privacy Policy</a></li>
-				<li><a href="/terms-conditions">Terms &amp; Conditions</a></li>
-				<li><a href="/terms-of-use">Terms of Use</a></li>
-				<li><a href="#">Blog</a></li>
-				<li><a href="/faqs">FAQs</a></li>	
-				<li><a href="/contact">Contact</a></li>
+				<li><a href="http://www.carenation.com.au/about">About Us</a></li>							
+				<li><a href="http://www.carenation.com.au/terms-conditions">Terms &amp; Conditions</a></li>
+				<li><a href="http://www.carenation.com.au/privacy-policy">Privacy Policy</a></li>
+				<li><a href="http://www.carenation.com.au/terms-of-use">Terms of Use</a></li>
+				<li><a href="http://www.carenation.com.au/blog">Blog</a></li>
+				<li><a href="http://www.carenation.com.au/faqs">FAQs</a></li>	
+				<li><a href="http://www.carenation.com.au/contact">Contact</a></li>
 				
 			@elseif(Auth::user()->status == 'Active')
 				@if (Auth::user() -> user_type == 'giver')
@@ -101,14 +100,13 @@
 
 					<nav id="sub-nav">
 						<ul>
-							<li><a href="/about">About Us</a></li>							
-							<li><a href="/terms-conditions">Terms &amp; Conditions</a></li>
-							<li><a href="/privacy-policy">Privacy Policy</a></li>
-							<li><a href="/terms-conditions">Terms &amp; Conditions</a></li>
-							<li><a href="/terms-of-use">Terms of Use</a></li>
-							<li><a href="#">Blog</a></li>
-							<li><a href="/faqs">FAQs</a></li>	
-							<li><a href="/contact">Contact</a></li>
+							<li><a href="http://www.carenation.com.au/about">About Us</a></li>							
+							<li><a href="http://www.carenation.com.au/terms-conditions">Terms &amp; Conditions</a></li>
+							<li><a href="http://www.carenation.com.au/privacy-policy">Privacy Policy</a></li>
+							<li><a href="http://www.carenation.com.au/terms-of-use">Terms of Use</a></li>
+							<li><a href="http://www.carenation.com.au/blog">Blog</a></li>
+							<li><a href="http://www.carenation.com.au/faqs">FAQs</a></li>	
+							<li><a href="http://www.carenation.com.au/contact">Contact</a></li>
 						</ul>
 					</nav>
 				</div>
@@ -241,11 +239,13 @@
 					<h3>Useful Links</h3>
 
 					<ul>
-						<li>FAQs</li>
-						<li>About CareNation</li>
-						<li>Contact Us</li>
-						<li>Privacy Policy</li>
-						<li>Terms &amp; Conditions</li>
+						<li><a href="http://www.carenation.com.au/about">About Us</a></li>							
+						<li><a href="http://www.carenation.com.au/terms-conditions">Terms &amp; Conditions</a></li>
+						<li><a href="http://www.carenation.com.au/privacy-policy">Privacy Policy</a></li>
+						<li><a href="http://www.carenation.com.au/terms-of-use">Terms of Use</a></li>
+						<li><a href="http://www.carenation.com.au/blog">Blog</a></li>
+						<li><a href="http://www.carenation.com.au/faqs">FAQs</a></li>	
+						<li><a href="http://www.carenation.com.au/contact">Contact</a></li>
 					</ul>
 				</div>
 
