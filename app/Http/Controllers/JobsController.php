@@ -132,7 +132,17 @@ class JobsController extends Controller
         $job->status = "Active";
         $job->save();
 
-        $carer = User::
+        $carers = User::getAllGiver();
+        foreach ( $carers as $c){
+            $c_fname = $c->firstname;
+            $c_lname = $c->lastname;
+            $c_email = $c->email;
+
+            Mail::send('emails.job_posted',array('firstname' => $c_fname, 'lastname' => $c_lname, 'email' => $c_email ), function($message) use ($c_email) {
+                $message->to($c_email , "CareNation Customer")->subject('A new job has been posted in CareNation.');
+            });
+
+        }
 
         return Redirect::route("job.show",array('id' => $job->id));
     }

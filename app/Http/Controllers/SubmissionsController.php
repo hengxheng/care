@@ -11,6 +11,7 @@ use App\user;
 use Redirect;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Mail;
 
 class SubmissionsController extends Controller
 {
@@ -77,6 +78,14 @@ class SubmissionsController extends Controller
         $message->subject = "New job submission";
         $message->content = 'Hi '.$poster->firstname.'<br/>Someone just applied for your job, click <a href="'.$job_url.'">here</a> to view.<br/><br/>Admin';
         $message->save();
+
+        $j_poster = User::find($poster->id);
+        $p_fname = $j_poster->firstname;
+        $p_lname = $j_poster->lastname;
+        $p_email = $j_poster->email;
+        Mail::send('emails.new_submission',array('firstname' => $p_fname, 'lastname' => $p_lname, 'email' => $p_email ), function($message) use ($p_email) {
+            $message->to($p_email , "CareNation Customer")->subject('New job submission');
+        });
 
         return Redirect::route('job.search', array('uid' => input::get('uid')));
     }

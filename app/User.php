@@ -57,4 +57,11 @@ class User extends Model implements AuthenticatableContract,
         ->first();
     }
 
+    public static function getAllGiver(){
+        return DB::table('users')
+        ->select('firstname','lastname','email')
+        ->where('user_type','=','giver')
+        ->get();
+    }
+
 }
