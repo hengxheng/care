@@ -5,6 +5,16 @@
 
 @section('content')
 <div id="user-1" class="register-block">
+    <div class="register-form-header">
+    <ul>
+        <li>Carers sign up for free</li>
+        <li>Negotiate your own rates</li>
+        <li>View and apply to unlimited job postings</li>
+        <li>Increase your client base</li>
+        <li>Apply for jobs that suit your availability</li>
+    </ul>
+    </div>
+    
 <form method="POST" action="{{ URL::route('register') }}">
     {!! csrf_field() !!}
 

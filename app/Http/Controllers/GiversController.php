@@ -244,7 +244,7 @@ class GiversController extends Controller
                     $message->to($hmail , "CareNation Customer")->subject('Thanks for joining CareNation.com.au!');
                 });
 
-                Mail::send('emails.cg_signup_notice',array('firstname' => $fname, 'lastname' => $lname, 'email' => $admin_email ), function($message) use ($admin_email) {
+                 Mail::send('emails.cg_signup_notice',array('firstname' => $fname, 'lastname' => $lname, 'email' => $admin_email ), function($message) use ($admin_email) {
                     $message->to($admin_email , "CareNation")->subject('A new Care Giver has signed up to CareNation');
                 });
 

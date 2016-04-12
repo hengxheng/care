@@ -19,8 +19,8 @@
 		<link rel="shortcut icon" href="http://localhost/CareNationWP/wp-content/themes/CareNationWP/images/favicon.png">
 
 		<!--Typekit-->
-		<script src="https://use.typekit.net/zbk6zbg.js"></script>
-		<script>try{Typekit.load({ async: true });}catch(e){}</script>
+<script src="https://use.typekit.net/kof2mhv.js"></script>
+<script>try{Typekit.load({ async: true });}catch(e){}</script>
 	</head>
 	<body ng-app="myApp" class="@yield('pageType')">
 		<nav class="pushy pushy-left">
@@ -41,10 +41,7 @@
 			<ul>
 			@if (Auth::guest())
 			
-				<li><a href="http://www.carenation.com.au/about">About Us</a></li>							
-				<li><a href="http://www.carenation.com.au/terms-conditions">Terms &amp; Conditions</a></li>
-				<li><a href="http://www.carenation.com.au/privacy-policy">Privacy Policy</a></li>
-				<li><a href="http://www.carenation.com.au/terms-of-use">Terms of Use</a></li>
+				<li><a href="http://www.carenation.com.au/about">About Us</a></li>			
 				<li><a href="http://www.carenation.com.au/blog">Blog</a></li>
 				<li><a href="http://www.carenation.com.au/faqs">FAQs</a></li>	
 				<li><a href="http://www.carenation.com.au/contact">Contact</a></li>
@@ -94,16 +91,13 @@
 					<div class="contact">
 						<ul>
 							<!-- <li><a href="tel:02052692359"><i class="fa fa-phone"></i><span>020 5269 2359</span></a></li> -->
-						<li><a href="mailto:info@carenation.com.au"><i class="fa fa-envelope"></i><span>info@carenation.com</span></a></li>
+						<li><a href="mailto:info@carenation.com.au"><i class="fa fa-envelope"></i><span>info@carenation.com.au</span></a></li>
 						</ul>
 					</div>
 
 					<nav id="sub-nav">
 						<ul>
-							<li><a href="http://www.carenation.com.au/about">About Us</a></li>							
-							<li><a href="http://www.carenation.com.au/terms-conditions">Terms &amp; Conditions</a></li>
-							<li><a href="http://www.carenation.com.au/privacy-policy">Privacy Policy</a></li>
-							<li><a href="http://www.carenation.com.au/terms-of-use">Terms of Use</a></li>
+							<li><a href="http://www.carenation.com.au/about">About Us</a></li>				
 							<li><a href="http://www.carenation.com.au/blog">Blog</a></li>
 							<li><a href="http://www.carenation.com.au/faqs">FAQs</a></li>	
 							<li><a href="http://www.carenation.com.au/contact">Contact</a></li>
