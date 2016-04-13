@@ -48,6 +48,9 @@
             </ul>
             @endif
         </div>
+        <div class="pagination-block">
+            {!! $seekers->render() !!}
+        </div>
     </div>
 
 @endsection

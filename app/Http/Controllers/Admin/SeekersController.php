@@ -10,6 +10,7 @@ use App\User;
 use App\Seeker;
 use Redirect;
 
+
 class SeekersController extends Controller
 {
     public function listing(){

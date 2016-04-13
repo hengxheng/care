@@ -2,8 +2,8 @@
 
 @section('content')
 
-<p>Total number of Care Givers signed up: {{ $m }}</p>
-<p>Total number of Care Seekers signed up: {{ $n }}</p>
+<p>Total number of Care Givers signed up: {{ $g }}</p>
+<p>Total number of Care Seekers signed up: {{ $s }}</p>
 
 
 <p><a href="{{ URL::route('admin.givers.list') }}" class="blue-btn">View All Care Givers</a>&nbsp;&nbsp;&nbsp;
