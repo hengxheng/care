@@ -33,22 +33,5 @@ class LoginEventhandler
         $now = Carbon::now();
         $user->last_login = $now;
         $user->save();
-
-        if($user->user_type == "seeker" ){
-            $seeker = Seeker::find($user->id);
-            $end_date = $seeker->subscription_ends_at;
-            $seeker->premium = 2;
-            if($end_date < $now){
-                $seeker->premium = 0;
-                $seeker->save();
-
-                $user->status = "Pending";
-               
-            }
-             $seeker->save();
-
-            
-
-        }
     }
 }

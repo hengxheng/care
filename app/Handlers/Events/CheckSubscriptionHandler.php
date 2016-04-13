@@ -31,17 +31,23 @@ class CheckSubscriptionHandler
     {
 
         $now = Carbon::now();
-        if($user->user_type == "seeker" ){
+        
+        if(($user->user_type == "seeker") && ($user->status != "Inactive")){
             $seeker = Seeker::find($user->id);
-            $end_date = $seeker->subscription_ends_at;
-            
-            if($end_date < $now){
-                $seeker->premium = 0;
-                $seeker->save();
+            if($seeker !== NULL){
 
-                $user->status = "Pending";
-                $user->save();              
+                $end_date = $seeker->subscription_ends_at;
+
+                if(($end_date !== NULL)&&($end_date > $now)){
+                    $seeker->premium = 0;
+                    $seeker->save();
+
+                    $user->status = "Pending";
+                    $user->save();              
+                }
             }
+            
         }
+           
     }
 }

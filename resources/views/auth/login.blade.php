@@ -57,7 +57,7 @@
 
         <div class="testimonial-content">
             <h3>Nancy</h3>
-            <p>I am loving Care Nation, it is a very easy website to navigate and to get the help we need for our Mother. Neither my sister or I live close enough to Mom to be there to help her daily so we needed to find someone to be there for Mum. Care Nation can provide just that! </p>
+            <p>I am loving CareNation, it is a very easy website to navigate and to get the help we need for our Mother. Neither my sister or I live close enough to Mum to be there to help her daily so we needed to find someone to be there for Mum. CareNation can provide just that! </p>
         </div>
     </div>
 </div>

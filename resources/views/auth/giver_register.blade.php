@@ -4,16 +4,18 @@
 @endsection
 
 @section('content')
-<div id="user-1" class="register-block">
-    <div class="register-form-header">
+<div class="giver-register-content">
+<div class="giver-register-prompt">
     <ul>
-        <li>Carers sign up for free</li>
-        <li>Negotiate your own rates</li>
-        <li>View and apply to unlimited job postings</li>
-        <li>Increase your client base</li>
-        <li>Apply for jobs that suit your availability</li>
+        <li><i class="fa fa-check" aria-hidden="true"></i>Carers sign up for free</li>
+        <li><i class="fa fa-check" aria-hidden="true"></i>Negotiate your own rates</li>
+        <li><i class="fa fa-check" aria-hidden="true"></i>View and apply to unlimited job postings</li>
+        <li><i class="fa fa-check" aria-hidden="true"></i>Increase your client base</li>
+        <li><i class="fa fa-check" aria-hidden="true"></i>Apply for jobs that suit your availability</li>
     </ul>
     </div>
+<div id="user-1" class="register-block">
+    
     
 <form method="POST" action="{{ URL::route('register') }}">
     {!! csrf_field() !!}
@@ -54,5 +56,6 @@
         <input type="submit" value="Register">
     </div>
 </form>
+</div>
 </div>
 @endsection

@@ -18,9 +18,10 @@ time, mark, audio, video {
   font-size: 100%;
   vertical-align: baseline;
 }
-
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,300,500,700,900);
 html {
   line-height: 1;
+  font-family: 'Raleway', sans-serif;
 }
 
 ol, ul {
@@ -59,7 +60,6 @@ a {
 }
 
 a, p, span, ul, li, address, input, textarea {
-  font-family: "proxima-nova", sans-serif;
   line-height: 22px;
   font-size: 16px;
 }
@@ -73,8 +73,8 @@ textarea {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "museo-sans", sans-serif;
-  font-weight: 900;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;
 }
 
 h1 {
@@ -138,9 +138,6 @@ p {
   background-size: cover;
 }
 
-body {
-  font-family: "proxima-nova", sans-serif;
-}
 
 .clear {
   clear: both;
@@ -675,10 +672,8 @@ header#site-header .header-content .account-block #account-down {
 
 nav#main-nav {
   background: #164856;
-  margin-bottom: 30px;
   display: block;
   width: 100%;
-  float: left;
 }
 @media only screen and (max-width: 30em) {
   nav#main-nav {
@@ -1055,10 +1050,10 @@ input[type="submit"] {
 }
 #message-main ul li .user-img img {
   width: 100%;
-  -webkit-border-radius: 200px;
-  -moz-border-radius: 200px;
-  -ms-border-radius: 200px;
-  border-radius: 200px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  border-radius: 50%;
 }
 #message-main ul li .message-tease {
   width: 89%;
@@ -1102,7 +1097,9 @@ input[type="submit"] {
   font-size: 16px;
   margin-bottom: 15px;
   color: #1E6073;
-  float: left;
+  position: absolute;
+  left: 35%;
+  top: 10px;
 }
 #message-main ul li .message-tease .message-date span {
   clear: both;
@@ -1329,6 +1326,7 @@ input[type="submit"] {
 }
 .profile-block aside.contact p {
   font-weight: 600;
+  font-size: 14px;
 }
 @media only screen and (max-width: 30em) {
   .profile-block aside.contact p {
@@ -1372,11 +1370,12 @@ input[type="submit"] {
   }
 }
 .profile-block aside.contact .profile-image img {
-  width: 100%;
-  -webkit-border-radius: 300px;
-  -moz-border-radius: 300px;
-  -ms-border-radius: 300px;
-  border-radius: 300px;
+  width: 180px;
+  height: 180px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  border-radius: 50%;
 }
 @media only screen and (max-width: 30em) {
   .profile-block aside.contact .profile-image img {
@@ -1403,6 +1402,7 @@ input[type="submit"] {
   box-sizing: border-box;
   font-weight: bold;
   position: relative;
+  font-size: 14px;
 }
 @media only screen and (max-width: 30em) {
   .profile-block aside.contact ul li br {
@@ -1581,18 +1581,22 @@ input[type="submit"] {
 .filter-sidebar .form-ele input[type="text"]:-moz-placeholder,
 .filter-sidebar .form-ele select:-moz-placeholder {
   color: #bbb;
+  font-family: 'Raleway', sans-serif;
 }
 .filter-sidebar .form-ele input[type="text"]::-moz-placeholder,
 .filter-sidebar .form-ele select::-moz-placeholder {
   color: #bbb;
+  font-family: 'Raleway', sans-serif;
 }
 .filter-sidebar .form-ele input[type="text"]:-ms-input-placeholder,
 .filter-sidebar .form-ele select:-ms-input-placeholder {
   color: #bbb;
+  font-family: 'Raleway', sans-serif;
 }
 .filter-sidebar .form-ele input[type="text"]::-webkit-input-placeholder,
 .filter-sidebar .form-ele select::-webkit-input-placeholder {
   color: #bbb;
+  font-family: 'Raleway', sans-serif;
 }
 .filter-sidebar .form-ele label {
   font-size: 14px;
@@ -1643,7 +1647,6 @@ input[type="submit"] {
   border-bottom: 5px solid #164856;
   font-size: 16px;
   font-weight: 600;
-  font-family: "proxima-nova", sans-serif;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   -ms-border-radius: 4px;
@@ -1662,11 +1665,13 @@ input[type="submit"] {
   padding: 10px;
 }
 .user-block .user-img img {
-  width: 100%;
-  -webkit-border-radius: 200px;
-  -moz-border-radius: 200px;
-  -ms-border-radius: 200px;
-  border-radius: 200px;
+  max-width: 100%;
+  width: 180px;
+  height:180px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  border-radius: 50%;
 }
 .user-block .user-info {
   width: 60%;
@@ -1797,6 +1802,7 @@ input[type="submit"] {
   font-weight: 600;
   font-size: 14px;
   margin-top: 15px;
+  padding: 6px 10px;
 }
 
 .sub-block .user-location {
@@ -2309,15 +2315,19 @@ form .form-row-2 input, form .form-row-2 select {
 }
 form .form-row-2 input:-moz-placeholder, form .form-row-2 select:-moz-placeholder {
   color: #bbb;
+  font-family: 'Raleway', sans-serif;
 }
 form .form-row-2 input::-moz-placeholder, form .form-row-2 select::-moz-placeholder {
   color: #bbb;
+  font-family: 'Raleway', sans-serif;
 }
 form .form-row-2 input:-ms-input-placeholder, form .form-row-2 select:-ms-input-placeholder {
   color: #bbb;
+  font-family: 'Raleway', sans-serif;
 }
 form .form-row-2 input::-webkit-input-placeholder, form .form-row-2 select::-webkit-input-placeholder {
   color: #bbb;
+  font-family: 'Raleway', sans-serif;
 }
 form .form-row.submit {
   margin-bottom: 0px;
@@ -2337,7 +2347,8 @@ form .form-row label {
 form .form-row input[type="text"],
 form .form-row input[type="email"],
 form .form-row input[type="password"],
-form .form-row select {
+form .form-row select,
+form .form-row textarea {
   border: 1px solid #909090;
   width: 100%;
   box-sizing: border-box;
@@ -2353,26 +2364,34 @@ form .form-row select {
 form .form-row input[type="text"]:-moz-placeholder,
 form .form-row input[type="email"]:-moz-placeholder,
 form .form-row input[type="password"]:-moz-placeholder,
-form .form-row select:-moz-placeholder {
+form .form-row select:-moz-placeholder,
+form .form-row textarea:-moz-placeholder {
   color: #bbb;
+  font-family: 'Raleway', sans-serif;
 }
 form .form-row input[type="text"]::-moz-placeholder,
 form .form-row input[type="email"]::-moz-placeholder,
 form .form-row input[type="password"]::-moz-placeholder,
-form .form-row select::-moz-placeholder {
+form .form-row select::-moz-placeholder,
+form .form-row textarea::-moz-placeholder {
   color: #bbb;
+  font-family: 'Raleway', sans-serif;
 }
 form .form-row input[type="text"]:-ms-input-placeholder,
 form .form-row input[type="email"]:-ms-input-placeholder,
 form .form-row input[type="password"]:-ms-input-placeholder,
-form .form-row select:-ms-input-placeholder {
+form .form-row select:-ms-input-placeholder,
+form .form-row textarea:-ms-input-placeholder {
   color: #bbb;
+  font-family: 'Raleway', sans-serif;
 }
 form .form-row input[type="text"]::-webkit-input-placeholder,
 form .form-row input[type="email"]::-webkit-input-placeholder,
 form .form-row input[type="password"]::-webkit-input-placeholder,
-form .form-row select::-webkit-input-placeholder {
+form .form-row select::-webkit-input-placeholder,
+form .form-row textarea::-webkit-input-placeholder  {
   color: #bbb;
+  font-family: 'Raleway', sans-serif;
 }
 form .form-row input[type="password"] {
   background: url(images/padlock.png) no-repeat 7px center;
@@ -2402,7 +2421,7 @@ form .form-row input[type="submit"] {
   border-bottom: 5px solid #164856;
   font-size: 16px;
   font-weight: 600;
-  font-family: "proxima-nova", sans-serif;
+  font-family: 'Raleway', sans-serif;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   -ms-border-radius: 4px;
@@ -2890,6 +2909,35 @@ form .desc textarea {
   }
 }
 
+.giver-signup .page-main{
+  position:relative;
+}
+.giver-register-prompt{
+  position:absolute;
+  top:45px;
+  right:0;
+  background: #dddddd;
+  padding: 15px;
+  margin-bottom:25px;
+}
+.giver-register-prompt ul{
+  display:inline-block;
+  text-align: left;
+  padding-left: 15px;
+}
+.giver-register-prompt ul li i{
+  margin-right:10px;
+  color: #009966;
+}
+
+@media screen and (max-width: 760px){
+  .giver-register-prompt{
+    position: static;
+    width: 100%;
+    text-align:center;
+  }
+
+}
 /*! Pushy - v0.9.2 - 2014-9-13
 * Pushy is a responsive off-canvas navigation menu using CSS transforms & transitions.
 * https://github.com/christophery/pushy/
@@ -2919,7 +2967,7 @@ form .desc textarea {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   text-decoration: none;
   font-weight: 300;
-  font-family: "museo-sans", sans-serif;
+  font-family: 'Raleway', sans-serif;
 }
 
 .pushy a:hover {

@@ -28,14 +28,18 @@
 						@if($the_seeker->subscription_ends_at == null)
 						Monthly Subcription
 						@else
-						Subscrtipion ends: {{ $the_seeker->subscription_ends_at }}
+							@if(strtotime($the_seeker->subscription_ends_at) < time())
+								Subscription has Expired 
+							@else								
+								Subscrtipion ends: {{ date('M d, Y', strtotime($the_seeker->subscription_ends_at)) }}
+							@endif
 						@endif
 					</h3>
 
 					<div class="block-bio">
-						<!-- <h3>About Me - This needs to be dynamic</h3> -->
-
-						<!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eget orci eget risus cursus posuere nec a nulla. Sed et dictum mauris. Nullam fermentum tortor quis felis eleifend iaculis. Vivamus odio ex, tempor vitae massa porttitor, convallis tempor odio. Integer rhoncus rhoncus dictum. Pellentesque interdum lacus justo, a ultrices risus euismod non. Etiam convallis sapien in finibus aliquet. Sed rhoncus nec felis non suscipit. Sed in massa ut lectus porttitor finibus nec vitae arcu.</p> -->
+						@if(strtotime($the_seeker->subscription_ends_at) < time())
+							Your subscription is expired. Click <a href="{{ URL::route('seeker.payment') }}">here</a> to renew.
+						@endif
 					</div>
 
 
@@ -43,6 +47,5 @@
 		</div>
 	</div>
 
-	<!-- <a class="btn" href="{{ URL::route('job.create', array('uid' => $the_user->id)) }}">Post a job</a> -->
 	@endif
 @endsection

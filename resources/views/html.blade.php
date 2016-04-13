@@ -18,9 +18,6 @@
 		
 		<link rel="shortcut icon" href="http://localhost/CareNationWP/wp-content/themes/CareNationWP/images/favicon.png">
 
-		<!--Typekit-->
-<script src="https://use.typekit.net/kof2mhv.js"></script>
-<script>try{Typekit.load({ async: true });}catch(e){}</script>
 	</head>
 	<body ng-app="myApp" class="@yield('pageType')">
 		<nav class="pushy pushy-left">
