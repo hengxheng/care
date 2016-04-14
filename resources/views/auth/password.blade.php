@@ -1,6 +1,9 @@
 @extends('html')
 
 @section('content')
+<div class="page-title">
+	Password Reset
+</div>
 <form method="POST" action="{{ URL::route('passwrod.postmail') }}">
     {!! csrf_field() !!}
     
@@ -13,5 +16,9 @@
         <input type="submit" value="Send Password Reset Link">
     </div>
 </form>
-
+<style>
+.page-main{
+    min-height: 500px !important;
+}
+</style>
 @endsection

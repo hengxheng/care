@@ -5,13 +5,13 @@
 @section('content')
 
 <div class="welcome title">
-    <h1>Welcome to CareNation</h1>
+    <h1 style="text-align:center;">Join CareNation today</h1>
 </div>
 
 <div class="register-block-container">
     <div class="register-block">
         <h1>Find Care For Your Family</h1>
-        <p>Get started by posting your care needs today and see who can hep.<br/>&nbsp;</p>
+        <p>Get started by posting your care needs today and see who can help by posting a custom job listing or browsing carer profiles.</p>
         <!-- <a href="{{ URL::route('seeker_register') }}" class="blue-btn">I'm looking for care</a> -->
         <a href="http://www.carenation.com.au/careseeker_signup/" class="blue-btn">I'm looking for care</a>
     </div>
@@ -27,7 +27,7 @@
     <h1>What our users think</h1>
     <div class="single-testimonail">
         <div class="testimonial-featured">
-            <img src="{{ URL::asset('images/fiverr.jpg') }}" style="border-radius: 50%;width: 128px; height: 128px;" />
+            <img src="{{ URL::asset('images/c2.jpg') }}" style="border-radius: 50%;width: 128px; height: 128px;" />
         </div>
 
         <div class="testimonial-content">
