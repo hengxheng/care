@@ -59,10 +59,6 @@ a {
   text-decoration: none;
 }
 
-a, p, span, ul, li, address, input, textarea {
-  line-height: 22px;
-  font-size: 16px;
-}
 
 textarea {
   -webkit-border-radius: 4px;
@@ -2107,6 +2103,10 @@ input[type="submit"] {
 .sub-list ul li .user-block .user-img {
   width: 25%;
 }
+.sub-list ul li .user-block .user-img img{
+  height: 130px;
+  width: 130px;
+}
 @media only screen and (max-width: 30em) {
   .sub-list ul li .user-block .user-img {
     padding-left: 0px;
@@ -2412,12 +2412,10 @@ form .form-row textarea {
   height: 70px;
 }
 form .form-row input[type="submit"] {
-  width: auto;
   color: #fff;
-  float: left;
   background: #1E6073;
-  border: 1px solid #1E6073;
-  padding: 6px 27px;
+  border: 0;
+  padding: 5px 27px;
   border-bottom: 5px solid #164856;
   font-size: 16px;
   font-weight: 600;

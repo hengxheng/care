@@ -105,7 +105,7 @@
 			<div class="header-content">
 				<div class="site-inner">
 					<div class="logo">
-						<a href="/"><img src="{{ URL::asset('images/logo.png') }}" alt=""></a>
+						<a href="http://www.carenation.com.au"><img src="{{ URL::asset('images/logo.png') }}" alt=""></a>
 					</div>	
 
 					<div class="menu-btn"><i class="fa fa-bars"></i></div>
@@ -147,8 +147,9 @@
 						<div id="main-menu-block">
 							<ul>
 								@if (Auth::guest())
-									<!-- <li><a href="{{ URL::route('login') }}">Login</a></li>
-									<li><a href="{{ URL::route('register') }}">Register</a></li> -->
+								<li><a href="{{ URL::route('register') }}">Join Now</a></li>
+									<li><a href="{{ URL::route('login') }}">Login</a></li>
+									
 								@elseif(Auth::user()->status == 'Active')
 										@if (Auth::user() -> user_type == 'giver')
 											<li><a href="{{ URL::route('care_givers.show', array('uid' => Auth::user()->id)) }}" >My Profile</a></li>

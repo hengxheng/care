@@ -37,8 +37,10 @@
 					</h3>
 
 					<div class="block-bio">
-						@if(strtotime($the_seeker->subscription_ends_at) < time())
-							Your subscription is expired. Click <a href="{{ URL::route('seeker.payment') }}">here</a> to renew.
+						@if($the_seeker->subscription_ends_at != null)
+							@if(strtotime($the_seeker->subscription_ends_at) < time())
+								Your subscription is expired. Click <a href="{{ URL::route('seeker.payment') }}">here</a> to renew.
+							@endif
 						@endif
 					</div>
 
