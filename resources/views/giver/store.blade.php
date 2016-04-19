@@ -4,7 +4,7 @@
 <div id="provider-create-form" ng-controller="GiverCtrl">
 <form action="{{ URL::route('care_givers.storeDetails') }}" method="post" enctype="multipart/form-data">
 	<input type="hidden" name="uid" value="{{ $uid }}">
-	{!! Form::token() !!}
+	{!! csrf_field() !!}
 	<div class="form-row">
 		<label for="gender">Gender</label>
 		<input type="radio" name="gender" value="male">Male

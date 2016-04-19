@@ -18,6 +18,8 @@
                 <div><input type="checkbox" name="service[]" value="Palliative Care"><span>Palliative Care</span></div>
                 <div><input type="checkbox" name="service[]" value="Respite Care"><span>Respite Care</span></div>
                 <div><input type="checkbox" name="service[]" value="Transition Care"><span>Transition Care</span></div>
+                <div><input type="checkbox" name="service[]" value="Disability Care"><span>Disability Care</span></div>
+                <div><input type="checkbox" name="service[]" value="Working With Children"><span>Working With Children</span></div>
             </div>
     </div>
 
@@ -39,17 +41,18 @@
                 </ul>
             </div>
     </div>
-
-    <div class="row">
-  
-            <h2>Qualifications</h2>
-            <div class="quolification-block">
-                <div class="form-row">
-                    <label>Qualification: </label><input type="text" name="quolification[]">
+    <div class="clear"></div>
+    <div class="row" style="float:left;">  
+        <h2>Qualifications</h2>
+        <div class="quolification-block">
+            <div class="form-row">
+                <div class="q-field">
+                    <input type="text" name="quolification[]">
                 </div>
+                <div class="q-button"></div>
             </div>
-            <a id="add_quo" href="#" ng-click="add_quolification()" class="dark-blue-btn">Add More Qualification</a>
-
+        </div>
+        <a id="add_quo" href="#" class="dark-blue-btn">Add Qualification</a>
     </div>
     <div class="row">
 

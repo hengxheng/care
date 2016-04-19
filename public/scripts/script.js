@@ -1,15 +1,26 @@
-
-var base_url = "http://localhost/care/public/";
-
 $(function(){
-	// var quo_count = 1; 
-	// var service_count = 1;
 
 	$("#add_quo").click(function(e){
 		e.preventDefault();
-		$(".quolification-block").append('<div class="form-row"><label>Qualification: </label><input type="text" name="quolification[]"></div>');
+		$(".q-field input").prop('readonly', true).addClass('readonly');
+		$(".q-button").html('<a class="q-btn dark-blue-btn" href="#">Edit</a>');
+		$(".quolification-block").append('<div class="form-row"><div class="q-field"><input type="text" name="quolification[]"></div><div class="q-button"></div></div>');
 	});
 
+	$(".quolification-block").on("click",".q-btn",function(e){
+		e.preventDefault();
+		console.log("dsfds");
+		var f = $(this).parent().parent().find("input");	
+		console.log(f);
+		if(f.prop('readonly')){
+			f.prop('readonly',false).removeClass("readonly");
+			$(this).html("OK");
+		}
+		else{
+			f.prop('readonly',true).addClass("readonly");
+			$(this).html("Edit");
+		}
+	});
 
 	$('#avaiability-table input[type="hidden"]').each(function(){
 		if($(this).val() == "1"){

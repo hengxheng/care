@@ -7,7 +7,7 @@
     <input name="_method" type="hidden" value="PATCH">
     <div class="row">
          <div class="col-1">
-            <h2>Services</h2>
+            <h2>Service Specialties</h2>
             <div class="form-row">
                 
                 <div><input type="checkbox" name="service[]" value="Alzheimer's & Dementia Care"
@@ -29,6 +29,14 @@
                 <div><input type="checkbox" name="service[]" value="Transition Care"
                 @if (isset($ser["Transition Care"])) checked @endif
                     ><span>Transition Care</span></div>
+
+                <div><input type="checkbox" name="service[]" value="Disability Care"
+                @if (isset($ser["Disability Care"])) checked @endif
+                    ><span>Disability Care</span></div>
+
+                <div><input type="checkbox" name="service[]" value="Working With Children"
+                @if (isset($ser["Working With Children"])) checked @endif
+                    ><span>Working With Children</span></div>
             </div>
          </div>
     </div>
@@ -80,12 +88,21 @@
             <h2>Qualifications</h2>
             <div class="quolification-block">
                 @foreach ($quolifications as $q)
-                    <div class="form-row">
-                    <label>Qualification: </label><input type="text" name="quolification[]" value="{{ $q->quolification_name }}">
+                <div class="form-row">
+                    <div class="q-field">
+                        <input type="text" class="readonly" id="q-{{$q->id}}" name="quolification[]" value="{{ $q->quolification_name }}" readonly>
+                    </div>
+                    <div class="q-button">
+                        <a class="q-btn dark-blue-btn" href="#" data-dd="q-{{$q->id}}">Edit</a>
+                    </div>
                 </div>
                 @endforeach
+                <div class="form-row">
+                    <div class="q-field"><input type="text" name="quolification[]"></div>
+                    <div class="q-button"></div>
+                </div>
             </div>
-            <a id="add_quo" href="#" ng-click="add_quolification()" class="dark-blue-btn">Add a qualification</a>
+            <a id="add_quo" href="#" class="dark-blue-btn">Add a qualification</a>
         </div>
     </div>
 

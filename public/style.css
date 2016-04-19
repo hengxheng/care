@@ -517,7 +517,6 @@ header#site-header .header-content {
   header#site-header .header-content {
     border-bottom: #164856 solid 10px;
     border-top: #164856 solid 10px;
-    margin-bottom: 20px;
   }
 }
 header#site-header .header-content .site-inner {
@@ -671,11 +670,7 @@ nav#main-nav {
   display: block;
   width: 100%;
 }
-@media only screen and (max-width: 30em) {
-  nav#main-nav {
-    display: none;
-  }
-}
+
 nav#main-nav .nav-inner {
   position: relative;
 }
@@ -2182,9 +2177,9 @@ input[type="submit"] {
     float: left;
   }
 }
-.giver-signup #giver-profile-3 .row:nth-child(odd) {
+/*.giver-signup #giver-profile-3 .row:nth-child(odd) {
   float: right;
-}
+}*/
 @media only screen and (max-width: 30em) {
   .giver-signup #giver-profile-3 .row:nth-child(odd) {
     float: left;
@@ -2926,6 +2921,7 @@ form .desc textarea {
   background: #dddddd;
   padding: 25px;
   margin-bottom:25px;
+  box-sizing:border-box;
   -webkit-border-top-left-radius: 4px;
   -moz-border-top-left-radius: 4px;
   -ms-border-top-left-radius: 4px;
@@ -2948,7 +2944,8 @@ form .desc textarea {
   .giver-register-prompt{
     position: static;
     width: 100%;
-    text-align:center;
+    text-align:left;
+
   }
 
 }
@@ -3085,6 +3082,11 @@ form .desc textarea {
     float: right;
     width: 25%;
 }
+@media screen and (max-width: 550px){
+  #sidebar{
+    display:none;
+  }
+}
 
 #sidebar .sidebar-block {
     background-color: #f7f7f7;
@@ -3139,4 +3141,18 @@ form .desc textarea {
 
 #sidebar .sidebar-block.contact i{
   margin-right:3px;
+}
+
+.q-field{
+  width: 60%;
+  float:left;
+  margin-right:15px;
+}
+.q-button{
+  width: 20%;
+  float:left;
+}
+
+.readonly{
+  background:#ddd;
 }

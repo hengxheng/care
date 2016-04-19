@@ -30,9 +30,9 @@
 					</div>
 				@endif
 				<form action="{{ URL::route('care_givers.store') }}" method="post" enctype="multipart/form-data">
-					<input type="hidden" name="uid" value="{{ Auth::user() -> id }}">
+					<input type="hidden" name="uid" value="{{ Auth::user()->id }}">
 					<input type="hidden" name="step" value="1">
-					{!! Form::token() !!}
+					{!! csrf_field() !!}
 					<div class="form-row gender">
 						<label for="gender">Gender</label>
 						<input type="radio" name="gender" value="male" checked>Male
@@ -66,7 +66,7 @@
 					</div>
 					<div class="form-row">
 						<label for="postcode">Postcode</label>
-						<input type="text" name="postcode" required pattern="[0-9]{4}">
+						<input id="postcode-field" type="text" name="postcode" required pattern="[0-9]{4}">
 					</div>	
 					<div class="form-row">	
 						<label for="picture">Profile Picture (Head shots only)</label>

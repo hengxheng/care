@@ -18,28 +18,28 @@
     
     
 <form method="POST" action="{{ URL::route('register') }}">
-    {!! csrf_field() !!}
+    {!! Form::token() !!}
 
     <h2>I want to provide care</h2>
     <input type="hidden" name="user_type" value="giver">
     <div class="form-row">
         <label for="firstname">First Name</label>
-        <input type="text" name="firstname" value="{{ old('firstname') }}">
+        <input type="text" name="firstname" value="">
     </div>
 
     <div class="form-row">
         <label for="lastname">Last Name</label>
-        <input type="text" name="lastname" value="{{ old('lastname') }}">
+        <input type="text" name="lastname" value="">
     </div>
 
     <div class="form-row">
         <label for="email">Email</label>
-        <input type="email" name="email" value="{{ old('email') }}">
+        <input type="email" name="email" value="">
     </div>
     
     <div class="form-row">
         <label for="phone">Phone</label>
-        <input type="text" name="phone" value="{{ old('phone') }}">
+        <input type="text" name="phone" value="">
     </div>
   
     <div class="form-row">

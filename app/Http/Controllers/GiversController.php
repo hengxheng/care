@@ -414,10 +414,13 @@ class GiversController extends Controller
             $quolifications = Input::get('quolification');
             if(is_array($quolifications) && sizeof($quolifications) > 0){
                 foreach ($quolifications as $q){
-                    $quo = new Quolification;
-                    $quo->giver_id = $id;
-                    $quo->quolification_name = $q;
-                    $quo->save();
+                    if(trim($q) != ""){
+                        $quo = new Quolification;
+                        $quo->giver_id = $id;
+                        $quo->quolification_name = trim($q);
+                        $quo->save();
+                    }
+                    
                 }
             }
         }

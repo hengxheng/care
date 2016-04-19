@@ -71,7 +71,7 @@
 			</div>
 
 			<div class="block">
-				<h2 class="block-title">Experiece
+				<h2 class="block-title">Experience
 					@if(Auth::user()->id == $the_user->id)
 					<a class="edit-btn" href="{{ URL::route('care_givers.edit2', array('id'=>$the_user->id)) }}"><i class="fa fa-pencil"></i></a>
 					@endif
