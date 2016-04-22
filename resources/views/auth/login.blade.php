@@ -34,11 +34,11 @@
     <div class="sidebar-block">
         <h4>Find Care For Your Family</h4>
         <p>Get started by posting your care needs today and see who can hep.</p>
-        <a class="cta push" href="http://www.carenation.com.au//careseeker_signup">I'm Looking for care</a>
+        <a class="cta push" href="http://www.carenation.com.au/careseeker_signup">I'm Looking for care</a>
 
         <h4>Apply for Caregiver Jobs</h4>
         <p>Connect with those seeking care today and see how you can help people in need.</p>
-        <a class="cta" href="https://app.carenation.com.au/giver/register">I want to provide care</a>
+        <a class="cta" href="{{ URL::route('giver_register')}}">I want to provide care</a>
     </div>
 
     <div class="sidebar-block contact">

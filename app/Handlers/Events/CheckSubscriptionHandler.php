@@ -38,7 +38,7 @@ class CheckSubscriptionHandler
 
                 $end_date = $seeker->subscription_ends_at;
 
-                if(($end_date !== NULL)&&($end_date > $now)){
+                if(($end_date !== NULL)&&($end_date < $now)){
                     $seeker->premium = 0;
                     $seeker->save();
 
