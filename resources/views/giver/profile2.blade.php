@@ -11,7 +11,7 @@
     <input type="hidden" name="step" value="3">
     <div class="row">
 
-            <h2>Do you have experience in any of the following</h2>
+            <h2>Do you have experience in any of the following?</h2>
             <div class="form-row service-cats">
                 <div><input type="checkbox" name="service[]" value="Alzheimer's & Dementia Care"><span>Alzheimer's & Dementia Care</span></div>
                 <div><input type="checkbox" name="service[]" value="Companion Care"><span>Companion Care</span></div>

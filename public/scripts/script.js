@@ -3,15 +3,13 @@ $(function(){
 	$("#add_quo").click(function(e){
 		e.preventDefault();
 		$(".q-field input").prop('readonly', true).addClass('readonly');
-		$(".q-button").html('<a class="q-btn dark-blue-btn" href="#">Edit</a>');
+		$(".q-button").html('<a class="q-btn dark-blue-btn" href="#">Edit</a><a class="dark-blue-btn q-dbtn" href="#">Delete</a>');
 		$(".quolification-block").append('<div class="form-row"><div class="q-field"><input type="text" name="quolification[]"></div><div class="q-button"></div></div>');
 	});
 
 	$(".quolification-block").on("click",".q-btn",function(e){
 		e.preventDefault();
-		console.log("dsfds");
 		var f = $(this).parent().parent().find("input");	
-		console.log(f);
 		if(f.prop('readonly')){
 			f.prop('readonly',false).removeClass("readonly");
 			$(this).html("OK");
@@ -21,6 +19,13 @@ $(function(){
 			$(this).html("Edit");
 		}
 	});
+
+	$(".quolification-block").on("click",".q-dbtn",function(e){
+		e.preventDefault();
+		var f = $(this).parent().parent('.form-row');	
+		f.remove();
+	});
+
 
 	$('#avaiability-table input[type="hidden"]').each(function(){
 		if($(this).val() == "1"){

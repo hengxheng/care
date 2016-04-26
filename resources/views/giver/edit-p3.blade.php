@@ -94,6 +94,7 @@
                     </div>
                     <div class="q-button">
                         <a class="q-btn dark-blue-btn" href="#" data-dd="q-{{$q->id}}">Edit</a>
+                        <a class="dark-blue-btn q-dbtn" href="#">Delete</a>
                     </div>
                 </div>
                 @endforeach

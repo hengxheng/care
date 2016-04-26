@@ -245,7 +245,7 @@ class GiversController extends Controller
                 });
 
                  Mail::send('emails.cg_signup_notice',array('firstname' => $fname, 'lastname' => $lname, 'email' => $admin_email ), function($message) use ($admin_email) {
-                    $message->to($admin_email , "CareNation")->subject('A new Care Giver has signed up to CareNation');
+                    $message->to($admin_email , "CareNation")->subject('A new Care Giver ('.$fname.' '.$lname') has signed up to CareNation');
                 });
 
                 return Redirect::route('care_givers.show', array('uid' => $uid)); 
