@@ -105,7 +105,7 @@
 			<div class="site-inner">
 				<div class="nav-inner">
 					<nav id="site-nav">
-						<a href="#" id="mb-btn"><i class="fa fa-bars"></i></a>
+						<!-- <a href="#" id="mb-btn"><i class="fa fa-bars"></i></a> -->
 						<div id="main-menu-block">
 							@if(Auth::check())
 								<ul>
