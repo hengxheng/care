@@ -142,15 +142,13 @@ p {
 .site-inner {
   width: 1280px;
   margin: 0 auto;
-  padding: 0 15px;
   box-sizing: border-box;
   overflow: hidden;
 }
 @media only screen and (max-width: 1280px) {
   .site-inner {
-    width: 95%;
-    margin: 0px 2.5%;
-    padding: 0px 0px 0px 0px;
+    width: 100%;
+    padding:0 15px;
   }
 }
 
@@ -2132,13 +2130,13 @@ input[type="submit"] {
   background-size: cover;
 }
 
-.giver-signup .page-main {
+/*.giver-signup .page-main {
   background: url(images/cagegiver-signup.jpg) no-repeat center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-}
+}*/
 .giver-signup #giver-profile-3 {
   width: 100%;
   background-color: #fff;
@@ -3159,4 +3157,271 @@ form .desc textarea {
 
 .readonly{
   background:#ddd;
+}
+
+
+.giver-signup .page-main{
+  padding:0;
+}
+
+
+.giver-register-header{
+  background:url(images/g-hero.jpg) no-repeat center center;
+  background-size: cover;
+  border-bottom: 8px solid #164856;
+}
+
+.giver-register-header .giver-register-header-content{
+  background-color: rgba(255, 255, 255, 0.5);
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  border-radius: 4px;
+  padding: 65px;
+  margin: 85px auto;
+  width: 45%;
+  text-align: center;
+  box-sizing: border-box;
+  text-align: center;
+}
+@media screen and (max-width:780px){
+  .giver-register-header .giver-register-header-content{
+    width:80%;
+  }
+}
+@media screen and (max-width:550px){
+  .giver-register-header .giver-register-header-content{
+    width:100%;
+  }
+}
+
+.giver-register-header .giver-register-header-content h2{
+    color: #164856;
+    margin-bottom: 20px;
+    font-size: 32px;
+}
+
+.giver-register-header .giver-register-header-content strong{
+  font-weight:bold;
+}
+
+.giver-register-header .giver-register-header-content p{
+    color: #164856;
+    margin-bottom: 20px;
+    line-height: 20px;
+    font-size: 18px;
+}
+
+.o-btn{
+  font-size: 20px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  border-radius: 4px;
+  background: #f47521;
+  color: #fff;
+  display: inline-block;
+  border: 0;
+  font-weight: 600;
+  padding: 6px 27px;
+  margin: 0 5px;
+  border-bottom: 4px solid #ba520b;
+  -webkit-transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear;
+  -ms-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+
+.o-btn:hover{
+  background-color: #ba520b;
+  border-bottom: 4px solid #f47521;
+}
+
+.giver-signup .s-title{
+  padding:15px;
+  text-align: center;
+}
+
+
+
+#why-join{
+  padding: 55px 0;
+}
+
+.giver-signup .s-title:after{
+  content:"";
+  display:inline-block;
+  width:60px;
+  height:2px;
+  background:#164856;
+}
+
+.giver-signup .col-5{
+  width:20%;
+  float: left;
+  text-align: center;
+  box-sizing: border-box;
+  padding:15px;
+}
+@media screen and (max-width:550px){
+  .giver-signup .col-5{
+      width:100%;
+    }
+}
+.giver-signup .col-5 img{
+  display:inline-block;
+  max-width: 100%;
+  margin-bottom:15px;
+}
+
+.giver-signup .why-text{
+  font-size: 18px;
+  line-height: 25px;
+}
+
+
+.register-testimonials{
+  background:#1E6073;
+  padding: 25px 0;
+}
+.register-testimonials h2{
+  color:#fff;
+}
+.register-testimonials .s-title:after{
+  background:#fff;
+}
+
+.register-testimonials-block{
+  position:relative;
+  overflow: hidden;
+  min-height: 270px;
+}
+
+.block-sliders .register-testimonials-img{ 
+  width:30%;
+  float:left;
+  box-sizing: border-box;
+  text-align: center;
+  color:#fff;
+  font-size: 14px;
+}
+#register-slider{
+  margin-top:50px;
+}
+.block-sliders .register-testimonials-img img{
+  width: 150px;
+  height:150px;
+  display:inline-block;
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  margin-bottom:10px;
+}
+
+.block-sliders .register-testimonials-img strong{
+  font-weight: bold;
+}
+.block-sliders .register-testimonials-text{
+  position:relative;
+  width:65%;
+  float:left;
+  margin-top: 15px;
+  box-sizing: border-box;
+  padding: 25px 25px 50px;
+  background:#fff;
+  color:#164856;
+  font-size: 16px;
+  -webkit-box-shadow: 10px 10px 0px 0px #164856;
+  -moz-box-shadow: 10px 10px 0px 0px #164856;
+  box-shadow: 10px 10px 0px 0px #164856;
+}
+.block-sliders .register-testimonials-img>div{
+  margin-bottom:3px;
+}
+.block-sliders .register-testimonials-img i{
+  font-size: 17px;
+}
+
+.block-sliders .register-testimonials-text:after{
+  content:"";
+  position:absolute;
+  top:40%;
+  left:-15px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 15px 25px 15px 0;
+  border-color: transparent #ffffff transparent transparent;
+
+}
+
+@media screen and (max-width:550px){
+  .block-sliders .register-testimonials-img,
+  .block-sliders .register-testimonials-text{
+    width:90%;
+    margin:10px;
+  }
+  .block-sliders .register-testimonials-text:after{
+    display:none;
+  }
+}
+
+.as-nav{
+  text-align: center;
+}
+
+.as-nav a{
+  background:transparent;
+  border:1px solid #fff;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  display:inline-block;
+  width:10px;
+  font-size:0;
+  height:10px;
+  margin:5px;
+}
+
+.as-nav a.as-active{
+  background:#fff;
+}
+
+.giver-register-content{
+  background:url(images/gbg.jpg) no-repeat center center;
+  background-size: cover;
+  padding:30px 0;
+}
+
+.giver-register-content form .form-row input[type="text"],
+.giver-register-content form .form-row input[type="email"],
+.giver-register-content form .form-row input[type="password"]{
+  border: 1px solid #1E6073;
+}
+
+.giver-register-content form .form-row input[type='submit']{
+   font-size: 20px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  border-radius: 4px;
+  background: #f47521;
+  color: #fff;
+  display: block;
+  border: 0;
+  font-weight: 600;
+  padding: 6px 27px;
+  width:100%;
+  border-bottom: 4px solid #ba520b;
+  -webkit-transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear;
+  -ms-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+
+.giver-register-content form .form-row  input[type='submit']:hover{
+  background-color: #ba520b;
+  border-bottom: 4px solid #f47521;
 }

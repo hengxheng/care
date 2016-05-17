@@ -15,7 +15,7 @@
 		<script src="{{URL::asset('scripts/pushy.min.js') }}"></script>
 		<script src="{{URL::asset('scripts/rateit/src/jquery.rateit.min.js') }}"></script>
 		<link rel="stylesheet" href="{{URL::asset('scripts/rateit/src/rateit.css') }}">
-		
+		<link rel="stylesheet" href="{{URL::asset('scripts/basic-jquery-slider-master/bjqs.css') }}">
 		<link rel="shortcut icon" href="http://localhost/CareNationWP/wp-content/themes/CareNationWP/images/favicon.png">
 		<!-- Facebook Pixel Code -->
 		<script>
@@ -192,7 +192,7 @@
 		
 
 		<div class="page-main">
-			<div class="page-content site-inner">
+			<div class="page-content">
 				<div class="sys-message">
 				@if (Session::has('message'))
 					<div class="flash alert-info">

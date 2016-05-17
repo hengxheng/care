@@ -1,0 +1,16 @@
+{
+    "name": "anyslider",
+    "version": "2.1.0",
+    "main": "dist/jquery.anyslider.js",
+    "ignore": [
+        "**/.*",
+        "*.json",
+        "*.md",
+        "demo",
+        "Gruntfile.js",
+        "src"
+    ],
+    "dependencies": {
+        "jquery": ">=1.7.0"
+    }
+}

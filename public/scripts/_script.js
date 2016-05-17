@@ -59,7 +59,7 @@ app.controller('GiverCtrl', function($scope, $http){
 		var wrapper = document.createElement("div");
 		wrapper.className = 'form-row';
 		var label = document.createElement("label");
-		label.innerHTML = 'Qualification '+quo_count +':';
+		label.innerHTML = 'Quolification '+quo_count +':';
 		var input = document.createElement("input");
 		input.type = "text";
 		input.name = "quolification[]";
