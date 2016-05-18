@@ -27,9 +27,25 @@
 						<select name="status" id="user-status">
 							<option value="{{ $the_user->status }}">{{ $the_user->status }}</option>
 							<option value="Active">Active</option>
-							<option value="Pending">Pending</option>
+							<option value="Inactive">Inactive</option>
 						</select>
 				</div>
+
+				<div class="user-status">			
+						<label for="status">Verify: </label>
+						<select name="verify" id="user-verify">
+							<option value="{{ $the_giver->verify }}">
+								@if($the_giver->verify)
+									Yes
+								@else
+									No
+								@endif
+							</option>
+							<option value="1">Yes</option>
+							<option value="0">No</option>
+						</select>
+				</div>
+
 				<div class="bg-check">
 					<a class="dark-blue-btn" href="{{ URL::asset('uploaded_files/user/'.$the_giver->background_check) }}" target="_blank">Background Check</a>
 				</div>		
@@ -288,6 +304,22 @@
 							"_token" : "{{ Session::token()}}",
 							"uid" : {{ $the_user->id }},
 							"status": $(this).val()
+					},
+					success: function(result){
+						console.log(result);
+					}
+			});
+		});
+
+		$("#user-verify").change(function(){
+			var v = $(this).val();
+			$.ajax({
+					type: 'POST',
+					url: "{{ URL::route('changeUserVerify') }}",
+					data: { 
+							"_token" : "{{ Session::token()}}",
+							"uid" : {{ $the_user->id }},
+							"verify": $(this).val()
 					},
 					success: function(result){
 						console.log(result);

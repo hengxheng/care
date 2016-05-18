@@ -45,6 +45,7 @@ class CreateUsersTable extends Migration
             $table->text('education')->nullable();
             $table->text('experience')->nullable();
             $table->string('background_check');
+            $table->boolean('verify')->default(false);
             $table->timestamps();
         });
 
@@ -63,31 +64,32 @@ class CreateUsersTable extends Migration
 
         Schema::create('quolification', function(Blueprint $table) {
             $table->increments('id');
-            $table->integer('giver_id');
-            // $table->foreign('giver_id')->references('uid')->on('giver')->onDelete('cascade');
+            $table->integer('giver_id')->unsigned();
+            $table->foreign('giver_id')->references('id')->on('users')->onDelete('cascade');
             $table->string('quolification_name');
             $table->timestamps();
         });
 
         Schema::create('service', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('giver_id');
-            // $table->foreign('giver_id')->references('uid')->on('giver')->onDelete('cascade');
+            $table->integer('giver_id')->unsigned();
+            $table->foreign('giver_id')->references('id')->on('users')->onDelete('cascade');
             $table->string('service_name');
             $table->timestamps();
         });
 
         Schema::create('service2', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('giver_id');
+            $table->integer('giver_id')->unsigned();
+            $table->foreign('giver_id')->references('id')->on('users')->onDelete('cascade');;
             $table->string('service_name');
             $table->timestamps();
         });
 
         Schema::create('availability', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('giver_id');
-            // $table->foreign('giver_id')->references('uid')->on('giver')->onDelete('cascade');
+            $table->integer('giver_id')->unsigned();
+            $table->foreign('giver_id')->references('id')->on('users')->onDelete('cascade');
             $table->string('week');
             $table->string('time');
             $table->boolean('av');
@@ -96,8 +98,9 @@ class CreateUsersTable extends Migration
 
         Schema::create('rating', function (Blueprint $table){
             $table->increments('rid');
-            $table->integer('rate_uid');
-            $table->integer('rateby_uid');
+            $table->integer('rate_uid')->unsigned();
+            $table->foreign('rate_uid')->references('id')->on('users')->onDelete('cascade');
+            $table->integer('rateby_uid')->unsigned();
             $table->integer('rate_star');
             $table->timestamps();
         });

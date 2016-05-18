@@ -88,7 +88,7 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::resource('rating', 'RatingController');
 
 	Route::post('user_status', [ 'as' => 'changeUserStatus', 'uses' => 'Admin\AdminController@changeUserStatus']);
-
+	Route::post('user_verify', [ 'as' => 'changeUserVerify', 'uses' => 'Admin\AdminController@changeUserVerify']);
 
 });
 

@@ -12,12 +12,12 @@
 				<img src="{{ URL::asset('images/user/'.$the_user->picture) }}" alt="">
 			</div>
 
-			<p style="text-transform: capitalize;"><i class="fa fa-venus-mars"></i> {{ $the_giver->gender }}@if ($the_giver->live_in)&nbsp;&nbsp;|&nbsp;&nbsp;Live In @endif</p>
+			<p style="text-transform: capitalize;"><i class="fa fa-venus-mars"></i>{{ $the_giver->gender }}@if ($the_giver->live_in)&nbsp;&nbsp;|&nbsp;&nbsp;Live In @endif</p>
 
-			@if($the_user->status == "Active")
-			<p class="success"><i class="fa fa-check"></i> Verified</p>
+			@if($the_giver->verify)
+			<p class="success"><i class="fa fa-check"></i>Verified</p>
 			@else
-			<p class="success"><i class="fa fa-times"></i> Not verified</p>
+			<p class="success"><i class="fa fa-times"></i>Not verified</p>
 			@endif
 			
 

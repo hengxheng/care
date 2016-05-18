@@ -139,9 +139,9 @@ class GiversController extends Controller
         $step = Input::get('step');
         switch ($step){
             case "1":
-             $this->validate($request, [
-                'background-check' => 'required'
-            ]);
+            //  $this->validate($request, [
+            //     'background-check' => 'required'
+            // ]);
                 $giver = new Giver;
                 $giver->uid = $uid;
                 $giver->gender = Input::get("gender");
@@ -232,7 +232,7 @@ class GiversController extends Controller
 
                 $user = new User;
                 $user = User::findorFail($uid);
-                $user->status = "Pending";
+                $user->status = "Active";
 
                 $fname = $user->firstname;
                 $lname = $user->lastname;

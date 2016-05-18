@@ -28,7 +28,11 @@
                                      {{ $giver->suburb }},{{ $giver->state }}
                                  </div>
                                  <div class="user-exp">
-                                     {{ str_limit($giver->bio, 200) }}
+                                    @if($giver->verify)
+                                    <p class="success"><i class="fa fa-check"></i>Verified</p>
+                                    @else
+                                    <p class="success"><i class="fa fa-times"></i>Not verified</p>
+                                    @endif
                                  </div>
                                  <div class="cta">
                                     <a class="blue-btn" href="{{ URL::route('admin.giver.show', array('uid' => $giver->id )) }}">View</a>
