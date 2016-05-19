@@ -565,11 +565,12 @@ header#site-header .header-content .account-block .account-block-img {
 }
 header#site-header .header-content .account-block .account-block-img img {
   width: 50px;
+  height: 50px;
   border: 2px solid #fff;
-  -webkit-border-radius: 50px 50px 50px 50px;
-  -moz-border-radius: 50px 50px 50px 50px;
-  -ms-border-radius: 50px 50px 50px 50px;
-  border-radius: 50px 50px 50px 50px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  border-radius: 50%;
 }
 header#site-header .header-content .account-block .account-block-content {
   display: inline-block;

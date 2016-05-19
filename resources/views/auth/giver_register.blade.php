@@ -158,7 +158,7 @@
     jQuery(function($){
          $('#the-slider').anyslider({
             'showControls' : false,
-            'interval' : 3000,
+            'interval' : 5000,
             'speed' : 800 
 
          });
