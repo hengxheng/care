@@ -42,7 +42,11 @@
 			<div class="profile-info">
 				<h2 class="profile-name">
 					{{ camel_case($the_user->firstname) }} {{ camel_case($the_user->lastname) }}
+					@if($the_giver->verify)
+						<div class="badge"><img src="{{ URL::asset('images/vbadge.png') }}" alt=""></div>
+					@endif
 				</h2>	
+				
 			</div>
 
 			<div class="rating-block">

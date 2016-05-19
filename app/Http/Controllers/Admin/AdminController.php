@@ -124,20 +124,7 @@ class AdminController extends Controller
         $verify = Input::get('verify');
         $giver = Giver::findorFail($uid);
         $giver->verify = $verify;
-        
-        // $fname = $user->firstname;
-        // $lname = $user->lastname;
-        // $hmail = $user->email;
-
-       $giver->save();
-
-        // if($status == "Active"){
-        //     Mail::send('emails.account_actived',array('firstname' => $fname, 'lastname' => $lname, 'email' => $hmail ), function($message) use ($hmail) {
-        //         $message->to($hmail , "CareNation Customer")->subject('Account actived with CareNation.com.au!');
-        //     });
-        // }
-
-
+        $giver->save();
         return $verify;
     }
 

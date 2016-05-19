@@ -3419,3 +3419,14 @@ form .desc textarea {
   background-color: #ba520b;
   border-bottom: 4px solid #f47521;
 }
+
+.badge{
+  float:right;
+}
+
+@media screen and (max-width: 550px){
+  .badge{
+    float:none;
+    margin:15px 0;
+  }
+}
