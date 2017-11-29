@@ -89,7 +89,7 @@
                         <div class="t-location"><i class="fa fa-map-marker" aria-hidden="true"></i> Sydney, Australia</div>
                     </div>
                     <div class="register-testimonials-text">
-                        <p>"Working together with CareNation makes me feel like I've really hit my career goals. It feels so good to be working with people who actually care about other people. Helping and caring is all I have ever wanted to do and now I get to do that with a company that feels the same way!" </p>
+                        <p>"Being a carer on CareNation has been a great experience. I am able to apply for the jobs I want so I am able to be very flexible with my hours. Not only that, but getting new clients isn’t such a daunting task anymore. Great site and I recommend it to anyone who is looking for a career as a Carer!"</p>
                     </div>
                 </div>
                 <div id="g-slider2" class="block-sliders">
@@ -100,7 +100,7 @@
                         <div class="t-location"><i class="fa fa-map-marker" aria-hidden="true"></i> Sydney, Australia</div>
                     </div>
                     <div class="register-testimonials-text">
-                        <p>"Working together with CareNation makes me feel like I've really hit my career goals. It feels so good to be working with people who actually care about other people. Helping and caring is all I have ever wanted to do and now I get to do that with a company that feels the same way!" </p>
+                        <p>"As a carer on CareNation, I love this site. I can set my own rates and only worry about the clients I accept. Its such an awesome system. I can't believe someone hasn’t thought of this sooner! Being a single parent, this is exactly what I need to have a career while being flexible enough to raise my son. Thanks!"</p>
                     </div>
                 </div>             
             </div>

@@ -186,6 +186,9 @@
                              <div class="user-info">
                                  <div class="user-name">
                                      {{ $giver->firstname }} {{ $giver->lastname}}
+                                      @if($giver->verify)
+                                    <div class="badge"><img src="{{ URL::asset('images/vbadge.png') }}" alt="" style="width:50%;float:right;"></div>
+                                @endif
                                  </div>
                                 <div class="last-login" style="margin-bottom: 10px;">
                                     <p><span>Last Login:</span> {{ date('F d Y', strtotime($giver->last_login)) }}<p>
@@ -203,7 +206,7 @@
                                     <a class="blue-btn" href="{{ URL::route('care_givers.show', array('uid' => $giver->id )) }}">View</a>
                         
                                 </div>
-                                
+                               
                              </div>
                              <div class="user-right-box">
                                 <div class="user-rate">

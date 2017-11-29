@@ -264,6 +264,7 @@ class GiversController extends Controller
     {
         $the_user = User::find($id);
         $the_giver = Giver::find($id);
+
         $my_services = Service::MyServices($id);
         $my_services2 = Service2::MyServices($id);
         $my_quolifications = Quolification::MyQuolifications($id);
@@ -274,6 +275,8 @@ class GiversController extends Controller
             $my_availability[$a->week][$a->time] = $a->av; 
         }
 
+        $the_giver->source = "Google";
+        $the_giver->save();
         return view('giver.show', compact(array(
             'the_user',
             'the_giver',

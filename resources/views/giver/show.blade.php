@@ -23,7 +23,7 @@
 
 			@if(Auth::user()->id == $the_user->id)
 			<h3 class="block-title">Contact Information</h3>
-			
+			<h2>Source: {{ $the_giver->source }}</h2>
 			<ul>
 				<li class="email"><span>Email</span>{{ $the_user->email }}</li>
 				<li class="phone"><span>Phone</span>{{ $the_user->phone }}</li>
